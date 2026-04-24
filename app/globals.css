@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #1a5680;
+  --teal: #248a84;
+  --light-teal: #f0fdfa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .duck-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, var(--blue), var(--teal));
+  }
+
+  .btn-duck {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%);
+    box-shadow: 0 10px 20px -10px var(--teal);
+    @apply transition-all duration-300;
+  }
+
+  .btn-duck:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 30px -10px var(--teal);
+  }
+
+  .hero-mesh {
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(at 0% 0%, hsla(199, 81%, 95%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(177, 59%, 94%, 1) 0, transparent 50%);
+  }
+
+  .bento-card {
+    @apply bg-white border border-black/5 transition-all duration-300;
+  }
+
+  .bento-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu-enter {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .mobile-menu-open {
+    max-height: 450px;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
