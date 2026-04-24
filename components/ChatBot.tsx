@@ -309,7 +309,8 @@ function findBestMatch(query: string): string {
   for (const [key, value] of Object.entries(KNOWLEDGE_BASE)) {
     if (key === 'default') continue
     
-    if (value.keywords.some(keyword => lowerQuery.includes(keyword))) {
+    // Type guard to check if value has keywords
+    if ('keywords' in value && value.keywords.some(keyword => lowerQuery.includes(keyword))) {
       return value.answer
     }
   }
