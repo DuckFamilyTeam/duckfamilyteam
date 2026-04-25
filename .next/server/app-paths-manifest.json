@@ -1,4 +1,6 @@
 {
   "/page": "app/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/blog/page": "app/blog/page.js",
+  "/blog/seo-2026/page": "app/blog/seo-2026/page.js",
+  "/blog/ga4-vodic/page": "app/blog/ga4-vodic/page.js"
 }

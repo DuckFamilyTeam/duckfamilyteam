@@ -30,7 +30,7 @@ const posts = [
     readTime: '5 min',
   },
   {
-    slug: null,
+    slug: 'seo-2026',
     img: 'https://www.vazoola.com/hs-fs/hubfs/The%20SEO%20Ecosystem%20in%202026.webp?width=864&height=486&name=The%20SEO%20Ecosystem%20in%202026.webp',
     tag: 'SEO',
     tagColor: 'bg-blue-600',
@@ -41,7 +41,7 @@ const posts = [
     readTime: '7 min',
   },
   {
-    slug: null,
+    slug: 'ga4-vodic',
     img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
     tag: 'Analitika',
     tagColor: 'bg-slate-900',
