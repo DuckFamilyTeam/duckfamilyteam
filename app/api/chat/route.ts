@@ -200,7 +200,6 @@ Next.js je React framework koji omogućava Server-Side Rendering (SSR), što zna
 
 **Naši Next.js projekti:**
 - Mobilni Vulkanizer Milan (www.mobilnivulkanizermilan.com) — rangiran TOP #1 na Google
-- Tepih Servis Jevtić (www.tepihservisjevtic.rs) — rangiran TOP #2 na Google
 
 ### Astro Sajtovi
 Astro je revolucionarni framework koji šalje NULA JavaScript-a klijentu po defaultu. Koristi Island Architecture — samo interaktivni delovi stranice dobijaju JavaScript.
@@ -213,8 +212,11 @@ Astro je revolucionarni framework koji šalje NULA JavaScript-a klijentu po defa
 - Podržava React, Vue, Svelte komponente
 - Idealan za prezentacione sajtove i blogove
 
-**Naši Astro projekti:**
-- Dubinsko Pranje Vetar (dubinsko-pranje-vetar.vercel.app) — TOP #1 Google
+**Naši čisti Astro projekti:**
+- Tepih Servis Jevtić (www.tepihservisjevtic.rs) — TOP #2 Google za "tepih servis Beograd"
+
+**Naši Next.js + Astro combo projekti:**
+- Dubinsko Pranje Vetar (dubinsko-pranje-vetar.vercel.app) — TOP #1 Google za lokalne pretrage
 - Shara Mara Nails Studio (shara-mara-nails-studio.vercel.app)
 
 ### Vercel Hosting
@@ -324,9 +326,9 @@ Cena varira u zavisnosti od kompleksnosti projekta. Kontaktirati za besplatnu ko
 
 ### Sajtovi koje smo izradili
 - **Mobilni Vulkanizer Milan** — www.mobilnivulkanizermilan.com (Next.js, TOP #1 Google)
-- **Tepih Servis Jevtić** — www.tepihservisjevtic.rs (Next.js, TOP #2 Google)
-- **Dubinsko Pranje Vetar** — dubinsko-pranje-vetar.vercel.app (Astro, TOP #1 Google)
-- **Shara Mara Nails Studio** — shara-mara-nails-studio.vercel.app (Astro)
+- **Tepih Servis Jevtić** — www.tepihservisjevtic.rs (Astro, TOP #2 Google)
+- **Dubinsko Pranje Vetar** — dubinsko-pranje-vetar.vercel.app (Next.js + Astro, TOP #1 Google)
+- **Shara Mara Nails Studio** — shara-mara-nails-studio.vercel.app (Next.js + Astro)
 
 ---
 

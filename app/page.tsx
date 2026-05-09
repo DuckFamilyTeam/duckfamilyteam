@@ -63,8 +63,8 @@ const marketingClients = [
     location: 'Sirinićka Župa',
     service: 'Google Ads & SEO',
     quote: 'Nikola i Anđela su napravili čudo za naš biznis! Zahvaljujući Google Ads kampanjama, broj poziva se trostruko povećao u prvom mesecu. Sada smo na prvom mestu u Google pretrazi za "dubinsko pranje" u našoj oblasti i klijenti nas pronalaze svaki dan.',
-    author: 'Marko V.',
-    role: 'Vlasnik',
+    author: 'Nenad i Milena Petković',
+    role: 'Vlasnici',
     color: 'from-teal-500 to-teal-600',
     icon: '🧹',
   },
@@ -73,8 +73,8 @@ const marketingClients = [
     location: 'Borča, Beograd',
     service: 'Google Ads & Lokalni SEO',
     quote: 'Pre saradnje sa Duck Family Team, niko nas nije nalazio na Google-u. Sada smo konstantno na prvom mestu! Broj novih klijenata se povećao za 200% u roku od 3 meseca. Preporučujem svim vlasnicima lokalnih biznisa!',
-    author: 'Miloš Jevtić',
-    role: 'Vlasnik',
+    author: 'Danijela Jevtić',
+    role: 'Vlasnica',
     color: 'from-blue-500 to-blue-600',
     icon: '🏠',
   },
@@ -83,7 +83,7 @@ const marketingClients = [
     location: 'Borča, Beograd',
     service: 'Google Ads & YouTube',
     quote: 'Kontaktirao sam Duck Family Team i za manje od mesec dana moj broj je počeo da zvoni non-stop! Google reklame su mi dovele više klijenata nego što sam ikad imao. Prava investicija za svaki biznis koji želi da raste!',
-    author: 'Milan P.',
+    author: 'Milan',
     role: 'Vlasnik',
     color: 'from-orange-500 to-red-500',
     icon: '🔧',
@@ -103,27 +103,27 @@ const websitePortfolio = [
   {
     name: 'Tepih Servis Jevtić',
     url: 'https://tepihservisjevtic.rs/',
-    description: 'Profesionalni sajt sa lokalnim SEO-om i optimizovanim ključnim rečima. Klijenti pronalaze servis direktno kroz Google pretragu svaki dan.',
-    tech: 'Next.js',
-    techColor: 'bg-slate-900',
+    description: 'Ultrabrzi Astro sajt sa lokalnim SEO-om i precizno targetiranim ključnim rečima. Klijenti pronalaze servis direktno kroz Google pretragu svaki dan.',
+    tech: 'Astro',
+    techColor: 'bg-orange-600',
     seoTag: 'TOP #2 Google',
     tagColor: 'bg-blue-600',
   },
   {
     name: 'Dubinsko Pranje Vetar',
     url: 'https://dubinsko-pranje-vetar.vercel.app/',
-    description: 'Moderan, responsive sajt sa optimizovanim SEO-om za lokalno tržište. Kompletan digitalni branding i web prisustvo za lokalni biznis.',
-    tech: 'Astro',
-    techColor: 'bg-orange-600',
+    description: 'Kombinovani Next.js + Astro sajt sa optimizovanim SEO-om za lokalno tržište. Kompletan digitalni branding i web prisustvo za lokalni biznis.',
+    tech: 'Next.js + Astro',
+    techColor: 'bg-indigo-600',
     seoTag: 'TOP #1 Google',
     tagColor: 'bg-teal-500',
   },
   {
     name: 'Shara Mara Nails Studio',
     url: 'https://shara-mara-nails-studio.vercel.app/',
-    description: 'Elegantni sajt za nail studio sa online prikazom usluga. SEO optimizovan za lokalne pretrage, klijentkinje zakazuju direktno putem sajta.',
-    tech: 'Astro',
-    techColor: 'bg-orange-600',
+    description: 'Elegantni kombinovani sajt za nail studio sa online prikazom usluga. SEO optimizovan za lokalne pretrage — klijentkinje zakazuju termine direktno putem sajta.',
+    tech: 'Next.js + Astro',
+    techColor: 'bg-indigo-600',
     seoTag: 'TOP #3 Google',
     tagColor: 'bg-purple-600',
   },
@@ -266,7 +266,7 @@ export default function Home() {
                 Sve Što Vaš Biznis Treba
               </h2>
               <p className="text-slate-500 text-lg">
-                Od izrade ultrabrzig SEO sajtova do Google, Instagram i YouTube kampanja. Pokrivamo kompletan digitalni nastup.
+                Od izrade ultrabrzih SEO sajtova do Google, Instagram i YouTube kampanja. Pokrivamo kompletan digitalni nastup.
               </p>
             </AnimatedSection>
 
@@ -353,7 +353,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-black text-slate-800 mb-4">Ultrabrzi SEO Sajtovi — Next.js & Astro</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Pravimo <strong>ultrabrzе</strong> sajtove u Next.js i Astro tehnologiji sa ugrađenom SEO optimizacijom, meta deskripcijama, ključnim rečima i svim što Google zahteva za najviše pozicije u pretrazi. Svaki sajt je <strong>optimizovan od prvog dana</strong> — klijenti vas pronalaze odmah.
+                  Pravimo <strong>ultrabrze sajtove</strong> u Next.js i Astro tehnologiji sa ugrađenom SEO optimizacijom, meta opisima, ključnim rečima i svim što Google zahteva za najviše pozicije u pretrazi. Svaki sajt je <strong>optimizovan od prvog dana</strong> — klijenti vas pronalaze odmah.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-bold text-slate-500 italic">
                   {[

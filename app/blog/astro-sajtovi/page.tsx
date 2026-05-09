@@ -383,38 +383,23 @@ export default function AstroSajtoviPage() {
                 Duck Family Team je do sada izradio više Astro sajtova za srpske lokalne biznise. Rezultati su konzistentno impresivni:
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  {
-                    name: 'Dubinsko Pranje Vetar Gotovuša',
-                    url: 'https://dubinsko-pranje-vetar.vercel.app/',
-                    result: 'TOP #1 Google za "dubinsko pranje" u oblasti',
-                    desc: 'Lokalnom biznisu donosi pozive svaki dan putem organskog SEO-a.',
-                  },
-                  {
-                    name: 'Shara Mara Nails Studio',
-                    url: 'https://shara-mara-nails-studio.vercel.app/',
-                    result: 'TOP #3 Google za lokalne nail studio usluge',
-                    desc: 'Klijentkinje pronalaze studio i zakazuju termine direktno putem sajta.',
-                  },
-                ].map((site) => (
-                  <div key={site.name} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                    <h4 className="font-black text-slate-800 mb-2">{site.name}</h4>
-                    <p className="text-teal-600 font-bold text-sm mb-3">🏆 {site.result}</p>
-                    <p className="text-slate-600 text-sm mb-4">{site.desc}</p>
-                    <a
-                      href={site.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-orange-600 font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
-                    >
-                      Poseti sajt
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </a>
-                  </div>
-                ))}
+              <div className="grid md:grid-cols-1 gap-6 max-w-xl">
+                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                  <h4 className="font-black text-slate-800 mb-2">Tepih Servis Jevtić</h4>
+                  <p className="text-teal-600 font-bold text-sm mb-3">🏆 TOP #2 Google za "tepih servis" u Beogradu</p>
+                  <p className="text-slate-600 text-sm mb-4">Čisti Astro sajt sa savršenim Lighthouse score-om. Klijenti pronalaze servis i šalju upite svaki dan putem organskog SEO-a.</p>
+                  <a
+                    href="https://www.tepihservisjevtic.rs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-600 font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
+                  >
+                    Poseti sajt
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -466,7 +451,7 @@ export default function AstroSajtoviPage() {
                 Želite Astro sajt koji rangira?
               </h3>
               <p className="mb-8 md:mb-10 text-slate-500 text-lg md:text-xl">
-                Duck Family Team pravi ultrabzе Astro i Next.js sajtove sa kompletnom SEO optimizacijom. Vaši klijenti će vas pronaći odmah.
+                Duck Family Team pravi ultrabrze Astro i Next.js sajtove sa kompletnom SEO optimizacijom. Vaši klijenti će vas pronaći odmah.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
