@@ -183,6 +183,151 @@ Obično 15-20% od ad spend-a ili fiksna mesečna naknada. Investicija se brzo vr
 4. **Voice search** - Optimizacija za glasovne pretrage
 5. **SGE uticaj** - Promena u SEO strategijama
 
+## IZRADA WEB SAJTOVA
+
+### Šta Duck Family Team nudi za sajtove?
+Duck Family Team pravi ultrabzе, SEO optimizovane sajtove u Next.js i Astro tehnologiji. Svaki sajt je optimizovan od prvog dana sa meta opisima, ključnim rečima, Schema markup-om i svim što Google zahteva za visoke pozicije.
+
+### Next.js Sajtovi
+Next.js je React framework koji omogućava Server-Side Rendering (SSR), što znači da Google može odmah da pročita sadržaj sajta. Koristi se za dinamičnije sajtove, e-commerce i projekte koji zahtevaju autentifikaciju ili bazu podataka.
+
+**Prednosti Next.js:**
+- Server-Side Rendering za bolji SEO
+- App Router za napredne funkcionalnosti
+- Image Optimization ugrađena
+- Automatski Code Splitting
+- Lighthouse Score 90-100/100
+
+**Naši Next.js projekti:**
+- Mobilni Vulkanizer Milan (www.mobilnivulkanizermilan.com) — rangiran TOP #1 na Google
+- Tepih Servis Jevtić (www.tepihservisjevtic.rs) — rangiran TOP #2 na Google
+
+### Astro Sajtovi
+Astro je revolucionarni framework koji šalje NULA JavaScript-a klijentu po defaultu. Koristi Island Architecture — samo interaktivni delovi stranice dobijaju JavaScript.
+
+**Prednosti Astro:**
+- Lighthouse Score 100/100 (savršene performanse)
+- Zero JS by default
+- Island Architecture — samo interaktivni elementi dobijaju JS
+- Odlično za SEO — Google voli ultrabrze sajtove
+- Podržava React, Vue, Svelte komponente
+- Idealan za prezentacione sajtove i blogove
+
+**Naši Astro projekti:**
+- Dubinsko Pranje Vetar (dubinsko-pranje-vetar.vercel.app) — TOP #1 Google
+- Shara Mara Nails Studio (shara-mara-nails-studio.vercel.app)
+
+### Vercel Hosting
+Vercel je platforma na kojoj Duck Family Team hostuje sve sajtove. Kreatori su Next.js frameworka.
+
+**Prednosti Vercel:**
+- Globalni CDN (Content Delivery Network) — serveri po celom svetu
+- Edge Network za ultra brzo učitavanje
+- Automatski deploy iz GitHub-a
+- Besplatni SSL sertifikat
+- 99.99% uptime
+- Besplatan plan dovoljan za male i srednje biznise
+
+### SEO Optimizacija Sajtova
+Svaki sajt koji Duck Family Team pravi uključuje:
+1. **Meta tagovi** — Title, Description, Keywords za svaku stranicu
+2. **Schema Markup (Structured Data)** — Pomaže Google-u da razume sadržaj
+3. **Open Graph** — Za lepšo prikazivanje na društvenim mrežama
+4. **Sitemap.xml** — Mapa sajta za Google botove
+5. **Robots.txt** — Instrukcije za Google crawlere
+6. **Core Web Vitals** — LCP, FID, CLS optimizovani
+7. **Mobile-first** — Savršeno prilagođen mobilnim uređajima
+8. **HTTPS** — SSL sertifikat (Google rangira HTTPS više)
+9. **Canonicalni URL-ovi** — Sprečava duplikate sadržaja
+10. **Alt tagovi za slike** — SEO optimizovani opisi slika
+
+### Ključne Reči (Keywords)
+Istraživanje ključnih reči je osnova i SEO-a i Google Ads-a.
+
+**Vrste ključnih reči:**
+- **Short-tail** — "vulkanizer" (visok volumen, velika konkurencija)
+- **Long-tail** — "mobilni vulkanizer Borča" (niži volumen, manja konkurencija, VIŠA KONVERZIJA)
+- **Lokalne** — "kafić Novi Sad" (odlično za lokalne biznise)
+- **Transakcione** — "kupi", "cena", "poruči" (visoka kupovna namera)
+
+**Naš proces istraživanja ključnih reči:**
+1. Analiza biznisa i industrije
+2. Istraživanje konkurencije
+3. Pronalazak "zlatnih" ključnih reči
+4. Implementacija u sajt i oglase
+
+## INSTAGRAM OGLAŠAVANJE
+
+### Šta je Instagram oglašavanje?
+Instagram Ads su plaćeni oglasi koji se prikazuju korisnicima Instagrama kroz feed, stories i reels. Upravljaju se kroz Meta Ads Manager platformu.
+
+**Vrste Instagram oglasa:**
+- **Feed oglasi** — Slike i video u feed-u korisnika
+- **Stories** — 15-sekundni format sa visokim engagementom
+- **Reels Ads** — Kratki video format koji trenutno eksplodira
+- **Shopping oglasi** — Direktna prodaja iz Instagram-a
+
+**Targeting opcije:**
+- Demografija (starost, pol, lokacija)
+- Interesovanja i ponašanje
+- Lookalike publika
+- Retargeting posetilaca sajta
+
+**Instagram vs Google:**
+- Google: Hvata ljude koji AKTIVNO traže (kupovna namera)
+- Instagram: Dostiže ljude i pre nego što znaju da nešto traže (svest o brendu)
+- Kombinacija oba daje BEST rezultate
+
+## YOUTUBE I GOOGLE PLATFORME
+
+### YouTube Video Oglasi
+YouTube je druga po veličini pretraživačka mašina na svetu! 2+ milijarde korisnika mesečno.
+
+**Vrste YouTube oglasa:**
+- **Skippable In-Stream** — Oglasi koji se mogu preskočiti posle 5 sekundi
+- **Non-skippable** — Obavezno gledanje 6-15 sekundi
+- **Bumper Ads** — 6-sekundni kratki oglasi
+- **Video Discovery** — Prikazuju se u YouTube pretrazi
+
+### Gmail Oglasi
+Gmail Sponsored Promotions se prikazuju kao emailovi u inbox-u korisnika.
+- Visok CTR jer deluje personalizovano
+- Odlično za B2B i skuplje proizvode
+
+### Performance Max (PMax)
+AI-driven kampanje koje automatski optimizuju oglase na svim Google platformama istovremeno: Search, Display, YouTube, Gmail, Discover.
+
+## CENE USLUGA
+
+### Kako Duck Family Team formira cene?
+Cene zavise od obima posla i zahteva klijenta. Proces je:
+1. Razgovaramo sa klijentom i postavljamo pitanja o ciljevima
+2. Analiziramo tržište i konkurenciju
+3. Dajemo preciznu cenu + kompletan plan rada
+
+### Orijentacioni budžeti za Google Ads
+- Mali biznis: od 30,000 RSD/mesečno
+- Srednji biznis: od 100,000 RSD/mesečno
+- Agencijska naknada: 15-20% od ad spenda
+
+### Izrada sajtova
+Cena varira u zavisnosti od kompleksnosti projekta. Kontaktirati za besplatnu konsultaciju.
+
+**Napomena:** Uz svaku cenu klijent dobija kompletan plan kampanje — šta radimo, kako i kada se očekuju rezultati. Nema skrivenih troškova.
+
+## NAŠI KLIJENTI I REZULTATI
+
+### Marketing klijenti
+- **Dubinsko Pranje Vetar Gotovuša** — Google Ads kampanje, 3x više poziva u prvom mesecu, #1 na Google-u za lokalne pretrage
+- **Tepih Servis Jevtić Borča** — Lokalni SEO + Google Ads, 200% više klijenata u 3 meseca, #1 na Google-u
+- **Mobilni Vulkanizer Milan Borča** — Google Ads, pun raspored za manje od mesec dana
+
+### Sajtovi koje smo izradili
+- **Mobilni Vulkanizer Milan** — www.mobilnivulkanizermilan.com (Next.js, TOP #1 Google)
+- **Tepih Servis Jevtić** — www.tepihservisjevtic.rs (Next.js, TOP #2 Google)
+- **Dubinsko Pranje Vetar** — dubinsko-pranje-vetar.vercel.app (Astro, TOP #1 Google)
+- **Shara Mara Nails Studio** — shara-mara-nails-studio.vercel.app (Astro)
+
 ---
 
 Ovo je baza znanja Duck Family Team-a. Uvek citirajte konkretne izvore i formule. Budite direktni, bez floskula.

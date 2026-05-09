@@ -284,21 +284,263 @@ CPC = 10,000 / 200 = 50 RSD po kliku
 
 **Važno:** Nizak CPC nije cilj - cilj je PROFITABILNOST (ROI/ROAS)!`,
   },
+  nextjs: {
+    keywords: ['next.js', 'nextjs', 'next js', 'react sajt', 'react website'],
+    answer: `**Next.js Sajtovi**
+
+Next.js je React framework koji koristi Duck Family Team za izradu ultra-performantnih web sajtova.
+
+**Zašto Next.js?**
+⚡ **Server-Side Rendering (SSR)** - Stranice se generišu na serveru = brže učitavanje
+🔍 **Odličan za SEO** - Google bot vidi kompletan sadržaj odmah
+📱 **Mobile-first** - Savršeno prilagođen svim uređajima
+🚀 **Vercel deployment** - Hosting na najbržoj infrastrukturi
+
+**Kada koristiti Next.js?**
+✅ E-commerce prodavnice
+✅ Biznisi sa dinamičnim sadržajem
+✅ Sajtovi koji zahtevaju autentifikaciju
+✅ Kompleksniji projekti sa bazom podataka
+
+**Lighthouse Score:** Naši Next.js sajtovi postižu 90-100/100!
+
+**Primeri koje smo uradili:**
+🔹 Mobilni Vulkanizer Milan - www.mobilnivulkanizermilan.com
+🔹 Tepih Servis Jevtić - www.tepihservisjevtic.rs
+
+Kontaktirajte nas za izradu vašeg Next.js sajta! 🦆`,
+  },
+  astro: {
+    keywords: ['astro', 'astro sajt', 'astro framework', 'island architecture', 'static site'],
+    answer: `**Astro Sajtovi**
+
+Astro je revolucionarni web framework koji šalje NULA JavaScript-a klijentu po defaultu!
+
+**Zašto je Astro poseban?**
+🏝️ **Island Architecture** - Samo interaktivni delovi dobijaju JS
+⚡ **Lighthouse Score 100/100** - Savršene performanse bez izuzetka
+🔍 **Google ga obožava** - Najbrži sajtovi = najviše pozicije
+📦 **Zero JS by default** - Drastično manji bundle size
+
+**Astro vs Next.js:**
+| | Astro | Next.js |
+|---|---|---|
+| Performanse | ★★★★★ | ★★★★ |
+| SEO | ★★★★★ | ★★★★★ |
+| Dinamičnost | ★★★ | ★★★★★ |
+| Blog/Portfolio | ★★★★★ | ★★★★ |
+
+**Kada koristiti Astro?**
+✅ Prezentacioni sajtovi
+✅ Blogovi i informativni sajtovi
+✅ Landing page-ovi
+✅ Lokalni biznisi (max brzina = max SEO)
+
+**Naši Astro projekti:**
+🔹 Dubinsko Pranje Vetar - dubinsko-pranje-vetar.vercel.app
+🔹 Shara Mara Nails Studio - shara-mara-nails-studio.vercel.app
+
+Astro je trenutno BEST CHOICE za lokalne biznise! 🚀`,
+  },
+  vercel: {
+    keywords: ['vercel', 'hosting', 'deployment', 'deploy', 'server'],
+    answer: `**Vercel — Najbrži Hosting na Svetu**
+
+Vercel je platforma na kojoj Duck Family Team hostuje sve sajtove. Kreatori Next.js-a!
+
+**Zašto Vercel?**
+🌍 **CDN mreža** - Serveri po celom svetu = ultra brzo učitavanje
+⚡ **Edge Network** - Sadržaj serviran iz najbližeg servera korisniku
+🔄 **Auto-deploy** - Svaka promena na GitHubu = automatski deploy
+🆓 **Besplatni SSL** - HTTPS sertifikat bez dodatnih troškova
+📊 **Analytics** - Ugrađena analitika performansi
+
+**Vercel prednosti za SEO:**
+✅ Automatski HTTPS (Google rangira HTTPS više)
+✅ Ultra brzo učitavanje (Core Web Vitals)
+✅ 99.99% uptime garantovan
+✅ Globalni CDN za brzo učitavanje svuda
+
+**Cena:** Besplatan plan je sasvim dovoljan za većinu malih i srednjih biznisa!
+
+Duck Family Team koristi Vercel za SVE sajtove koje prave. Proverite naše primere na Vercel-u! 🦆`,
+  },
+  izrada_sajta: {
+    keywords: ['izrada sajta', 'pravimo sajt', 'napraviti sajt', 'web sajt', 'website', 'sajt za biznis', 'koliko košta sajt', 'cena sajta', 'web development', 'web dizajn'],
+    answer: `**Izrada Web Sajtova — Duck Family Team**
+
+Pravimo ultrabzе, SEO optimizovane sajtove koji donose klijente!
+
+**Šta dobijate:**
+🚀 **Ultrabrz sajt** - Lighthouse Score 95-100/100
+🔍 **SEO od prvog dana** - Meta opisi, ključne reči, Schema markup
+📱 **Mobile-first** - 70%+ saobraćaja je sa telefona
+🎨 **Moderan dizajn** - Profesionalan izgled koji ostavlja utisak
+☁️ **Vercel hosting** - Najbrža infrastruktura
+✅ **Google Ready** - Sve što Google traži za visoke pozicije
+
+**Tehnologije:**
+⚛️ **Next.js** - Za dinamičnije sajtove i e-commerce
+🌟 **Astro** - Za prezentacione sajtove (max brzina)
+
+**Naši radovi:**
+🔗 mobilnivulkanizermilan.com (Next.js) — TOP #1 Google
+🔗 tepihservisjevtic.rs (Next.js) — TOP #2 Google
+🔗 dubinsko-pranje-vetar.vercel.app (Astro) — TOP #1 Google
+🔗 shara-mara-nails-studio.vercel.app (Astro)
+
+**Cena** zavisi od obima projekta. Kontaktirajte nas za besplatnu konsultaciju!
+
+📞 +381 64 387 7524`,
+  },
+  instagram_ads: {
+    keywords: ['instagram', 'instagram oglašavanje', 'instagram reklame', 'instagram kampanja', 'stories', 'reels', 'meta ads', 'facebook'],
+    answer: `**Instagram Oglašavanje**
+
+Instagram je platforma sa 1+ milijardu korisnika. Vaša ciljana publika je tamo!
+
+**Vrste Instagram oglasa:**
+📸 **Feed oglasi** - Slike i video u feed-u
+📱 **Stories** - 15-sekundi video/slika (visok engagement)
+🎬 **Reels Ads** - Kratki video format koji eksplodira
+🛍️ **Shopping oglasi** - Direktna prodaja iz Instagram-a
+
+**Kako funkcioniše targetiranje:**
+🎯 Demografija (starost, pol, lokacija)
+❤️ Interesovanja i ponašanje
+👥 Lookalike publika (slična vašim kupcima)
+🔄 Retargeting (ko je posetio vaš sajt)
+
+**Instagram vs Google Ads:**
+| | Instagram | Google |
+|---|---|---|
+| Publika | "Hladna" - ne traži aktivno | "Vruća" - aktivno traži |
+| Format | Vizuelni | Tekstualni |
+| Cena | Niži CPC | Viši CPC |
+| Rezultati | Svest o brendu + kupovina | Direktna kupovina |
+
+**Najbolja strategija:** Kombinovati oba! Instagram za svest, Google za konverzije.
+
+Duck Family Team vodi Instagram kampanje koje donose stvarne rezultate! 📲`,
+  },
+  google_platforme: {
+    keywords: ['youtube oglasi', 'youtube reklame', 'gmail oglasi', 'display mreža', 'google platforme', 'video oglasi'],
+    answer: `**Google Platforme — Sve Na Jednom Mestu**
+
+Google poseduje više platformi za oglašavanje osim Search-a!
+
+**YouTube Oglašavanje:**
+🎬 **Skippable In-Stream** - Oglasi koji se mogu preskočiti
+⏭️ **Non-skippable** - Obavezno gledanje (6-15 sec)
+📺 **Bumper Ads** - 6-sekundni oglasi
+📌 **Video Discovery** - Prikazuju se u YouTube pretrazi
+
+**Gmail Ads:**
+📧 Oglasi koji izgledaju kao emailovi u inboxu
+🎯 Targetiranje po interesovanjima i demografiji
+📈 Odličan CTR jer deluje personalizovano
+
+**Display Mreža:**
+🌐 2 miliona+ web sajtova i aplikacija
+🖼️ Banner oglasi u različitim veličinama
+🔄 Odlično za Remarketing kampanje
+
+**Performance Max (AI):**
+🤖 Google AI automatski optimizuje oglase
+📊 Radi na SVIM Google platformama odjednom
+⚡ Uči koji kanali donose najbolje rezultate
+
+**Koja platforma za koga?**
+✅ YouTube → Svest o brendu, kompleksniji proizvodi
+✅ Gmail → B2B, skupi proizvodi/usluge
+✅ Display → Remarketing, lokalni biznisi
+
+Duck Family Team pokriva sve Google platforme! 🦆`,
+  },
+  kljucne_reci: {
+    keywords: ['ključne reči', 'keywords', 'keyword research', 'istraživanje ključnih reči', 'long tail', 'short tail'],
+    answer: `**Ključne Reči (Keywords) — Osnova Svega**
+
+Bez pravih ključnih reči, ni SEO ni Google Ads ne mogu da rade efikasno.
+
+**Vrste ključnih reči:**
+🎯 **Short-tail** - "vulkanizer" (visok volumen, velika konkurencija)
+🎯 **Long-tail** - "mobilni vulkanizer Borča" (niži volumen, manja konkurencija, viša konverzija)
+🎯 **Lokalne** - "kafić Novi Sad" (lokalni biznisi)
+🎯 **Transakcione** - "kupi", "cena", "poruči" (kupovna namera)
+
+**Zašto su long-tail ključne reči ZLATNE?**
+✅ Manja konkurencija = niži CPC
+✅ Veća specifičnost = viša stopa konverzije
+✅ Lakše rangiranje u organskim rezultatima
+
+**Istraživanje ključnih reči — naš proces:**
+1. Analiza vašeg biznisa i industrije
+2. Istraživanje konkurencije (šta oni rangiraju)
+3. Pronalazak "zlatnih" ključnih reči (visoka namera, niska konkurencija)
+4. Implementacija u sajt I Google Ads
+
+**Alati koje koristimo:**
+🔧 Google Keyword Planner
+🔧 Ahrefs / Semrush
+🔧 Google Search Console
+🔧 Google Trends
+
+**Važno:** Prave ključne reči su tajna uspeha! Svi naši sajtovi su rangiraju jer koristimo precizne lokalne ključne reči.
+
+Kontaktirajte nas za keyword research! 🦆`,
+  },
+  cene_usluge: {
+    keywords: ['koliko košta', 'cena usluge', 'cena marketinga', 'cena sajta', 'cene', 'paket', 'mesečna naknada', 'koliko naplaćujete'],
+    answer: `**Cene Duck Family Team Usluga**
+
+Cene zavise od obima posla i zahteva svakog klijenta individualno.
+
+**Naš proces formiranja cene:**
+1️⃣ Razgovaramo o vašim ciljevima i potrebama
+2️⃣ Analiziramo vaše tržište i konkurenciju
+3️⃣ Dajemo preciznu cenu + kompletan plan rada
+
+**Šta dobijate uz cenu:**
+📋 Detaljni plan kampanje
+🎯 Definisanu strategiju i korake
+📊 Projekcije rezultata
+🔄 Redovne izveštaje o napretku
+
+**Orijentacioni budžeti za Google Ads:**
+💰 Mali biznis: od 30,000 RSD/mesečno
+💰 Srednji biznis: od 100,000 RSD/mesečno
+💰 Agencijska naknada: 15-20% od ad spenda
+
+**Izrada sajtova:**
+🌐 Prezentacioni sajt (Astro): po dogovoru
+🌐 Poslovni sajt (Next.js): po dogovoru
+🌐 E-commerce: po dogovoru
+
+**Nema skrivenih troškova!**
+Sve je transparentno. Dobijate tačno ono što je dogovoreno.
+
+📞 Pozovite za besplatnu konsultaciju: +381 64 387 7524
+📧 stankovic.s.nikola@gmail.com`,
+  },
   default: {
     answer: `Hvala na pitanju! 🦆
 
-Za detaljnija pitanja o Google Ads marketingu, SEO-u, analitici ili digitalnoj strategiji, slobodno me pitajte o:
+Za detaljnija pitanja o našim uslugama, slobodno me pitajte o:
 
+🌐 **Izrada Sajtova:** Next.js, Astro, Vercel, SEO optimizacija
 📊 **Metrike:** ROAS, ROI, CTR, CPC, CPA, Quality Score
 🎯 **Google Ads:** Kampanje, Smart Bidding, Remarketing
-🔍 **SEO:** Optimizacija, Ranking strategije
+📱 **Instagram & Društvene Mreže:** Kampanje i targetiranje
+🎬 **YouTube & Gmail:** Oglašavanje na Google platformama
+🔍 **SEO & Ključne Reči:** Optimizacija i Ranking strategije
 📈 **GA4:** Analitika i praćenje konverzija
-💰 **Budžeti:** Preporuke za različite industrije
-📄 **Landing Pages:** Optimizacija i konverzije
+💰 **Cene i Budžeti:** Transparentno formiranje cena
 
-Ili kontaktirajte Duck Family Team direktno za profesionalnu konsultaciju! 
+Ili kontaktirajte Duck Family Team direktno za besplatnu konsultaciju!
 
-**📞 Besplatna analiza budžeta:** www.duckfamilyteam.online`,
+**📞 +381 64 387 7524**
+**🌐 www.duckfamilyteam.online`,
   },
 }
 
@@ -377,8 +619,10 @@ export default function ChatBot() {
   const quickQuestions = [
     'Šta je ROAS?',
     'Kako se reklamirati na Google-u?',
-    'Šta je ROI?',
-    'Razlika između SEO i Google Ads?',
+    'Šta je Astro sajt?',
+    'Koliko košta izrada sajta?',
+    'Instagram oglašavanje?',
+    'Šta su ključne reči?',
   ]
 
   return (

@@ -6,9 +6,9 @@ import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: 'Blog | Saveti za Google Ads i SEO',
+  title: 'Blog | Google Ads, SEO, Astro & Next.js Sajtovi | Duck Family Team',
   description:
-    'Ekspertski blog Duck Family Team agencije. Saveti za Google oglase, SEO optimizaciju i GA4 analitiku koji donose pravi profit.',
+    'Ekspertski blog Duck Family Team agencije. Saveti za Google oglase, SEO optimizaciju, GA4 analitiku, Astro i Next.js sajtove koji donose pravi profit.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/blog' },
   openGraph: {
     title: 'Duck Family Team Blog — Marketing koji donosi profit',
@@ -18,6 +18,17 @@ export const metadata: Metadata = {
 }
 
 const posts = [
+  {
+    slug: 'astro-sajtovi',
+    img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
+    tag: 'Web Development',
+    tagColor: 'bg-orange-600',
+    title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web?',
+    excerpt:
+      'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove i zašto vaš biznis treba jedan.',
+    date: '2026-05-09',
+    readTime: '8 min',
+  },
   {
     slug: 'google-ads-trosak',
     img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
