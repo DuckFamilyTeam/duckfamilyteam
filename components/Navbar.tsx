@@ -23,6 +23,7 @@ export default function Navbar() {
     { label: 'Naš Proces', href: pathname === '/' ? '#proces' : '/#proces' },
     { label: 'Portfolio', href: pathname === '/' ? '#portfolio' : '/#portfolio' },
     { label: 'Cene', href: pathname === '/' ? '#cene' : '/#cene' },
+    { label: 'Zadovoljni Klijenti', href: pathname === '/' ? '#klijenti' : '/#klijenti' },
     { label: 'Blog', href: '/blog' },
     { label: 'Kontakt', href: pathname === '/' ? '#kontakt' : '/#kontakt' },
   ]
