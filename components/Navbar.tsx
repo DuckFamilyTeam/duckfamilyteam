@@ -24,6 +24,7 @@ export default function Navbar() {
     { label: 'Portfolio', href: pathname === '/' ? '#portfolio' : '/#portfolio' },
     { label: 'Cene', href: pathname === '/' ? '#cene' : '/#cene' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Kontakt', href: pathname === '/' ? '#kontakt' : '/#kontakt' },
   ]
 
   return (

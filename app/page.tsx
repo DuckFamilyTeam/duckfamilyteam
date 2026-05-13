@@ -59,14 +59,22 @@ const reviewsSchema = {
 
 const marketingClients = [
   {
+    name: 'Diviana Beauty Studio',
+    location: 'Beograd',
+    service: 'Google Ads & Instagram',
+    quote: 'Fantastična saradnja sa Duck Family Team! Naši termini su puni, a broj novih klijentica koje dolaze iz Google pretrage je neverovatno porastao. Pravi profesionalci koji razumeju beauty industriju!',
+    author: 'Diviana Beauty Studio',
+    role: 'Vlasnica',
+    logo: '/img/diviana-beauty-studio-logo.jpg',
+  },
+  {
     name: 'Dubinsko Pranje Vetar Gotovuša',
     location: 'Sirinićka Župa',
     service: 'Google Ads & SEO',
     quote: 'Nikola i Anđela su napravili čudo za naš biznis! Zahvaljujući Google Ads kampanjama, broj poziva se trostruko povećao u prvom mesecu. Sada smo na prvom mestu u Google pretrazi za "dubinsko pranje" u našoj oblasti i klijenti nas pronalaze svaki dan.',
     author: 'Nenad i Milena Petković',
     role: 'Vlasnici',
-    color: 'from-teal-500 to-teal-600',
-    icon: '🧹',
+    logo: '/img/vetar1.jpg',
   },
   {
     name: 'Tepih Servis Jevtić',
@@ -75,8 +83,7 @@ const marketingClients = [
     quote: 'Pre saradnje sa Duck Family Team, niko nas nije nalazio na Google-u. Sada smo konstantno na prvom mestu! Broj novih klijenata se povećao za 200% u roku od 3 meseca. Preporučujem svim vlasnicima lokalnih biznisa!',
     author: 'Danijela Jevtić',
     role: 'Vlasnica',
-    color: 'from-blue-500 to-blue-600',
-    icon: '🏠',
+    logo: '/img/tepih-servis-jevtic-logo.png',
   },
   {
     name: 'Mobilni Vulkanizer Milan',
@@ -85,12 +92,21 @@ const marketingClients = [
     quote: 'Kontaktirao sam Duck Family Team i za manje od mesec dana moj broj je počeo da zvoni non-stop! Google reklame su mi dovele više klijenata nego što sam ikad imao. Prava investicija za svaki biznis koji želi da raste!',
     author: 'Milan',
     role: 'Vlasnik',
-    color: 'from-orange-500 to-red-500',
-    icon: '🔧',
+    logo: '/img/milan-vulkanizer-logo.WEBP',
   },
 ]
 
 const websitePortfolio = [
+  {
+    name: 'Diviana Beauty Studio',
+    url: 'https://www.instagram.com/diviana_studio/#',
+    description: 'Elegantni luksuzni sajt za beauty studio sa online prezentacijom usluga. SEO optimizovan za pretrage vezane za beauty i kozmetiku u Beogradu.',
+    tech: 'Next.js',
+    techColor: 'bg-amber-700',
+    seoTag: 'TOP Google',
+    tagColor: 'bg-amber-500',
+    logo: '/img/diviana-beauty-studio-logo.png',
+  },
   {
     name: 'Mobilni Vulkanizer Milan',
     url: 'https://www.mobilnivulkanizermilan.com/',
@@ -99,6 +115,7 @@ const websitePortfolio = [
     techColor: 'bg-slate-900',
     seoTag: 'TOP #1 Google',
     tagColor: 'bg-teal-500',
+    logo: '/img/milan-vulkanizer-logo.WEBP',
   },
   {
     name: 'Tepih Servis Jevtić',
@@ -108,6 +125,7 @@ const websitePortfolio = [
     techColor: 'bg-orange-600',
     seoTag: 'TOP #2 Google',
     tagColor: 'bg-blue-600',
+    logo: '/img/tepih-servis-jevtic-logo.png',
   },
   {
     name: 'Dubinsko Pranje Vetar',
@@ -117,6 +135,7 @@ const websitePortfolio = [
     techColor: 'bg-indigo-600',
     seoTag: 'TOP #1 Google',
     tagColor: 'bg-teal-500',
+    logo: '/img/vetar1.jpg',
   },
   {
     name: 'Shara Mara Nails Studio',
@@ -126,6 +145,7 @@ const websitePortfolio = [
     techColor: 'bg-indigo-600',
     seoTag: 'TOP #3 Google',
     tagColor: 'bg-purple-600',
+    logo: '/img/shara-mara-nails-logo.jpg',
   },
 ]
 
@@ -523,8 +543,14 @@ export default function Home() {
               {marketingClients.map((client, i) => (
                 <AnimatedSection key={client.name} delay={i * 100}>
                   <div className="bg-white/5 backdrop-blur-sm rounded-[2.5rem] p-8 border border-white/10 hover:bg-white/10 transition-all duration-300 h-full flex flex-col">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${client.color} rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg`}>
-                      {client.icon}
+                    <div className="w-24 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-lg overflow-hidden p-1.5">
+                      <Image
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        width={90}
+                        height={60}
+                        className="object-contain w-full h-full"
+                      />
                     </div>
                     <div className="mb-4">
                       <h3 className="text-xl font-black text-white mb-1">{client.name}</h3>
@@ -585,24 +611,34 @@ export default function Home() {
                           </span>
                         </div>
                       </div>
-                      <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                        </svg>
+                      <div className="w-16 h-14 bg-white rounded-xl border border-slate-100 flex items-center justify-center flex-shrink-0 overflow-hidden p-1">
+                        <Image
+                          src={site.logo}
+                          alt={`${site.name} logo`}
+                          width={64}
+                          height={56}
+                          className="object-contain w-full h-full"
+                        />
                       </div>
                     </div>
                     <p className="text-slate-600 leading-relaxed mb-8 flex-1">{site.description}</p>
-                    <a
-                      href={site.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 text-teal-600 font-black text-sm uppercase tracking-widest hover:gap-5 transition-all"
-                    >
-                      Poseti sajt uživo
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </a>
+                    {site.url ? (
+                      <a
+                        href={site.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 text-teal-600 font-black text-sm uppercase tracking-widest hover:gap-5 transition-all"
+                      >
+                        Poseti sajt uživo
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-2 text-slate-400 font-black text-sm uppercase tracking-widest">
+                        Sajt u izradi
+                      </span>
+                    )}
                   </div>
                 </AnimatedSection>
               ))}
