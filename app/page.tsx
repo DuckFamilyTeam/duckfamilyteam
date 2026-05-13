@@ -62,8 +62,8 @@ const marketingClients = [
     name: 'Diviana Beauty Studio',
     location: 'Beograd',
     service: 'Google Ads & Instagram',
-    quote: 'Fantastična saradnja sa Duck Family Team! Naši termini su puni, a broj novih klijentica koje dolaze iz Google pretrage je neverovatno porastao. Pravi profesionalci koji razumeju beauty industriju!',
-    author: 'Diviana Beauty Studio',
+    quote: 'Fantastična saradnja sa Duck Family Team! Naši termini su puni, a broj novih klijentkinja koje dolaze putem Meta i tiktok reklama je neverovatno porastao. Pravi profesionalci koji razumeju beauty industriju!',
+    author: 'Dajana',
     role: 'Vlasnica',
     logo: '/img/diviana-beauty-studio-logo.jpg',
   },
@@ -92,21 +92,11 @@ const marketingClients = [
     quote: 'Kontaktirao sam Duck Family Team i za manje od mesec dana moj broj je počeo da zvoni non-stop! Google reklame su mi dovele više klijenata nego što sam ikad imao. Prava investicija za svaki biznis koji želi da raste!',
     author: 'Milan',
     role: 'Vlasnik',
-    logo: '/img/milan-vulkanizer-logo.WEBP',
+    logo: '/img/milan-vulkanizer-logo.webp',
   },
 ]
 
 const websitePortfolio = [
-  {
-    name: 'Diviana Beauty Studio',
-    url: 'https://www.instagram.com/diviana_studio/#',
-    description: 'Elegantni luksuzni sajt za beauty studio sa online prezentacijom usluga. SEO optimizovan za pretrage vezane za beauty i kozmetiku u Beogradu.',
-    tech: 'Next.js',
-    techColor: 'bg-amber-700',
-    seoTag: 'TOP Google',
-    tagColor: 'bg-amber-500',
-    logo: '/img/diviana-beauty-studio-logo.png',
-  },
   {
     name: 'Mobilni Vulkanizer Milan',
     url: 'https://www.mobilnivulkanizermilan.com/',
@@ -115,7 +105,7 @@ const websitePortfolio = [
     techColor: 'bg-slate-900',
     seoTag: 'TOP #1 Google',
     tagColor: 'bg-teal-500',
-    logo: '/img/milan-vulkanizer-logo.WEBP',
+    logo: '/img/milan-vulkanizer-logo.webp',
   },
   {
     name: 'Tepih Servis Jevtić',
