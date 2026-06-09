@@ -6,14 +6,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'www.vazoola.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.redtechnology.com',
-      },
     ],
   },
   async headers() {

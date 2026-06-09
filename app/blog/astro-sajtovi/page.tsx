@@ -11,7 +11,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
   },
-  keywords: 'Astro framework, Astro sajt, Island Architecture, ultrabrzi sajt, SEO optimizacija, Lighthouse 100, web development Srbija',
+  keywords: [
+    'Astro framework',
+    'Astro sajt',
+    'Island Architecture',
+    'ultrabrzi sajt',
+    'SEO optimizacija Srbija',
+    'Lighthouse 100',
+    'web development Srbija',
+    'Duck Family Team',
+  ],
   openGraph: {
     title: 'Astro Sajtovi: Zašto Su Trenutno Najboljа Tehnologija za Web | Duck Family Team',
     description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',

@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  title: '404 — Stranica nije pronađena | Duck Family Team',
+  description: 'Ova stranica ne postoji ili je premeštena.',
+  robots: { index: false, follow: false },
+}
 
 export default function NotFound() {
   return (

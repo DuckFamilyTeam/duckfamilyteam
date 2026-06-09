@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/seo-2026',
   },
+  keywords: [
+    'SEO 2026',
+    'SEO optimizacija Srbija',
+    'Google algoritam',
+    'ključne reči SEO',
+    'Google Search',
+    'digitalni marketing Srbija',
+    'Duck Family Team',
+  ],
   openGraph: {
     title: 'SEO u 2026: Da li su ključne reči i dalje bitne? | Duck Family Team',
     description: 'Google algoritam se menja. Fokus se pomera na nameru korisnika.',
@@ -20,7 +29,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://www.vazoola.com/hs-fs/hubfs/The%20SEO%20Ecosystem%20in%202026.webp?width=1200&height=630&name=The%20SEO%20Ecosystem%20in%202026.webp',
+        url: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200',
         width: 1200,
         height: 630,
         alt: 'SEO u 2026',
@@ -35,7 +44,7 @@ const articleSchema = {
   headline: 'SEO u 2026: Da li su ključne reči i dalje bitne?',
   description:
     'Google algoritam se menja. Fokus se pomera sa "kucanja reči" na "nameru korisnika". Saznajte kako da dominirate.',
-  image: 'https://www.vazoola.com/hs-fs/hubfs/The%20SEO%20Ecosystem%20in%202026.webp?width=1200&height=630&name=The%20SEO%20Ecosystem%20in%202026.webp',
+  image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200',
   datePublished: '2026-03-15',
   dateModified: '2026-03-15',
   author: {
@@ -98,7 +107,7 @@ export default function SEO2026Page() {
           </div>
 
           <Image
-            src="https://www.vazoola.com/hs-fs/hubfs/The%20SEO%20Ecosystem%20in%202026.webp?width=1200&height=630&name=The%20SEO%20Ecosystem%20in%202026.webp"
+            src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200"
             alt="SEO u 2026 — Duck Family Team"
             width={1200}
             height={600}

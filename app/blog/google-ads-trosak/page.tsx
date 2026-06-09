@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/google-ads-trosak',
   },
+  keywords: [
+    'Google Ads Srbija',
+    'Google Ads troškovi',
+    'Smart Bidding',
+    'PPC optimizacija',
+    'Google Ads konverzije',
+    'digitalni marketing Srbija',
+    'Duck Family Team',
+  ],
   openGraph: {
     title: 'Zašto Google oglasi troše novac bez prodaje? | Duck Family Team',
     description: '3 glavna razloga zašto vaši Google oglasi ne donose konverzije.',

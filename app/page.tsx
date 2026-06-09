@@ -12,7 +12,24 @@ export const metadata: Metadata = {
   description:
     'Sertifikovani Google Ads stručnjaci. Izrada ultrabrzih Next.js i Astro sajtova sa SEO optimizacijom. Instagram, YouTube, Gmail oglašavanje. Uvek na prvim mestima u Google pretrazi. Duck Family Team.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/' },
-  keywords: 'Google Ads Srbija, SEO optimizacija, izrada sajtova, Next.js, Astro, Instagram reklame, YouTube oglašavanje, digitalni marketing',
+  keywords: [
+    'Google Ads Srbija',
+    'Google Ads agencija',
+    'SEO optimizacija Srbija',
+    'izrada sajtova',
+    'izrada web sajtova Srbija',
+    'Next.js sajt',
+    'Astro sajt',
+    'Instagram reklame',
+    'YouTube oglašavanje',
+    'digitalni marketing Srbija',
+    'GA4 analitika',
+    'PPC stručnjak',
+    'povećanje prodaje',
+    'remarketing',
+    'lokalni SEO',
+    'Duck Family Team',
+  ],
 }
 
 const faqSchema = {
@@ -851,7 +868,7 @@ export default function Home() {
                 },
                 {
                   href: '/blog/seo-2026',
-                  img: 'https://www.vazoola.com/hs-fs/hubfs/The%20SEO%20Ecosystem%20in%202026.webp?width=864&height=486&name=The%20SEO%20Ecosystem%20in%202026.webp',
+                  img: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
                   tag: 'SEO',
                   tagColor: 'bg-blue-600',
                   title: 'SEO u 2026: Da li su ključne reči i dalje bitne?',

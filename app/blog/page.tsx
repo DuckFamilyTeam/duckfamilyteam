@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   description:
     'Ekspertski blog Duck Family Team agencije. Saveti za Google oglase, SEO optimizaciju, GA4 analitiku, Astro i Next.js sajtove koji donose pravi profit.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/blog' },
+  keywords: [
+    'Google Ads blog',
+    'SEO blog Srbija',
+    'digitalni marketing saveti',
+    'GA4 analitika vodič',
+    'Google Ads optimizacija',
+    'Astro sajtovi',
+    'Next.js web development',
+    'Duck Family Team blog',
+  ],
   openGraph: {
     title: 'Duck Family Team Blog — Marketing koji donosi profit',
     description: 'Strategije iz prve ruke koje testiramo svakodnevno.',
@@ -42,7 +52,7 @@ const posts = [
   },
   {
     slug: 'seo-2026',
-    img: 'https://www.vazoola.com/hs-fs/hubfs/The%20SEO%20Ecosystem%20in%202026.webp?width=864&height=486&name=The%20SEO%20Ecosystem%20in%202026.webp',
+    img: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
     tag: 'SEO',
     tagColor: 'bg-blue-600',
     title: 'SEO u 2026: Da li su ključne reči i dalje bitne?',

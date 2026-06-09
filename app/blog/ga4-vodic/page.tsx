@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/ga4-vodic',
   },
+  keywords: [
+    'GA4 analitika',
+    'Google Analytics 4',
+    'GA4 vodič',
+    'konverzije GA4',
+    'digitalni marketing Srbija',
+    'Duck Family Team',
+  ],
   openGraph: {
     title: 'GA4 vodič: Šta zapravo treba da gledate? | Duck Family Team',
     description: 'Fokusirajte se na 3 metrike koje direktno pokazuju koliko zarađujete.',
