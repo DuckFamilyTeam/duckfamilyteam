@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const jakarta = Plus_Jakarta_Sans({
@@ -109,6 +110,19 @@ export default function RootLayout({
       </head>
       <body className="font-jakarta antialiased bg-[#fafafa] text-slate-900 overflow-x-hidden">
         {children}
+        {/* Google Ads Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18049467991"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18049467991');
+          `}
+        </Script>
       </body>
     </html>
   )
