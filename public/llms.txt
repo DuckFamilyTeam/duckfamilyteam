@@ -1,39 +1,28 @@
 # Duck Family Team
 
-> Sertifikovana Google Ads agencija iz Srbije. Specijalizovani za PPC kampanje, SEO optimizaciju, GA4 analitiku i izradu ultrabrzih web sajtova u Next.js i Astro tehnologijama.
+> Sertifikovana Google Ads agencija iz Srbije. Specijalizovani za PPC kampanje, SEO optimizaciju, GA4 analitiku i izradu ultrabrzih web sajtova. Primarno tržište: Srbija i region (BiH, Hrvatska, Crna Gora).
 
-## O agenciji
+## Osnovno
 
-Duck Family Team je digitalna marketing agencija sa sedištem u Srbiji. Fokusiramo se na merljive rezultate — povećanje prodaje, smanjenje troška po konverziji i rast organskog saobraćaja.
+- [Početna](https://www.duckfamilyteam.online/): Uvod u agenciju, usluge, rezultati i kontakt
+- [Blog](https://www.duckfamilyteam.online/blog): Svi stručni tekstovi o Google Ads, SEO i web developmentu
 
-Naše usluge:
-- **Google Ads (PPC)** — kreiranje, optimizacija i skaliranje kampanja uz Smart Bidding i naprednu segmentaciju
-- **SEO optimizacija** — tehničko i sadržajno SEO za trajno rangiranje na Google-u
-- **GA4 analitika** — podešavanje konverzija, event trackinga i dashboarda za donosioce odluka
-- **Izrada sajtova** — ultrabrzi sajtovi u Next.js (App Router) i Astro sa Lighthouse score 100
-- **Instagram i YouTube oglašavanje** — paid social kampanje za brand awareness i lead generaciju
+## Usluge
 
-## Kontakt
+- [Google Ads Agencija Srbija](https://www.duckfamilyteam.online/google-ads): Profesionalne PPC kampanje — Search, Shopping, Display, Remarketing, Performance Max i lokalni oglasi za firme u Srbiji
+- [SEO Optimizacija Srbija](https://www.duckfamilyteam.online/seo-optimizacija): Tehničko SEO, on-page optimizacija, sadržajna strategija, lokalni SEO i link building za trajno Google rangiranje
+- [Izrada Web Sajtova Srbija](https://www.duckfamilyteam.online/izrada-sajtova): Ultrabrzi Next.js, React i Astro sajtovi sa Lighthouse 90+ skorom i kompletnom SEO optimizacijom
+- [GA4 analitika](https://www.duckfamilyteam.online/): Podešavanje konverzija, event trackinga i dashboarda za donosioce odluka
 
-- Web: https://www.duckfamilyteam.online
+## Blog / Sadržaj
+
+- [Astro Sajtovi — Island Architecture i Lighthouse 100](https://www.duckfamilyteam.online/blog/astro-sajtovi): Zašto su Astro sajtovi trenutno najbolja tehnologija za brze, SEO optimizovane web prezentacije
+- [Zašto Google Oglasi Troše Novac Bez Konverzija](https://www.duckfamilyteam.online/blog/google-ads-trosak): Najčešći razlozi niskog ROAS-a i kako ispraviti targeting, landing stranicu i conversion tracking
+- [SEO u 2026: Ključne Reči i Namera Korisnika](https://www.duckfamilyteam.online/blog/seo-2026): Aktuelne SEO strategije, tematski autoritet i promene u Google algoritmima za 2026. godinu
+- [GA4 Vodič za Preduzetnike](https://www.duckfamilyteam.online/blog/ga4-vodic): Kako podesiti Google Analytics 4 za praćenje prodaje i konverzija
+
+## Kontakt i profili
+
 - Email: stankovic.s.nikola@gmail.com
 - Telefon: +381 64 387 7524
-- Instagram: https://www.instagram.com/duckfamilyteam/
-
-## Blog
-
-Redovno objavljujemo stručne tekstove o Google Ads strategijama, SEO trendovima i web developmentu:
-
-- https://www.duckfamilyteam.online/blog/astro-sajtovi — Astro sajtovi: Island Architecture i Lighthouse 100
-- https://www.duckfamilyteam.online/blog/google-ads-trosak — Zašto Google oglasi troše novac bez konverzija
-- https://www.duckfamilyteam.online/blog/seo-2026 — SEO u 2026: ključne reči i namera korisnika
-- https://www.duckfamilyteam.online/blog/ga4-vodic — GA4 vodič za preduzetnike
-
-## Tehnologije
-
-Sajtovi koje pravimo koriste: Next.js 14 (App Router), Astro, TypeScript, TailwindCSS, Vercel deployment, schema.org JSON-LD structured data, Core Web Vitals optimizaciju.
-
-## Lokacija i tržište
-
-Primarno tržište: Srbija i region (BiH, Hrvatska, Crna Gora).
-Jezik: srpski.
+- [Instagram](https://www.instagram.com/duckfamilyteam/): @duckfamilyteam

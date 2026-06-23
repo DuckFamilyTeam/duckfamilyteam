@@ -11,6 +11,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/google-ads`,
+      lastModified: new Date('2026-06-23'),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/seo-optimizacija`,
+      lastModified: new Date('2026-06-23'),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/izrada-sajtova`,
+      lastModified: new Date('2026-06-23'),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -24,13 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/google-ads-trosak`,
-      lastModified: new Date('2026-04-01'),
+      lastModified: new Date('2026-06-23'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog/seo-2026`,
-      lastModified: new Date('2026-03-15'),
+      lastModified: new Date('2026-06-23'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

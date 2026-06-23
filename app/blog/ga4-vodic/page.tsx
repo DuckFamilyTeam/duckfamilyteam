@@ -5,17 +5,23 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'GA4 vodič za preduzetnike: Šta zapravo treba da gledate?',
+  title: 'GA4 Vodič za preduzetnike: Podešavanje, metrike i konverzije | Duck Family Team',
   description:
-    'Ne dozvolite da vas gomila brojeva zbuni. Fokusirajte se na ove 3 metrike koje direktno pokazuju koliko zarađujete.',
+    'Kompletni GA4 vodič za firme u Srbiji. Kako podesiti Google Analytics 4, pratiti konverzije, razumeti ključne metrike i povezati sa Google Ads kampanjama.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/ga4-vodic',
   },
   keywords: [
-    'GA4 analitika',
-    'Google Analytics 4',
-    'GA4 vodič',
-    'konverzije GA4',
+    'GA4 analitika Srbija',
+    'Google Analytics 4 vodič',
+    'GA4 konverzije podešavanje',
+    'GA4 Google Ads integracija',
+    'GA4 events tracking',
+    'Google Tag Manager Srbija',
+    'GA4 metrike Srbija',
+    'konverzije praćenje Srbija',
+    'GA4 za preduzetnike',
+    'web analitika Srbija',
     'digitalni marketing Srbija',
     'Duck Family Team',
   ],
@@ -40,12 +46,13 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'GA4 vodič za preduzetnike: Šta zapravo treba da gledate?',
+  headline: 'GA4 Vodič za preduzetnike: Podešavanje, konverzije i ključne metrike',
   description:
-    'Ne dozvolite da vas gomila brojeva zbuni. Fokusirajte se na ove 3 metrike koje direktno pokazuju koliko zarađujete.',
+    'Kompletni GA4 vodič — kako podesiti Google Analytics 4, pratiti konverzije i iskoristiti podatke za pametnije marketinške odluke.',
   image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
   datePublished: '2026-02-28',
-  dateModified: '2026-02-28',
+  dateModified: '2026-06-23',
+  wordCount: 1800,
   author: {
     '@type': 'Organization',
     name: 'Duck Family Team',
@@ -65,12 +72,26 @@ const articleSchema = {
   },
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Početna', item: 'https://www.duckfamilyteam.online' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.duckfamilyteam.online/blog' },
+    { '@type': 'ListItem', position: 3, name: 'GA4 Vodič', item: 'https://www.duckfamilyteam.online/blog/ga4-vodic' },
+  ],
+}
+
 export default function GA4VodicPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navbar />
       <main className="pt-28 md:pt-40 pb-20 px-4 md:px-6">
@@ -87,21 +108,21 @@ export default function GA4VodicPage() {
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
             <span className="bg-slate-100 text-slate-900 text-[10px] md:text-[11px] font-extrabold uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-wider italic">
-              Analitika
+              GA4 Analitika
             </span>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-6 mb-6 md:mb-8 leading-relaxed px-2">
-              GA4 vodič za preduzetnike:{' '}
-              <span className="duck-gradient-text italic">Šta zapravo treba da gledate?</span>
+              GA4 Vodič za preduzetnike:{' '}
+              <span className="duck-gradient-text italic">Podešavanje, konverzije i metrike</span>
             </h1>
             <p className="text-lg md:text-2xl text-slate-500 italic font-medium max-w-2xl mx-auto leading-relaxed">
-              Google Analytics 4 je lavirint brojeva. Mi vam pokazujemo samo ono što ZAPRAVO utiče na profit.
+              Google Analytics 4 je lavirint brojeva. Mi vam pokazujemo kako ga podesiti i šta zapravo treba da pratite da biste donosili pametne marketinške odluke.
             </p>
             <div className="flex items-center justify-center gap-4 mt-6 text-[11px] text-slate-400 font-bold uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-02-28">28. Februar 2026.</time>
               <span>·</span>
-              <span>6 min čitanja</span>
+              <span>11 min čitanja</span>
             </div>
           </div>
 
@@ -118,12 +139,97 @@ export default function GA4VodicPage() {
           <div className="bg-white border border-black/5 rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-slate-700 text-base md:text-xl">
             <p className="leading-relaxed">
               Otvorite Google Analytics 4. Šta vidite?{' '}
-              <strong className="text-slate-900 font-bold">Haos.</strong> Grafovi, tabele, procentualni pomaci koji ne znače apsolutno ništa vašem budžetu. Većina ljudi se tu izgubi i odustane.
+              <strong className="text-slate-900 font-bold">Haos.</strong> Grafovi, tabele, procentualni pomaci koji ne znače apsolutno ništa vašem budžetu. Većina preduzetnika u Srbiji se tu izgubi i odustane — ili što je gore, donosi pogrešne odluke na osnovu pogrešnih metrika.
             </p>
             <p className="leading-relaxed">
               Ali vi niste tu da budete data scientist — vi ste tu da{' '}
-              <strong className="text-red-600 font-bold">zarađujete novac</strong>. Zato ćemo vam objasniti 3 metrike koje morate pratiti ako želite da znate koliko vam marketing ZAISTA donosi.
+              <strong className="text-red-600 font-bold">zarađujete novac</strong>. U ovom vodiču ćemo pokriti sve: od inicijalnog podešavanja GA4 za firme u Srbiji, kroz praćenje konverzija sa Google Tag Manager-om, do konkretnih metrika koje treba da gledate svake nedelje.
             </p>
+
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
+                Zašto GA4, a ne stari Universal Analytics?
+              </h2>
+              <p className="leading-relaxed">
+                Google je u julu 2023. ugasio Universal Analytics. GA4 je sada jedina opcija — i za razliku od prethodnika, <strong className="text-slate-900">zasnovan je na event-based modelu</strong>, a ne na session-based pristupu. To znači mnogo detaljnije praćenje ponašanja korisnika.
+              </p>
+              <p className="leading-relaxed">
+                Ključne prednosti GA4 za firme u Srbiji koje ulažu u digitalni marketing:
+              </p>
+              <ul className="space-y-3 pl-6 list-none">
+                {[
+                  'Direktna integracija sa Google Ads za uvid u konverzije po kampanji',
+                  'Cross-platform tracking — prati korisnika i na sajtu i u mobilnoj aplikaciji',
+                  'Machine learning uvidi koji automatski detektuju anomalije',
+                  'Bolji privacy model koji funkcioniše i bez kolačića (cookieless)',
+                  'Prediktivne metrike: verovatnoća kupovine, predviđeni prihod',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="text-teal-500 font-black text-xl leading-none">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
+                Inicijalno podešavanje GA4 korak po korak
+              </h2>
+              <p className="leading-relaxed">
+                Pre nego što analizirate ikakve podatke, morate ispravno podesiti GA4. Mnoge firme u Srbiji imaju instaliran kod, ali prate pogrešne stvari ili nemaju podešene nikakve konverzije.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { n: '1', t: 'Kreirajte GA4 Property', d: 'Na analytics.google.com → Admin → Create Property. Izaberite timezone "Europe/Belgrade" i valutu EUR ili RSD.' },
+                  { n: '2', t: 'Instalirajte Google Tag Manager', d: 'Koristite GTM (tagmanager.google.com) umesto direktnog GA4 koda na sajtu. GTM vam daje fleksibilnost za dodavanje svih budućih tagova bez menjanja koda.' },
+                  { n: '3', t: 'Povežite GA4 sa Google Ads', d: 'U GA4 → Admin → Google Ads Links → Link Account. Ovo vam daje uvid u koje Google Ads kampanje donose konverzije direktno u Google Ads interfejsu.' },
+                  { n: '4', t: 'Podesite konverzije', d: 'GA4 automatski prati neke event-e, ali morate označiti koje su vam konverzije. Idite na Admin → Conversions → Mark as conversion za svaki važan event.' },
+                  { n: '5', t: 'Povežite Google Search Console', d: 'GA4 → Admin → Search Console Links. Dobijate uvid u organske ključne reči i klikove direktno u GA4.' },
+                ].map((item) => (
+                  <div key={item.n} className="flex gap-4 bg-slate-50 rounded-xl p-4">
+                    <div className="text-3xl font-black text-teal-100 select-none shrink-0 w-8 text-right">{item.n}</div>
+                    <div>
+                      <div className="font-black text-slate-800 mb-1">{item.t}</div>
+                      <p className="text-slate-500 text-sm leading-relaxed m-0">{item.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
+                Praćenje konverzija sa Google Tag Manager-om
+              </h2>
+              <p className="leading-relaxed">
+                Konverzija je svaka akcija korisnika koja ima vrednost za vaš biznis: klik na telefon, popunjen formular za kontakt, kupovina, preuzimanje cenovnika, prijavljivanje na newsletter. Bez praćenja konverzija, ne znate koji marketing kanal zaista radi.
+              </p>
+              <p className="leading-relaxed">
+                Najvažniji eventi za praćenje za firme u Srbiji:
+              </p>
+              <ul className="space-y-3 pl-6 list-none">
+                {[
+                  { e: 'phone_click', d: 'Klik na "tel:" link — kritično za servise, lekare, advokate' },
+                  { e: 'form_submit', d: 'Svaki popunjen kontakt formular ili prijava' },
+                  { e: 'purchase', d: 'Kupovina u e-commerce prodavnici' },
+                  { e: 'file_download', d: 'Preuzimanje cenovnika, kataloga ili brošure' },
+                  { e: 'scroll', d: 'Koliko daleko korisnici skroluju (25%, 50%, 75%, 90%)' },
+                  { e: 'video_complete', d: 'Kompletno odgledano video objašnjenje' },
+                ].map((item) => (
+                  <li key={item.e} className="flex items-start gap-3">
+                    <span className="text-teal-500 font-mono text-sm font-black shrink-0 mt-1 bg-teal-50 px-2 py-0.5 rounded">{item.e}</span>
+                    <span>{item.d}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="bg-slate-50 p-5 md:p-8 border-l-4 border-teal-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
+                <p className="text-slate-800 m-0">
+                  <strong className="text-teal-700 uppercase text-xs md:text-sm tracking-widest not-italic block mb-2">Pro tip:</strong>
+                  U GTM-u, koristite "Click URL contains tel:" trigger za automatsko praćenje klikova na telefone. Ovo radi na svim stranicama bez menjanja koda sajta.
+                </p>
+              </div>
+            </div>
 
             <div className="space-y-4 md:space-y-6">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
@@ -288,6 +394,16 @@ export default function GA4VodicPage() {
                 Podesi GA4 za Mene
               </Link>
             </div>
+          </div>
+
+          {/* Related links */}
+          <div className="mt-12 p-6 bg-slate-50 rounded-2xl">
+            <h3 className="font-black text-slate-800 mb-4">Povezani tekstovi</h3>
+            <ul className="space-y-2">
+              <li><Link href="/google-ads" className="text-teal-600 hover:underline font-medium">Google Ads Agencija Srbija — PPC kampanje →</Link></li>
+              <li><Link href="/blog/google-ads-trosak" className="text-teal-600 hover:underline font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
+              <li><Link href="/blog/seo-2026" className="text-teal-600 hover:underline font-medium">SEO u 2026 — Tematski autoritet i AI pretraga →</Link></li>
+            </ul>
           </div>
 
           {/* Back to blog */}

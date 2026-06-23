@@ -77,6 +77,23 @@ export const metadata: Metadata = {
   },
 }
 
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Duck Family Team',
+  url: siteUrl,
+  description: 'Sertifikovana Google Ads agencija u Srbiji. Specijalizovani za PPC, SEO i GA4 analitiku.',
+  inLanguage: 'sr-RS',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${siteUrl}/blog?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
@@ -103,6 +120,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/img/logo-za-nasu-agenciju.png" />
         <link rel="apple-touch-icon" href="/img/logo-za-nasu-agenciju.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

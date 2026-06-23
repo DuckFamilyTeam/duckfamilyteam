@@ -227,12 +227,12 @@ export default function Home() {
                 Google Premier Partner Standard
               </div>
               <h1 className="text-4xl md:text-7xl font-extrabold leading-[1.1] text-slate-900 tracking-tight">
-                Dominirajte na <br />
-                <span className="duck-gradient-text italic font-black">Google Pretrazi.</span>
+                Google Ads Agencija <br />
+                <span className="duck-gradient-text italic font-black">Srbija — Duck Family Team</span>
               </h1>
               <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-xl font-medium">
-                Ultrabrzi SEO sajtovi, Google Ads, Instagram i YouTube kampanje — sve što vam treba da budete{' '}
-                <strong>uvek na prvom mestu.</strong>
+                Sertifikovana Google Ads agencija iz Srbije. Kreiramo PPC kampanje, SEO optimizaciju, GA4 analitiku i ultrabrze web sajtove koji donose{' '}
+                <strong>merljive rezultate i organske posete.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
