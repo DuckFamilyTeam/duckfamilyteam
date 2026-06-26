@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="text-teal-400">pobedite.</span>
           </h2>
           <div className="space-y-4">
-            <p className="text-slate-400 text-xs uppercase tracking-widest font-black">Direktna Linija</p>
+            <p className="text-slate-300 text-xs uppercase tracking-widest font-black">Direktna Linija</p>
             <a
               href="tel:+381643877524"
               className="block text-2xl md:text-4xl font-bold hover:text-teal-400 transition tracking-tighter"
@@ -30,7 +30,7 @@ export default function Footer() {
 
         {/* Right: Contact form */}
         <div className="bg-white p-8 md:p-14 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl text-slate-900 relative mt-8 lg:mt-0">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-teal-500 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase italic tracking-widest whitespace-nowrap">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-teal-700 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase italic tracking-widest whitespace-nowrap">
             Ostavi Poruku
           </div>
           <form
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-[10px] font-bold uppercase tracking-widest text-center">
+      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-300 text-[10px] font-bold uppercase tracking-widest text-center">
         <p>© 2026 Duck Family Team. Sva prava zadržana.</p>
         <div className="flex gap-8">
           <Link href="/" className="hover:text-teal-400 transition">Početna</Link>
