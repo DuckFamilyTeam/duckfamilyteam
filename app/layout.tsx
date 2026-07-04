@@ -140,17 +140,18 @@ export default function RootLayout({
       </head>
       <body className="font-jakarta antialiased bg-[#fafafa] text-slate-900 overflow-x-hidden">
         {children}
-        {/* Google Ads Tag */}
+        {/* Google Ads + GA4 Tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18049467991"
           strategy="afterInteractive"
         />
-        <Script id="google-ads-config" strategy="afterInteractive">
+        <Script id="google-tags-config" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-18049467991');
+            gtag('config', 'G-HW9597T7Y7');
           `}
         </Script>
       </body>
