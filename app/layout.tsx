@@ -154,6 +154,18 @@ export default function RootLayout({
             gtag('config', 'G-HW9597T7Y7');
           `}
         </Script>
+        <Script id="phone-conversion-tracking" strategy="afterInteractive">
+          {`
+            document.addEventListener('click', function (e) {
+              var link = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+              if (link && typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18049467991/CvCuCLq6jsscENeM1J5D'
+                });
+              }
+            });
+          `}
+        </Script>
       </body>
     </html>
   )
