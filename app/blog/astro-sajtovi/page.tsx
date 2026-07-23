@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Astro Sajtovi: Zašto Su Trenutno Najboljа Tehnologija za Web | Duck Family Team',
+  title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web | Duck Family Team',
   description:
     'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript — sve što Google voli.',
   alternates: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'Duck Family Team',
   ],
   openGraph: {
-    title: 'Astro Sajtovi: Zašto Su Trenutno Najboljа Tehnologija za Web | Duck Family Team',
+    title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web | Duck Family Team',
     description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',
     url: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
     type: 'article',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Astro Sajtovi: Zašto Su Trenutno Najboljа Tehnologija za Web',
+  headline: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
   description:
     'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript.',
   image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
@@ -107,7 +107,7 @@ export default function AstroSajtoviPage() {
             </span>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-6 mb-6 md:mb-8 leading-relaxed px-2">
               Astro Sajtovi:{' '}
-              <span className="duck-gradient-text italic">Zašto Su Trenutno Najboljа</span>{' '}
+              <span className="duck-gradient-text italic">Zašto Su Trenutno Najbolja</span>{' '}
               Tehnologija za Web?
             </h1>
             <p className="text-lg md:text-2xl text-slate-500 italic font-medium max-w-2xl mx-auto leading-relaxed">
@@ -288,7 +288,7 @@ export default function AstroSajtoviPage() {
                   },
                   {
                     title: 'Automatski sitemap',
-                    desc: 'Astro generiše sitemap.xml koji Google koristi za indeksiranje. Svaka nova strana je automatski prijavljuje Google-u.',
+                    desc: 'Astro generiše sitemap.xml koji Google koristi za indeksiranje. Svaka nova strana se automatski prijavljuje Google-u.',
                   },
                   {
                     title: 'Perfektni Core Web Vitals',

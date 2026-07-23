@@ -359,7 +359,7 @@ Ponekad je best rešenje kombinacija dve tehnologije — statički brze Astro st
 🔗 Shara Mara Nails Studio — shara-mara-nails-studio.vercel.app
 
 **Prednosti Combo pristupa:**
-⚡ Ultrabzre statičke stranice za SEO
+⚡ Ultrabrze statičke stranice za SEO
 🔧 Dinamične funkcionalnosti gde je potrebno
 📊 Lighthouse 95+ na svim stranicama
 
@@ -555,7 +555,7 @@ Google My Business (GMB) je besplatan alat koji prikazuje vaš biznis na Google 
 📞 +381 64 387 7524 | ✉️ stankovic.s.nikola@gmail.com`,
   },
   negativne_kljucne_reci: {
-    keywords: ['negativne ključne reči', 'negative keywords', 'blokirane reči', 'irrelevantni klikovi', 'nepotrebni klikovi'],
+    keywords: ['negativne ključne reči', 'negative keywords', 'blokirane reči', 'irelevantni klikovi', 'nepotrebni klikovi'],
     answer: `**Negativne Ključne Reči — Štite Vaš Budžet**
 
 Negativne ključne reči govore Google-u za koje pretrage DA NE prikazuje vaš oglas.
@@ -665,7 +665,7 @@ Duck Family Team ugradi optimalne meta tagove u svaki sajt! 🦆`,
 
 Link building je proces dobijanja linkova sa drugih sajtova koji upućuju na vaš sajt. Google ih vidi kao "glasove poverenja".
 
-**Zašto su backlinkovani važni?**
+**Zašto su backlinkovi važni?**
 Google pretpostavlja: ako mnogo kvalitetnih sajtova linkuje na vas → vi ste autoritet u svojoj oblasti.
 
 **Vrste linkova:**

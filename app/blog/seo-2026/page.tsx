@@ -166,7 +166,7 @@ export default function SEO2026Page() {
                 ))}
               </ul>
               <p className="leading-relaxed">
-                Sajt koji odgovara na sve ove implicitne potrebe — čak i bez da doslovno pominje svaku — rangiće bolje od sajta koji mehanički ponavlja ključnu reč 15 puta.
+                Sajt koji odgovara na sve ove implicitne potrebe — čak i kada ne pominje svaku doslovno — rangiraće bolje od sajta koji mehanički ponavlja ključnu reč 15 puta.
               </p>
             </div>
 
@@ -208,8 +208,8 @@ export default function SEO2026Page() {
                 {[
                   { n: '1.', t: 'Pillar stranica', d: 'Glavna "stub" stranica koja sveobuhvatno pokriva temu (npr. "Kompletan vodič za Google Ads u Srbiji" — 3000+ reči).' },
                   { n: '2.', t: 'Cluster sadržaj', d: 'Serija dubinskih tekstova na uže podteme koji se linkuju ka pillar stranici i međusobno (npr. "Kako podesiti Smart Bidding", "Negativne ključne reči vodič", "Google Ads Quality Score").' },
-                  { n: '3.', t: 'Interno linkovanje', d: 'Sistematično međusobno linkovanje srodnih stranica prenosi SEO vrednost i pomaže Googletu da razume strukturu vašeg znanja.' },
-                  { n: '4.', t: 'Konzistentna objava', d: 'Redovni novi sadržaj signalizira Googlu da je sajt aktivan i relevantan — idealno jednom nedeljno.' },
+                  { n: '3.', t: 'Interno linkovanje', d: 'Sistematično međusobno linkovanje srodnih stranica prenosi SEO vrednost i pomaže Google-u da razume strukturu vašeg znanja.' },
+                  { n: '4.', t: 'Konzistentna objava', d: 'Redovni novi sadržaj signalizira Google-u da je sajt aktivan i relevantan — idealno jednom nedeljno.' },
                 ].map((item) => (
                   <li key={item.n} className="flex items-start gap-3">
                     <span className="text-teal-500 font-black text-2xl leading-none shrink-0">{item.n}</span>
@@ -259,7 +259,7 @@ export default function SEO2026Page() {
                 <strong>Koji upiti su najmanje pogođeni?</strong> Kompleksne pretrage sa personalnom namerom, lokalne pretrage ("frizer Beograd"), transakcione pretrage ("kupi auto karike Srbija"), pretrage gde korisnici žele da vide više opcija i porede.
               </p>
               <p className="leading-relaxed">
-                Strategija: fokusirajte se na <strong>long-tail ključne reči</strong> sa jasnom transakciosnalnom ili lokalnom namerom. "SEO optimizacija za mali biznis Beograd" je mnogo teže za AI da zadovolji direktno nego "šta je SEO".
+                Strategija: fokusirajte se na <strong>long-tail ključne reči</strong> sa jasnom transakcionom ili lokalnom namerom. "SEO optimizacija za mali biznis Beograd" je mnogo teže za AI da zadovolji direktno nego "šta je SEO".
               </p>
               <div className="bg-slate-50 p-5 md:p-8 border-l-4 border-blue-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
                 <p className="text-slate-800 m-0">
@@ -272,7 +272,7 @@ export default function SEO2026Page() {
             {/* SEO 6 */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Tehničko SEO i Core Web Vitals — i dalje fondament
+                Tehničko SEO i Core Web Vitals — i dalje fundament
               </h2>
               <p className="leading-relaxed">
                 Bez obzira koliko dobar bio vaš sadržaj, ako sajt ne učitava brzo ili nije optimizovan za mobilne, <span className="text-red-600 font-bold">gubite pozicije</span>. Google-ovi Core Web Vitals su i u 2026. direktni ranking faktor:
@@ -297,10 +297,10 @@ export default function SEO2026Page() {
             {/* SEO 7 - Lokalni */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Lokalni SEO u Srbiji — podcenjena prilikа
+                Lokalni SEO u Srbiji — podcenjena prilika
               </h2>
               <p className="leading-relaxed">
-                Za firme koje rade u Srbiji sa fizičkom lokacijom, <strong>lokalni SEO je možda najveća prilikа u 2026</strong>. Zašto? Jer srpske firme u ogromnoj većini ignorišu Google Business Profile, ne prikupljaju recenzije i ne optimizuju za lokalne ključne reči.
+                Za firme koje rade u Srbiji sa fizičkom lokacijom, <strong>lokalni SEO je možda najveća prilika u 2026</strong>. Zašto? Jer srpske firme u ogromnoj većini ignorišu Google Business Profile, ne prikupljaju recenzije i ne optimizuju za lokalne ključne reči.
               </p>
               <p className="leading-relaxed">
                 Pretraga "advokat Beograd" prikazuje Map Pack — tri lokalna rezultata na vrhu stranice. Kompanija koja se pojavljuje u Map Pack-u za relevantne lokalne pretrage dobija vidljivost ekvivalentnu prvoj organskoj poziciji, bez plaćanja Google Ads-a.
@@ -337,7 +337,7 @@ export default function SEO2026Page() {
                 Šta to znači? Ako vaša firma nije citirana u relevantnim AI odgovorima, propuštate sve veći deo potencijalnih klijenata koji koriste AI asistente za istraživanje.
               </p>
               <p className="leading-relaxed">
-                Kako povećati AI vidljivost: kreira sadržaj koji AI sistemi mogu lako citirati (strukturiran, autoritativan, sa jasnim tvrdnjama), nabavite linkove sa autoritativnih izvora, osigurajte da je vaš sajt dostupan AI crawler-ima (ClaudeBot, GPTBot, PerplexityBot) u robots.txt, i implementirajte <strong>llms.txt</strong> — novi standard koji AI sistemima opisuje vaš sajt.
+                Kako povećati AI vidljivost: kreirajte sadržaj koji AI sistemi mogu lako citirati (strukturiran, autoritativan, sa jasnim tvrdnjama), nabavite linkove sa autoritativnih izvora, osigurajte da je vaš sajt dostupan AI crawler-ima (ClaudeBot, GPTBot, PerplexityBot) u robots.txt, i implementirajte <strong>llms.txt</strong> — novi standard koji AI sistemima opisuje vaš sajt.
               </p>
             </div>
 

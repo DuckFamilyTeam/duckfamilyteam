@@ -14,7 +14,7 @@ const faqs = [
       'SEO je maraton. Prvi značajni pomaci u pozicijama se vide nakon 3 do 6 meseci, ali jednom kada zauzmete vrh Google-a, dobijate besplatan saobraćaj godinama.',
   },
   {
-    question: 'Da li AI (SGE) menja način na koji se rangiram?',
+    question: 'Da li AI (SGE) menja način na koji se rangirate?',
     answer:
       'Apsolutno. Google sada koristi SGE (Search Generative Experience) da direktno odgovori korisnicima. Naša strategija se fokusira na to da vaš sadržaj postane primarni izvor informacija za te AI odgovore.',
   },
@@ -22,6 +22,31 @@ const faqs = [
     question: 'Koliko košta vaša usluga?',
     answer:
       'Cena zavisi od obima kampanje, industrije i ciljeva. Nudimo besplatnu analizu budžeta — zakazite konsultacije i dobićete preciznu ponudu bez obaveza.',
+  },
+  {
+    question: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
+    answer:
+      'Radimo sa firmama svih veličina — od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
+  },
+  {
+    question: 'Koliko dugo traje izrada sajta?',
+    answer:
+      'Jednostavna landing stranica je gotova za 5–7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2–4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
+  },
+  {
+    question: 'Već imam sajt — možete li ga samo poboljšati?',
+    answer:
+      'Da. Radimo i audit i optimizaciju postojećih sajtova — brzinu učitavanja, SEO osnove, mobilnu prilagođenost i podešavanje konverzija — a da ne morate da krećete ispočetka, osim ako je to zaista neophodno.',
+  },
+  {
+    question: 'Da li se vezujem ugovorom na duži period?',
+    answer:
+      'Ne insistiramo na dugoročnim ugovorima. Radije dokazujemo vrednost rezultatima iz meseca u mesec — saradnju možete prekinuti u svakom trenutku uz razuman otkazni rok.',
+  },
+  {
+    question: 'Da li garantujete prvo mesto na Google-u?',
+    answer:
+      'Nijedna ozbiljna agencija ne može da garantuje tačnu poziciju, jer Google algoritam nije pod nečijom kontrolom. Ono što garantujemo je transparentan rad, primenu proverenih SEO i Google Ads tehnika i mesečno izveštavanje o napretku.',
   },
 ]
 

@@ -147,7 +147,7 @@ export default function GoogleAdsTrosakPage() {
                 Ovo je najčešća greška. Ako prodajete "luksuzne satove", a vaš oglas se pojavljuje za pretragu "kako popraviti stari sat", vi gubite novac. Platili ste klik osobi koja želi <strong className="text-slate-900 font-bold">besplatan savet</strong>, a ne <strong className="text-slate-900 font-bold">novi proizvod</strong>.
               </p>
               <p className="leading-relaxed">
-                U srpskom kontekstu ovo je posebno izraženo. Mnoge firme targetuju generičke reči poput "advokat", "zubar" ili "auto servis" — bez da specificiraju lokaciju, tip usluge ili nameru kupca. Rezultat: platite klik studenta koji istražuje profesije, a ne klijenta koji traži vašu uslugu.
+                U srpskom kontekstu ovo je posebno izraženo. Mnoge firme targetuju generičke reči poput "advokat", "zubar" ili "auto servis" — a da ne specificiraju lokaciju, tip usluge ili nameru kupca. Rezultat: platite klik studenta koji istražuje profesije, a ne klijenta koji traži vašu uslugu.
               </p>
               <p className="leading-relaxed">
                 Postoje četiri tipa pretražnog namere: <strong>informational</strong> (žele da uče), <strong>navigational</strong> (traže specifičan sajt), <strong>commercial investigation</strong> (porede opcije) i <strong>transactional</strong> (spremni da kupe). Vi plaćate samo za poslednje dve.
@@ -155,7 +155,7 @@ export default function GoogleAdsTrosakPage() {
               <div className="bg-slate-50 p-5 md:p-8 border-l-4 border-teal-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
                 <p className="text-slate-800 m-0">
                   <strong className="text-teal-700 uppercase text-xs md:text-sm tracking-widest not-italic block mb-2">Rešenje:</strong>
-                  Koristite negativne ključne reči i fokusirajte se na "Buyer Intent" termine: "prodaja satova cena Beograd", "kupovina luksuznog sata" umesto samo "satovi". Revidirajte Search Terms izveštaj svake nedelje i dodajte ireleventne pretrage u negativnu listu.
+                  Koristite negativne ključne reči i fokusirajte se na "Buyer Intent" termine: "prodaja satova cena Beograd", "kupovina luksuznog sata" umesto samo "satovi". Revidirajte Search Terms izveštaj svake nedelje i dodajte irelevantne pretrage u negativnu listu.
                 </p>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function GoogleAdsTrosakPage() {
                 Quality Score je ocena od 1 do 10 koju Google daje svakoj ključnoj reči u vašoj kampanji. Ona se zasniva na: <strong>Expected CTR</strong> (koliko se očekuje da će korisnici kliknuti), <strong>Ad relevance</strong> (koliko je oglas relevantan za ključnu reč) i <strong>Landing page experience</strong> (kvalitet vaše stranice).
               </p>
               <p className="leading-relaxed">
-                Zašto je ovo ključno? Jer Quality Score direktno utiče na cenu klika. Sa Quality Score 10, možete plaćati i do <strong>50% manje</strong> po kliku nego konkurent sa Quality Score 5 — čak i za iste pozicije. Loš Quality Score znači da plaćate penale za ireleventnost.
+                Zašto je ovo ključno? Jer Quality Score direktno utiče na cenu klika. Sa Quality Score 10, možete plaćati i do <strong>50% manje</strong> po kliku nego konkurent sa Quality Score 5 — čak i za iste pozicije. Loš Quality Score znači da plaćate penale za irelevantnost.
               </p>
               <div className="bg-slate-50 p-5 md:p-8 border-l-4 border-blue-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
                 <p className="text-slate-800 m-0">

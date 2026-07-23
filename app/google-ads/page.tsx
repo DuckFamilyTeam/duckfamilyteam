@@ -208,7 +208,7 @@ export default function GoogleAdsPage() {
               {
                 title: 'Google Shopping kampanje',
                 desc: 'Prikazujete proizvode sa slikom, cenom i nazivom prodavnice direktno u Google pretrazi. Neophodno za svaki e-commerce biznis koji želi da poveća online prodaju u Srbiji.',
-                tags: ['E-commerce', 'Vizuelni oglasi', 'Produkt listinzi'],
+                tags: ['E-commerce', 'Vizuelni oglasi', 'Prikaz proizvoda'],
               },
               {
                 title: 'Google Display Network',

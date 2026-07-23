@@ -60,6 +60,54 @@ const faqSchema = {
         text: 'Apsolutno. Google SGE direktno odgovara korisnicima. Fokusiramo se na to da vaš sadržaj postane primarni izvor za te AI odgovore.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Koliko košta vaša usluga?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cena zavisi od obima kampanje, industrije i ciljeva. Nudimo besplatnu analizu budžeta — zakazite konsultacije i dobićete preciznu ponudu bez obaveza.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Radimo sa firmama svih veličina — od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Koliko dugo traje izrada sajta?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Jednostavna landing stranica je gotova za 5–7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2–4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Već imam sajt — možete li ga samo poboljšati?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Da. Radimo i audit i optimizaciju postojećih sajtova — brzinu učitavanja, SEO osnove, mobilnu prilagođenost i podešavanje konverzija — a da ne morate da krećete ispočetka, osim ako je to zaista neophodno.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Da li se vezujem ugovorom na duži period?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ne insistiramo na dugoročnim ugovorima. Radije dokazujemo vrednost rezultatima iz meseca u mesec — saradnju možete prekinuti u svakom trenutku uz razuman otkazni rok.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Da li garantujete prvo mesto na Google-u?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nijedna ozbiljna agencija ne može da garantuje tačnu poziciju, jer Google algoritam nije pod nečijom kontrolom. Ono što garantujemo je transparentan rad, primenu proverenih SEO i Google Ads tehnika i mesečno izveštavanje o napretku.',
+      },
+    },
   ],
 }
 
@@ -79,7 +127,7 @@ const marketingClients = [
     name: 'Diviana Beauty Studio',
     location: 'Beograd',
     service: 'Google Ads & Instagram',
-    quote: 'Fantastična saradnja sa Duck Family Team! Naši termini su puni, a broj novih klijentkinja koje dolaze putem Meta i tiktok reklama je neverovatno porastao. Pravi profesionalci koji razumeju beauty industriju!',
+    quote: 'Fantastična saradnja sa Duck Family Team! Naši termini su puni, a broj novih klijentkinja koje dolaze putem Meta i TikTok reklama je neverovatno porastao. Pravi profesionalci koji razumeju beauty industriju!',
     author: 'Dajana',
     role: 'Vlasnica',
     logo: '/img/diviana-beauty-studio-logo.jpg',
@@ -343,7 +391,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl font-black text-slate-800 mb-4">GA4 Analitika</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Pratimo svaki klik. Conversion tracking, event setup, i custom dashboards za potpun uvid u performanse.
+                    Pratimo svaki klik. Conversion tracking, event setup i custom dashboards za potpun uvid u performanse.
                   </p>
                 </div>
               </AnimatedSection>
@@ -825,7 +873,7 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-20 px-6 md:px-12 bg-white">
+        <section id="pitanja" className="py-20 px-6 md:px-12 bg-white">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
               <h2 className="text-3xl md:text-5xl font-black text-slate-900 text-center italic mb-12">

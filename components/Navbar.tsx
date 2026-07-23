@@ -22,6 +22,7 @@ export default function Navbar() {
     { label: 'Usluge', href: pathname === '/' ? '#usluge' : '/#usluge' },
     { label: 'Naš Proces', href: pathname === '/' ? '#proces' : '/#proces' },
     { label: 'Portfolio', href: pathname === '/' ? '#portfolio' : '/#portfolio' },
+    { label: 'Pitanja i Odgovori', href: pathname === '/' ? '#pitanja' : '/#pitanja' },
     { label: 'Cene', href: pathname === '/' ? '#cene' : '/#cene' },
     { label: 'Zadovoljni Klijenti', href: pathname === '/' ? '#klijenti' : '/#klijenti' },
     { label: 'Blog', href: '/blog' },

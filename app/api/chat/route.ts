@@ -140,7 +140,7 @@ AI-driven kampanje koje automatski optimizuju kreative, targetiranje, i bidding 
 
 1. **Loš targeting** - Široka publika bez fokusa
 2. **Neoptimizovan Quality Score** - Skupi klikovi, loš položaj
-3. **Zanemarivanje negativnih ključnih reči** - Plaćate za nerlevantne klikove
+3. **Zanemarivanje negativnih ključnih reči** - Plaćate za nerelevantne klikove
 4. **Bez praćenja konverzija** - Ne znate šta radi, šta ne
 5. **Set-and-forget mentalitet** - Google Ads zahteva konstantno testiranje i optimizaciju
 6. **Slaba landing page** - Dobar oglas, loša stranica = potrošen novac
@@ -186,7 +186,7 @@ Obično 15-20% od ad spend-a ili fiksna mesečna naknada. Investicija se brzo vr
 ## IZRADA WEB SAJTOVA
 
 ### Šta Duck Family Team nudi za sajtove?
-Duck Family Team pravi ultrabzе, SEO optimizovane sajtove u Next.js i Astro tehnologiji. Svaki sajt je optimizovan od prvog dana sa meta opisima, ključnim rečima, Schema markup-om i svim što Google zahteva za visoke pozicije.
+Duck Family Team pravi ultrabrze, SEO optimizovane sajtove u Next.js i Astro tehnologiji. Svaki sajt je optimizovan od prvog dana sa meta opisima, ključnim rečima, Schema markup-om i svim što Google zahteva za visoke pozicije.
 
 ### Next.js Sajtovi
 Next.js je React framework koji omogućava Server-Side Rendering (SSR), što znači da Google može odmah da pročita sadržaj sajta. Koristi se za dinamičnije sajtove, e-commerce i projekte koji zahtevaju autentifikaciju ili bazu podataka.
@@ -234,7 +234,7 @@ Vercel je platforma na kojoj Duck Family Team hostuje sve sajtove. Kreatori su N
 Svaki sajt koji Duck Family Team pravi uključuje:
 1. **Meta tagovi** — Title, Description, Keywords za svaku stranicu
 2. **Schema Markup (Structured Data)** — Pomaže Google-u da razume sadržaj
-3. **Open Graph** — Za lepšo prikazivanje na društvenim mrežama
+3. **Open Graph** — Za lepše prikazivanje na društvenim mrežama
 4. **Sitemap.xml** — Mapa sajta za Google botove
 5. **Robots.txt** — Instrukcije za Google crawlere
 6. **Core Web Vitals** — LCP, FID, CLS optimizovani
@@ -364,7 +364,7 @@ STIL KOMUNIKACIJE:
 - Koristiš bullet points za preglednost
 - Objašnjavaš složene koncepte jednostavno
 - Dodaješ primere iz prakse
-- Izbevaš žargon gde god je moguće, ali ga objašnjavaš kada ga koristiš
+- Izbegavaš žargon gde god je moguće, ali ga objašnjavaš kada ga koristiš
 
 BAZA ZNANJA:
 ${MARKETING_KNOWLEDGE}

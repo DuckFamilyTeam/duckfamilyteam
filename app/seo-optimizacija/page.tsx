@@ -167,7 +167,7 @@ export default function SEOOptimizacijaPage() {
             Zašto SEO optimizacija, a ne samo Google Ads?
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed mb-6">
-            Google Ads donosi trenutne rezultate, ali čim pauzirате kampanju — posete nestaju.
+            Google Ads donosi trenutne rezultate, ali čim pauzirate kampanju — posete nestaju.
             <strong> SEO optimizacija gradi trajnu vidljivost</strong> — rangiranje koje ostaje i raste mesecima
             nakon što investicija bude napravljena. Firme koje ulažu u SEO u Srbiji smanjuju zavisnost od
             plaćenih oglasa i grade organsku publiku koja donosi konverzije bez CPC troška.

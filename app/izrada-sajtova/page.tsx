@@ -172,7 +172,7 @@ export default function IzradaSajtovaTPage() {
             imaju automatski bolji Lighthouse skor i prirodno su SEO-friendly zbog server-side renderinga.
           </p>
           <p className="text-slate-600 text-lg leading-relaxed mb-10">
-            Google je jasno rekao — brzina i Core Web Vitals utiču na rangiranje. Svaki millisekund
+            Google je jasno rekao — brzina i Core Web Vitals utiču na rangiranje. Svaki milisekund
             kašnjenja košta konverzije. Naši sajtovi učitavaju se za <strong>ispod 1.5 sekundi</strong>
             na mobilnim uređajima, što daje direktnu prednost u pretrazi.
           </p>
