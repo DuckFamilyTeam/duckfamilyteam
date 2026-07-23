@@ -22,7 +22,7 @@ export default function Navbar() {
     { label: 'Usluge', href: pathname === '/' ? '#usluge' : '/#usluge' },
     { label: 'Naš Proces', href: pathname === '/' ? '#proces' : '/#proces' },
     { label: 'Portfolio', href: pathname === '/' ? '#portfolio' : '/#portfolio' },
-    { label: 'Pitanja i Odgovori', href: pathname === '/' ? '#pitanja' : '/#pitanja' },
+    { label: 'FAQ', href: pathname === '/' ? '#pitanja' : '/#pitanja' },
     { label: 'Cene', href: pathname === '/' ? '#cene' : '/#cene' },
     { label: 'Zadovoljni Klijenti', href: pathname === '/' ? '#klijenti' : '/#klijenti' },
     { label: 'Blog', href: '/blog' },
@@ -39,27 +39,27 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 md:px-6 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 md:gap-3" onClick={closeMobile}>
+          <Link href="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0" onClick={closeMobile}>
             <Image
               src="/img/logo-za-nasu-agenciju.png"
               alt="Duck Family Team logo"
               width={48}
               height={48}
-              className="h-10 w-auto md:h-12"
+              className="h-10 w-auto md:h-12 flex-shrink-0"
               priority
             />
-            <span className="text-xl font-extrabold uppercase tracking-tighter italic text-slate-800">
+            <span className="text-lg md:text-xl font-extrabold uppercase tracking-tighter italic text-slate-800 whitespace-nowrap">
               Duck<span className="text-[#248a84]">FamilyTeam</span>
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden xl:flex items-center gap-6 2xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-bold transition-colors duration-200 ${
+                className={`text-sm font-bold whitespace-nowrap transition-colors duration-200 ${
                   (link.href === '/blog' && pathname.startsWith('/blog'))
                     ? 'text-[#248a84]'
                     : 'text-slate-600 hover:text-[#248a84]'
@@ -70,7 +70,7 @@ export default function Navbar() {
             ))}
             <Link
               href={pathname === '/' ? '#kontakt' : '/#kontakt'}
-              className="btn-duck text-white px-7 py-2.5 rounded-full text-sm font-bold"
+              className="btn-duck text-white px-7 py-2.5 rounded-full text-sm font-bold whitespace-nowrap flex-shrink-0"
             >
               Zakaži Konsultacije
             </Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* Hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="lg:hidden text-2xl text-slate-800 focus:outline-none p-1"
+            className="xl:hidden text-2xl text-slate-800 focus:outline-none p-1 flex-shrink-0"
             aria-label="Otvori meni"
             aria-expanded={mobileOpen}
           >
@@ -91,8 +91,8 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         <div
-          className="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
-          style={{ maxHeight: mobileOpen ? '400px' : '0' }}
+          className="xl:hidden overflow-hidden transition-all duration-300 ease-in-out"
+          style={{ maxHeight: mobileOpen ? '500px' : '0' }}
         >
           <div className="flex flex-col gap-2 mt-4 pb-4">
             {navLinks.map((link) => (
