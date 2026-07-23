@@ -31,7 +31,7 @@ const posts = [
   {
     slug: 'google-business-profil',
     img: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800',
-    tag: 'Google Business Profil',
+    tag: 'GBP',
     tagColor: 'bg-green-600',
     title: 'Google Business Profil: Vaš najjači, a najčešće zanemareni alat',
     excerpt:
@@ -119,7 +119,7 @@ export default function BlogPage() {
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <span className={`absolute top-6 left-6 ${post.tagColor} text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-widest italic`}>
+                    <span className={`absolute top-6 left-6 ${post.tagColor} text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-widest italic whitespace-nowrap`}>
                       {post.tag}
                     </span>
                   </div>
