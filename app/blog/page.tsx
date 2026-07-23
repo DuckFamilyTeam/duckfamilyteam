@@ -29,6 +29,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'google-business-profil',
+    img: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800',
+    tag: 'Google Business Profil',
+    tagColor: 'bg-green-600',
+    title: 'Google Business Profil: Vaš najjači, a najčešće zanemareni alat',
+    excerpt:
+      'Besplatan je i gradi poverenje pre nego što neko klikne na vaš sajt. Saznajte kako da ga pametno napravite i optimizujete — za male, srednje i velike firme.',
+    date: '2026-07-23',
+    readTime: '9 min',
+  },
+  {
     slug: 'astro-sajtovi',
     img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
     tag: 'Web Development',
