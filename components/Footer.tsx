@@ -10,7 +10,7 @@ declare global {
 }
 
 const googleMapsUrl = 'https://www.google.com/maps?cid=13771670212645560743'
-const googleReviewUrl = 'https://search.google.com/local/writereview?placeid=0x8bbd6d300cb3eded:0xbf1ecd17cc9121a7'
+const googleReviewUrl = 'https://g.page/r/CachkcwXzR6_EBM/review'
 const mapEmbedQuery = encodeURIComponent(
   'Duck Family Team - Online Marketing, Porodice Josipović 2, Sremčica, Beograd'
 )

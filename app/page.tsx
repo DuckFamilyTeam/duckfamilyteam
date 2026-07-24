@@ -761,7 +761,7 @@ export default function Home() {
                   Vaša recenzija na Google-u traje samo minut, a nama znači mnogo — pomaže drugim biznisima da nas pronađu i direktno podržava naš rad.
                 </p>
                 <a
-                  href="https://search.google.com/local/writereview?placeid=0x8bbd6d300cb3eded:0xbf1ecd17cc9121a7"
+                  href="https://g.page/r/CachkcwXzR6_EBM/review"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-teal-700 px-8 py-4 rounded-full font-black text-sm md:text-base uppercase tracking-wide hover:bg-teal-50 transition"
