@@ -746,6 +746,33 @@ export default function Home() {
                 </AnimatedSection>
               ))}
             </div>
+
+            <AnimatedSection delay={200} className="mt-14">
+              <div className="bg-gradient-to-br from-teal-600 to-blue-700 rounded-[2.5rem] md:rounded-[3rem] p-10 md:p-14 text-center text-white shadow-xl">
+                <div className="flex justify-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-300 text-2xl">★</span>
+                  ))}
+                </div>
+                <h3 className="text-2xl md:text-4xl font-black italic tracking-tighter mb-3">
+                  Zadovoljni saradnjom?
+                </h3>
+                <p className="text-teal-50 text-sm md:text-base max-w-xl mx-auto mb-8">
+                  Vaša recenzija na Google-u traje samo minut, a nama znači mnogo — pomaže drugim biznisima da nas pronađu i direktno podržava naš rad.
+                </p>
+                <a
+                  href="https://search.google.com/local/writereview?placeid=0x8bbd6d300cb3eded:0xbf1ecd17cc9121a7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white text-teal-700 px-8 py-4 rounded-full font-black text-sm md:text-base uppercase tracking-wide hover:bg-teal-50 transition"
+                >
+                  Ostavite Google Recenziju
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 

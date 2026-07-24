@@ -95,10 +95,13 @@ const webSiteSchema = {
   },
 }
 
+const googleMapsUrl = 'https://www.google.com/maps?cid=13771670212645560743'
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Duck Family Team',
+  name: 'Duck Family Team - Online Marketing',
+  alternateName: 'Duck Family Team',
   url: siteUrl,
   logo: `${siteUrl}/img/logo-za-nasu-agenciju.png`,
   description:
@@ -113,8 +116,9 @@ const organizationSchema = {
     postalCode: '11253',
     addressCountry: 'RS',
   },
+  hasMap: googleMapsUrl,
   areaServed: 'RS',
-  sameAs: ['https://www.instagram.com/duckfamilyteam/'],
+  sameAs: ['https://www.instagram.com/duckfamilyteam/', googleMapsUrl],
   priceRange: '$$',
   serviceType: ['Google Ads', 'SEO Optimizacija', 'GA4 Analitika', 'Digitalni Marketing'],
 }

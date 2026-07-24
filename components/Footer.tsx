@@ -9,6 +9,12 @@ declare global {
   }
 }
 
+const googleMapsUrl = 'https://www.google.com/maps?cid=13771670212645560743'
+const googleReviewUrl = 'https://search.google.com/local/writereview?placeid=0x8bbd6d300cb3eded:0xbf1ecd17cc9121a7'
+const mapEmbedQuery = encodeURIComponent(
+  'Duck Family Team - Online Marketing, Porodice Josipović 2, Sremčica, Beograd'
+)
+
 export default function Footer() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -63,6 +69,34 @@ export default function Footer() {
             >
               stankovic.s.nikola@gmail.com
             </a>
+            <p className="text-slate-400 pt-6 text-xs uppercase tracking-widest font-black">Adresa</p>
+            <p className="text-lg md:text-xl font-bold text-slate-100">
+              Porodice Josipović 2, Sremčica, Beograd
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-1">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition font-bold text-sm"
+              >
+                Pogledaj nas na Google mapi
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a
+                href={googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition font-bold text-sm"
+              >
+                Ostavite recenziju
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -125,8 +159,21 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className="max-w-7xl mx-auto mt-16 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10">
+        <iframe
+          src={`https://www.google.com/maps?q=${mapEmbedQuery}&output=embed`}
+          width="100%"
+          height="320"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Duck Family Team - Online Marketing na Google mapi"
+          className="grayscale-[20%]"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-300 text-[10px] font-bold uppercase tracking-widest text-center">
-        <p>© 2026 Duck Family Team. Sva prava zadržana.</p>
+        <p>© 2026 Duck Family Team - Online Marketing. Sva prava zadržana.</p>
         <div className="flex gap-8">
           <Link href="/" className="hover:text-teal-400 transition">Početna</Link>
           <Link href="/blog" className="hover:text-teal-400 transition">Blog</Link>
