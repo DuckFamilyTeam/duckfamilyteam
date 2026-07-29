@@ -8,39 +8,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        teal: {
-          DEFAULT: '#248a84',
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          400: '#2dd4bf',
-          500: '#248a84',
-          600: '#1a6b66',
-          700: '#155e5a',
-          900: '#0d3d3a',
+        wine: {
+          DEFAULT: '#8C2438',
+          bright: '#B03A47',
         },
-        duck: {
-          blue: '#1a5680',
-          teal: '#248a84',
-        }
+        ink: {
+          bg: '#14100E',
+          surface: '#1E1815',
+          'surface-hover': '#251E1A',
+          text: '#F2EAE2',
+          muted: '#A69A8F',
+          border: '#2E2622',
+        },
       },
       fontFamily: {
-        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
+        sans: ['var(--font-sans)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
       },
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
         '6xl': '3rem',
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        }
-      }
     },
   },
   plugins: [],

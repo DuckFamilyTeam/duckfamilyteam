@@ -1,0 +1,191 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  title: 'Cene usluga',
+  description:
+    'Google Ads vođenje 200 evra mesečno, Google Business profil 100 evra mesečno, izrada sajta od 50 evra. Pun, transparentan cenovnik.',
+  keywords: ['Google Ads kampanje cena', 'cena izrade sajta', 'cena vođenja Google Business profila', 'Duck Family Team'],
+  alternates: {
+    canonical: 'https://www.duckfamilyteam.online/cene',
+  },
+  openGraph: {
+    title: 'Cene usluga | Duck Family Team',
+    description: 'Pun, transparentan cenovnik za Google Ads, Google Business profil i izradu sajta.',
+    url: 'https://www.duckfamilyteam.online/cene',
+    type: 'website',
+  },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Šta je uključeno u mesečno vođenje Google Ads kampanja?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Vođenje Google Ads kampanja, 200 evra mesečno. U to spada svakodnevno praćenje, podešavanje ponuda i mesečni izveštaj sa konkretnim brojkama.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Da li cena uključuje budžet za same Google oglase?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ne. Navedena cena je naša naknada za vođenje kampanje. Budžet koji ide direktno Google-u za prikazivanje oglasa je poseban i dogovara se prema vašim ciljevima.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Šta ako mi treba samo jedna usluga, ne sve zajedno?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno po cenama iz tabele. Paket "sve na jednom mestu" je opcija za one koji žele kompletno vođenje na jednom mestu.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Da li su sve cene fiksne?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Za standardne usluge iz tabele, da, cena je fiksna. Za dodatne usluge, kao izrada AI skilova i promptova, cena zavisi od obima posla i dogovara se posebno.',
+      },
+    },
+  ],
+}
+
+function PriceRow({ label, price }: { label: string; price: string }) {
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
+      <span className="text-ink-text">{label}</span>
+      <span className="font-mono text-wine-bright whitespace-nowrap">{price}</span>
+    </div>
+  )
+}
+
+export default function CenePage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Navbar />
+      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+        <div className="max-w-5xl mx-auto">
+
+          {/* ── BREADCRUMB ── */}
+          <nav className="mb-8 font-mono text-xs text-ink-muted flex items-center gap-2 uppercase tracking-widest" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-ink-text transition">Početna</Link>
+            <span>/</span>
+            <span className="text-ink-text">Cene</span>
+          </nav>
+
+          {/* ── HERO ── */}
+          <section className="mb-16">
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+              Cene
+            </div>
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
+              Koliko košta Google Ads, GBP i izrada sajta
+            </h1>
+            <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
+              Cene usluge fizičkog lica, bez skrivenih troškova. Svaka stavka piše tačno šta dobijate.
+            </p>
+          </section>
+
+          {/* ── GOOGLE ADS ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Google Ads</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow label="Mesečno vođenje Google Ads kampanja" price="200 evra mesečno" />
+              <PriceRow label="Jednokratna postavka kampanje, bez mesečnog vođenja" price="70 evra po kampanji" />
+              <PriceRow label="Detaljna analiza naloga, sa istorijom kampanja i proverom konverzija" price="200 evra" />
+              <PriceRow label="Detaljna analiza naloga, samo trenutne aktivne kampanje" price="100 evra" />
+              <PriceRow label="Povezivanje GA4 sa Google Ads nalogom" price="50 evra" />
+              <PriceRow label="Povezivanje Google Business profila sa Google Ads nalogom" price="50 evra" />
+            </div>
+          </section>
+
+          {/* ── GBP ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Google Business profil</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow
+                label="Vođenje profila: 8 objava i 8 fotografija mesečno, odgovaranje na recenzije, optimizacija profila"
+                price="100 evra mesečno"
+              />
+            </div>
+          </section>
+
+          {/* ── IZRADA SAJTA ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Izrada i održavanje sajta</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow label="Sajt do 3 stranice (Next.js/Astro, SEO optimizovan)" price="300 evra" />
+              <PriceRow label="Višestranični sajt (Next.js/Astro, SEO optimizovan)" price="600 evra" />
+              <PriceRow label="Osnovni HTML sajt, jedna stranica" price="50 evra" />
+              <PriceRow label="Osnovni HTML sajt, više stranica" price="100 evra" />
+              <PriceRow label="Mesečno održavanje sajta: do 3 izmene mesečno, redovna kontrola stabilnosti" price="70 evra mesečno" />
+            </div>
+          </section>
+
+          {/* ── SVE NA JEDNOM MESTU ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Sve na jednom mestu</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow
+                label="Kompletno vođenje: Google Ads, Google Business profil i sajt, sva odgovornost na nama"
+                price="300 evra mesečno"
+              />
+            </div>
+          </section>
+
+          {/* ── DODATNA USLUGA ── */}
+          <section className="mb-16">
+            <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-8">
+              <h3 className="font-display font-medium text-xl mb-2">Izrada AI skilova i promptova</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Za precizniju i bolju upotrebu veštačke inteligencije u poslovanju. Cena zavisi od obima, javite se za ponudu.
+              </p>
+            </div>
+          </section>
+
+          {/* ── FAQ ── */}
+          <section className="mb-16">
+            <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
+              Pitanja o cenama
+            </h2>
+            <div className="space-y-4">
+              {faqSchema.mainEntity.map((item) => (
+                <details key={item.name} className="bg-ink-surface border border-ink-border rounded-2xl p-6 group">
+                  <summary className="font-medium cursor-pointer text-lg list-none flex justify-between items-center gap-4">
+                    {item.name}
+                    <span className="text-wine-bright shrink-0 group-open:rotate-180 transition-transform">↓</span>
+                  </summary>
+                  <p className="mt-4 text-ink-muted leading-relaxed">{item.acceptedAnswer.text}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* ── CTA ── */}
+          <section className="bg-ink-surface border border-ink-border rounded-2xl p-10 md:p-16 text-center">
+            <h2 className="font-display font-medium text-3xl md:text-4xl mb-4">
+              Nije sigurno šta vam treba?
+            </h2>
+            <p className="text-ink-muted mb-8 max-w-xl mx-auto">
+              Besplatna konsultacija, pregledamo vaš biznis i predlažemo tačno ono što vam treba, ništa više.
+            </p>
+            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-medium inline-block transition-colors">
+              Zakažite besplatnu konsultaciju
+            </Link>
+          </section>
+
+        </div>
+      </main>
+      <Footer />
+    </>
+  )
+}

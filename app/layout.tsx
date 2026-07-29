@@ -1,14 +1,31 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import Script from 'next/script'
+import CookieConsent from '@/components/CookieConsent'
 import './globals.css'
 
-const jakarta = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-jakarta',
+  weight: ['400', '500', '600'],
+  variable: '--font-display',
   display: 'swap',
   preload: true,
+})
+
+const plexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-sans',
+  display: 'swap',
+  preload: true,
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+  preload: false,
 })
 
 const siteUrl = 'https://www.duckfamilyteam.online'
@@ -129,7 +146,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="sr" className={jakarta.variable}>
+    <html lang="sr" className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <head>
         <link rel="icon" type="image/png" href="/img/logo-za-nasu-agenciju.png" />
         <link rel="apple-touch-icon" href="/img/logo-za-nasu-agenciju.png" />
@@ -142,8 +159,34 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="font-jakarta antialiased bg-[#fafafa] text-slate-900 overflow-x-hidden">
+      <body className="font-sans antialiased bg-ink-bg text-ink-text overflow-x-hidden">
+        {/* Consent Mode v2 defaults, must run before gtag.js loads */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500
+            });
+            try {
+              var stored = localStorage.getItem('cookie_consent');
+              if (stored === 'granted') {
+                gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                  analytics_storage: 'granted'
+                });
+              }
+            } catch (e) {}
+          `}
+        </Script>
         {children}
+        <CookieConsent />
         {/* Google Ads + GA4 Tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18049467991"
@@ -166,6 +209,7 @@ export default function RootLayout({
                 gtag('event', 'conversion', {
                   'send_to': 'AW-18049467991/CvCuCLq6jsscENeM1J5D'
                 });
+                dataLayer.push({ event: 'phone_click' });
               }
             });
           `}

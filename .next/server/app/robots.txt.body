@@ -1,0 +1,66 @@
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Perplexity-User
+Allow: /
+
+User-Agent: xAI-Bot
+Allow: /
+
+User-Agent: Meta-ExternalAgent
+Allow: /
+
+User-Agent: Meta-ExternalFetcher
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+User-Agent: BingPreview
+Allow: /
+
+User-Agent: Applebot
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: cohere-ai
+Allow: /
+
+User-Agent: YouBot
+Allow: /
+
+User-Agent: DuckAssistBot
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://www.duckfamilyteam.online/sitemap.xml
+Sitemap: https://www.duckfamilyteam.online/llms.txt

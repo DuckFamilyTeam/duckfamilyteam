@@ -5,9 +5,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web | Duck Family Team',
+  title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
   description:
-    'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript — sve što Google voli.',
+    'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript, sve što Google voli.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'Duck Family Team',
   ],
   openGraph: {
-    title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web | Duck Family Team',
+    title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
     description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',
     url: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
     type: 'article',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200&h=630',
         width: 1200,
         height: 630,
-        alt: 'Astro Sajtovi — Duck Family Team',
+        alt: 'Astro Sajtovi, Duck Family Team',
       },
     ],
   },
@@ -89,34 +89,32 @@ export default function AstroSajtoviPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navbar />
-      <main className="pt-28 md:pt-40 pb-20 px-4 md:px-6">
+      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-slate-400 font-bold flex items-center gap-2" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-teal-600 transition">Početna</Link>
+          <nav className="mb-8 font-mono text-xs uppercase tracking-widest text-ink-muted flex items-center gap-2" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-ink-text transition">Početna</Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-teal-600 transition">Blog</Link>
+            <Link href="/blog" className="hover:text-ink-text transition">Blog</Link>
             <span>/</span>
-            <span className="text-slate-600">Astro Sajtovi</span>
+            <span className="text-ink-text">Astro Sajtovi</span>
           </nav>
 
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
-            <span className="bg-orange-50 text-orange-700 text-[10px] md:text-[11px] font-extrabold uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-wider italic">
+            <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               Web Development
             </span>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-6 mb-6 md:mb-8 leading-relaxed px-2">
-              Astro Sajtovi:{' '}
-              <span className="duck-gradient-text italic">Zašto Su Trenutno Najbolja</span>{' '}
-              Tehnologija za Web?
+            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+              Astro sajtovi: zašto su trenutno najbolja tehnologija za web?
             </h1>
-            <p className="text-lg md:text-2xl text-slate-500 italic font-medium max-w-2xl mx-auto leading-relaxed">
-              Island Architecture, nulti JavaScript i Lighthouse score 100. Evo zašto Google obožava Astro sajtove — i zašto vaš biznis treba jedan.
+            <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
+              Island Architecture, nulti JavaScript i Lighthouse score 100. Evo zašto Google obožava Astro sajtove, i zašto vaš biznis treba jedan.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 text-[11px] text-slate-400 font-bold uppercase tracking-widest">
+            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
-              <time dateTime="2026-05-09">9. Maj 2026.</time>
+              <time dateTime="2026-05-09">9. maj 2026.</time>
               <span>·</span>
               <span>8 min čitanja</span>
             </div>
@@ -124,163 +122,163 @@ export default function AstroSajtoviPage() {
 
           <Image
             src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200"
-            alt="Astro Sajtovi — Duck Family Team web development"
+            alt="Astro Sajtovi, Duck Family Team web development"
             width={1200}
             height={600}
-            className="w-full h-[250px] md:h-[500px] object-cover rounded-[2rem] md:rounded-[3.5rem] mb-12 md:mb-16 shadow-2xl"
+            className="w-full h-[250px] md:h-[500px] object-cover rounded-2xl mb-12 md:mb-16 border border-ink-border"
             priority
           />
 
           {/* Content */}
-          <div className="bg-white border border-black/5 rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-slate-700 text-base md:text-xl">
+          <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-ink-muted text-base md:text-xl">
 
             <p className="leading-relaxed">
-              U svetu web razvoja, svake godine se pojavljuje novi "revolucionarni" framework. Ali Astro je nešto drugačije. Od svog lansiranja, Astro je preuzeo primat u kategoriji performansi — i to nije slučajno. Iza toga stoji fundamentalno drugačiji pristup tome{' '}
-              <strong className="text-slate-900 font-bold">šta web sajt treba da radi</strong>.
+              U svetu web razvoja, svake godine se pojavljuje novi framework koji obećava sve. Ali Astro je nešto drugačije. Od svog lansiranja, Astro je preuzeo primat u kategoriji performansi, i to nije slučajno. Iza toga stoji fundamentalno drugačiji pristup tome{' '}
+              <strong className="text-ink-text font-medium">šta web sajt treba da radi</strong>.
             </p>
 
             {/* Šta je Astro */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
                 Šta je zapravo Astro?
               </h2>
               <p className="leading-relaxed">
-                Astro je web framework koji je kreiran sa jednom misijom: <strong className="text-slate-900 font-bold">isporučiti manje JavaScript-a</strong>. Dok Next.js, Nuxt i ostali frameworki šalju tone JS-a klijentu (čak i za statičan sadržaj koji mu ne treba), Astro ide suprotnim putem.
+                Astro je web framework koji je kreiran sa jednom misijom: <strong className="text-ink-text font-medium">isporučiti manje JavaScript-a</strong>. Dok Next.js, Nuxt i ostali frameworki šalju tone JS-a klijentu, čak i za statičan sadržaj koji mu ne treba, Astro ide suprotnim putem.
               </p>
-              <div className="bg-orange-50 p-5 md:p-8 border-l-4 border-orange-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
-                <p className="text-slate-800 m-0">
-                  <strong className="text-orange-700 uppercase text-xs md:text-sm tracking-widest not-italic block mb-2">
-                    Ključna razlika:
+              <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
+                <p className="text-ink-text m-0">
+                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                    Ključna razlika
                   </strong>
-                  Tradicionalni JavaScript frameworki šalju kompletan JS bundle klijentu. Astro šalje HTML i CSS — bez ijedne linije JavaScript-a, osim ako vi to eksplicitno ne tražite za specifičnu komponentu.
+                  Tradicionalni JavaScript frameworki šalju kompletan JS bundle klijentu. Astro šalje HTML i CSS, bez ijedne linije JavaScript-a, osim ako vi to eksplicitno ne tražite za specifičnu komponentu.
                 </p>
               </div>
             </div>
 
             {/* Island Architecture */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Island Architecture — Revolucija u Web Razvoju
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Island Architecture, revolucija u web razvoju
               </h2>
               <p className="leading-relaxed">
-                Astro-ov "tajni recept" zove se <strong className="text-slate-900 font-bold">Island Architecture</strong> (Arhitektura Ostrva). Ideja je jednostavna, ali genijalna:
+                Astro-ov "tajni recept" zove se <strong className="text-ink-text font-medium">Island Architecture</strong> (arhitektura ostrva). Ideja je jednostavna, ali genijalna:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-black text-2xl leading-none">→</span>
-                  <span>Stranica se sastoji od "ostrva" — interaktivnih komponenti</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span>Stranica se sastoji od "ostrva", interaktivnih komponenti</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-black text-2xl leading-none">→</span>
-                  <span>Sve ostalo (tekst, slike, navigacija) je statični HTML — BEZ JavaScript-a</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span>Sve ostalo (tekst, slike, navigacija) je statični HTML, bez JavaScript-a</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-black text-2xl leading-none">→</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
                   <span>Samo "ostrva" dobijaju JavaScript, i to samo kada je potrebno</span>
                 </li>
               </ul>
               <p className="leading-relaxed">
-                Rezultat? Sajt se učitava <strong className="text-slate-900 font-bold">3-10x brže</strong> od ekvivalentnog Next.js sajta, uz isti vizuelni izgled i funkcionalnost.
+                Rezultat? Sajt se učitava <strong className="text-ink-text font-medium">3 do 10 puta brže</strong> od ekvivalentnog Next.js sajta, uz isti vizuelni izgled i funkcionalnost.
               </p>
 
-              <div className="bg-slate-50 p-5 md:p-8 border-l-4 border-teal-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
-                <p className="text-slate-800 m-0">
-                  <strong className="text-teal-700 uppercase text-xs md:text-sm tracking-widest not-italic block mb-2">
-                    Primer iz prakse:
+              <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
+                <p className="text-ink-text m-0">
+                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                    Primer iz prakse
                   </strong>
-                  Zamislite restoran sajt. 95% sadržaja je statičan (meni, adresa, radno vreme). Samo kontakt forma treba JavaScript. Astro šalje JS SAMO za tu formu, a sve ostalo učitava kao čisti HTML. Rezultat: sajt se otvara za manje od 0.5 sekunde.
+                  Zamislite restoran sajt. 95% sadržaja je statičan (meni, adresa, radno vreme). Samo kontakt forma treba JavaScript. Astro šalje JS samo za tu formu, a sve ostalo učitava kao čisti HTML. Rezultat: sajt se otvara za manje od 0.5 sekunde.
                 </p>
               </div>
             </div>
 
             {/* Lighthouse Score */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Lighthouse 100/100 — Nije Mit
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Lighthouse 100/100, nije mit
               </h2>
               <p className="leading-relaxed">
-                Google Lighthouse je alat koji meri kvalitet web sajtova ocenama od 0 do 100 u 4 kategorije: Performanse, Pristupačnost, Best Practices i SEO. Astro sajtovi rutinski postižu:
+                Google Lighthouse je alat koji meri kvalitet web sajtova ocenama od 0 do 100 u 4 kategorije: performanse, pristupačnost, best practices i SEO. Astro sajtovi rutinski postižu:
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { label: 'Performance', score: '100', color: 'bg-green-500' },
-                  { label: 'Accessibility', score: '98', color: 'bg-green-500' },
-                  { label: 'Best Practices', score: '100', color: 'bg-green-500' },
-                  { label: 'SEO', score: '100', color: 'bg-green-500' },
+                  { label: 'Performance', score: '100' },
+                  { label: 'Accessibility', score: '98' },
+                  { label: 'Best Practices', score: '100' },
+                  { label: 'SEO', score: '100' },
                 ].map((item) => (
-                  <div key={item.label} className="bg-slate-50 rounded-2xl p-4 text-center">
-                    <div className={`w-16 h-16 ${item.color} rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-2`}>
+                  <div key={item.label} className="bg-ink-bg border border-ink-border rounded-2xl p-4 text-center">
+                    <div className="w-16 h-16 bg-wine rounded-full flex items-center justify-center text-ink-text font-display font-medium text-2xl mx-auto mb-2">
                       {item.score}
                     </div>
-                    <p className="text-xs font-bold text-slate-600 uppercase tracking-wide">{item.label}</p>
+                    <p className="text-xs font-mono uppercase tracking-wide text-ink-muted">{item.label}</p>
                   </div>
                 ))}
               </div>
 
               <p className="leading-relaxed">
-                Poređenja radi, prosečni WordPress sajt postiže 40-60 poena za performanse. Čak i dobro optimizovani Next.js sajtovi retko prelaze 95. Astro dostiže 100 bez posebnog truda.
+                Poređenja radi, prosečni WordPress sajt postiže 40 do 60 poena za performanse. Čak i dobro optimizovani Next.js sajtovi retko prelaze 95. Astro dostiže 100 bez posebnog truda.
               </p>
             </div>
 
             {/* Zašto Google voli Astro */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Zašto Google Obožava Astro Sajtove?
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Zašto Google obožava Astro sajtove?
               </h2>
               <p className="leading-relaxed">
-                Google rangira sajtove prema desecima faktora, ali <strong className="text-red-600">Core Web Vitals su postali jedan od najvažnijih</strong>. Ovo su 3 ključne metrike:
+                Google rangira sajtove prema desecima faktora, ali <strong className="text-wine-bright">Core Web Vitals su postali jedan od najvažnijih</strong>. Ovo su 3 ključne metrike:
               </p>
               <ul className="space-y-5 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">1.</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">1.</span>
                   <div>
-                    <strong className="text-slate-900 font-black">LCP (Largest Contentful Paint)</strong>
-                    <p className="text-slate-600 text-base mt-1">Koliko brzo se pojavljuje najveći element na stranici. Astro postiže &lt;1.2s (odlično), dok WordPress prosečno 3-5s (loše).</p>
+                    <strong className="text-ink-text font-medium">LCP (Largest Contentful Paint)</strong>
+                    <p className="text-ink-muted text-base mt-1">Koliko brzo se pojavljuje najveći element na stranici. Astro postiže manje od 1.2s (odlično), dok WordPress prosečno 3 do 5s (loše).</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">2.</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">2.</span>
                   <div>
-                    <strong className="text-slate-900 font-black">FID / INP (Interaction to Next Paint)</strong>
-                    <p className="text-slate-600 text-base mt-1">Odzivnost sajta na interakcije korisnika. Sa minimalnim JavaScript-om, Astro postiže skoro nultu kašnjenje.</p>
+                    <strong className="text-ink-text font-medium">FID / INP (Interaction to Next Paint)</strong>
+                    <p className="text-ink-muted text-base mt-1">Odzivnost sajta na interakcije korisnika. Sa minimalnim JavaScript-om, Astro postiže skoro nulto kašnjenje.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">3.</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">3.</span>
                   <div>
-                    <strong className="text-slate-900 font-black">CLS (Cumulative Layout Shift)</strong>
-                    <p className="text-slate-600 text-base mt-1">Stabilnost layouta tokom učitavanja. Astro generiše savršen statičan HTML koji ne "skače".</p>
+                    <strong className="text-ink-text font-medium">CLS (Cumulative Layout Shift)</strong>
+                    <p className="text-ink-muted text-base mt-1">Stabilnost layouta tokom učitavanja. Astro generiše savršen statičan HTML koji ne "skače".</p>
                   </div>
                 </li>
               </ul>
-              <div className="bg-teal-50 p-5 md:p-8 border-l-4 border-teal-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
-                <p className="text-slate-800 m-0">
-                  <strong className="text-teal-700 uppercase text-xs md:text-sm tracking-widest not-italic block mb-2">
-                    Direktna veza:
+              <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
+                <p className="text-ink-text m-0">
+                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                    Direktna veza
                   </strong>
-                  Google je zvanično potvrdio da Core Web Vitals utiču na rangiranje. Bolji Vitals = Viša pozicija u pretrazi. Astro sajtovi uvek imaju perfektne Vitals = uvek na vrhu Google-a.
+                  Google je zvanično potvrdio da Core Web Vitals utiču na rangiranje. Bolji Vitals znače višu poziciju u pretrazi. Astro sajtovi uvek imaju dobre Vitals, pa su uvek konkurentni na Google-u.
                 </p>
               </div>
             </div>
 
             {/* SEO Prednosti */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                SEO Prednosti Koje Nema Nijedan Drugi Framework
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                SEO prednosti koje nema nijedan drugi framework
               </h2>
               <p className="leading-relaxed">
-                Astro nije samo brz — on je dizajniran da bude SEO mašina od prvog dana.
+                Astro nije samo brz, on je dizajniran da bude SEO mašina od prvog dana.
               </p>
               <ul className="space-y-4 pl-6 list-none">
                 {[
                   {
                     title: 'Statički generisan HTML',
-                    desc: 'Google bot odmah vidi kompletan sadržaj bez potrebe za JavaScript izvršavanjem. Nema "čekanja" na hydration.',
+                    desc: 'Google bot odmah vidi kompletan sadržaj bez potrebe za JavaScript izvršavanjem. Nema čekanja na hydration.',
                   },
                   {
                     title: 'Ugrađeni SEO alati',
-                    desc: 'Meta tagovi, Open Graph, Twitter Cards, Schema Markup — sve se generiše automatski na pravi način.',
+                    desc: 'Meta tagovi, Open Graph, Twitter Cards i Schema Markup se generišu automatski na pravi način.',
                   },
                   {
                     title: 'Optimizacija slika',
@@ -292,14 +290,14 @@ export default function AstroSajtoviPage() {
                   },
                   {
                     title: 'Perfektni Core Web Vitals',
-                    desc: 'Bez JavaScript-a = bez blokiranja renderovanja = savršeni vitali. Direktan uticaj na SEO ranking.',
+                    desc: 'Bez JavaScript-a nema blokiranja renderovanja, pa su vitali savršeni. Direktan uticaj na SEO ranking.',
                   },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-3">
-                    <span className="text-orange-500 font-black mt-1 flex-shrink-0">✓</span>
+                    <span className="text-wine-bright font-bold mt-1 flex-shrink-0">✓</span>
                     <div>
-                      <strong className="text-slate-900 font-black">{item.title}: </strong>
-                      <span className="text-slate-600">{item.desc}</span>
+                      <strong className="text-ink-text font-medium">{item.title}: </strong>
+                      <span className="text-ink-muted">{item.desc}</span>
                     </div>
                   </li>
                 ))}
@@ -308,23 +306,23 @@ export default function AstroSajtoviPage() {
 
             {/* Astro vs Next.js */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Astro vs Next.js — Kada Koristiti Šta?
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Astro vs Next.js, kada koristiti šta?
               </h2>
               <p className="leading-relaxed">
                 I Astro i Next.js su odlični frameworki. Ali nisu za isti tip projekata. Evo kada koristiti koji:
               </p>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-sm rounded-2xl overflow-hidden">
+                <table className="w-full text-sm rounded-2xl overflow-hidden border border-ink-border">
                   <thead>
-                    <tr className="bg-slate-900 text-white">
-                      <th className="text-left p-4 font-black">Kriterijum</th>
-                      <th className="text-center p-4 font-black text-orange-400">Astro</th>
-                      <th className="text-center p-4 font-black text-blue-400">Next.js</th>
+                    <tr className="bg-ink-bg text-ink-text">
+                      <th className="text-left p-4 font-medium font-display">Kriterijum</th>
+                      <th className="text-center p-4 font-medium font-display text-wine-bright">Astro</th>
+                      <th className="text-center p-4 font-medium font-display text-ink-muted">Next.js</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100">
+                  <tbody className="divide-y divide-ink-border">
                     {[
                       { crit: 'Performanse', astro: '★★★★★', next: '★★★★' },
                       { crit: 'SEO', astro: '★★★★★', next: '★★★★★' },
@@ -335,10 +333,10 @@ export default function AstroSajtoviPage() {
                       { crit: 'Baza podataka', astro: '★★', next: '★★★★★' },
                       { crit: 'Lighthouse Score', astro: '100/100', next: '90-97/100' },
                     ].map((row, i) => (
-                      <tr key={row.crit} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="p-4 font-bold text-slate-700">{row.crit}</td>
-                        <td className="p-4 text-center text-orange-600 font-bold">{row.astro}</td>
-                        <td className="p-4 text-center text-blue-600 font-bold">{row.next}</td>
+                      <tr key={row.crit} className={i % 2 === 0 ? 'bg-ink-surface' : 'bg-ink-bg'}>
+                        <td className="p-4 font-medium text-ink-text">{row.crit}</td>
+                        <td className="p-4 text-center text-wine-bright font-medium">{row.astro}</td>
+                        <td className="p-4 text-center text-ink-muted font-medium">{row.next}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -346,22 +344,22 @@ export default function AstroSajtoviPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-orange-50 rounded-2xl p-6 border-2 border-orange-200">
-                  <h4 className="font-black text-orange-700 mb-3 uppercase text-sm tracking-widest">Koristite Astro za:</h4>
-                  <ul className="space-y-2 text-sm text-slate-700">
-                    {['Prezentacioni sajtovi biznisa', 'Blogovi i informativni portali', 'Landing page-ovi', 'Lokalni biznisi (max SEO)', 'Portfolio sajtovi', 'Dokumentacija'].map(item => (
+                <div className="bg-ink-bg rounded-2xl p-6 border border-wine">
+                  <h4 className="font-display font-medium text-wine-bright mb-3 uppercase text-sm tracking-widest">Koristite Astro za</h4>
+                  <ul className="space-y-2 text-sm text-ink-muted">
+                    {['Prezentacioni sajtovi biznisa', 'Blogovi i informativni portali', 'Landing stranice', 'Lokalni biznisi (maksimalan SEO)', 'Portfolio sajtovi', 'Dokumentacija'].map(item => (
                       <li key={item} className="flex items-center gap-2">
-                        <span className="text-orange-500">✓</span> {item}
+                        <span className="text-wine-bright">✓</span> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
-                  <h4 className="font-black text-blue-700 mb-3 uppercase text-sm tracking-widest">Koristite Next.js za:</h4>
-                  <ul className="space-y-2 text-sm text-slate-700">
+                <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
+                  <h4 className="font-display font-medium text-ink-text mb-3 uppercase text-sm tracking-widest">Koristite Next.js za</h4>
+                  <ul className="space-y-2 text-sm text-ink-muted">
                     {['E-commerce prodavnice', 'Aplikacije sa loginom', 'Dashboard-i i admin paneli', 'Sajtovi sa bazom podataka', 'Real-time funkcionalnosti', 'SaaS platforme'].map(item => (
                       <li key={item} className="flex items-center gap-2">
-                        <span className="text-blue-500">✓</span> {item}
+                        <span className="text-ink-muted">✓</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -371,51 +369,51 @@ export default function AstroSajtoviPage() {
 
             {/* Vercel */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Vercel — Savršeni Dom za Astro Sajtove
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Vercel, dobar dom za Astro sajtove
               </h2>
               <p className="leading-relaxed">
-                Astro sajtove hostujemo na <strong className="text-slate-900 font-bold">Vercel platformi</strong> — globalnoj CDN mreži koja servira sadržaj sa najbližeg servera svakom korisniku.
+                Astro sajtove hostujemo na <strong className="text-ink-text font-medium">Vercel platformi</strong>, globalnoj CDN mreži koja servira sadržaj sa najbližeg servera svakom korisniku.
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">→</span>
-                  <span><strong>Globalni CDN</strong> — Serveri u 30+ zemalja = sajt se učitava brzo svuda</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span><strong className="text-ink-text">Globalni CDN</strong>, serveri u 30+ zemalja, sajt se učitava brzo svuda</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">→</span>
-                  <span><strong>Auto-deploy</strong> — Svaka izmena na sajtu je live za 30 sekundi</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span><strong className="text-ink-text">Auto-deploy</strong>, svaka izmena na sajtu je live za 30 sekundi</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">→</span>
-                  <span><strong>Besplatni SSL</strong> — HTTPS sertifikat bez dodatnih troškova</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span><strong className="text-ink-text">Besplatni SSL</strong>, HTTPS sertifikat bez dodatnih troškova</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-2xl leading-none">→</span>
-                  <span><strong>99.99% uptime</strong> — Vaš sajt je uvek dostupan</span>
+                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span><strong className="text-ink-text">99.99% uptime</strong>, vaš sajt je uvek dostupan</span>
                 </li>
               </ul>
             </div>
 
             {/* Naši primeri */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Naši Astro Sajtovi — Realni Rezultati
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Naši Astro sajtovi, realni rezultati
               </h2>
               <p className="leading-relaxed">
-                Duck Family Team je do sada izradio više Astro sajtova za srpske lokalne biznise. Rezultati su konzistentno impresivni:
+                Duck Family Team je do sada izradio Astro sajtove za srpske lokalne biznise. Rezultati su konzistentno dobri:
               </p>
 
               <div className="grid md:grid-cols-1 gap-6 max-w-xl">
-                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <h4 className="font-black text-slate-800 mb-2">Tepih Servis Jevtić</h4>
-                  <p className="text-teal-600 font-bold text-sm mb-3">🏆 TOP #2 Google za "tepih servis" u Beogradu</p>
-                  <p className="text-slate-600 text-sm mb-4">Čisti Astro sajt sa savršenim Lighthouse score-om. Klijenti pronalaze servis i šalju upite svaki dan putem organskog SEO-a.</p>
+                <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
+                  <h4 className="font-display font-medium text-ink-text mb-2">Tepih Servis Jevtić</h4>
+                  <p className="text-wine-bright font-medium text-sm mb-3">TOP #2 na Google-u za "tepih servis" u Beogradu</p>
+                  <p className="text-ink-muted text-sm mb-4">Čist Astro sajt sa visokim Lighthouse score-om. Klijenti pronalaze servis i šalju upite svaki dan putem organskog SEO-a.</p>
                   <a
                     href="https://www.tepihservisjevtic.rs"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
+                    className="text-wine-bright font-medium text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
                   >
                     Poseti sajt
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -428,66 +426,66 @@ export default function AstroSajtoviPage() {
 
             {/* Zaključak */}
             <div className="space-y-4 md:space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 italic uppercase leading-tight">
-                Zaključak: Da Li Vaš Biznis Treba Astro Sajt?
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Zaključak: da li vaš biznis treba Astro sajt?
               </h2>
               <p className="leading-relaxed">
-                Ako imate prezentacioni sajt, blog, landing page ili sajt za lokalni biznis — odgovor je gotovo uvek <strong className="text-teal-600">da</strong>. Astro vam daje:
+                Ako imate prezentacioni sajt, blog, landing stranicu ili sajt za lokalni biznis, odgovor je gotovo uvek <strong className="text-wine-bright">da</strong>. Astro vam daje:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-xl leading-none">✓</span>
-                  <span>Savršene performanse koje Google nagrađuje višim pozicijama</span>
+                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span>Performanse koje Google nagrađuje višim pozicijama</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-xl leading-none">✓</span>
+                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
                   <span>SEO optimizaciju od prvog dana bez dodatnih podešavanja</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-xl leading-none">✓</span>
-                  <span>Ultra brzo učitavanje na mobilnim uređajima (70%+ saobraćaja)</span>
+                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span>Brzo učitavanje na mobilnim uređajima (70%+ saobraćaja)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-xl leading-none">✓</span>
-                  <span>Lighthouse Score 100 koji konkurencija ne može da dosegne</span>
+                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span>Lighthouse Score 100 koji konkurencija teško dostiže</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-teal-500 font-black text-xl leading-none">✓</span>
-                  <span>Klijente koji vas pronalaze organskim putem — besplatno i svaki dan</span>
+                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span>Klijente koji vas pronalaze organskim putem, besplatno i svaki dan</span>
                 </li>
               </ul>
-              <div className="bg-orange-50 p-5 md:p-8 border-l-4 border-orange-500 italic rounded-r-xl md:rounded-r-2xl shadow-sm">
-                <p className="text-slate-800 m-0">
-                  <strong className="text-orange-700 uppercase text-xs md:text-sm tracking-widest not-italic block mb-2">
-                    Naša preporuka:
+              <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
+                <p className="text-ink-text m-0">
+                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                    Naša preporuka
                   </strong>
-                  Za lokalne biznise u Srbiji, Astro sajt + Google Ads je trenutno najmoćnija kombinacija za brzo sticanje novih klijenata. Organski SEO kroz Astro donosi besplatan saobraćaj, dok Google Ads odmah dovodi kupce dok SEO raste.
+                  Za lokalne biznise u Srbiji, Astro sajt uz Google Ads je trenutno moćna kombinacija za brzo sticanje novih klijenata. Organski SEO kroz Astro donosi besplatan saobraćaj, dok Google Ads odmah dovodi kupce dok SEO raste.
                 </p>
               </div>
             </div>
 
-            <hr className="border-slate-100 my-8 md:my-12" />
+            <hr className="border-ink-border my-8 md:my-12" />
 
             {/* CTA */}
             <div className="text-center py-4 md:py-6">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">
+              <h3 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text mb-6 leading-tight">
                 Želite Astro sajt koji rangira?
               </h3>
-              <p className="mb-8 md:mb-10 text-slate-500 text-lg md:text-xl">
-                Duck Family Team pravi ultrabrze Astro i Next.js sajtove sa kompletnom SEO optimizacijom. Vaši klijenti će vas pronaći odmah.
+              <p className="mb-8 md:mb-10 text-ink-muted text-lg md:text-xl">
+                Duck Family Team pravi brze Astro i Next.js sajtove sa kompletnom SEO optimizacijom. Vaši klijenti će vas pronaći odmah.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/#kontakt"
-                  className="btn-duck text-white px-8 py-5 md:px-10 md:py-6 rounded-2xl font-black uppercase tracking-widest inline-block shadow-2xl hover:scale-105 transform transition text-sm md:text-base text-center"
+                  href="/kontakt"
+                  className="bg-wine hover:bg-wine-bright text-ink-text px-8 py-5 md:px-10 md:py-6 rounded-xl font-medium inline-block transition-colors text-sm md:text-base text-center"
                 >
-                  Zatraži Besplatnu Konsultaciju
+                  Zatraži besplatnu konsultaciju
                 </Link>
                 <Link
-                  href="/#portfolio"
-                  className="bg-slate-900 text-white px-8 py-5 md:px-10 md:py-6 rounded-2xl font-black uppercase tracking-widest inline-block hover:bg-slate-800 transition text-sm md:text-base text-center"
+                  href="/rezultati"
+                  className="border border-ink-border hover:border-wine text-ink-text px-8 py-5 md:px-10 md:py-6 rounded-xl font-medium inline-block transition-colors text-sm md:text-base text-center"
                 >
-                  Vidi Naše Sajtove
+                  Pogledaj rezultate klijenata
                 </Link>
               </div>
             </div>
@@ -497,7 +495,7 @@ export default function AstroSajtoviPage() {
           <div className="mt-12 text-center">
             <Link
               href="/blog"
-              className="text-teal-600 font-bold hover:text-teal-700 transition italic text-sm md:text-base flex items-center justify-center gap-2"
+              className="text-wine-bright font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

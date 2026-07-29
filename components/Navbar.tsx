@@ -7,111 +7,112 @@ import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
 
   const closeMobile = () => setMobileOpen(false)
 
   const navLinks = [
-    { label: 'Usluge', href: pathname === '/' ? '#usluge' : '/#usluge' },
-    { label: 'Naš Proces', href: pathname === '/' ? '#proces' : '/#proces' },
-    { label: 'Portfolio', href: pathname === '/' ? '#portfolio' : '/#portfolio' },
-    { label: 'FAQ', href: pathname === '/' ? '#pitanja' : '/#pitanja' },
-    { label: 'Cene', href: pathname === '/' ? '#cene' : '/#cene' },
-    { label: 'Zadovoljni Klijenti', href: pathname === '/' ? '#klijenti' : '/#klijenti' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Kontakt', href: pathname === '/' ? '#kontakt' : '/#kontakt' },
+    { label: 'Rezultati', href: '/rezultati' },
+    { label: 'Cene', href: '/cene' },
+    { label: 'O nama', href: '/o-nama' },
   ]
 
   return (
-    <header
-      className={`fixed w-full top-0 z-[100] transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-slate-100'
-          : 'bg-white/80 backdrop-blur-xl border-b border-slate-100'
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-4 md:px-6 py-4">
+    <header className="fixed w-full top-0 z-[100] bg-ink-bg/95 backdrop-blur-xl border-b border-ink-border">
+      <nav className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0" onClick={closeMobile}>
-            <Image
-              src="/img/logo-za-nasu-agenciju.png"
-              alt="Duck Family Team logo"
-              width={48}
-              height={48}
-              className="h-10 w-auto md:h-12 flex-shrink-0"
-              priority
-            />
-            <span className="text-lg md:text-xl font-extrabold uppercase tracking-tighter italic text-slate-800 whitespace-nowrap">
-              Duck<span className="text-[#248a84]">FamilyTeam</span>
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0" onClick={closeMobile}>
+            <span className="bg-ink-text rounded-xl p-1 flex-shrink-0">
+              <Image
+                src="/img/logo-za-nasu-agenciju.png"
+                alt="Duck Family Team logo"
+                width={40}
+                height={40}
+                className="h-8 w-8 md:h-9 md:w-9"
+                priority
+              />
+            </span>
+            <span className="font-display font-medium text-lg md:text-xl text-ink-text tracking-tight whitespace-nowrap">
+              Duck<span className="text-wine-bright">Family</span>Team
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden xl:flex items-center gap-6 2xl:gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-bold whitespace-nowrap transition-colors duration-200 ${
-                  (link.href === '/blog' && pathname.startsWith('/blog'))
-                    ? 'text-[#248a84]'
-                    : 'text-slate-600 hover:text-[#248a84]'
+                className={`text-sm font-sans font-medium whitespace-nowrap transition-colors duration-200 ${
+                  pathname.startsWith(link.href) && link.href !== '/'
+                    ? 'text-ink-text'
+                    : 'text-ink-muted hover:text-ink-text'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href={pathname === '/' ? '#kontakt' : '/#kontakt'}
-              className="btn-duck text-white px-7 py-2.5 rounded-full text-sm font-bold whitespace-nowrap flex-shrink-0"
+            <a
+              href="tel:+381643877524"
+              className="inline-flex items-center gap-2 border border-wine text-ink-text px-4 py-2 rounded-full text-sm font-sans font-medium whitespace-nowrap hover:bg-wine transition-colors duration-200"
             >
-              Zakaži Konsultacije
-            </Link>
+              +381 64 387 7524
+            </a>
           </div>
 
           {/* Hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="xl:hidden text-2xl text-slate-800 focus:outline-none p-1 flex-shrink-0"
+            className="lg:hidden text-2xl text-ink-text focus:outline-none p-1 flex-shrink-0"
             aria-label="Otvori meni"
             aria-expanded={mobileOpen}
           >
-            <span className="block w-6 h-0.5 bg-slate-800 mb-1.5 transition-all duration-300" style={mobileOpen ? { transform: 'rotate(45deg) translate(3px, 8px)' } : {}} />
-            <span className="block w-6 h-0.5 bg-slate-800 mb-1.5 transition-all duration-300" style={mobileOpen ? { opacity: 0 } : {}} />
-            <span className="block w-6 h-0.5 bg-slate-800 transition-all duration-300" style={mobileOpen ? { transform: 'rotate(-45deg) translate(3px, -8px)' } : {}} />
+            <span
+              className="block w-6 h-0.5 bg-ink-text mb-1.5 transition-all duration-300"
+              style={mobileOpen ? { transform: 'rotate(45deg) translate(3px, 8px)' } : {}}
+            />
+            <span
+              className="block w-6 h-0.5 bg-ink-text mb-1.5 transition-all duration-300"
+              style={mobileOpen ? { opacity: 0 } : {}}
+            />
+            <span
+              className="block w-6 h-0.5 bg-ink-text transition-all duration-300"
+              style={mobileOpen ? { transform: 'rotate(-45deg) translate(3px, -8px)' } : {}}
+            />
           </button>
         </div>
 
         {/* Mobile menu */}
         <div
-          className="xl:hidden overflow-hidden transition-all duration-300 ease-in-out"
-          style={{ maxHeight: mobileOpen ? '500px' : '0' }}
+          className="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
+          style={{ maxHeight: mobileOpen ? '400px' : '0' }}
         >
-          <div className="flex flex-col gap-2 mt-4 pb-4">
+          <div className="flex flex-col gap-1 mt-4 pb-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={closeMobile}
-                className="text-lg font-bold text-slate-600 border-b border-slate-50 py-3 hover:text-[#248a84] transition-colors"
+                className="text-lg font-sans font-medium text-ink-muted border-b border-ink-border py-3 hover:text-ink-text transition-colors"
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href={pathname === '/' ? '#kontakt' : '/#kontakt'}
+            <a
+              href="tel:+381643877524"
               onClick={closeMobile}
-              className="btn-duck text-white px-7 py-4 rounded-2xl text-center text-sm font-bold mt-2"
+              className="inline-flex items-center justify-center border border-wine text-ink-text px-4 py-4 rounded-2xl text-center text-sm font-sans font-medium mt-4"
             >
-              Zakaži Konsultacije
-            </Link>
+              +381 64 387 7524
+            </a>
           </div>
         </div>
       </nav>

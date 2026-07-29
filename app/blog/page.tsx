@@ -3,12 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import AnimatedSection from '@/components/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: 'Blog | Google Ads, SEO, Astro & Next.js Sajtovi | Duck Family Team',
+  title: 'Blog',
   description:
-    'Ekspertski blog Duck Family Team agencije. Saveti za Google oglase, SEO optimizaciju, GA4 analitiku, Astro i Next.js sajtove koji donose pravi profit.',
+    'Ekspertski blog Duck Family Team agencije. Saveti za Google oglase, SEO optimizaciju, GA4 analitiku i Next.js sajtove koji donose pravi profit.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/blog' },
   keywords: [
     'Google Ads blog',
@@ -16,12 +15,11 @@ export const metadata: Metadata = {
     'digitalni marketing saveti',
     'GA4 analitika vodič',
     'Google Ads optimizacija',
-    'Astro sajtovi',
     'Next.js web development',
     'Duck Family Team blog',
   ],
   openGraph: {
-    title: 'Duck Family Team Blog — Marketing koji donosi profit',
+    title: 'Duck Family Team blog, marketing koji donosi profit',
     description: 'Strategije iz prve ruke koje testiramo svakodnevno.',
     url: 'https://www.duckfamilyteam.online/blog',
   },
@@ -32,10 +30,9 @@ const posts = [
     slug: 'google-business-profil',
     img: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800',
     tag: 'GBP',
-    tagColor: 'bg-green-600',
-    title: 'Google Business Profil: Vaš najjači, a najčešće zanemareni alat',
+    title: 'Google Business Profil: vaš najjači, a najčešće zanemareni alat',
     excerpt:
-      'Besplatan je i gradi poverenje pre nego što neko klikne na vaš sajt. Saznajte kako da ga pametno napravite i optimizujete — za male, srednje i velike firme.',
+      'Besplatan je i gradi poverenje pre nego što neko klikne na vaš sajt. Saznajte kako da ga pametno napravite i optimizujete, za male, srednje i velike firme.',
     date: '2026-07-23',
     readTime: '9 min',
   },
@@ -43,8 +40,7 @@ const posts = [
     slug: 'astro-sajtovi',
     img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
     tag: 'Web Development',
-    tagColor: 'bg-orange-600',
-    title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web?',
+    title: 'Astro sajtovi: zašto su trenutno najbolja tehnologija za web?',
     excerpt:
       'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove i zašto vaš biznis treba jedan.',
     date: '2026-05-09',
@@ -54,7 +50,6 @@ const posts = [
     slug: 'google-ads-trosak',
     img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     tag: 'Google Ads',
-    tagColor: 'bg-teal-500',
     title: 'Zašto vaši Google oglasi troše novac bez konverzija?',
     excerpt:
       'Otkrijte 3 najčešće greške koje prave početnici i kako da podesite Smart Bidding da radi za vaš profit.',
@@ -65,10 +60,9 @@ const posts = [
     slug: 'seo-2026',
     img: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
     tag: 'SEO',
-    tagColor: 'bg-blue-600',
-    title: 'SEO u 2026: Da li su ključne reči i dalje bitne?',
+    title: 'SEO u 2026: da li su ključne reči i dalje bitne?',
     excerpt:
-      'Google algoritam se menja. Fokus se pomera sa "kucanja reči" na "nameru korisnika". Saznajte kako da dominirate.',
+      'Google algoritam se menja. Fokus se pomera sa kucanja reči na nameru korisnika. Saznajte kako da dominirate.',
     date: '2026-03-15',
     readTime: '7 min',
   },
@@ -76,8 +70,7 @@ const posts = [
     slug: 'ga4-vodic',
     img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
     tag: 'Analitika',
-    tagColor: 'bg-slate-900',
-    title: 'GA4 vodič za preduzetnike: Šta zapravo treba da gledate?',
+    title: 'GA4 vodič za preduzetnike: šta zapravo treba da gledate?',
     excerpt:
       'Ne dozvolite da vas gomila brojeva zbuni. Fokusirajte se na ove 3 metrike koje direktno pokazuju koliko zarađujete.',
     date: '2026-02-28',
@@ -89,98 +82,88 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-20">
-        {/* Header */}
-        <section className="px-6 mb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSection>
-              <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-                Marketing{' '}
-                <span className="duck-gradient-text italic">Bez Filtera.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-slate-500 font-medium">
-                Delimo strategije koje testiramo svakodnevno. Nema "pametovanja", samo čisti podaci i saveti za veći profit.
-              </p>
-            </AnimatedSection>
-          </div>
-        </section>
+      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
 
-        {/* Posts grid */}
-        <section className="px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, i) => (
-              <AnimatedSection key={post.title} delay={i * 100}>
-                <article className="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
-                  <div className="h-64 bg-slate-200 relative overflow-hidden">
-                    <Image
-                      src={post.img}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <span className={`absolute top-6 left-6 ${post.tagColor} text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-widest italic whitespace-nowrap`}>
-                      {post.tag}
-                    </span>
-                  </div>
-                  <div className="p-8 flex-1 flex flex-col">
-                    <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-4">
-                      <span>{post.date}</span>
-                      <span>·</span>
-                      <span>{post.readTime} čitanja</span>
-                    </div>
-                    <h2 className="text-2xl font-black text-slate-800 mb-4 leading-tight">{post.title}</h2>
-                    <p className="text-slate-500 text-sm italic mb-6 flex-1">{post.excerpt}</p>
-                    {post.slug ? (
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="text-[#248a84] font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
-                      >
-                        Pročitaj više
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </Link>
-                    ) : (
-                      <span className="text-slate-300 font-black text-xs uppercase tracking-widest">Uskoro...</span>
-                    )}
-                  </div>
-                </article>
-              </AnimatedSection>
-            ))}
-          </div>
-        </section>
+          {/* ── HERO ── */}
+          <section className="mb-16 max-w-2xl">
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+              Blog
+            </div>
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+              Marketing bez filtera
+            </h1>
+            <p className="text-lg text-ink-muted leading-relaxed">
+              Delimo strategije koje testiramo svakodnevno. Nema pametovanja, samo čisti podaci i saveti za veći profit.
+            </p>
+          </section>
 
-        {/* Newsletter CTA */}
-        <section className="mt-32 px-6">
-          <div className="max-w-5xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-teal-500/10 blur-3xl" />
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 italic">
-                Želite savete direktno u inbox?
-              </h2>
-              <p className="text-slate-400 mb-10 max-w-xl mx-auto font-medium">
-                Šaljemo jednu analizu tržišta mesečno. Bez spama, samo konkretni primeri kako da poboljšate prodaju.
-              </p>
-              <form
-                action="https://formspree.io/f/mgoppzqp"
-                method="POST"
-                className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto"
+          {/* ── POSTS GRID ── */}
+          <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl overflow-hidden flex flex-col transition-colors"
               >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Vaša email adresa"
-                  className="flex-1 p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-teal-500 italic font-medium"
-                  required
-                />
-                <button type="submit" className="btn-duck text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest">
-                  Prijavi se
-                </button>
-              </form>
-            </AnimatedSection>
-          </div>
-        </section>
+                <div className="h-48 relative overflow-hidden">
+                  <Image
+                    src={post.img}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <span className="absolute top-4 left-4 bg-wine text-ink-text text-[10px] font-mono uppercase px-3 py-1.5 rounded-full tracking-widest">
+                    {post.tag}
+                  </span>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3 font-mono text-ink-muted text-xs uppercase tracking-widest mb-3">
+                    <span>{post.date}</span>
+                    <span>·</span>
+                    <span>{post.readTime} čitanja</span>
+                  </div>
+                  <h2 className="font-display font-medium text-xl mb-3 leading-snug">{post.title}</h2>
+                  <p className="text-ink-muted text-sm leading-relaxed mb-5 flex-1">{post.excerpt}</p>
+                  <span className="text-sm font-medium flex items-center gap-2">
+                    Pročitaj više
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </section>
+
+          {/* ── NEWSLETTER CTA ── */}
+          <section className="bg-ink-surface border border-ink-border rounded-2xl p-10 md:p-16 text-center">
+            <h2 className="font-display font-medium text-3xl md:text-4xl mb-4">
+              Želite savete direktno u inbox?
+            </h2>
+            <p className="text-ink-muted mb-8 max-w-xl mx-auto">
+              Šaljemo jednu analizu tržišta mesečno. Bez spama, samo konkretni primeri kako da poboljšate prodaju.
+            </p>
+            <form
+              action="https://formspree.io/f/mgoppzqp"
+              method="POST"
+              className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Vaša email adresa"
+                className="flex-1 p-5 rounded-xl bg-ink-bg border border-ink-border text-ink-text placeholder:text-ink-muted outline-none focus:ring-2 focus:ring-wine"
+                required
+              />
+              <button type="submit" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-medium transition-colors">
+                Prijavi se
+              </button>
+            </form>
+          </section>
+
+        </div>
       </main>
       <Footer />
     </>

@@ -21,27 +21,27 @@ const faqs = [
   {
     question: 'Koliko košta vaša usluga?',
     answer:
-      'Cena zavisi od obima kampanje, industrije i ciljeva. Nudimo besplatnu analizu budžeta — zakazite konsultacije i dobićete preciznu ponudu bez obaveza.',
+      'Cena zavisi od obima kampanje, industrije i ciljeva. Nudimo besplatnu analizu budžeta, zakazite konsultacije i dobićete preciznu ponudu bez obaveza.',
   },
   {
     question: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
     answer:
-      'Radimo sa firmama svih veličina — od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
+      'Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
   },
   {
     question: 'Koliko dugo traje izrada sajta?',
     answer:
-      'Jednostavna landing stranica je gotova za 5–7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2–4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
+      'Jednostavna landing stranica je gotova za 5 do 7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2 do 4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
   },
   {
-    question: 'Već imam sajt — možete li ga samo poboljšati?',
+    question: 'Već imam sajt, možete li ga samo poboljšati?',
     answer:
-      'Da. Radimo i audit i optimizaciju postojećih sajtova — brzinu učitavanja, SEO osnove, mobilnu prilagođenost i podešavanje konverzija — a da ne morate da krećete ispočetka, osim ako je to zaista neophodno.',
+      'Da. Radimo i audit i optimizaciju postojećih sajtova, brzinu učitavanja, SEO osnove, mobilnu prilagođenost i podešavanje konverzija, bez da morate da krećete ispočetka, osim ako je to zaista neophodno.',
   },
   {
     question: 'Da li se vezujem ugovorom na duži period?',
     answer:
-      'Ne insistiramo na dugoročnim ugovorima. Radije dokazujemo vrednost rezultatima iz meseca u mesec — saradnju možete prekinuti u svakom trenutku uz razuman otkazni rok.',
+      'Ne insistiramo na dugoročnim ugovorima. Radije dokazujemo vrednost rezultatima iz meseca u mesec, saradnju možete prekinuti u svakom trenutku uz razuman otkazni rok.',
   },
   {
     question: 'Da li garantujete prvo mesto na Google-u?',
@@ -58,16 +58,16 @@ export default function FaqAccordion() {
       {faqs.map((faq, i) => (
         <div
           key={i}
-          className="border border-slate-100 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-300"
+          className="border border-ink-border rounded-2xl overflow-hidden transition-colors duration-300"
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex justify-between items-center p-5 md:p-6 text-left font-bold text-slate-800 text-base md:text-lg hover:bg-slate-50 transition-colors"
+            className="w-full flex justify-between items-center p-5 md:p-6 text-left font-medium text-ink-text text-base md:text-lg hover:bg-ink-surface-hover transition-colors"
             aria-expanded={open === i}
           >
             <span>{faq.question}</span>
             <svg
-              className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`}
+              className={`w-5 h-5 text-wine-bright flex-shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -79,7 +79,7 @@ export default function FaqAccordion() {
             className="overflow-hidden transition-all duration-300"
             style={{ maxHeight: open === i ? '200px' : '0' }}
           >
-            <p className="px-5 md:px-6 pb-5 md:pb-6 text-slate-600 text-sm md:text-base leading-relaxed italic">
+            <p className="px-5 md:px-6 pb-5 md:pb-6 text-ink-muted text-sm md:text-base leading-relaxed">
               {faq.answer}
             </p>
           </div>
