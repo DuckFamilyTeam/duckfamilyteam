@@ -169,7 +169,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 mb-20 md:mb-24">
               <Link
                 href="#kontakt"
-                className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20"
+                className="bg-wine hover:bg-wine-bright text-ink-text px-8 py-4 rounded-xl font-medium text-center transition-colors"
               >
                 Besplatna konsultacija
               </Link>
@@ -344,6 +344,84 @@ export default function Home() {
               </h2>
               <FaqAccordion />
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* ── BLOG PREVIEW ── */}
+        <section id="blog" className="py-20 px-6 md:px-12 bg-ink-surface">
+          <div className="max-w-7xl mx-auto">
+            <AnimatedSection className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+              <div className="max-w-2xl">
+                <h2 className="font-display font-medium text-3xl md:text-5xl text-ink-text tracking-tight mb-4">
+                  Marketing bez filtera
+                </h2>
+                <p className="text-ink-muted text-lg">
+                  Delimo strategije koje testiramo svakodnevno. Nema pametovanja, samo čisti podaci.
+                </p>
+              </div>
+              <Link
+                href="/blog"
+                className="border border-ink-border hover:border-wine text-ink-text px-8 py-4 rounded-xl font-medium transition-colors whitespace-nowrap"
+              >
+                Vidi sve tekstove
+              </Link>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  href: '/blog/google-ads-trosak',
+                  img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+                  tag: 'Google Ads',
+                  title: 'Zašto vaši oglasi troše novac bez konverzija?',
+                  excerpt: 'Otkrijte 3 najčešće greške koje prave početnici i kako da podesite Smart Bidding.',
+                },
+                {
+                  href: '/blog/seo-2026',
+                  img: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
+                  tag: 'SEO',
+                  title: 'SEO u 2026: da li su ključne reči i dalje bitne?',
+                  excerpt: 'Fokus se pomera sa kucanja reči na nameru korisnika. Saznajte kako da dominirate.',
+                },
+                {
+                  href: '/blog/astro-sajtovi',
+                  img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
+                  tag: 'Web Development',
+                  title: 'Astro sajtovi: zašto su trenutno najbolja tehnologija za web?',
+                  excerpt: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',
+                },
+              ].map((post, i) => (
+                <AnimatedSection key={post.title} delay={i * 100}>
+                  <Link
+                    href={post.href}
+                    className="group bg-ink-bg border border-ink-border hover:border-wine rounded-2xl overflow-hidden flex flex-col h-full transition-colors"
+                  >
+                    <div className="h-48 relative overflow-hidden">
+                      <Image
+                        src={post.img}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <span className="absolute top-4 left-4 bg-wine text-ink-text text-[10px] font-mono uppercase px-3 py-1.5 rounded-full tracking-widest">
+                        {post.tag}
+                      </span>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <h3 className="font-display font-medium text-lg text-ink-text mb-3 leading-snug">{post.title}</h3>
+                      <p className="text-ink-muted text-sm mb-5 flex-1">{post.excerpt}</p>
+                      <span className="text-sm font-medium flex items-center gap-2">
+                        Pročitaj više
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import BackButton from '@/components/BackButton'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
@@ -59,8 +58,6 @@ export default function KontaktPage() {
       <Navbar />
       <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
-
-          <BackButton />
 
           {/* ── BREADCRUMB ── */}
           <nav className="mb-8 font-mono text-xs text-ink-muted flex items-center gap-2 uppercase tracking-widest" aria-label="Breadcrumb">

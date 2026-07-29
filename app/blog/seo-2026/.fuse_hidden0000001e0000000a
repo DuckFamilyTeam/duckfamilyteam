@@ -93,7 +93,6 @@ export default function SEO2026Page() {
       <Navbar />
       <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
-          <BackButton />
           {/* Breadcrumb */}
           <nav className="mb-8 font-mono text-xs uppercase tracking-widest text-ink-muted flex items-center gap-2" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-ink-text transition">Početna</Link>

@@ -21,3 +21,37 @@ html {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--ink-bg); }
 ::-webkit-scrollbar-thumb { background: var(--wine); border-radius: 3px; }
+
+/* Custom cursor — desktop / fine-pointer devices only, added via JS class on <html> */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor [role='button'] {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--wine-bright);
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  will-change: transform;
+}
+
+.custom-cursor.cursor-active {
+  width: 44px;
+  height: 44px;
+  background: var(--ink-text);
+}
+
+@media (pointer: coarse) {
+  .custom-cursor { display: none; }
+}

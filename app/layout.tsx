@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import Script from 'next/script'
 import CookieConsent from '@/components/CookieConsent'
+import CustomCursor from '@/components/CustomCursor'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -186,6 +187,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <CustomCursor />
         <CookieConsent />
         {/* Google Ads + GA4 Tag */}
         <Script

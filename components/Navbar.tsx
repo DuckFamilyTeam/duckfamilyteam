@@ -25,6 +25,8 @@ export default function Navbar() {
     { label: 'O nama', href: '/o-nama' },
   ]
 
+  const googleReviewUrl = 'https://g.page/r/CachkcwXzR6_EBM/review'
+
   return (
     <header className="fixed w-full top-0 z-[100] bg-ink-bg/95 backdrop-blur-xl border-b border-ink-border">
       <nav className="max-w-7xl mx-auto px-4 md:px-6 py-3">
@@ -61,10 +63,18 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="tel:+381643877524"
-              className="inline-flex items-center gap-2 border border-wine text-ink-text px-4 py-2 rounded-full text-sm font-sans font-medium whitespace-nowrap hover:bg-wine transition-colors duration-200"
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-sans font-medium whitespace-nowrap text-ink-muted hover:text-ink-text transition-colors duration-200"
             >
-              +381 64 387 7524
+              Recenzije
+            </a>
+            <a
+              href="tel:+381643877524"
+              className="inline-flex items-center gap-2 bg-wine hover:bg-wine-bright text-ink-text px-6 py-3 rounded-full text-sm font-sans font-semibold whitespace-nowrap transition-colors duration-200"
+            >
+              Pozovite nas
             </a>
           </div>
 
@@ -107,11 +117,20 @@ export default function Navbar() {
               </Link>
             ))}
             <a
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobile}
+              className="text-lg font-sans font-medium text-ink-muted border-b border-ink-border py-3 hover:text-ink-text transition-colors"
+            >
+              Recenzije
+            </a>
+            <a
               href="tel:+381643877524"
               onClick={closeMobile}
-              className="inline-flex items-center justify-center border border-wine text-ink-text px-4 py-4 rounded-2xl text-center text-sm font-sans font-medium mt-4"
+              className="inline-flex items-center justify-center bg-wine hover:bg-wine-bright text-ink-text px-6 py-5 rounded-2xl text-center text-base font-sans font-semibold mt-4"
             >
-              +381 64 387 7524
+              Pozovite nas: +381 64 387 7524
             </a>
           </div>
         </div>
