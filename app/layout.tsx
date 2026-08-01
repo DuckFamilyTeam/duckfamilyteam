@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: '%s | Duck Family Team',
   },
   description:
-    'Sertifikovani Google Ads stručnjaci iz Srbije. Povećajte prodaju uz precizno targetiranje, istraživanje ključnih reči i naprednu GA4 analitiku. Duck Family Team — Vaš partner za ROI.',
+    'Sertifikovani Google Ads stručnjaci iz Srbije. Povećajte prodaju uz precizno targetiranje, istraživanje ključnih reči i naprednu GA4 analitiku. Duck Family Team, transparentan rad i merljivi rezultati.',
   keywords: [
     'Google Ads agencija',
     'Google Ads Srbija',
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
         url: '/img/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Duck Family Team — Google Ads & SEO Agencija',
+        alt: 'Duck Family Team, Google Ads i SEO Agencija',
       },
     ],
   },

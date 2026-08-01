@@ -9,7 +9,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Google Ads Agencija Srbija | SEO Sajtovi Next.js & Astro | Duck Family Team',
   description:
-    'Sertifikovani Google Ads stručnjaci. Izrada ultrabrzih Next.js i Astro sajtova sa SEO optimizacijom. Instagram, YouTube, Gmail oglašavanje. Uvek na prvim mestima u Google pretrazi. Duck Family Team.',
+    'Sertifikovani Google Ads stručnjaci. Izrada ultrabrzih Next.js i Astro sajtova sa SEO optimizacijom. Vođenje Google Business profila i lokalni SEO. Uvek na prvim mestima u Google pretrazi. Duck Family Team.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/' },
   keywords: [
     'Google Ads Srbija',
@@ -19,8 +19,7 @@ export const metadata: Metadata = {
     'izrada web sajtova Srbija',
     'Next.js sajt',
     'Astro sajt',
-    'Instagram reklame',
-    'YouTube oglašavanje',
+    'Google Business profil',
     'digitalni marketing Srbija',
     'GA4 analitika',
     'PPC stručnjak',

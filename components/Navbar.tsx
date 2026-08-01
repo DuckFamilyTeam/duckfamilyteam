@@ -18,11 +18,18 @@ export default function Navbar() {
 
   const closeMobile = () => setMobileOpen(false)
 
+  const serviceLinks = [
+    { label: 'Google Ads kampanje', href: '/usluge/google-ads' },
+    { label: 'Izrada sajtova', href: '/usluge/izrada-sajtova' },
+    { label: 'Google Business profil', href: '/usluge/google-business-profil' },
+  ]
+
   const navLinks = [
     { label: 'Blog', href: '/blog' },
     { label: 'Rezultati', href: '/rezultati' },
     { label: 'Cene', href: '/cene' },
     { label: 'O nama', href: '/o-nama' },
+    { label: 'Kontakt', href: '/kontakt' },
   ]
 
   const googleReviewUrl = 'https://g.page/r/CachkcwXzR6_EBM/review'
@@ -49,6 +56,32 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8">
+            <div className="relative group">
+              <button
+                type="button"
+                className={`flex items-center gap-1 text-sm font-sans font-medium whitespace-nowrap transition-colors duration-200 ${
+                  pathname.startsWith('/usluge') ? 'text-ink-text' : 'text-ink-muted hover:text-ink-text'
+                }`}
+              >
+                Usluge
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-150">
+                <div className="bg-ink-surface border border-ink-border rounded-xl p-2 min-w-[240px] shadow-lg">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="block px-3 py-2.5 rounded-lg text-sm text-ink-muted hover:text-ink-text hover:bg-ink-surface-hover transition-colors whitespace-nowrap"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -103,9 +136,22 @@ export default function Navbar() {
         {/* Mobile menu */}
         <div
           className="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
-          style={{ maxHeight: mobileOpen ? '400px' : '0' }}
+          style={{ maxHeight: mobileOpen ? '90vh' : '0', overflowY: mobileOpen ? 'auto' : 'hidden' }}
         >
           <div className="flex flex-col gap-1 mt-4 pb-4">
+            <div className="font-mono text-xs uppercase tracking-widest text-ink-muted pt-2 pb-1">
+              Usluge
+            </div>
+            {serviceLinks.map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                onClick={closeMobile}
+                className="text-lg font-sans font-medium text-ink-muted border-b border-ink-border py-3 hover:text-ink-text transition-colors"
+              >
+                {service.label}
+              </Link>
+            ))}
             {navLinks.map((link) => (
               <Link
                 key={link.label}
