@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 
 export const metadata: Metadata = {
-  title: 'SEO u 2026: Tematski autoritet, AI pretraga i ključne reči',
+  title: 'SEO u 2026: vodič za tematski autoritet i AI pretragu',
   description:
     'Kompletni vodič za SEO u 2026. Tematski autoritet, Google SGE, E-E-A-T, Core Web Vitals i strategije koje zaista rade za firme u Srbiji.',
   alternates: {

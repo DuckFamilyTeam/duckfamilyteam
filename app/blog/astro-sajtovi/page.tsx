@@ -493,6 +493,16 @@ export default function AstroSajtoviPage() {
             </div>
           </div>
 
+          {/* Related links */}
+          <div className="mt-12 p-6 bg-ink-surface border border-ink-border rounded-2xl">
+            <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
+            <ul className="space-y-2">
+              <li><Link href="/usluge/izrada-sajtova" className="text-wine-bright hover:text-ink-text font-medium">Next.js i Astro sajtovi, naša usluga →</Link></li>
+              <li><Link href="/blog/seo-2026" className="text-wine-bright hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
+              <li><Link href="/blog/google-ads-trosak" className="text-wine-bright hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
+            </ul>
+          </div>
+
           {/* Back to blog */}
           <div className="mt-12 text-center">
             <Link

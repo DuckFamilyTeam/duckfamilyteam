@@ -35,9 +35,6 @@ export default function robots(): MetadataRoute.Robots {
       // ─── FALLBACK ─────────────────────────────────────
       { userAgent: '*', allow: '/', disallow: '/api/' },
     ],
-    sitemap: [
-      'https://www.duckfamilyteam.online/sitemap.xml',
-      'https://www.duckfamilyteam.online/llms.txt',
-    ],
+    sitemap: 'https://www.duckfamilyteam.online/sitemap.xml',
   }
 }

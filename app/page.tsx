@@ -7,9 +7,9 @@ import AnimatedSection from '@/components/AnimatedSection'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Google Ads Agencija Srbija | SEO Sajtovi Next.js & Astro | Duck Family Team',
+  title: 'Google Ads Agencija Srbija | Duck Family Team',
   description:
-    'Sertifikovani Google Ads stručnjaci. Izrada ultrabrzih Next.js i Astro sajtova sa SEO optimizacijom. Vođenje Google Business profila i lokalni SEO. Uvek na prvim mestima u Google pretrazi. Duck Family Team.',
+    'Google Ads kampanje i izrada sajtova sa ugrađenim SEO-om. Fokus na pozivima, ne na klikovima. Besplatna konsultacija za firme u Srbiji.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/' },
   keywords: [
     'Google Ads Srbija',

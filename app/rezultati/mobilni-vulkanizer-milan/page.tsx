@@ -96,13 +96,13 @@ export default function MilanCaseStudyPage() {
               <li className="flex gap-4 items-start">
                 <span className="mt-1 w-2 h-2 rounded-full bg-wine-bright flex-shrink-0" />
                 <p className="text-ink-text leading-relaxed">
-                  <span className="font-medium">Google Business profil</span>, vodimo i optimizujemo profil, objave, fotografije i odgovaranje na recenzije, da ga klijenti pronađu prvo na Google mapi.
+                  <Link href="/usluge/google-business-profil" className="font-medium text-wine-bright hover:text-ink-text">Google Business profil</Link>, vodimo i optimizujemo profil, objave, fotografije i odgovaranje na recenzije, da ga klijenti pronađu prvo na Google mapi.
                 </p>
               </li>
               <li className="flex gap-4 items-start">
                 <span className="mt-1 w-2 h-2 rounded-full bg-wine-bright flex-shrink-0" />
                 <p className="text-ink-text leading-relaxed">
-                  <span className="font-medium">Google Ads kampanje</span>, svakodnevno pratimo i optimizujemo kampanju, budžet i ključne reči.
+                  <Link href="/usluge/google-ads" className="font-medium text-wine-bright hover:text-ink-text">Google Ads kampanje</Link>, svakodnevno pratimo i optimizujemo kampanju, budžet i ključne reči.
                 </p>
               </li>
               <li className="flex gap-4 items-start">
