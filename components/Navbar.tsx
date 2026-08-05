@@ -32,7 +32,7 @@ export default function Navbar() {
     { label: 'Kontakt', href: '/kontakt' },
   ]
 
-  const googleReviewUrl = 'https://g.page/r/CachkcwXzR6_EBM/review'
+  const googleReviewUrl = 'https://maps.google.com/?cid=13771670212645560743&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed'
 
   return (
     <header className="fixed w-full top-0 z-[100] bg-ink-bg/95 backdrop-blur-xl border-b border-ink-border">
