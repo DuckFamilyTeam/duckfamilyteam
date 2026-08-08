@@ -9,9 +9,9 @@ const faqs = [
       'Google Ads hvata ljude u momentu namere. Dok na društvenim mrežama ometate ljude u zabavi, na Google-u se pojavljujete tačno onda kada neko traži vaše rešenje. To je razlika između "sviđanja" i "kupovine".',
   },
   {
-    question: 'Šta je to SEO i koliko traje?',
+    question: 'Da li se bavite i SEO-om?',
     answer:
-      'SEO je maraton. Prvi značajni pomaci u pozicijama se vide nakon 3 do 6 meseci, ali jednom kada zauzmete vrh Google-a, dobijate besplatan saobraćaj godinama.',
+      'SEO nije poseban paket kod nas. Ugrađen je u izradu sajta i u vođenje Google Business profila, kroz ključne reči, strukturu stranica i lokalni sadržaj. Prvi pomaci u organskim pozicijama se obično vide za 3 do 6 meseci.',
   },
   {
     question: 'Da li AI (SGE) menja način na koji se rangirate?',

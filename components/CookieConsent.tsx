@@ -40,9 +40,9 @@ export default function CookieConsent() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-[200] p-4 md:p-6">
-      <div className="max-w-3xl mx-auto bg-ink-surface border border-ink-border rounded-2xl p-5 md:p-6 shadow-2xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
-        <p className="text-ink-muted text-sm leading-relaxed flex-1">
+    <div className="fixed bottom-0 inset-x-0 z-[200] p-3 md:p-5">
+      <div className="max-w-2xl mx-auto bg-ink-surface/90 backdrop-blur-md border border-ink-border rounded-2xl p-4 md:p-5 shadow-2xl flex flex-col md:flex-row items-center gap-3 md:gap-5">
+        <p className="text-ink-muted text-xs md:text-sm leading-relaxed flex-1">
           Koristimo kolačiće za analitiku i merenje efikasnosti oglasa (Google Ads i GA4). Možete da prihvatite ili odbijete, sajt radi u oba slučaja.
         </p>
         <div className="flex gap-3 flex-shrink-0">

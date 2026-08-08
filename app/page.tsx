@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
 import FaqAccordion from '@/components/FaqAccordion'
+import { getGoogleReviewsSummary } from '@/lib/googleReviews'
 
 export const metadata: Metadata = {
-  title: 'Google Ads Agencija Srbija | Duck Family Team',
+  title: 'Google Ads i GBP agencija Beograd | Duck Family Team',
   description:
     'Google Ads kampanje i izrada sajtova sa ugrađenim SEO-om. Fokus na pozivima, ne na klikovima. Besplatna konsultacija za firme u Srbiji.',
   alternates: { canonical: 'https://www.duckfamilyteam.online/' },
@@ -44,10 +45,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Šta je to SEO i koliko traje?',
+      name: 'Da li se bavite i SEO-om?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SEO je maraton. Prvi pomaci se vide nakon 3–6 meseci, ali jednom kada zauzmete vrh Google-a, dobijate besplatan saobraćaj godinama.',
+        text: 'SEO nije poseban paket kod nas. Ugrađen je u izradu sajta i u vođenje Google Business profila, kroz ključne reči, strukturu stranica i lokalni sadržaj. Prvi pomaci u organskim pozicijama se obično vide za 3 do 6 meseci.',
       },
     },
     {
@@ -109,18 +110,20 @@ const faqSchema = {
   ],
 }
 
-const reviewsSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Duck Family Team',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    reviewCount: '6',
-  },
-}
+export default async function Home() {
+  const { rating, count } = await getGoogleReviewsSummary()
 
-export default function Home() {
+  const reviewsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Duck Family Team',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: String(rating),
+      reviewCount: String(count),
+    },
+  }
+
   return (
     <>
       <script
@@ -137,80 +140,113 @@ export default function Home() {
         {/* ── HERO ── */}
         <section className="bg-ink-bg text-ink-text px-6 md:px-12 pt-8 pb-20 md:pb-28">
           <div className="max-w-7xl mx-auto">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
-              Google Ads &amp; SEO agencija, Beograd
-            </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight max-w-2xl mb-6">
-              Klijenti koji{' '}
-              <span className="relative inline-block">
-                zovu
-                <svg
-                  viewBox="0 0 120 14"
-                  preserveAspectRatio="none"
-                  className="absolute left-0 -bottom-1.5 w-full h-[0.4em]"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 8C20 2 35 12 55 7C75 2 90 12 118 6"
-                    stroke="#8C2438"
-                    strokeWidth="3"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-              , ne klikovi koji nestaju.
-            </h1>
-            <p className="text-base md:text-lg text-ink-muted leading-relaxed max-w-xl mb-10">
-              Google Ads, SEO i brzi sajtovi za lokalne biznise koji žele da ih klijenti stvarno pronađu, ne samo da ih vide.
-            </p>
+            <div className="grid lg:grid-cols-[1fr_0.92fr] gap-10 lg:gap-14 items-center mb-16 md:mb-20">
+              <div>
+                <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+                  Google Ads i GBP agencija, Beograd
+                </div>
+                <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+                  Klijenti koji{' '}
+                  <span className="relative inline-block">
+                    zovu
+                    <svg
+                      viewBox="0 0 120 14"
+                      preserveAspectRatio="none"
+                      className="absolute left-0 -bottom-1.5 w-full h-[0.4em]"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 8C20 2 35 12 55 7C75 2 90 12 118 6"
+                        stroke="#8C2438"
+                        strokeWidth="3"
+                        fill="none"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                  , ne klikovi koji nestaju.
+                </h1>
+                <p className="text-base md:text-lg text-ink-muted leading-relaxed max-w-xl mb-8">
+                  Google Ads kampanje, Google Business profil i brzi sajtovi za lokalne biznise koji žele da ih klijenti stvarno pronađu.
+                </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-20 md:mb-24">
-              <Link
-                href="#kontakt"
-                className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20"
-              >
-                Besplatna konsultacija
-              </Link>
-              <Link
-                href="/rezultati"
-                className="text-ink-muted hover:text-ink-text px-2 py-4 text-center border-b border-ink-border self-start sm:self-auto"
-              >
-                Pogledaj rezultate klijenata
-              </Link>
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <Link
+                    href="#kontakt"
+                    className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20"
+                  >
+                    Besplatna konsultacija
+                  </Link>
+                  <Link
+                    href="/rezultati"
+                    className="text-ink-muted hover:text-ink-text px-2 py-4 text-center border-b border-ink-border self-start sm:self-auto"
+                  >
+                    Pogledaj rezultate klijenata
+                  </Link>
+                </div>
+
+                <div className="flex items-baseline gap-4 border-t border-ink-border pt-5 max-w-md">
+                  <div className="font-display font-semibold text-3xl text-wine-bright leading-none">203%</div>
+                  <p className="text-xs text-ink-muted leading-relaxed">
+                    <strong className="text-ink-text font-medium">Mobilni Vulkanizer Milan.</strong> Povraćaj na uloženo za tri meseca, provereno, ne procenjeno.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative rounded-3xl overflow-hidden border border-ink-border aspect-[4/5] lg:aspect-auto lg:h-full">
+                <Image
+                  src="/img/andjela-i-nikola-u-radnoj-sobi-1.png"
+                  alt="Anđela i Nikola Stanković, Google Ads stručnjaci, Duck Family Team"
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-cover"
+                  style={{ filter: 'sepia(.35) saturate(1.15) hue-rotate(-8deg) brightness(.72) contrast(1.05)' }}
+                  priority
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(160deg, rgba(140,36,56,0.28), rgba(20,16,14,0.55) 65%, rgba(20,16,14,0.85))',
+                    mixBlendMode: 'multiply',
+                  }}
+                />
+                <div className="absolute left-5 bottom-5 font-mono text-xs text-ink-text bg-ink-bg/55 backdrop-blur-md border border-ink-text/15 rounded-full px-3.5 py-2">
+                  Nikola i Anđela, uživo
+                </div>
+              </div>
             </div>
 
             <div className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4">
               Izaberite šta vam je potrebno
             </div>
-            <div className="grid lg:grid-cols-[1.5fr_1fr] gap-3.5">
+            <div className="grid md:grid-cols-3 gap-3.5">
               <Link
                 href="/usluge/google-ads"
-                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between lg:row-span-2 min-h-[280px] transition-colors"
+                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px] transition-colors"
               >
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-widest text-wine-bright mb-3.5">
                     Najtraženije
                   </div>
-                  <h2 className="font-display font-medium text-2xl md:text-3xl mb-3">Google Ads kampanje</h2>
-                  <p className="text-sm text-ink-muted leading-relaxed max-w-[340px]">
+                  <h2 className="font-display font-medium text-xl mb-2">Google Ads kampanje</h2>
+                  <p className="text-sm text-ink-muted leading-relaxed">
                     PPC kampanje fokusirane na konverzije i pozive, ne na broj klikova. Smart Bidding, remarketing, potpuna transparentnost.
                   </p>
                 </div>
-                <div className="flex items-center gap-2 text-sm font-medium mt-5">
+                <div className="flex items-center gap-2 text-sm font-medium mt-3.5">
                   Pogledaj uslugu →
                 </div>
               </Link>
               <Link
                 href="/usluge/izrada-sajtova"
-                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[133px] transition-colors"
+                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px] transition-colors"
               >
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-widest text-wine-bright mb-3.5">
                     Sajtovi
                   </div>
                   <h3 className="font-display font-medium text-xl mb-2">Izrada brzih sajtova</h3>
-                  <p className="text-sm text-ink-muted leading-relaxed max-w-[340px]">
+                  <p className="text-sm text-ink-muted leading-relaxed">
                     Next.js sajtovi optimizovani za Google od prvog dana.
                   </p>
                 </div>
@@ -220,14 +256,14 @@ export default function Home() {
               </Link>
               <Link
                 href="/usluge/google-business-profil"
-                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[133px] transition-colors"
+                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px] transition-colors"
               >
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-widest text-wine-bright mb-3.5">
                     Google Maps
                   </div>
                   <h3 className="font-display font-medium text-xl mb-2">Google Business profil</h3>
-                  <p className="text-sm text-ink-muted leading-relaxed max-w-[340px]">
+                  <p className="text-sm text-ink-muted leading-relaxed">
                     Postavljanje i optimizacija profila da vas klijenti pronađu lokalno.
                   </p>
                 </div>
