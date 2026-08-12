@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import CookieConsent from '@/components/CookieConsent'
 import CustomCursor from '@/components/CustomCursor'
 import './globals.css'
@@ -189,6 +190,8 @@ export default function RootLayout({
         {children}
         <CustomCursor />
         <CookieConsent />
+        {/* Vercel Web Analytics — cookieless, no personal data, no consent banner needed */}
+        <Analytics />
         {/* Google Ads + GA4 Tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18049467991"

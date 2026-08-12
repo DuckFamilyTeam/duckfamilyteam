@@ -22,7 +22,10 @@ html {
 ::-webkit-scrollbar-track { background: var(--ink-bg); }
 ::-webkit-scrollbar-thumb { background: var(--wine); border-radius: 3px; }
 
-/* Custom cursor — desktop / fine-pointer devices only, added via JS class on <html> */
+/* Custom cursor — desktop / fine-pointer devices only, added via JS class on <html>,
+   and only once a live pointer position is available (see CustomCursor.tsx). This
+   class is removed the instant tracking becomes unreliable (iframe, blur, hidden tab)
+   so the real OS cursor is never left hidden with nothing to replace it. */
 .has-custom-cursor,
 .has-custom-cursor a,
 .has-custom-cursor button,
@@ -30,28 +33,57 @@ html {
   cursor: none;
 }
 
-.custom-cursor {
+/* Text fields keep their native caret — the ring/dot are a style layer, not a
+   replacement for precise text-cursor placement. */
+.has-custom-cursor input,
+.has-custom-cursor textarea {
+  cursor: text;
+}
+
+.has-custom-cursor select {
+  cursor: pointer;
+}
+
+.custom-cursor-ring,
+.custom-cursor-dot {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
   border-radius: 9999px;
-  background: var(--wine-bright);
   pointer-events: none;
   z-index: 999;
   opacity: 0;
   mix-blend-mode: difference;
-  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
   will-change: transform;
 }
 
-.custom-cursor.cursor-active {
-  width: 44px;
-  height: 44px;
+.custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--wine-bright);
+  transition: opacity 0.15s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--wine-bright);
+  transition: opacity 0.15s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+
+.custom-cursor-ring.cursor-active {
+  width: 56px;
+  height: 56px;
+  border-color: var(--ink-text);
+}
+
+.custom-cursor-dot.cursor-active {
+  width: 8px;
+  height: 8px;
   background: var(--ink-text);
 }
 
 @media (pointer: coarse) {
-  .custom-cursor { display: none; }
+  .custom-cursor-ring,
+  .custom-cursor-dot { display: none; }
 }
