@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'SEO u 2026: vodič za tematski autoritet i AI pretragu',
@@ -91,7 +92,7 @@ export default function SEO2026Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
           <BackButton />
           {/* Breadcrumb */}
@@ -160,7 +161,7 @@ export default function SEO2026Page() {
                   'Može biti spreman da kontaktira odmah',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                    <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -175,7 +176,7 @@ export default function SEO2026Page() {
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
                 Da li su ključne reči i dalje bitne?
               </h2>
-              <p className="leading-relaxed text-wine-bright font-medium text-2xl md:text-3xl">
+              <p className="leading-relaxed text-wine-text font-medium text-2xl md:text-3xl">
                 Da. Ali njihova uloga se drastično promenila.
               </p>
               <p className="leading-relaxed">
@@ -212,14 +213,14 @@ export default function SEO2026Page() {
                   { n: '4.', t: 'Konzistentna objava', d: 'Redovni novi sadržaj signalizira Google-u da je sajt aktivan i relevantan, idealno jednom nedeljno.' },
                 ].map((item) => (
                   <li key={item.n} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold text-2xl leading-none shrink-0">{item.n}</span>
+                    <span className="text-wine-text font-bold text-2xl leading-none shrink-0">{item.n}</span>
                     <span><strong className="text-ink-text">{item.t}:</strong> {item.d}</span>
                   </li>
                 ))}
               </ul>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Zlatno pravilo 2026</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Zlatno pravilo 2026</strong>
                   Pišite za ljude, optimizujte za Google. Svaki tekst treba da bude toliko dobar da neko želi da ga podeli i da se na njega referiše, to automatski donosi backlinkove i autoritativnost.
                 </p>
               </div>
@@ -275,7 +276,7 @@ export default function SEO2026Page() {
                 Tehničko SEO i Core Web Vitals, i dalje fundament
               </h2>
               <p className="leading-relaxed">
-                Bez obzira koliko dobar bio vaš sadržaj, ako sajt ne učitava brzo ili nije optimizovan za mobilne, <span className="text-wine-bright font-medium">gubite pozicije</span>. Google-ovi Core Web Vitals su i u 2026. direktni ranking faktor:
+                Bez obzira koliko dobar bio vaš sadržaj, ako sajt ne učitava brzo ili nije optimizovan za mobilne, <span className="text-wine-text font-medium">gubite pozicije</span>. Google-ovi Core Web Vitals su i u 2026. direktni ranking faktor:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 {[
@@ -284,7 +285,7 @@ export default function SEO2026Page() {
                   { m: 'INP (Interaction to Next Paint)', v: 'ispod 200ms, koliko brzo stranica reaguje na klikove' },
                 ].map((item) => (
                   <li key={item.m} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                    <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                     <span><strong className="text-ink-text">{item.m}:</strong> {item.v}</span>
                   </li>
                 ))}
@@ -318,7 +319,7 @@ export default function SEO2026Page() {
                   'Citati na lokalnim srpskim direktorijumima',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold text-xl leading-none">☐</span>
+                    <span className="text-wine-text font-bold text-xl leading-none">☐</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -356,7 +357,7 @@ export default function SEO2026Page() {
                   'Konzistentna objava kvalitetnog sadržaja (1500+ reči)',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold shrink-0">{i + 1}.</span>
+                    <span className="text-wine-text font-bold shrink-0">{i + 1}.</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -386,17 +387,28 @@ export default function SEO2026Page() {
           <div className="mt-12 p-6 bg-ink-surface border border-ink-border rounded-2xl">
             <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
             <ul className="space-y-2">
-              <li><Link href="/usluge/izrada-sajtova" className="text-wine-bright hover:text-ink-text font-medium">Izrada sajtova sa ugrađenim SEO-om →</Link></li>
-              <li><Link href="/blog/google-ads-trosak" className="text-wine-bright hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
-              <li><Link href="/blog/astro-sajtovi" className="text-wine-bright hover:text-ink-text font-medium">Astro sajtovi, Lighthouse 100 i Island Architecture →</Link></li>
+              <li><Link href="/usluge/izrada-sajtova" className="text-wine-text hover:text-ink-text font-medium">Izrada sajtova sa ugrađenim SEO-om →</Link></li>
+              <li><Link href="/blog/google-ads-trosak" className="text-wine-text hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
+              <li><Link href="/blog/astro-sajtovi" className="text-wine-text hover:text-ink-text font-medium">Astro sajtovi, Lighthouse 100 i Island Architecture →</Link></li>
             </ul>
+          </div>
+
+          {/* Newsletter — prijava ide preko sopstvene /api/newsletter rute. */}
+          <div className="mt-12 p-8 md:p-10 bg-ink-surface border border-ink-border rounded-2xl text-center">
+            <h3 className="font-display font-medium text-xl md:text-2xl text-ink-text mb-3">
+              Javljamo se kad izađe nov tekst
+            </h3>
+            <p className="text-ink-muted text-sm mb-6 max-w-md mx-auto leading-relaxed">
+              Jedna analiza tržišta mesečno, bez spama. Odjava je moguća u svakom trenutku.
+            </p>
+            <NewsletterForm />
           </div>
 
           {/* Back to blog */}
           <div className="mt-12 text-center">
             <Link
               href="/blog"
-              className="text-wine-bright font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
+              className="text-wine-text font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

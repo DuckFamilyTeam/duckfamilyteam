@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'Google Business Profil: Zašto je vaš najjači marketinški alat',
@@ -93,7 +94,7 @@ export default function GoogleBusinessProfilPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
           <BackButton />
           {/* Breadcrumb */}
@@ -139,7 +140,7 @@ export default function GoogleBusinessProfilPage() {
             <p className="leading-relaxed">
               Zamislite nekoga ko upravo treba uslugu koju vi nudite, vodoinstalatera, frizerski salon, agenciju, prodavnicu. Ne otvara vaš sajt. Ne traži vas na Instagramu. Otvara Google Maps ili prostu Google pretragu, ukuca šta mu treba i grad u kom se nalazi, i za tri sekunde vidi tri firme sa mapom, ocenama, slikama i dugmetom{' '}
               <strong className="text-ink-text font-medium">Pozovi</strong>. To je{' '}
-              <strong className="text-wine-bright font-medium">local pack</strong>, i ako vas tu nema, taj klijent je već otišao kod nekog drugog. Nikad neće ni saznati da postojite.
+              <strong className="text-wine-text font-medium">local pack</strong>, i ako vas tu nema, taj klijent je već otišao kod nekog drugog. Nikad neće ni saznati da postojite.
             </p>
             <p className="leading-relaxed">
               Google Business Profil, skraćeno <strong className="text-ink-text font-medium">GBP</strong> (nekadašnji Google My Business optimizacija je i dalje čest naziv koji ljudi kucaju u pretragu), nije "još jedna stavka na spisku obaveza". Za veliku većinu lokalnih firmi u Srbiji to je{' '}
@@ -156,7 +157,7 @@ export default function GoogleBusinessProfilPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Praktično
                   </strong>
                   Dok vaš sajt čeka mesecima da se popne na organsku SEO poziciju, profil pravilno podešen i optimizovan može se progurati u local pack za nedelje. To je najbrži besplatan put do telefona koji zvoni.
@@ -178,7 +179,7 @@ export default function GoogleBusinessProfilPage() {
                   { n: 'Velika', t: 'Lanci i firme sa 10+ lokacija', d: 'Individualno upravljanje profilima više nije opcija. Google nudi grupno upravljanje (Business Groups) i grupnu verifikaciju za 10 i više lokacija, jedan nalog, jedinstven pregled svih podružnica, kontrola pristupa za tim i dosledan brend na svakoj adresi.' },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
-                    <div className="text-sm font-medium text-wine-bright select-none shrink-0 w-20 text-right uppercase tracking-wider pt-1">{item.n}</div>
+                    <div className="text-sm font-medium text-wine-text select-none shrink-0 w-20 text-right uppercase tracking-wider pt-1">{item.n}</div>
                     <div>
                       <div className="font-medium text-ink-text mb-1">{item.t}</div>
                       <p className="text-ink-muted text-sm leading-relaxed m-0">{item.d}</p>
@@ -195,7 +196,7 @@ export default function GoogleBusinessProfilPage() {
               <p className="leading-relaxed">
                 Pre nego što neko uopšte razmisli da poseti vaš sajt, već je formirao mišljenje o vama na osnovu profila. Brojke to jasno pokazuju: čak{' '}
                 <strong className="text-ink-text font-medium">97% korisnika čita recenzije</strong> lokalnih firmi, a 88% ih čita direktno na Google-u pre nego što se odluči. Skoro sedam od deset ljudi{' '}
-                <strong className="text-wine-bright font-medium">neće ni razmatrati firmu sa ocenom ispod 4 zvezdice</strong>. Firma sa potpuno popunjenim i verifikovanim profilom je za korisnike 2,7 puta poverljivija od one koja to nema.
+                <strong className="text-wine-text font-medium">neće ni razmatrati firmu sa ocenom ispod 4 zvezdice</strong>. Firma sa potpuno popunjenim i verifikovanim profilom je za korisnike 2,7 puta poverljivija od one koja to nema.
               </p>
               <p className="leading-relaxed">
                 Recenzije danas nose oko petine ukupnog rangiranja u local pack-u, ne broje se samo pet zvezdica, već i koliko ih imate, koliko su sveže i da li uopšte odgovarate na njih. Firme u top 3 pozicije lokalne pretrage imaju u proseku 47 recenzija, one na pozicijama 7 do 10 tek 38. A profili sa 50 ili više recenzija imaju gotovo tri puta veću šansu da se uopšte pojave u local pack-u od onih sa manje od deset.
@@ -253,7 +254,7 @@ export default function GoogleBusinessProfilPage() {
                   { e: 'Atributi', d: 'Plaćanje karticom, pristup za osobe sa invaliditetom, parking, radno vreme praznikom, sitni detalji koji vas uklapaju u filtere koje korisnici koriste pri pretrazi.' },
                 ].map((item) => (
                   <li key={item.e} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold text-xl leading-none shrink-0 mt-1">✓</span>
+                    <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✓</span>
                     <span><strong className="text-ink-text">{item.e}</strong>: {item.d}</span>
                   </li>
                 ))}
@@ -266,7 +267,7 @@ export default function GoogleBusinessProfilPage() {
               </h2>
               <p className="leading-relaxed">
                 Za srednje i velike firme najveći rizik nije loš profil, već{' '}
-                <strong className="text-wine-bright font-medium">nekonzistentni profili</strong> na različitim adresama. Google danas nudi grupno upravljanje (Business Groups) preko kog centralizovano kontrolišete sve lokacije: jedinstven pregled statistike, masovne izmene podataka i podelu pristupa članovima tima po ulogama. Za lance sa deset ili više lokacija tu je i grupna (bulk) verifikacija, koja štedi nedelje administracije.
+                <strong className="text-wine-text font-medium">nekonzistentni profili</strong> na različitim adresama. Google danas nudi grupno upravljanje (Business Groups) preko kog centralizovano kontrolišete sve lokacije: jedinstven pregled statistike, masovne izmene podataka i podelu pristupa članovima tima po ulogama. Za lance sa deset ili više lokacija tu je i grupna (bulk) verifikacija, koja štedi nedelje administracije.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-ink-border rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
@@ -284,23 +285,23 @@ export default function GoogleBusinessProfilPage() {
               </h2>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none shrink-0 mt-1">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
                   <span className="text-ink-muted">Ubacivanje ključnih reči u naziv firme ("Vulkanizer Beograd Najbrže"), kršenje Google pravila koje može dovesti do suspenzije profila.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none shrink-0 mt-1">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
                   <span className="text-ink-muted">Različit naziv ili broj telefona na sajtu, profilu i direktorijumima.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none shrink-0 mt-1">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
                   <span className="text-ink-muted">Ignorisanje negativnih recenzija, ćutanje deluje gore od same recenzije.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none shrink-0 mt-1">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
                   <span className="text-ink-muted">Zastarelo radno vreme ili slike od pre nekoliko godina.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none shrink-0 mt-1">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
                   <span className="text-ink-muted">Duplirani profili za istu lokaciju, zbunjuju algoritam i cepaju recenzije na dva mesta umesto da se sabiraju na jednom.</span>
                 </li>
               </ul>
@@ -329,17 +330,28 @@ export default function GoogleBusinessProfilPage() {
           <div className="mt-12 p-6 bg-ink-surface border border-ink-border rounded-2xl">
             <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
             <ul className="space-y-2">
-              <li><Link href="/blog/seo-2026" className="text-wine-bright hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
-              <li><Link href="/blog/ga4-vodic" className="text-wine-bright hover:text-ink-text font-medium">GA4 vodič za preduzetnike →</Link></li>
-              <li><Link href="/usluge/google-business-profil" className="text-wine-bright hover:text-ink-text font-medium">Vođenje Google Business profila, naša usluga →</Link></li>
+              <li><Link href="/blog/seo-2026" className="text-wine-text hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
+              <li><Link href="/blog/ga4-vodic" className="text-wine-text hover:text-ink-text font-medium">GA4 vodič za preduzetnike →</Link></li>
+              <li><Link href="/usluge/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">Vođenje Google Business profila, naša usluga →</Link></li>
             </ul>
+          </div>
+
+          {/* Newsletter — prijava ide preko sopstvene /api/newsletter rute. */}
+          <div className="mt-12 p-8 md:p-10 bg-ink-surface border border-ink-border rounded-2xl text-center">
+            <h3 className="font-display font-medium text-xl md:text-2xl text-ink-text mb-3">
+              Javljamo se kad izađe nov tekst
+            </h3>
+            <p className="text-ink-muted text-sm mb-6 max-w-md mx-auto leading-relaxed">
+              Jedna analiza tržišta mesečno, bez spama. Odjava je moguća u svakom trenutku.
+            </p>
+            <NewsletterForm />
           </div>
 
           {/* Back to blog */}
           <div className="mt-12 text-center">
             <Link
               href="/blog"
-              className="text-wine-bright font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
+              className="text-wine-text font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

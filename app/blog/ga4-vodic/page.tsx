@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'GA4 Vodič za preduzetnike: Podešavanje, metrike i konverzije',
@@ -95,7 +96,7 @@ export default function GA4VodicPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
           <BackButton />
           {/* Breadcrumb */}
@@ -144,7 +145,7 @@ export default function GA4VodicPage() {
             </p>
             <p className="leading-relaxed">
               Ali vi niste tu da budete data scientist, vi ste tu da{' '}
-              <strong className="text-wine-bright font-medium">zarađujete novac</strong>. U ovom vodiču ćemo pokriti sve: od inicijalnog podešavanja GA4 za firme u Srbiji, kroz praćenje konverzija sa Google Tag Manager-om, do konkretnih metrika koje treba da gledate svake nedelje.
+              <strong className="text-wine-text font-medium">zarađujete novac</strong>. U ovom vodiču ćemo pokriti sve: od inicijalnog podešavanja GA4 za firme u Srbiji, kroz praćenje konverzija sa Google Tag Manager-om, do konkretnih metrika koje treba da gledate svake nedelje.
             </p>
 
             <div className="space-y-4 md:space-y-6">
@@ -166,7 +167,7 @@ export default function GA4VodicPage() {
                   'Prediktivne metrike: verovatnoća kupovine, predviđeni prihod',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                    <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -219,14 +220,14 @@ export default function GA4VodicPage() {
                   { e: 'video_complete', d: 'Kompletno odgledano video objašnjenje' },
                 ].map((item) => (
                   <li key={item.e} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-mono text-sm font-bold shrink-0 mt-1 bg-ink-bg px-2 py-0.5 rounded">{item.e}</span>
+                    <span className="text-wine-text font-mono text-sm font-bold shrink-0 mt-1 bg-ink-bg px-2 py-0.5 rounded">{item.e}</span>
                     <span>{item.d}</span>
                   </li>
                 ))}
               </ul>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Pro tip</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Pro tip</strong>
                   U GTM-u, koristite "Click URL contains tel:" trigger za automatsko praćenje klikova na telefone. Ovo radi na svim stranicama bez menjanja koda sajta.
                 </p>
               </div>
@@ -238,14 +239,14 @@ export default function GA4VodicPage() {
               </h2>
               <p className="leading-relaxed">
                 Ovo je <strong className="text-ink-text font-medium">najvažnija metrika</strong>. Period. Zašto? Zato što vam kaže:{' '}
-                <span className="text-wine-bright font-medium">"Koliko ljudi koji dođu na sajt zapravo nešto uradi?"</span>
+                <span className="text-wine-text font-medium">"Koliko ljudi koji dođu na sajt zapravo nešto uradi?"</span>
               </p>
               <p className="leading-relaxed">
                 Možete imati 10.000 posetilaca mesečno, ali ako nijedan ne popuni formular, ne nazove, ili ne kupi, vi trošite pare na vetar.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Gde naći
                   </strong>
                   Reports, Engagement, Conversions. Podešavate šta je "konverzija" za vas (klik na telefon, kupovina, prijava na newsletter).
@@ -267,7 +268,7 @@ export default function GA4VodicPage() {
               </h2>
               <p className="leading-relaxed">
                 Da li vaš profit dolazi iz Google Ads-a? Organskog SEO-a? Instagrama? Ako ne znate ovo,{' '}
-                <strong className="text-wine-bright font-medium">gubite novac tamo gde ne treba</strong>.
+                <strong className="text-wine-text font-medium">gubite novac tamo gde ne treba</strong>.
               </p>
               <p className="leading-relaxed">
                 GA4 vam pokazuje koje kanale dovode najviše korisnika koji se <strong className="text-ink-text font-medium">konvertuju</strong>, ne samo klikaju.
@@ -297,23 +298,23 @@ export default function GA4VodicPage() {
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Klik na telefon ("Click to Call")</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Preuzimanje PDF-a sa cenovnikom</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Koliko daleko su korisnici skrolovali stranicu</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Reprodukcija video snimka</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Klik na CTA dugme ("Zakaži konsultaciju")</span>
                 </li>
               </ul>
@@ -322,7 +323,7 @@ export default function GA4VodicPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Gde naći
                   </strong>
                   Reports, Engagement, Events. Možete kreirati custom evente kroz Google Tag Manager.
@@ -335,7 +336,7 @@ export default function GA4VodicPage() {
                 Bonus: ROI (Return on Investment)
               </h2>
               <p className="leading-relaxed">
-                Uložili ste 1.000 evra u marketing. Dobili ste 5.000 evra prodaje. <strong className="text-wine-bright font-medium">Profit je 5x.</strong> To je jedini broj koji vaš direktor zaista želi da vidi.
+                Uložili ste 1.000 evra u marketing. Dobili ste 5.000 evra prodaje. <strong className="text-wine-text font-medium">Profit je 5x.</strong> To je jedini broj koji vaš direktor zaista želi da vidi.
               </p>
               <p className="leading-relaxed">
                 GA4 može automatski da prati koliko donosi svaki izvor saobraćaja ako ispravno podesite{' '}
@@ -361,15 +362,15 @@ export default function GA4VodicPage() {
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✗</span>
                   <span className="text-ink-muted">Bounce Rate (napuštena metrika, GA4 je ne meri isto što i UA)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✗</span>
                   <span className="text-ink-muted">Session Duration (retko relevantno za prodaju)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✗</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✗</span>
                   <span className="text-ink-muted">Page Views (samo broj, ne znači ništa bez konteksta)</span>
                 </li>
               </ul>
@@ -401,17 +402,28 @@ export default function GA4VodicPage() {
           <div className="mt-12 p-6 bg-ink-surface border border-ink-border rounded-2xl">
             <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
             <ul className="space-y-2">
-              <li><Link href="/usluge/google-ads" className="text-wine-bright hover:text-ink-text font-medium">Google Ads kampanje, naša usluga →</Link></li>
-              <li><Link href="/blog/google-ads-trosak" className="text-wine-bright hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
-              <li><Link href="/blog/seo-2026" className="text-wine-bright hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
+              <li><Link href="/usluge/google-ads" className="text-wine-text hover:text-ink-text font-medium">Google Ads kampanje, naša usluga →</Link></li>
+              <li><Link href="/blog/google-ads-trosak" className="text-wine-text hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
+              <li><Link href="/blog/seo-2026" className="text-wine-text hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
             </ul>
+          </div>
+
+          {/* Newsletter — prijava ide preko sopstvene /api/newsletter rute. */}
+          <div className="mt-12 p-8 md:p-10 bg-ink-surface border border-ink-border rounded-2xl text-center">
+            <h3 className="font-display font-medium text-xl md:text-2xl text-ink-text mb-3">
+              Javljamo se kad izađe nov tekst
+            </h3>
+            <p className="text-ink-muted text-sm mb-6 max-w-md mx-auto leading-relaxed">
+              Jedna analiza tržišta mesečno, bez spama. Odjava je moguća u svakom trenutku.
+            </p>
+            <NewsletterForm />
           </div>
 
           {/* Back to blog */}
           <div className="mt-12 text-center">
             <Link
               href="/blog"
-              className="text-wine-bright font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
+              className="text-wine-text font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

@@ -28,6 +28,33 @@ export const contactSchema = z.object({
     .max(2000, 'Poruka je predugačka.')
     .optional()
     .or(z.literal('')),
+  /**
+   * Honeypot. Polje je sakriveno od ljudi, pa svaka vrednost u njemu znači bot.
+   * Zove se "company" jer automati popunjavaju polja po imenu atributa.
+   *
+   * Schema ga namerno propušta umesto da ga odbije: odluku donosi ruta, koja
+   * botu vraća lažni uspeh da skripta ne nauči šta je zapelo. Da ovde stoji
+   * `.max(0)`, parsiranje bi puklo pre toga i bot bi dobio 400 sa porukom.
+   */
+  company: z.string().max(200).optional(),
+  /** Sa koje stranice je upit poslat — da se u inboxu zna odakle je stigao. */
+  source: z.string().trim().max(200).optional().or(z.literal('')),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>
+
+export const newsletterSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(5, 'Unesite email adresu.')
+    .max(200, 'Email adresa je predugačka.')
+    .regex(/^[^@\s]+@[^@\s]+\.[^@\s]+$/, 'Unesite validnu email adresu.'),
+  consent: z.literal(true, {
+    message: 'Potrebna je saglasnost za prijem email poruka.',
+  }),
+  /** Honeypot — vidi objašnjenje uz isto polje u contactSchema. */
+  company: z.string().max(200).optional(),
+})
+
+export type NewsletterFormData = z.infer<typeof newsletterSchema>

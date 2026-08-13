@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -83,14 +84,14 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
 
           <BackButton />
 
           {/* ── HERO ── */}
           <section className="mb-16 max-w-2xl">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Blog
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
@@ -148,22 +149,10 @@ export default function BlogPage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Šaljemo jednu analizu tržišta mesečno. Bez spama, samo konkretni primeri kako da poboljšate prodaju.
             </p>
-            <form
-              action="https://formspree.io/f/mgoppzqp"
-              method="POST"
-              className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto"
-            >
-              <input
-                type="email"
-                name="email"
-                placeholder="Vaša email adresa"
-                className="flex-1 p-5 rounded-xl bg-ink-bg border border-ink-border text-ink-text placeholder:text-ink-muted outline-none focus:ring-2 focus:ring-wine"
-                required
-              />
-              <button type="submit" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-medium transition-colors">
-                Prijavi se
-              </button>
-            </form>
+            {/* Ranije je ovde stajala forma sa action="https://formspree.io/f/…",
+                koju CSP pravilo `form-action 'self'` blokira. Prijava sada ide
+                preko sopstvene /api/newsletter rute, sa saglasnošću i honeypot-om. */}
+            <NewsletterForm />
           </section>
 
         </div>

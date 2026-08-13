@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
@@ -90,7 +91,7 @@ export default function AstroSajtoviPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
           <BackButton />
           {/* Breadcrumb */}
@@ -149,7 +150,7 @@ export default function AstroSajtoviPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Ključna razlika
                   </strong>
                   Tradicionalni JavaScript frameworki šalju kompletan JS bundle klijentu. Astro šalje HTML i CSS, bez ijedne linije JavaScript-a, osim ako vi to eksplicitno ne tražite za specifičnu komponentu.
@@ -167,15 +168,15 @@ export default function AstroSajtoviPage() {
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Stranica se sastoji od "ostrva", interaktivnih komponenti</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Sve ostalo (tekst, slike, navigacija) je statični HTML, bez JavaScript-a</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span>Samo "ostrva" dobijaju JavaScript, i to samo kada je potrebno</span>
                 </li>
               </ul>
@@ -185,7 +186,7 @@ export default function AstroSajtoviPage() {
 
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Primer iz prakse
                   </strong>
                   Zamislite restoran sajt. 95% sadržaja je statičan (meni, adresa, radno vreme). Samo kontakt forma treba JavaScript. Astro šalje JS samo za tu formu, a sve ostalo učitava kao čisti HTML. Rezultat: sajt se otvara za manje od 0.5 sekunde.
@@ -229,25 +230,25 @@ export default function AstroSajtoviPage() {
                 Zašto Google obožava Astro sajtove?
               </h2>
               <p className="leading-relaxed">
-                Google rangira sajtove prema desecima faktora, ali <strong className="text-wine-bright">Core Web Vitals su postali jedan od najvažnijih</strong>. Ovo su 3 ključne metrike:
+                Google rangira sajtove prema desecima faktora, ali <strong className="text-wine-text">Core Web Vitals su postali jedan od najvažnijih</strong>. Ovo su 3 ključne metrike:
               </p>
               <ul className="space-y-5 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">1.</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">1.</span>
                   <div>
                     <strong className="text-ink-text font-medium">LCP (Largest Contentful Paint)</strong>
                     <p className="text-ink-muted text-base mt-1">Koliko brzo se pojavljuje najveći element na stranici. Astro postiže manje od 1.2s (odlično), dok WordPress prosečno 3 do 5s (loše).</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">2.</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">2.</span>
                   <div>
                     <strong className="text-ink-text font-medium">FID / INP (Interaction to Next Paint)</strong>
                     <p className="text-ink-muted text-base mt-1">Odzivnost sajta na interakcije korisnika. Sa minimalnim JavaScript-om, Astro postiže skoro nulto kašnjenje.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">3.</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">3.</span>
                   <div>
                     <strong className="text-ink-text font-medium">CLS (Cumulative Layout Shift)</strong>
                     <p className="text-ink-muted text-base mt-1">Stabilnost layouta tokom učitavanja. Astro generiše savršen statičan HTML koji ne "skače".</p>
@@ -256,7 +257,7 @@ export default function AstroSajtoviPage() {
               </ul>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Direktna veza
                   </strong>
                   Google je zvanično potvrdio da Core Web Vitals utiču na rangiranje. Bolji Vitals znače višu poziciju u pretrazi. Astro sajtovi uvek imaju dobre Vitals, pa su uvek konkurentni na Google-u.
@@ -296,7 +297,7 @@ export default function AstroSajtoviPage() {
                   },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold mt-1 flex-shrink-0">✓</span>
+                    <span className="text-wine-text font-bold mt-1 flex-shrink-0">✓</span>
                     <div>
                       <strong className="text-ink-text font-medium">{item.title}: </strong>
                       <span className="text-ink-muted">{item.desc}</span>
@@ -320,7 +321,7 @@ export default function AstroSajtoviPage() {
                   <thead>
                     <tr className="bg-ink-bg text-ink-text">
                       <th className="text-left p-4 font-medium font-display">Kriterijum</th>
-                      <th className="text-center p-4 font-medium font-display text-wine-bright">Astro</th>
+                      <th className="text-center p-4 font-medium font-display text-wine-text">Astro</th>
                       <th className="text-center p-4 font-medium font-display text-ink-muted">Next.js</th>
                     </tr>
                   </thead>
@@ -337,7 +338,7 @@ export default function AstroSajtoviPage() {
                     ].map((row, i) => (
                       <tr key={row.crit} className={i % 2 === 0 ? 'bg-ink-surface' : 'bg-ink-bg'}>
                         <td className="p-4 font-medium text-ink-text">{row.crit}</td>
-                        <td className="p-4 text-center text-wine-bright font-medium">{row.astro}</td>
+                        <td className="p-4 text-center text-wine-text font-medium">{row.astro}</td>
                         <td className="p-4 text-center text-ink-muted font-medium">{row.next}</td>
                       </tr>
                     ))}
@@ -347,11 +348,11 @@ export default function AstroSajtoviPage() {
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-ink-bg rounded-2xl p-6 border border-wine">
-                  <h4 className="font-display font-medium text-wine-bright mb-3 uppercase text-sm tracking-widest">Koristite Astro za</h4>
+                  <h4 className="font-display font-medium text-wine-text mb-3 uppercase text-sm tracking-widest">Koristite Astro za</h4>
                   <ul className="space-y-2 text-sm text-ink-muted">
                     {['Prezentacioni sajtovi biznisa', 'Blogovi i informativni portali', 'Landing stranice', 'Lokalni biznisi (maksimalan SEO)', 'Portfolio sajtovi', 'Dokumentacija'].map(item => (
                       <li key={item} className="flex items-center gap-2">
-                        <span className="text-wine-bright">✓</span> {item}
+                        <span className="text-wine-text">✓</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -379,19 +380,19 @@ export default function AstroSajtoviPage() {
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span><strong className="text-ink-text">Globalni CDN</strong>, serveri u 30+ zemalja, sajt se učitava brzo svuda</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span><strong className="text-ink-text">Auto-deploy</strong>, svaka izmena na sajtu je live za 30 sekundi</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span><strong className="text-ink-text">Besplatni SSL</strong>, HTTPS sertifikat bez dodatnih troškova</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-2xl leading-none">→</span>
+                  <span className="text-wine-text font-bold text-2xl leading-none">→</span>
                   <span><strong className="text-ink-text">99.99% uptime</strong>, vaš sajt je uvek dostupan</span>
                 </li>
               </ul>
@@ -409,13 +410,13 @@ export default function AstroSajtoviPage() {
               <div className="grid md:grid-cols-1 gap-6 max-w-xl">
                 <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
                   <h4 className="font-display font-medium text-ink-text mb-2">Tepih Servis Jevtić</h4>
-                  <p className="text-wine-bright font-medium text-sm mb-3">TOP #2 na Google-u za "tepih servis" u Beogradu</p>
+                  <p className="text-wine-text font-medium text-sm mb-3">TOP #2 na Google-u za "tepih servis" u Beogradu</p>
                   <p className="text-ink-muted text-sm mb-4">Čist Astro sajt sa visokim Lighthouse score-om. Klijenti pronalaze servis i šalju upite svaki dan putem organskog SEO-a.</p>
                   <a
                     href="https://www.tepihservisjevtic.rs"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-wine-bright font-medium text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
+                    className="text-wine-text font-medium text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
                   >
                     Poseti sajt
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -432,33 +433,33 @@ export default function AstroSajtoviPage() {
                 Zaključak: da li vaš biznis treba Astro sajt?
               </h2>
               <p className="leading-relaxed">
-                Ako imate prezentacioni sajt, blog, landing stranicu ili sajt za lokalni biznis, odgovor je gotovo uvek <strong className="text-wine-bright">da</strong>. Astro vam daje:
+                Ako imate prezentacioni sajt, blog, landing stranicu ili sajt za lokalni biznis, odgovor je gotovo uvek <strong className="text-wine-text">da</strong>. Astro vam daje:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                   <span>Performanse koje Google nagrađuje višim pozicijama</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                   <span>SEO optimizaciju od prvog dana bez dodatnih podešavanja</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                   <span>Brzo učitavanje na mobilnim uređajima (70%+ saobraćaja)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                   <span>Lighthouse Score 100 koji konkurencija teško dostiže</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-wine-bright font-bold text-xl leading-none">✓</span>
+                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
                   <span>Klijente koji vas pronalaze organskim putem, besplatno i svaki dan</span>
                 </li>
               </ul>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Naša preporuka
                   </strong>
                   Za lokalne biznise u Srbiji, Astro sajt uz Google Ads je trenutno moćna kombinacija za brzo sticanje novih klijenata. Organski SEO kroz Astro donosi besplatan saobraćaj, dok Google Ads odmah dovodi kupce dok SEO raste.
@@ -497,17 +498,28 @@ export default function AstroSajtoviPage() {
           <div className="mt-12 p-6 bg-ink-surface border border-ink-border rounded-2xl">
             <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
             <ul className="space-y-2">
-              <li><Link href="/usluge/izrada-sajtova" className="text-wine-bright hover:text-ink-text font-medium">Next.js i Astro sajtovi, naša usluga →</Link></li>
-              <li><Link href="/blog/seo-2026" className="text-wine-bright hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
-              <li><Link href="/blog/google-ads-trosak" className="text-wine-bright hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
+              <li><Link href="/usluge/izrada-sajtova" className="text-wine-text hover:text-ink-text font-medium">Next.js i Astro sajtovi, naša usluga →</Link></li>
+              <li><Link href="/blog/seo-2026" className="text-wine-text hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
+              <li><Link href="/blog/google-ads-trosak" className="text-wine-text hover:text-ink-text font-medium">Zašto Google Ads troše novac bez konverzija? →</Link></li>
             </ul>
+          </div>
+
+          {/* Newsletter — prijava ide preko sopstvene /api/newsletter rute. */}
+          <div className="mt-12 p-8 md:p-10 bg-ink-surface border border-ink-border rounded-2xl text-center">
+            <h3 className="font-display font-medium text-xl md:text-2xl text-ink-text mb-3">
+              Javljamo se kad izađe nov tekst
+            </h3>
+            <p className="text-ink-muted text-sm mb-6 max-w-md mx-auto leading-relaxed">
+              Jedna analiza tržišta mesečno, bez spama. Odjava je moguća u svakom trenutku.
+            </p>
+            <NewsletterForm />
           </div>
 
           {/* Back to blog */}
           <div className="mt-12 text-center">
             <Link
               href="/blog"
-              className="text-wine-bright font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
+              className="text-wine-text font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

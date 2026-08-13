@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'Zašto Google oglasi troše novac bez prodaje? 7 razloga',
@@ -91,7 +92,7 @@ export default function GoogleAdsTrosakPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-4 md:px-6">
         <article className="max-w-4xl mx-auto">
           <BackButton />
           {/* Breadcrumb */}
@@ -155,7 +156,7 @@ export default function GoogleAdsTrosakPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
                   Koristite negativne ključne reči i fokusirajte se na "Buyer Intent" termine: "prodaja satova cena Beograd", "kupovina luksuznog sata" umesto samo "satovi". Revidirajte Search Terms izveštaj svake nedelje i dodajte irelevantne pretrage u negativnu listu.
                 </p>
               </div>
@@ -167,7 +168,7 @@ export default function GoogleAdsTrosakPage() {
                 2. Landing stranica je hladan tuš
               </h2>
               <p className="leading-relaxed">
-                Zamislite da kliknete na oglas "dubinsko pranje tepiha Beograd", a sajt vas odvede na početnu stranicu gde se priča o istoriji firme i čišćenju prozora. <span className="text-wine-bright font-medium">Kupac odlazi u roku od 3 sekunde.</span>
+                Zamislite da kliknete na oglas "dubinsko pranje tepiha Beograd", a sajt vas odvede na početnu stranicu gde se priča o istoriji firme i čišćenju prozora. <span className="text-wine-text font-medium">Kupac odlazi u roku od 3 sekunde.</span>
               </p>
               <p className="leading-relaxed">
                 Oglas je obećanje, a vaša stranica mora biti <strong className="text-ink-text font-medium">ispunjenje tog obećanja</strong>. Mora postojati savršena koherentnost između naslova oglasa, ključnih reči i sadržaja stranice. Google to naziva "message match", i direktno utiče na vaš Quality Score.
@@ -196,7 +197,7 @@ export default function GoogleAdsTrosakPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
                   Podesite GA4 konverzije putem Google Tag Manager-a. Pratite svaki klik na telefon (tel: link), svaki popunjen formular, svaku kupovinu. Importujte GA4 konverzije u Google Ads. Sačekajte minimum 30 do 50 konverzija pre nego što aktivirate Target CPA bidding.
                 </p>
               </div>
@@ -215,7 +216,7 @@ export default function GoogleAdsTrosakPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
                   Izgradite negativnu listu pre pokretanja kampanje: dodajte "besplatan", "kako", "sam", "DIY", "šta je", "Wikipedia" i slično. Svake nedelje pregledajte Search Terms izveštaj i dodajte nove negativne reči.
                 </p>
               </div>
@@ -253,7 +254,7 @@ export default function GoogleAdsTrosakPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
                   Analizirajte GA4 i Google Ads izveštaje po danu i satu. Podesite bid adjustments (korekcije ponuda) za periode niže konverzije. Koristite location targeting na nivou grada ili radijusa. Isključite nerentabilne periode iz prikazivanja.
                 </p>
               </div>
@@ -272,7 +273,7 @@ export default function GoogleAdsTrosakPage() {
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
-                  <strong className="text-wine-bright uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
+                  <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
                   U Google Ads, proverite izveštaj "Devices" i vidite CPA po uređaju. Podesite bid adjustments za mobilne, tablet i desktop posebno. Za mobilne oglasnike, koristite Call Extensions i Click-to-Call da iskoristite prirodnu prednost mobilnih uređaja.
                 </p>
               </div>
@@ -306,7 +307,7 @@ export default function GoogleAdsTrosakPage() {
                   'Imate ad extensions: Sitelinks, Callout, Call?',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-wine-bright font-bold shrink-0">☐</span>
+                    <span className="text-wine-text font-bold shrink-0">☐</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -336,17 +337,28 @@ export default function GoogleAdsTrosakPage() {
           <div className="mt-12 p-6 bg-ink-surface border border-ink-border rounded-2xl">
             <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
             <ul className="space-y-2">
-              <li><Link href="/usluge/google-ads" className="text-wine-bright hover:text-ink-text font-medium">Google Ads kampanje, naša usluga →</Link></li>
-              <li><Link href="/blog/seo-2026" className="text-wine-bright hover:text-ink-text font-medium">SEO u 2026: da li su ključne reči i dalje bitne? →</Link></li>
-              <li><Link href="/blog/ga4-vodic" className="text-wine-bright hover:text-ink-text font-medium">GA4 vodič: kako podesiti Google Analytics 4 →</Link></li>
+              <li><Link href="/usluge/google-ads" className="text-wine-text hover:text-ink-text font-medium">Google Ads kampanje, naša usluga →</Link></li>
+              <li><Link href="/blog/seo-2026" className="text-wine-text hover:text-ink-text font-medium">SEO u 2026: da li su ključne reči i dalje bitne? →</Link></li>
+              <li><Link href="/blog/ga4-vodic" className="text-wine-text hover:text-ink-text font-medium">GA4 vodič: kako podesiti Google Analytics 4 →</Link></li>
             </ul>
+          </div>
+
+          {/* Newsletter — prijava ide preko sopstvene /api/newsletter rute. */}
+          <div className="mt-12 p-8 md:p-10 bg-ink-surface border border-ink-border rounded-2xl text-center">
+            <h3 className="font-display font-medium text-xl md:text-2xl text-ink-text mb-3">
+              Javljamo se kad izađe nov tekst
+            </h3>
+            <p className="text-ink-muted text-sm mb-6 max-w-md mx-auto leading-relaxed">
+              Jedna analiza tržišta mesečno, bez spama. Odjava je moguća u svakom trenutku.
+            </p>
+            <NewsletterForm />
           </div>
 
           {/* Back to blog */}
           <div className="mt-12 text-center">
             <Link
               href="/blog"
-              className="text-wine-bright font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
+              className="text-wine-text font-medium hover:text-ink-text transition text-sm md:text-base flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
