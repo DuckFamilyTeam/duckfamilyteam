@@ -11,12 +11,17 @@ type Bucket = { count: number; resetAt: number }
 
 const buckets = new Map<string, Bucket>()
 
-/** Sprečava da Map raste bez granice na dugovečnoj instanci. */
+/**
+ * Sprečava da Map raste bez granice na dugovečnoj instanci.
+ *
+ * `forEach` umesto `for...of`: tsconfig.json nema `target`, pa tsc pada na ES5
+ * i ne dozvoljava iteraciju nad Map-om bez `downlevelIteration`.
+ */
 function sweep(now: number): void {
   if (buckets.size < 500) return
-  for (const [key, bucket] of buckets) {
+  buckets.forEach((bucket, key) => {
     if (bucket.resetAt <= now) buckets.delete(key)
-  }
+  })
 }
 
 export function checkRateLimit(
