@@ -46,7 +46,7 @@ export default function MilanCaseStudyPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
 
           <BackButton />
@@ -62,7 +62,7 @@ export default function MilanCaseStudyPage() {
 
           {/* ── HERO ── */}
           <section className="mb-14">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Google Ads &amp; SEO, mobilni servis za gume
             </div>
             <h1 className="font-display font-medium text-3xl md:text-5xl leading-[1.15] tracking-tight mb-6 max-w-3xl">
@@ -74,7 +74,7 @@ export default function MilanCaseStudyPage() {
           <section className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
             {brojke.map((item) => (
               <div key={item.label} className="bg-ink-surface border border-ink-border rounded-2xl p-6 text-center">
-                <div className="font-display font-medium text-2xl md:text-3xl text-wine-bright mb-1">{item.value}</div>
+                <div className="font-display font-medium text-2xl md:text-3xl text-wine-text mb-1">{item.value}</div>
                 <div className="text-ink-muted text-xs uppercase tracking-widest font-mono">{item.label}</div>
               </div>
             ))}
@@ -96,13 +96,13 @@ export default function MilanCaseStudyPage() {
               <li className="flex gap-4 items-start">
                 <span className="mt-1 w-2 h-2 rounded-full bg-wine-bright flex-shrink-0" />
                 <p className="text-ink-text leading-relaxed">
-                  <Link href="/usluge/google-business-profil" className="font-medium text-wine-bright hover:text-ink-text">Google Business profil</Link>, vodimo i optimizujemo profil, objave, fotografije i odgovaranje na recenzije, da ga klijenti pronađu prvo na Google mapi.
+                  <Link href="/usluge/google-business-profil" className="font-medium text-wine-text hover:text-ink-text">Google Business profil</Link>, vodimo i optimizujemo profil, objave, fotografije i odgovaranje na recenzije, da ga klijenti pronađu prvo na Google mapi.
                 </p>
               </li>
               <li className="flex gap-4 items-start">
                 <span className="mt-1 w-2 h-2 rounded-full bg-wine-bright flex-shrink-0" />
                 <p className="text-ink-text leading-relaxed">
-                  <Link href="/usluge/google-ads" className="font-medium text-wine-bright hover:text-ink-text">Google Ads kampanje</Link>, svakodnevno pratimo i optimizujemo kampanju, budžet i ključne reči.
+                  <Link href="/usluge/google-ads" className="font-medium text-wine-text hover:text-ink-text">Google Ads kampanje</Link>, svakodnevno pratimo i optimizujemo kampanju, budžet i ključne reči.
                 </p>
               </li>
               <li className="flex gap-4 items-start">
@@ -116,7 +116,7 @@ export default function MilanCaseStudyPage() {
 
           {/* ── SAJT KOJI SMO MU IZRADILI ── */}
           <section className="mb-16 max-w-3xl bg-ink-surface border border-ink-border rounded-2xl p-8 md:p-10">
-            <div className="font-mono text-xs uppercase tracking-widest text-wine-bright mb-3">
+            <div className="font-mono text-xs uppercase tracking-widest text-wine-text mb-3">
               Izrada sajta
             </div>
             <h2 className="font-display font-medium text-2xl md:text-3xl mb-4">

@@ -9,12 +9,41 @@
   --ink-text: #F2EAE2;
   --ink-muted: #A69A8F;
   --ink-border: #2E2622;
+  --ink-border-strong: #776A62;
   --wine: #8C2438;
   --wine-bright: #B03A47;
+  --wine-text: #D9707C;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Fiksni Navbar je ~64px; bez ovoga svaki skok na #kontakt, #cena, #proces…
+     završi sa naslovom sekcije sakrivenim iza menija. */
+  scroll-padding-top: 6rem;
+}
+
+/* Vidljiv fokus za tastaturu na svemu što se fokusira. Definisano jednom ovde
+   umesto po komponentama, da nijedan novi link ne može da ostane bez njega. */
+:focus-visible {
+  outline: 2px solid var(--wine-text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Poštuj sistemsku želju za manje animacije (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Scrollbar */

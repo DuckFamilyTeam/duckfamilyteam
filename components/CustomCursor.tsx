@@ -42,6 +42,7 @@ export default function CustomCursor() {
     // back to the real OS cursor. Otherwise the visitor is left with nothing visible
     // at all: the native cursor is hidden via CSS and the fake one has stopped moving.
     const disengage = () => {
+      stopLoop()
       if (!active.current) return
       active.current = false
       html.classList.remove('has-custom-cursor')
@@ -55,6 +56,7 @@ export default function CustomCursor() {
       pos.current.y = e.clientY
       dot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`
       engage()
+      startLoop()
     }
 
     const handleOver = (e: PointerEvent) => {
@@ -86,12 +88,39 @@ export default function CustomCursor() {
       if (document.hidden) disengage()
     }
 
+    // The loop only runs while the ring still has ground to cover. Previously it
+    // rescheduled itself unconditionally and burned a frame at 60fps for as long
+    // as the page stayed open — including with the pointer parked and the cursor
+    // disengaged. Now a settled ring stops the loop, and the next pointermove
+    // starts it again.
     const tick = () => {
+      const dx = pos.current.x - ringPos.current.x
+      const dy = pos.current.y - ringPos.current.y
+
+      if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+        ringPos.current.x = pos.current.x
+        ringPos.current.y = pos.current.y
+        ring.style.transform = `translate3d(${ringPos.current.x}px, ${ringPos.current.y}px, 0) translate(-50%, -50%)`
+        rafId.current = undefined
+        return
+      }
+
       // Ease toward the real pointer position — cheap lerp, no external deps.
-      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.2
-      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.2
+      ringPos.current.x += dx * 0.2
+      ringPos.current.y += dy * 0.2
       ring.style.transform = `translate3d(${ringPos.current.x}px, ${ringPos.current.y}px, 0) translate(-50%, -50%)`
       rafId.current = requestAnimationFrame(tick)
+    }
+
+    function startLoop() {
+      if (rafId.current === undefined) rafId.current = requestAnimationFrame(tick)
+    }
+
+    function stopLoop() {
+      if (rafId.current !== undefined) {
+        cancelAnimationFrame(rafId.current)
+        rafId.current = undefined
+      }
     }
 
     window.addEventListener('pointermove', handleMove, { passive: true })
@@ -100,7 +129,6 @@ export default function CustomCursor() {
     document.addEventListener('pointerout', handleDocPointerOut, { passive: true })
     window.addEventListener('blur', handleBlur)
     document.addEventListener('visibilitychange', handleVisibility)
-    rafId.current = requestAnimationFrame(tick)
 
     return () => {
       disengage()
@@ -110,7 +138,7 @@ export default function CustomCursor() {
       document.removeEventListener('pointerout', handleDocPointerOut)
       window.removeEventListener('blur', handleBlur)
       document.removeEventListener('visibilitychange', handleVisibility)
-      if (rafId.current) cancelAnimationFrame(rafId.current)
+      stopLoop()
     }
   }, [])
 

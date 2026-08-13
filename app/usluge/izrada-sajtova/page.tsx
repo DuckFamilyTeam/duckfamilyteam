@@ -146,7 +146,7 @@ export default function IzradaSajtovaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
 
           <BackButton />
@@ -160,7 +160,7 @@ export default function IzradaSajtovaPage() {
 
           {/* ── HERO ── */}
           <section className="mb-20">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Izrada sajtova
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
@@ -204,7 +204,7 @@ export default function IzradaSajtovaPage() {
               {tipovi.map((item) => (
                 <div key={item.title} className="bg-ink-surface border border-ink-border rounded-2xl p-6">
                   <h3 className="font-display font-medium text-xl mb-1">{item.title}</h3>
-                  <div className="font-mono text-wine-bright text-sm mb-3">{item.price}</div>
+                  <div className="font-mono text-wine-text text-sm mb-3">{item.price}</div>
                   <p className="text-ink-muted text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -236,7 +236,7 @@ export default function IzradaSajtovaPage() {
                 <details key={item.name} className="bg-ink-surface border border-ink-border rounded-2xl p-6 group">
                   <summary className="font-medium cursor-pointer text-lg list-none flex justify-between items-center gap-4">
                     {item.name}
-                    <span className="text-wine-bright shrink-0 group-open:rotate-180 transition-transform">↓</span>
+                    <span className="text-wine-text shrink-0 group-open:rotate-180 transition-transform">↓</span>
                   </summary>
                   <p className="mt-4 text-ink-muted leading-relaxed">{item.acceptedAnswer.text}</p>
                 </details>

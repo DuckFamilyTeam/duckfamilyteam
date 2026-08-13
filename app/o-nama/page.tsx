@@ -50,7 +50,7 @@ export default function ONamaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
 
           <BackButton />
@@ -65,7 +65,7 @@ export default function ONamaPage() {
           {/* ── HERO ── */}
           <section className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
                 O nama
               </div>
               <h1 className="font-display font-medium text-4xl md:text-5xl leading-[1.1] tracking-tight mb-6">

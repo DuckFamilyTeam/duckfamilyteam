@@ -13,7 +13,7 @@ export default function NotFound() {
   return (
     <>
       <Navbar />
-      <main className="bg-ink-bg min-h-screen flex items-center justify-center px-6">
+      <main id="glavni-sadrzaj" className="bg-ink-bg min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="font-display font-medium text-8xl text-ink-border mb-4">404</h1>
           <h2 className="font-display font-medium text-3xl text-ink-text mb-4">Stranica nije pronađena</h2>

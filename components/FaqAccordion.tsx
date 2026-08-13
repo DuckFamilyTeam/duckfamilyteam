@@ -1,89 +1,37 @@
-'use client'
+import { homeFaqs } from '@/lib/faqs'
 
-import { useState } from 'react'
-
-const faqs = [
-  {
-    question: 'Zašto Google Ads umesto društvenih mreža?',
-    answer:
-      'Google Ads hvata ljude u momentu namere. Dok na društvenim mrežama ometate ljude u zabavi, na Google-u se pojavljujete tačno onda kada neko traži vaše rešenje. To je razlika između "sviđanja" i "kupovine".',
-  },
-  {
-    question: 'Da li se bavite i SEO-om?',
-    answer:
-      'SEO nije poseban paket kod nas. Ugrađen je u izradu sajta i u vođenje Google Business profila, kroz ključne reči, strukturu stranica i lokalni sadržaj. Prvi pomaci u organskim pozicijama se obično vide za 3 do 6 meseci.',
-  },
-  {
-    question: 'Da li AI (SGE) menja način na koji se rangirate?',
-    answer:
-      'Apsolutno. Google sada koristi SGE (Search Generative Experience) da direktno odgovori korisnicima. Naša strategija se fokusira na to da vaš sadržaj postane primarni izvor informacija za te AI odgovore.',
-  },
-  {
-    question: 'Koliko košta vaša usluga?',
-    answer:
-      'Cena zavisi od obima kampanje, industrije i ciljeva. Nudimo besplatnu analizu budžeta, zakazite konsultacije i dobićete preciznu ponudu bez obaveza.',
-  },
-  {
-    question: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
-    answer:
-      'Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
-  },
-  {
-    question: 'Koliko dugo traje izrada sajta?',
-    answer:
-      'Jednostavna landing stranica je gotova za 5 do 7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2 do 4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
-  },
-  {
-    question: 'Već imam sajt, možete li ga samo poboljšati?',
-    answer:
-      'Da. Radimo i audit i optimizaciju postojećih sajtova, brzinu učitavanja, SEO osnove, mobilnu prilagođenost i podešavanje konverzija, bez da morate da krećete ispočetka, osim ako je to zaista neophodno.',
-  },
-  {
-    question: 'Da li se vezujem ugovorom na duži period?',
-    answer:
-      'Ne insistiramo na dugoročnim ugovorima. Radije dokazujemo vrednost rezultatima iz meseca u mesec, saradnju možete prekinuti u svakom trenutku uz razuman otkazni rok.',
-  },
-  {
-    question: 'Da li garantujete prvo mesto na Google-u?',
-    answer:
-      'Nijedna ozbiljna agencija ne može da garantuje tačnu poziciju, jer Google algoritam nije pod nečijom kontrolom. Ono što garantujemo je transparentan rad, primenu proverenih SEO i Google Ads tehnika i mesečno izveštavanje o napretku.',
-  },
-]
-
+/**
+ * Nativni <details>/<summary> umesto ručnog akordiona.
+ *
+ * Prethodna verzija je sakrivala odgovore preko `max-height: 200px`, pa su duži
+ * odgovori bili odsečeni, a čitač ekrana je čitao sve odgovore bez obzira na
+ * `aria-expanded`. Stranice usluga ionako već koriste <details>, pa je ovo i
+ * konzistentno sa ostatkom sajta — i radi bez JavaScripta.
+ */
 export default function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(null)
-
   return (
     <div className="space-y-4">
-      {faqs.map((faq, i) => (
-        <div
-          key={i}
-          className="border border-ink-border rounded-2xl overflow-hidden transition-colors duration-300"
+      {homeFaqs.map((faq) => (
+        <details
+          key={faq.question}
+          className="group border border-ink-border rounded-2xl overflow-hidden transition-colors duration-300 open:bg-ink-surface/40"
         >
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex justify-between items-center p-5 md:p-6 text-left font-medium text-ink-text text-base md:text-lg hover:bg-ink-surface-hover transition-colors"
-            aria-expanded={open === i}
-          >
+          <summary className="flex justify-between items-center gap-4 p-5 md:p-6 cursor-pointer font-medium text-ink-text text-base md:text-lg hover:bg-ink-surface-hover transition-colors list-none [&::-webkit-details-marker]:hidden">
             <span>{faq.question}</span>
             <svg
-              className={`w-5 h-5 text-wine-bright flex-shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`}
+              className="w-5 h-5 text-wine-text flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
-          <div
-            className="overflow-hidden transition-all duration-300"
-            style={{ maxHeight: open === i ? '200px' : '0' }}
-          >
-            <p className="px-5 md:px-6 pb-5 md:pb-6 text-ink-muted text-sm md:text-base leading-relaxed">
-              {faq.answer}
-            </p>
-          </div>
-        </div>
+          </summary>
+          <p className="px-5 md:px-6 pb-5 md:pb-6 text-ink-muted text-sm md:text-base leading-relaxed">
+            {faq.answer}
+          </p>
+        </details>
       ))}
     </div>
   )

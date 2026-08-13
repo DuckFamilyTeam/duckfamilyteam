@@ -63,7 +63,7 @@ function PriceRow({ label, price }: { label: string; price: string }) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
       <span className="text-ink-text">{label}</span>
-      <span className="font-mono text-wine-bright whitespace-nowrap">{price}</span>
+      <span className="font-mono text-wine-text whitespace-nowrap">{price}</span>
     </div>
   )
 }
@@ -73,7 +73,7 @@ export default function CenePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
-      <main className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
+      <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
 
           <BackButton />
@@ -87,7 +87,7 @@ export default function CenePage() {
 
           {/* ── HERO ── */}
           <section className="mb-16">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Cene
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
@@ -165,7 +165,7 @@ export default function CenePage() {
                 <details key={item.name} className="bg-ink-surface border border-ink-border rounded-2xl p-6 group">
                   <summary className="font-medium cursor-pointer text-lg list-none flex justify-between items-center gap-4">
                     {item.name}
-                    <span className="text-wine-bright shrink-0 group-open:rotate-180 transition-transform">↓</span>
+                    <span className="text-wine-text shrink-0 group-open:rotate-180 transition-transform">↓</span>
                   </summary>
                   <p className="mt-4 text-ink-muted leading-relaxed">{item.acceptedAnswer.text}</p>
                 </details>

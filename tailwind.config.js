@@ -8,9 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // wine.DEFAULT i wine.bright su POZADINSKE boje (dugmad, badge-evi).
+        // Kao boja teksta na tamnoj podlozi padaju na WCAG AA (2.96:1 na kartici),
+        // zato za tekst postoji wine.text — 5.5:1 na ink-surface, 5.9:1 na ink-bg.
         wine: {
           DEFAULT: '#8C2438',
           bright: '#B03A47',
+          text: '#D9707C',
         },
         ink: {
           bg: '#14100E',
@@ -18,7 +22,10 @@ module.exports = {
           'surface-hover': '#251E1A',
           text: '#F2EAE2',
           muted: '#A69A8F',
+          // border je dekorativna ivica kartica; border-strong ispunjava
+          // WCAG 1.4.11 (3:1) i ide na polja forme i interaktivne granice.
           border: '#2E2622',
+          'border-strong': '#776A62',
         },
       },
       fontFamily: {
