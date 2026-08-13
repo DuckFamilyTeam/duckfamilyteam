@@ -94,5 +94,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    // Pravne stranice — indeksiraju se, ali sa niskim prioritetom, da ne
+    // preuzimaju crawl budžet od stranica koje donose upite.
+    {
+      url: `${baseUrl}/politika-privatnosti`,
+      lastModified: new Date('2026-08-13'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/politika-kolacica`,
+      lastModified: new Date('2026-08-13'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ]
 }

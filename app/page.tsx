@@ -5,124 +5,29 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
 import FaqAccordion from '@/components/FaqAccordion'
+import ClientLogos from '@/components/ClientLogos'
+import GoogleRating from '@/components/GoogleRating'
+import PhoneCta from '@/components/PhoneCta'
 import { getGoogleReviewsSummary } from '@/lib/googleReviews'
+import { faqPageSchema, homeFaqs } from '@/lib/faqs'
 
 export const metadata: Metadata = {
   title: 'Google Ads i GBP agencija Beograd | Duck Family Team',
   description:
     'Google Ads kampanje i izrada sajtova sa ugrađenim SEO-om. Fokus na pozivima, ne na klikovima. Besplatna konsultacija za firme u Srbiji.',
-  alternates: { canonical: 'https://www.duckfamilyteam.online/' },
-  keywords: [
-    'Google Ads Srbija',
-    'Google Ads agencija',
-    'SEO optimizacija Srbija',
-    'izrada sajtova',
-    'izrada web sajtova Srbija',
-    'Next.js sajt',
-    'Astro sajt',
-    'Google Business profil',
-    'digitalni marketing Srbija',
-    'GA4 analitika',
-    'PPC stručnjak',
-    'povećanje prodaje',
-    'remarketing',
-    'lokalni SEO',
-    'Duck Family Team',
-  ],
+  // Bez kose crte na kraju, da se poklopi sa sitemap.ts.
+  alternates: { canonical: 'https://www.duckfamilyteam.online' },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Zašto Google Ads umesto društvenih mreža?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Google Ads hvata ljude u momentu namere. Na Google-u se pojavljujete tačno onda kada neko traži vaše rešenje, to je razlika između sviđanja i kupovine.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Da li se bavite i SEO-om?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'SEO nije poseban paket kod nas. Ugrađen je u izradu sajta i u vođenje Google Business profila, kroz ključne reči, strukturu stranica i lokalni sadržaj. Prvi pomaci u organskim pozicijama se obično vide za 3 do 6 meseci.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Da li AI (SGE) menja način rangiranja?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Apsolutno. Google SGE direktno odgovara korisnicima. Fokusiramo se na to da vaš sadržaj postane primarni izvor za te AI odgovore.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Koliko košta vaša usluga?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Cena zavisi od obima kampanje, industrije i ciljeva. Nudimo besplatnu analizu budžeta, zakazite konsultacije i dobićete preciznu ponudu bez obaveza.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Koliko dugo traje izrada sajta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Jednostavna landing stranica je gotova za 5–7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2–4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Već imam sajt, možete li ga samo poboljšati?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Da. Radimo i audit i optimizaciju postojećih sajtova, brzinu učitavanja, SEO osnove, mobilnu prilagođenost i podešavanje konverzija, bez da morate da krećete ispočetka, osim ako je to zaista neophodno.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Da li se vezujem ugovorom na duži period?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ne insistiramo na dugoročnim ugovorima. Radije dokazujemo vrednost rezultatima iz meseca u mesec, saradnju možete prekinuti u svakom trenutku uz razuman otkazni rok.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Da li garantujete prvo mesto na Google-u?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Nijedna ozbiljna agencija ne može da garantuje tačnu poziciju, jer Google algoritam nije pod nečijom kontrolom. Ono što garantujemo je transparentan rad, primenu proverenih SEO i Google Ads tehnika i mesečno izveštavanje o napretku.',
-      },
-    },
-  ],
-}
+// FAQPage schema i vidljivi akordion sada dolaze iz istog izvora (lib/faqs.ts),
+// pa markup i tekst na stranici ne mogu više da se raziđu.
+const faqSchema = faqPageSchema(homeFaqs)
 
 export default async function Home() {
-  const { rating, count } = await getGoogleReviewsSummary()
-
-  const reviewsSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Duck Family Team',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: String(rating),
-      reviewCount: String(count),
-    },
-  }
+  // Vraća null ako Places API nije podešen — u tom slučaju se ocena ne prikazuje
+  // umesto da se izmisli. AggregateRating u JSON-LD-u je uklonjen: Google ne
+  // dozvoljava da firma sama sebi dodeljuje zbirnu ocenu na sopstvenom sajtu.
+  const reviews = await getGoogleReviewsSummary()
 
   return (
     <>
@@ -130,19 +35,15 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
-      />
       <Navbar />
-      <main className="pt-24">
+      <main id="glavni-sadrzaj" className="pt-24">
 
         {/* ── HERO ── */}
         <section className="bg-ink-bg text-ink-text px-6 md:px-12 pt-8 pb-20 md:pb-28">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_0.92fr] gap-10 lg:gap-14 items-center mb-16 md:mb-20">
               <div>
-                <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">
+                <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
                   Google Ads i GBP agencija, Beograd
                 </div>
                 <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
@@ -170,27 +71,46 @@ export default async function Home() {
                   Google Ads kampanje, Google Business profil i brzi sajtovi za lokalne biznise koji žele da ih klijenti stvarno pronađu.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
                   <Link
                     href="#kontakt"
                     className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20"
                   >
                     Besplatna konsultacija
                   </Link>
+                  <PhoneCta location="pocetna_hero" className="px-8 py-5 rounded-xl text-base" />
+                </div>
+
+                <div className="mb-8">
                   <Link
                     href="/rezultati"
-                    className="text-ink-muted hover:text-ink-text px-2 py-4 text-center border-b border-ink-border self-start sm:self-auto"
+                    className="text-ink-muted hover:text-ink-text border-b border-ink-border pb-1"
                   >
                     Pogledaj rezultate klijenata
                   </Link>
                 </div>
 
-                <div className="flex items-baseline gap-4 border-t border-ink-border pt-5 max-w-md">
-                  <div className="font-display font-semibold text-3xl text-wine-bright leading-none">203%</div>
+                {reviews && (
+                  <div className="mb-8">
+                    <GoogleRating summary={reviews} />
+                  </div>
+                )}
+
+                <Link
+                  href="/rezultati/mobilni-vulkanizer-milan"
+                  className="flex items-baseline gap-4 border-t border-ink-border pt-5 max-w-md group"
+                >
+                  <div className="font-display font-semibold text-3xl text-wine-text leading-none">
+                    203%
+                  </div>
                   <p className="text-xs text-ink-muted leading-relaxed">
-                    <strong className="text-ink-text font-medium">Mobilni Vulkanizer Milan.</strong> Povraćaj na uloženo za tri meseca, provereno, ne procenjeno.
+                    <strong className="text-ink-text font-medium">Mobilni Vulkanizer Milan.</strong>{' '}
+                    Povraćaj na uloženo za tri meseca, provereno, ne procenjeno.{' '}
+                    <span className="text-wine-text group-hover:text-ink-text transition">
+                      Pogledaj kako →
+                    </span>
                   </p>
-                </div>
+                </Link>
               </div>
 
               <div className="relative rounded-3xl overflow-hidden border border-ink-border aspect-[4/5] lg:aspect-auto lg:h-full">
@@ -216,19 +136,21 @@ export default async function Home() {
               </div>
             </div>
 
-            <div className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4">
+            {/* Ovo je h2, a sve tri kartice ispod su h3 — ranije je prva kartica
+                bila h2 a druge dve h3, iako su na istom nivou. */}
+            <h2 className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4">
               Izaberite šta vam je potrebno
-            </div>
+            </h2>
             <div className="grid md:grid-cols-3 gap-3.5">
               <Link
                 href="/usluge/google-ads"
                 className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px] transition-colors"
               >
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-bright mb-3.5">
+                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
                     Najtraženije
                   </div>
-                  <h2 className="font-display font-medium text-xl mb-2">Google Ads kampanje</h2>
+                  <h3 className="font-display font-medium text-xl mb-2">Google Ads kampanje</h3>
                   <p className="text-sm text-ink-muted leading-relaxed">
                     PPC kampanje fokusirane na konverzije i pozive, ne na broj klikova. Smart Bidding, remarketing, potpuna transparentnost.
                   </p>
@@ -242,7 +164,7 @@ export default async function Home() {
                 className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px] transition-colors"
               >
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-bright mb-3.5">
+                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
                     Sajtovi
                   </div>
                   <h3 className="font-display font-medium text-xl mb-2">Izrada brzih sajtova</h3>
@@ -259,7 +181,7 @@ export default async function Home() {
                 className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px] transition-colors"
               >
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-bright mb-3.5">
+                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
                     Google Maps
                   </div>
                   <h3 className="font-display font-medium text-xl mb-2">Google Business profil</h3>
@@ -271,6 +193,10 @@ export default async function Home() {
                   Pogledaj uslugu →
                 </div>
               </Link>
+            </div>
+
+            <div className="mt-16 pt-12 border-t border-ink-border">
+              <ClientLogos />
             </div>
           </div>
         </section>
@@ -312,7 +238,7 @@ export default async function Home() {
               ].map((item) => (
                 <AnimatedSection key={item.n}>
                   <div className="bg-ink-bg p-6 rounded-2xl border border-ink-border h-full">
-                    <div className="font-display text-3xl text-wine-bright mb-4">{item.n}</div>
+                    <div className="font-display text-3xl text-wine-text mb-4">{item.n}</div>
                     <h3 className="font-medium text-ink-text mb-3">{item.t}</h3>
                     <p className="text-ink-muted text-sm leading-relaxed">{item.d}</p>
                   </div>
@@ -326,7 +252,7 @@ export default async function Home() {
         <section id="cene" className="py-20 px-6 md:px-12 bg-ink-bg text-ink-text">
           <div className="max-w-5xl mx-auto text-center">
             <AnimatedSection>
-              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">Cene</div>
+              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">Cene</div>
               <h2 className="font-display font-medium text-3xl md:text-5xl tracking-tight mb-6">
                 Koliko košta Google Ads, GBP i izrada sajta
               </h2>
@@ -346,24 +272,37 @@ export default async function Home() {
         {/* ── O NAMA ── */}
         <section id="o-nama" className="py-20 px-6 md:px-12 bg-ink-surface text-ink-text">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <AnimatedSection className="relative">
+            {/* Ovde je ranije stajala ista fotografija kao u hero sekciji, drugi
+                put učitana. Zamenjena je sertifikatima — oni su dokaz za tvrdnju
+                „sertifikovana agencija" koja se ponavlja kroz ceo sajt, a do sada
+                su se videli samo na stranici O nama. */}
+            <AnimatedSection className="grid grid-cols-2 gap-4">
               <Image
-                src="/img/andjela-i-nikola-u-radnoj-sobi-1.png"
-                alt="Anđela i Nikola Stanković, Google Ads stručnjaci, Duck Family Team"
-                width={600}
-                height={500}
-                className="rounded-2xl border border-ink-border w-full object-cover"
+                src="/img/nikola-stankovic-slika-sertifikata.png"
+                alt="Google sertifikat, Nikola Stanković"
+                width={400}
+                height={300}
+                sizes="(min-width: 768px) 20vw, 45vw"
+                className="rounded-2xl border border-ink-border w-full object-cover bg-ink-bg"
+              />
+              <Image
+                src="/img/andjela-slika-sertifikata.png"
+                alt="Google sertifikat, Anđela Stanković"
+                width={400}
+                height={300}
+                sizes="(min-width: 768px) 20vw, 45vw"
+                className="rounded-2xl border border-ink-border w-full object-cover bg-ink-bg"
               />
             </AnimatedSection>
             <AnimatedSection delay={100}>
-              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-bright mb-4">O nama</div>
+              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">O nama</div>
               <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-4">
                 Nikola i Anđela, tim iza Duck Family Team
               </h2>
               <p className="text-ink-muted leading-relaxed mb-6">
                 Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
               </p>
-              <Link href="/o-nama" className="text-ink-text hover:text-wine-bright transition font-medium border-b border-ink-border pb-1">
+              <Link href="/o-nama" className="text-ink-text hover:text-wine-text transition font-medium border-b border-ink-border pb-1">
                 Upoznajte nas →
               </Link>
             </AnimatedSection>

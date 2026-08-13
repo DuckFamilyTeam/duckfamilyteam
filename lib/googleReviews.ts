@@ -1,11 +1,18 @@
-const FALLBACK = { rating: 5, count: 9 }
+export type GoogleReviewsSummary = { rating: number; count: number }
 
-export async function getGoogleReviewsSummary(): Promise<{ rating: number; count: number }> {
+/**
+ * Zbirna ocena sa Google Business profila.
+ *
+ * Vraća `null` kad podaci nisu dostupni — ranije je u tom slučaju vraćana
+ * hardkodovana vrednost 5.0 / 9 recenzija, koja se onda objavljivala kao da je
+ * stvarna. Radije ne prikazati ništa nego prikazati izmišljen broj.
+ */
+export async function getGoogleReviewsSummary(): Promise<GoogleReviewsSummary | null> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
   const placeId = process.env.GOOGLE_PLACE_ID
 
   if (!apiKey || !placeId) {
-    return FALLBACK
+    return null
   }
 
   try {
@@ -14,18 +21,18 @@ export async function getGoogleReviewsSummary(): Promise<{ rating: number; count
       {
         headers: { 'X-Goog-Api-Key': apiKey },
         next: { revalidate: 3600 },
-      }
+      },
     )
 
-    if (!res.ok) return FALLBACK
+    if (!res.ok) return null
 
     const data = (await res.json()) as { rating?: number; userRatingCount?: number }
     if (typeof data.rating !== 'number' || typeof data.userRatingCount !== 'number') {
-      return FALLBACK
+      return null
     }
 
     return { rating: data.rating, count: data.userRatingCount }
   } catch {
-    return FALLBACK
+    return null
   }
 }
