@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { contactSchema } from '@/lib/validation'
@@ -14,6 +14,14 @@ const fieldClass =
 const labelClass = 'block font-mono text-[11px] uppercase tracking-widest text-ink-muted mb-2'
 
 export default function ContactForm() {
+  // Id-jevi su ranije bili hardkodovani (id('ime'), id('telefon')…).
+  // Dok je forma bila jedna po stranici to je prolazilo, ali footer je takođe
+  // renderuje — pa su na /kontakt postojale dve forme sa istim id-jevima.
+  // Posledica nije bila samo nevalidan HTML: klik na labelu u donjoj formi
+  // fokusirao je polje u gornjoj, jer `htmlFor` uvek pogađa prvi id u dokumentu.
+  // `useId` daje svakoj instanci sopstveni prefiks, pa se to više ne može desiti.
+  const uid = useId()
+  const id = (polje: string) => `${uid}-${polje}`
   const [status, setStatus] = useState<Status>('idle')
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [formError, setFormError] = useState('')
@@ -99,32 +107,32 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="relative space-y-4 md:space-y-6">
       <div className="grid md:grid-cols-2 gap-4 md:gap-6">
         <div>
-          <label htmlFor="kontakt-ime" className={labelClass}>
+          <label htmlFor={id('ime')} className={labelClass}>
             Ime i prezime
           </label>
           <input
-            id="kontakt-ime"
+            id={id('ime')}
             type="text"
             name="name"
             required
             autoComplete="name"
             placeholder="Vaše ime"
             aria-invalid={errors.name ? true : undefined}
-            aria-describedby={errors.name ? 'kontakt-ime-greska' : undefined}
+            aria-describedby={errors.name ? id('ime-greska') : undefined}
             className={fieldClass}
           />
           {errors.name && (
-            <p id="kontakt-ime-greska" className="text-wine-text text-xs mt-1.5">
+            <p id={id('ime-greska')} className="text-wine-text text-xs mt-1.5">
               {errors.name}
             </p>
           )}
         </div>
         <div>
-          <label htmlFor="kontakt-telefon" className={labelClass}>
+          <label htmlFor={id('telefon')} className={labelClass}>
             Telefon
           </label>
           <input
-            id="kontakt-telefon"
+            id={id('telefon')}
             type="tel"
             name="phone"
             required
@@ -132,52 +140,52 @@ export default function ContactForm() {
             inputMode="tel"
             placeholder="06x xxx xxxx"
             aria-invalid={errors.phone ? true : undefined}
-            aria-describedby={errors.phone ? 'kontakt-telefon-greska' : undefined}
+            aria-describedby={errors.phone ? id('telefon-greska') : undefined}
             className={fieldClass}
           />
           {errors.phone && (
-            <p id="kontakt-telefon-greska" className="text-wine-text text-xs mt-1.5">
+            <p id={id('telefon-greska')} className="text-wine-text text-xs mt-1.5">
               {errors.phone}
             </p>
           )}
         </div>
       </div>
       <div>
-        <label htmlFor="kontakt-sajt" className={labelClass}>
+        <label htmlFor={id('sajt')} className={labelClass}>
           Vaš sajt <span className="normal-case tracking-normal">(opciono)</span>
         </label>
         <input
-          id="kontakt-sajt"
+          id={id('sajt')}
           type="url"
           name="website"
           autoComplete="url"
           inputMode="url"
           placeholder="https://vasadresa.rs"
           aria-invalid={errors.website ? true : undefined}
-          aria-describedby={errors.website ? 'kontakt-sajt-greska' : undefined}
+          aria-describedby={errors.website ? id('sajt-greska') : undefined}
           className={fieldClass}
         />
         {errors.website && (
-          <p id="kontakt-sajt-greska" className="text-wine-text text-xs mt-1.5">
+          <p id={id('sajt-greska')} className="text-wine-text text-xs mt-1.5">
             {errors.website}
           </p>
         )}
       </div>
       <div>
-        <label htmlFor="kontakt-poruka" className={labelClass}>
+        <label htmlFor={id('poruka')} className={labelClass}>
           Šta vam treba? <span className="normal-case tracking-normal">(opciono)</span>
         </label>
         <textarea
-          id="kontakt-poruka"
+          id={id('poruka')}
           name="message"
           rows={4}
           placeholder="Ukratko, šta biste želeli da postignete"
           aria-invalid={errors.message ? true : undefined}
-          aria-describedby={errors.message ? 'kontakt-poruka-greska' : undefined}
+          aria-describedby={errors.message ? id('poruka-greska') : undefined}
           className={`${fieldClass} resize-none`}
         />
         {errors.message && (
-          <p id="kontakt-poruka-greska" className="text-wine-text text-xs mt-1.5">
+          <p id={id('poruka-greska')} className="text-wine-text text-xs mt-1.5">
             {errors.message}
           </p>
         )}
@@ -185,8 +193,8 @@ export default function ContactForm() {
 
       {/* Honeypot — sakriveno od ljudi i od čitača ekrana, vidljivo samo botovima. */}
       <div aria-hidden="true" className="absolute w-px h-px -m-px overflow-hidden opacity-0">
-        <label htmlFor="kontakt-company">Ne popunjavajte ovo polje</label>
-        <input id="kontakt-company" type="text" name="company" tabIndex={-1} autoComplete="off" />
+        <label htmlFor={id('company')}>Ne popunjavajte ovo polje</label>
+        <input id={id('company')} type="text" name="company" tabIndex={-1} autoComplete="off" />
       </div>
 
       <button

@@ -38,7 +38,11 @@ const siteUrl = 'https://www.duckfamilyteam.online'
 
 // Jedan @id za firmu, da Google ne vidi dva nepovezana poslovna entiteta
 // (ProfessionalService ovde i LocalBusiness na početnoj).
-export const ORGANIZATION_ID = `${siteUrl}/#organizacija`
+// Namerno bez `export`: Next dozvoljava da layout izvozi samo poznati skup
+// imena (default, metadata, viewport…), pa je `export const ORGANIZATION_ID`
+// obarao `tsc --noEmit` na generisanim tipovima u .next/types. Konstanta se
+// ionako koristi samo u ovom fajlu.
+const ORGANIZATION_ID = `${siteUrl}/#organizacija`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
