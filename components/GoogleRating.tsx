@@ -48,7 +48,10 @@ export default function GoogleRating({ summary }: { summary: GoogleReviewsSummar
         ))}
       </span>
       <span className="text-sm text-ink-text">
-        <strong className="font-medium">{rating.toFixed(1)}</strong>{' '}
+        {/* Decimalni zarez, ne tačka. `toFixed` uvek vraća tačku, pa je badge
+            pokazivao „5.0" dok je sekcija sa brojevima na istoj strani pisala
+            „5,0" — isti podatak, dva zapisa. */}
+        <strong className="font-medium">{rating.toFixed(1).replace('.', ',')}</strong>{' '}
         <span className="text-ink-muted">
           na Google-u, {count} {recenzijaOblik(count)}
         </span>
