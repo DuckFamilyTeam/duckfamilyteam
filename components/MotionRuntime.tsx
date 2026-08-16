@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 /**
  * Jedina klijentska komponenta zadužena za kretanje na sajtu.
@@ -15,6 +16,8 @@ import { useEffect } from 'react'
  * preskaču layout i paint.
  */
 export default function MotionRuntime() {
+  const pathname = usePathname()
+
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
@@ -22,18 +25,40 @@ export default function MotionRuntime() {
 
     // ── ① Ulaz sekcija ────────────────────────────────────────────────
     const targets = document.querySelectorAll<HTMLElement>('[data-rv]')
+    // Elementi koji još čekaju svoj red. Skup se prazni kako se otkrivaju, pa
+    // provera u rAF petlji (dole) vrlo brzo prestane da košta bilo šta.
+    const cekaju = new Set<HTMLElement>()
     if (reduce || typeof IntersectionObserver === 'undefined') {
       targets.forEach((el) => el.classList.add('rv-in'))
     } else {
+      targets.forEach((el) => cekaju.add(el))
       const timers: Array<ReturnType<typeof setTimeout>> = []
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (!entry.isIntersecting) return
             const el = entry.target as HTMLElement
+
+            if (!entry.isIntersecting) {
+              // Element koji je već iznad vidnog polja posetilac nikada neće
+              // „ući" u kadar odozdo, pa bi ostao zauvek na opacity: 0. To se
+              // dešava kad se stigne na sred stranice: preko sidra (#proces),
+              // preko vraćene pozicije skrola posle navigacije nazad, ili kad
+              // browser obnovi poziciju posle osvežavanja.
+              //
+              // Takav element se prikazuje odmah i bez animacije — ionako se
+              // ne vidi, pa nema šta da se animira.
+              if (entry.boundingClientRect.bottom < 0) {
+                el.classList.add('rv-in')
+                cekaju.delete(el)
+                io.unobserve(el)
+              }
+              return
+            }
+
             const delay = Number(el.dataset.rvDelay || 0)
             if (delay > 0) timers.push(setTimeout(() => el.classList.add('rv-in'), delay))
             else el.classList.add('rv-in')
+            cekaju.delete(el)
             io.unobserve(el)
           })
         },
@@ -96,6 +121,24 @@ export default function MotionRuntime() {
       queued = false
       const y = window.scrollY
       const max = document.documentElement.scrollHeight - window.innerHeight
+
+      // IntersectionObserver javlja samo prelaske praga. Kad posetilac skokne
+      // preko cele sekcije odjednom — sidro (#proces), skok na kraj tastaturom,
+      // vraćena pozicija skrola — element pređe iz „ispod ekrana" pravo u
+      // „iznad ekrana", nijednom ne dodirnuvši kadar, i observer ćuti. Takav
+      // element bi ostao nevidljiv do osvežavanja stranice.
+      //
+      // Zato se ovde dovršava posao: sve što je ostalo iza leđa prikazuje se
+      // odmah, bez animacije. Skup `cekaju` se prazni, pa ova petlja posle
+      // par sekundi skrolovanja ne radi ništa.
+      if (cekaju.size > 0) {
+        cekaju.forEach((el) => {
+          if (el.getBoundingClientRect().bottom < 0) {
+            el.classList.add('rv-in')
+            cekaju.delete(el)
+          }
+        })
+      }
 
       if (progress) progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`
       if (header) header.dataset.stuck = y > 40 ? 'true' : 'false'
@@ -214,7 +257,21 @@ export default function MotionRuntime() {
     }
 
     return () => cleanups.forEach((fn) => fn())
-  }, [])
+    // `pathname` je ovde ključan, a ne kozmetika.
+    //
+    // Ova komponenta stoji u root layoutu, a layout preživljava klijentsku
+    // navigaciju — App Router menja samo sadržaj ispod njega. Sa praznim nizom
+    // zavisnosti efekat bi se izvršio tačno jednom, pri prvom učitavanju, pa bi
+    // observer video samo one `[data-rv]` elemente koji su tada postojali.
+    //
+    // Posledica je bila da posetilac koji ode na /cene pa se vrati na početnu
+    // vidi samo naslov i sliku (njih animira čist CSS), dok su sve sekcije
+    // ispod ostajale na `opacity: 0` sve do ručnog osvežavanja stranice.
+    //
+    // Sa `pathname` u zavisnostima efekat se pri svakoj promeni rute uredno
+    // demontira i ponovo pokreće nad novim DOM-om. Isto važi i za brojače,
+    // 3D nagib kartica i magnetna dugmad — svi se traže istim upitom.
+  }, [pathname])
 
   return null
 }

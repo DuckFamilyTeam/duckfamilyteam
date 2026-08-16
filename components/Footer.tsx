@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import ContactForm from './ContactForm'
 import MapEmbed from './MapEmbed'
 import { openCookieSettings } from './CookieConsent'
@@ -11,13 +12,27 @@ const googleReviewUrl = 'https://g.page/r/CachkcwXzR6_EBM/review'
 
 export default function Footer() {
   const godina = new Date().getFullYear()
+  const pathname = usePathname()
+
+  // Stranica /kontakt ima sopstvenu formu u glavnom sadržaju. Footer se
+  // renderuje na svakoj stranici, pa su se tamo pojavljivale dve identične
+  // forme jedna ispod druge — posetilac ne zna koja je „prava", a i sam upit
+  // deluje kao da se traži dvaput.
+  //
+  // Provera ide preko putanje, a ne preko propa, da se ne bi zaboravila kad se
+  // jednog dana doda još neka stranica sa sopstvenom formom.
+  const prikaziFormu = pathname !== '/kontakt'
 
   return (
     <footer
       id="kontakt"
       className="bg-ink-bg pt-20 pb-12 px-6 md:px-12 text-ink-text border-t border-ink-border"
     >
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-16">
+      <div
+        className={`max-w-7xl mx-auto grid gap-12 md:gap-16 ${
+          prikaziFormu ? 'lg:grid-cols-2' : ''
+        }`}
+      >
         {/* Left: Contact info */}
         <div className="space-y-8 md:space-y-10">
           <h2 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight">
@@ -99,13 +114,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right: Contact form */}
-        <div className="bg-ink-surface border border-ink-border p-8 md:p-14 rounded-[2rem] relative mt-8 lg:mt-0">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-wine text-ink-text px-6 py-2 rounded-full text-[10px] font-mono uppercase tracking-widest whitespace-nowrap">
-            Ostavi poruku
+        {/* Right: Contact form — izostavljena na /kontakt, vidi gore. */}
+        {prikaziFormu && (
+          <div className="bg-ink-surface border border-ink-border p-8 md:p-14 rounded-[2rem] relative mt-8 lg:mt-0">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-wine text-ink-text px-6 py-2 rounded-full text-[10px] font-mono uppercase tracking-widest whitespace-nowrap">
+              Ostavi poruku
+            </div>
+            <ContactForm />
           </div>
-          <ContactForm />
-        </div>
+        )}
       </div>
 
       <div className="max-w-7xl mx-auto mt-16 rounded-[1.5rem] overflow-hidden border border-ink-border">
