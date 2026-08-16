@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ══════════════════════════════════════════════════════════════════════
+   PALETA
+   ══════════════════════════════════════════════════════════════════════ */
 :root {
   --ink-bg: #14100E;
   --ink-surface: #1E1815;
@@ -13,106 +16,455 @@
   --wine: #8C2438;
   --wine-bright: #B03A47;
   --wine-text: #D9707C;
+
+  /* Ugrađene CSS krive (ease, ease-out) su preslabe — nemaju „udarac" koji
+     animaciju čini namernom. Ove tri se koriste kroz ceo sajt. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Jačina animacija. Menja se jednim potezom ako ikad zatreba smirivanje. */
+  --amp: 1;
+  --tilt: 1;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Fiksni Navbar je ~64px; bez ovoga svaki skok na #kontakt, #cena, #proces…
+  /* Fiksni Navbar je ~64px; bez ovoga svaki skok na #kontakt, #proces…
      završi sa naslovom sekcije sakrivenim iza menija. */
   scroll-padding-top: 6rem;
 }
 
-/* Vidljiv fokus za tastaturu na svemu što se fokusira. Definisano jednom ovde
-   umesto po komponentama, da nijedan novi link ne može da ostane bez njega. */
+/* Vidljiv fokus za tastaturu na svemu što se fokusira. */
 :focus-visible {
   outline: 2px solid var(--wine-text);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-/* Poštuj sistemsku želju za manje animacije (WCAG 2.3.3). */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--ink-bg); }
 ::-webkit-scrollbar-thumb { background: var(--wine); border-radius: 3px; }
 
-/* Custom cursor — desktop / fine-pointer devices only, added via JS class on <html>,
-   and only once a live pointer position is available (see CustomCursor.tsx). This
-   class is removed the instant tracking becomes unreliable (iframe, blur, hidden tab)
-   so the real OS cursor is never left hidden with nothing to replace it. */
-.has-custom-cursor,
-.has-custom-cursor a,
-.has-custom-cursor button,
-.has-custom-cursor [role='button'] {
-  cursor: none;
-}
-
-/* Text fields keep their native caret — the ring/dot are a style layer, not a
-   replacement for precise text-cursor placement. */
-.has-custom-cursor input,
-.has-custom-cursor textarea {
-  cursor: text;
-}
-
-.has-custom-cursor select {
-  cursor: pointer;
-}
-
-.custom-cursor-ring,
-.custom-cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: 999;
+/* ══════════════════════════════════════════════════════════════════════
+   ① ULAZ SEKCIJA
+   Sadržaj se skriva SAMO ako JavaScript radi (klasa `js` na <html> dolazi iz
+   blokirajuće inline skripte u layoutu). Bez JS-a je sve odmah vidljivo, pa
+   Googlebot i čitači ekrana nikad ne vide praznu stranicu.
+   ══════════════════════════════════════════════════════════════════════ */
+.js [data-rv] {
   opacity: 0;
-  mix-blend-mode: difference;
+  will-change: transform, opacity, filter;
+}
+.js [data-rv='up']    { transform: translateY(calc(22px * var(--amp))); }
+.js [data-rv='left']  { transform: translateX(calc(-28px * var(--amp))); }
+.js [data-rv='right'] { transform: translateX(calc(28px * var(--amp))); }
+.js [data-rv='zoom']  { transform: scale(calc(1 - 0.04 * var(--amp))); filter: blur(calc(4px * var(--amp))); }
+.js [data-rv='clip']  { opacity: 1; clip-path: inset(0 0 100% 0); }
+
+.js [data-rv].rv-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  clip-path: inset(0 0 0 0);
+  transition:
+    opacity 620ms var(--ease-out),
+    transform 700ms var(--ease-out),
+    filter 620ms var(--ease-out),
+    clip-path 800ms var(--ease-out);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ② ŽIVA POZADINA
+   Tri „mrlje" svetla različitih perioda (26s / 34s / 42s) — pošto se periodi
+   ne poklapaju, šara se praktično nikad ne ponovi isto. Animira se samo
+   `transform`, pa sve ide na grafičku karticu i glavna nit ostaje slobodna.
+   ══════════════════════════════════════════════════════════════════════ */
+.aurora {
+  position: fixed;
+  inset: -25vmax;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: calc(0.42 * var(--amp));
+  contain: strict;
+}
+.aurora span {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+.aurora .b1 {
+  width: 58vmax; height: 58vmax; left: 2%; top: -6%;
+  background: radial-gradient(circle, rgba(176, 58, 71, 0.44), transparent 70%);
+  animation: dft-drift-1 26s var(--ease-in-out) infinite;
+}
+.aurora .b2 {
+  width: 46vmax; height: 46vmax; right: 0; top: 18%;
+  background: radial-gradient(circle, rgba(140, 36, 56, 0.38), transparent 68%);
+  animation: dft-drift-2 34s var(--ease-in-out) infinite;
+}
+.aurora .b3 {
+  width: 40vmax; height: 40vmax; left: 32%; top: 52%;
+  background: radial-gradient(circle, rgba(217, 112, 124, 0.2), transparent 66%);
+  animation: dft-drift-3 42s var(--ease-in-out) infinite;
+}
+@keyframes dft-drift-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(14vmax, 8vmax, 0) scale(1.18); }
+  66% { transform: translate3d(-6vmax, 16vmax, 0) scale(0.9); }
+}
+@keyframes dft-drift-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+  40% { transform: translate3d(-16vmax, 12vmax, 0) scale(0.86); }
+  75% { transform: translate3d(-4vmax, -10vmax, 0) scale(1.22); }
+}
+@keyframes dft-drift-3 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.95); }
+  50% { transform: translate3d(18vmax, -14vmax, 0) scale(1.28); }
+}
+
+/* Zrno preko gradijenta — bez njega gradijent izgleda „plastično". */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: dft-grain 8s steps(6) infinite;
+}
+@keyframes dft-grain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -2%); }
+  80% { transform: translate(3%, 1%); }
+}
+
+/* Svetlo koje prati miša, sa inercijom (poziciju postavlja MotionRuntime). */
+.spotlight {
+  position: fixed;
+  left: 0; top: 0;
+  width: 640px; height: 640px;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(217, 112, 124, 0.075), transparent 62%);
+  transform: translate3d(-50%, -50%, 0);
+  opacity: calc(1 * var(--amp));
   will-change: transform;
 }
 
-.custom-cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid var(--wine-bright);
-  transition: opacity 0.15s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+/* Sav sadržaj mora biti iznad pozadinskih slojeva. */
+main, header, footer { position: relative; z-index: 2; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ③ TRAKA NAPRETKA SKROLA
+   ══════════════════════════════════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 2.5px;
+  z-index: 300;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--wine), var(--wine-text));
+  box-shadow: 0 0 18px rgba(217, 112, 124, 0.55);
 }
 
-.custom-cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--wine-bright);
-  transition: opacity 0.15s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+/* ══════════════════════════════════════════════════════════════════════
+   ④ NASLOV KOJI SE SKLAPA REČ PO REČ
+   Reči su podeljene na serveru, pa je ceo tekst u HTML-u od prve sekunde.
+   ══════════════════════════════════════════════════════════════════════ */
+.js .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(calc(0.45em * var(--amp))) rotate(calc(2deg * var(--amp)));
+  filter: blur(calc(8px * var(--amp)));
+  animation: dft-word-in 760ms var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes dft-word-in {
+  to { opacity: 1; transform: none; filter: blur(0); }
 }
 
-.custom-cursor-ring.cursor-active {
-  width: 56px;
-  height: 56px;
-  border-color: var(--ink-text);
+/* Podvlaka koja se sama iscrtava. */
+.squiggle { position: relative; display: inline-block; }
+.squiggle svg {
+  position: absolute;
+  left: -3%; bottom: -0.12em;
+  width: 106%; height: 0.4em;
+  overflow: visible;
+}
+.js .squiggle path {
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: dft-draw 820ms var(--ease-out) 900ms forwards;
+}
+@keyframes dft-draw { to { stroke-dashoffset: 0; } }
+
+/* Ulaz ostatka hero sekcije, usklađen sa rečima naslova. */
+.js [data-hero-in] {
+  opacity: 0;
+  animation: dft-fade-up 700ms var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes dft-fade-up {
+  from { opacity: 0; transform: translateY(calc(14px * var(--amp))); }
+  to { opacity: 1; transform: none; }
 }
 
-.custom-cursor-dot.cursor-active {
-  width: 8px;
-  height: 8px;
-  background: var(--ink-text);
+/* Hero slika: otkriva se odozdo, pa neprimetno „diše". */
+.js [data-hero-media] {
+  clip-path: inset(0 0 100% 0);
+  animation: dft-media-in 950ms var(--ease-out) 300ms forwards;
+  will-change: transform;
+}
+@keyframes dft-media-in { to { clip-path: inset(0 0 0 0); } }
+.js [data-hero-media] > [data-breathe] {
+  animation: dft-breathe 14s var(--ease-in-out) infinite;
+  will-change: transform;
+}
+@keyframes dft-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(calc(1 + 0.045 * var(--amp))); }
 }
 
-@media (pointer: coarse) {
-  .custom-cursor-ring,
-  .custom-cursor-dot { display: none; }
+/* ══════════════════════════════════════════════════════════════════════
+   ⑤ DUGMAD — odziv na pritisak i sjaj koji prelazi preko njih
+   ══════════════════════════════════════════════════════════════════════ */
+.btn-fx {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background-color 200ms var(--ease-out),
+    border-color 200ms var(--ease-out),
+    transform 160ms var(--ease-out),
+    box-shadow 240ms var(--ease-out);
+}
+.btn-fx > * { position: relative; z-index: 2; }
+.btn-fx::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.22) 48%, transparent 66%);
+  transform: translateX(-130%);
+  transition: transform 620ms var(--ease-out);
+}
+.btn-fx:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-fx:hover::before { transform: translateX(130%); }
+}
+
+/* Isti odziv na pritisak za svaki link koji izgleda kao dugme. */
+.press:active { transform: scale(0.97); }
+.press { transition: transform 160ms var(--ease-out); }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑥ KARTICE — 3D nagib i sjaj koji prati kursor
+   ══════════════════════════════════════════════════════════════════════ */
+[data-tilt] {
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  transition:
+    border-color 240ms var(--ease-out),
+    box-shadow 300ms var(--ease-out),
+    transform 320ms var(--ease-out);
+}
+[data-tilt]::before,
+[data-tilt]::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 280ms var(--ease-out);
+}
+[data-tilt]::before {
+  inset: 0;
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(217, 112, 124, 0.15), transparent 62%);
+}
+[data-tilt]::after {
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(217, 112, 124, 0.5), transparent 55%);
+  -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+@media (hover: hover) and (pointer: fine) {
+  [data-tilt]:hover::before,
+  [data-tilt]:hover::after { opacity: 1; }
+  [data-tilt]:hover .arrow-fx { transform: translateX(5px); }
+}
+.arrow-fx { display: inline-block; transition: transform 260ms var(--ease-spring); }
+
+/* Suptilan lift na svemu što nije tilt kartica. */
+@media (hover: hover) and (pointer: fine) {
+  .lift { transition: transform 260ms var(--ease-out), border-color 240ms var(--ease-out), box-shadow 300ms var(--ease-out); }
+  .lift:hover { transform: translateY(-3px); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑦ BESKONAČNA TRAKA
+   ══════════════════════════════════════════════════════════════════════ */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: dft-scroll-x 34s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes dft-scroll-x { to { transform: translateX(-50%); } }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑧ NAVBAR
+   ══════════════════════════════════════════════════════════════════════ */
+[data-header] {
+  transition: background-color 300ms var(--ease-out), border-color 300ms var(--ease-out);
+}
+.nav-underline { position: relative; }
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 1.5px;
+  background: var(--wine-text);
+  transform: scaleX(0);
+  transform-origin: 50%;
+  transition: transform 260ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .nav-underline:hover::after { transform: scaleX(1); }
+}
+
+/* Dropdown skalira iz trigera, ne iz centra, a stavke ulaze u nizu. */
+.dd-panel {
+  transform-origin: top left;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateY(-6px);
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 220ms var(--ease-spring),
+    visibility 0s linear 220ms;
+}
+[data-dd='open'] .dd-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.dd-panel a {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    background-color 180ms var(--ease-out),
+    color 180ms var(--ease-out),
+    opacity 240ms var(--ease-out),
+    transform 240ms var(--ease-out);
+}
+[data-dd='open'] .dd-panel a { opacity: 1; transform: none; }
+[data-dd='open'] .dd-panel a:nth-child(1) { transition-delay: 40ms; }
+[data-dd='open'] .dd-panel a:nth-child(2) { transition-delay: 80ms; }
+[data-dd='open'] .dd-panel a:nth-child(3) { transition-delay: 120ms; }
+.chev { display: inline-block; transition: transform 260ms var(--ease-spring); }
+[data-dd='open'] .chev { transform: rotate(180deg); }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑨ LINIJA KOJA SE CRTA KROZ KORAKE PROCESA
+   ══════════════════════════════════════════════════════════════════════ */
+[data-steps-fill] {
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+}
+[data-step] .step-dot {
+  transition:
+    border-color 400ms var(--ease-out),
+    color 400ms var(--ease-out),
+    transform 500ms var(--ease-spring);
+}
+[data-step].rv-in .step-dot {
+  border-color: var(--wine);
+  color: var(--wine-text);
+  transform: scale(1.06);
+}
+
+/* Linija ispod metrike koja izraste kad kartica uđe u kadar. */
+.metric-line {
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 700ms var(--ease-out);
+}
+.rv-in .metric-line { transform: scaleX(1); transition-delay: 380ms; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑩ LEPLJIVI CTA
+   ══════════════════════════════════════════════════════════════════════ */
+[data-sticky-cta] {
+  transform: translate(-50%, 150%);
+  transition: transform 520ms var(--ease-spring);
+}
+[data-sticky-cta].on { transform: translate(-50%, 0); }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑪ FAQ — animirano otvaranje native <details> elementa
+   ══════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  :root { interpolate-size: allow-keywords; }
+  details[data-faq]::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 340ms var(--ease-out), content-visibility 340ms allow-discrete;
+  }
+  details[data-faq][open]::details-content { block-size: auto; }
+}
+details[data-faq] svg { transition: transform 320ms var(--ease-spring); }
+details[data-faq][open] svg { transform: rotate(180deg); }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑫ PRISTUPAČNOST
+   Reduced motion znači MANJE kretanja, ne nula animacija. Pokret se uklanja,
+   promene boje i providnosti ostaju jer pomažu razumevanju stanja.
+   (Ranije je ovde stajalo `transition-duration: .01ms !important` na svemu,
+   pa ni hover boje nisu radile.)
+   ══════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .aurora, .grain, .spotlight { display: none; }
+
+  .js [data-rv],
+  .js [data-hero-in],
+  .js .word {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+  .js [data-hero-media] {
+    clip-path: none !important;
+    animation: none !important;
+  }
+  .js [data-hero-media] > [data-breathe],
+  .marquee-track { animation: none !important; }
+  .js .squiggle path { animation: none; stroke-dashoffset: 0; }
+
+  *, *::before, *::after {
+    transition-property: opacity, background-color, border-color, color, box-shadow, fill, stroke !important;
+    transition-duration: 200ms !important;
+  }
+}
+
+/* Hover efekti se ne primenjuju na dodir — tap bi ostavio „zaglavljen" hover. */
+@media not all and (hover: hover) {
+  [data-tilt] { transform: none !important; }
 }

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const posts = [
   {
     slug: 'google-business-profil',
-    img: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800',
+    img: '/img/blog/google-business-profil.svg',
     tag: 'GBP',
     title: 'Google Business Profil: vaš najjači, a najčešće zanemareni alat',
     excerpt:
@@ -40,7 +40,7 @@ const posts = [
   },
   {
     slug: 'astro-sajtovi',
-    img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
+    img: '/img/blog/astro-sajtovi.svg',
     tag: 'Web Development',
     title: 'Astro sajtovi: zašto su trenutno najbolja tehnologija za web?',
     excerpt:
@@ -50,7 +50,7 @@ const posts = [
   },
   {
     slug: 'google-ads-trosak',
-    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+    img: '/img/blog/google-ads-trosak.svg',
     tag: 'Google Ads',
     title: 'Zašto vaši Google oglasi troše novac bez konverzija?',
     excerpt:
@@ -60,7 +60,7 @@ const posts = [
   },
   {
     slug: 'seo-2026',
-    img: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
+    img: '/img/blog/seo-2026.svg',
     tag: 'SEO',
     title: 'SEO u 2026: da li su ključne reči i dalje bitne?',
     excerpt:
@@ -70,7 +70,7 @@ const posts = [
   },
   {
     slug: 'ga4-vodic',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    img: '/img/blog/ga4-vodic.svg',
     tag: 'Analitika',
     title: 'GA4 vodič za preduzetnike: šta zapravo treba da gledate?',
     excerpt:
@@ -113,6 +113,7 @@ export default function BlogPage() {
                 <div className="h-48 relative overflow-hidden">
                   <Image
                     src={post.img}
+                    unoptimized
                     alt={post.title}
                     fill
                     className="object-cover"

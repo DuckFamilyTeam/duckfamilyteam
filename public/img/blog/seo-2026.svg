@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SEO u 2026, rast pozicija u Google pretrazi">
+<defs>
+  <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a1412"/><stop offset="1" stop-color="#14100E"/>
+  </linearGradient>
+  <radialGradient id="glow1" cx="0.24" cy="0.16" r="0.78">
+    <stop offset="0" stop-color="#B03A47" stop-opacity="0.40"/>
+    <stop offset="0.55" stop-color="#8C2438" stop-opacity="0.14"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow21" cx="0.86" cy="0.92" r="0.62">
+    <stop offset="0" stop-color="#8C2438" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="acc1" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#8C2438"/><stop offset="1" stop-color="#D9707C"/>
+  </linearGradient>
+  <linearGradient id="fade1" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#F2EAE2" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#F2EAE2" stop-opacity="0.15"/>
+  </linearGradient>
+  <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#F2EAE2" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg1)"/>
+<rect width="1200" height="630" fill="url(#grid1)"/>
+<rect width="1200" height="630" fill="url(#glow1)"/>
+<rect width="1200" height="630" fill="url(#glow21)"/>
+<g><rect x="740" y="360" width="44" height="70" rx="9" fill="url(#acc1)" opacity="0.30"/><rect x="806" y="310" width="44" height="120" rx="9" fill="url(#acc1)" opacity="0.43"/><rect x="872" y="255" width="44" height="175" rx="9" fill="url(#acc1)" opacity="0.56"/><rect x="938" y="185" width="44" height="245" rx="9" fill="url(#acc1)" opacity="0.69"/><rect x="1004" y="100" width="44" height="330" rx="9" fill="url(#acc1)" opacity="0.82"/><rect x="1070" y="0" width="44" height="430" rx="9" fill="url(#acc1)" opacity="0.95"/><circle cx="1092" cy="-26" r="9" fill="#D9707C"/><circle cx="1092" cy="-26" r="19" fill="none" stroke="#D9707C" stroke-opacity="0.35" stroke-width="1.5"/>
+<polyline points="762,320 828,270 894,215 960,145 1026,60 1092,-40" fill="none" stroke="#D9707C" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 9"/>
+<line x1="726" y1="430" x2="1140" y2="430" stroke="#F2EAE2" stroke-opacity="0.14" stroke-width="1.5"/>
+<g opacity="0.9">
+ <rect x="72" y="112" width="440" height="52" rx="26" fill="#1E1815" stroke="#2E2622"/>
+ <circle cx="104" cy="138" r="10" fill="none" stroke="#D9707C" stroke-width="2.5"/>
+ <line x1="111" y1="145" x2="119" y2="153" stroke="#D9707C" stroke-width="2.5" stroke-linecap="round"/>
+ <rect x="136" y="130" width="230" height="16" rx="8" fill="url(#fade1)" opacity="0.55"/>
+</g>
+<g opacity="0.55">
+ <rect x="72" y="192" width="520" height="12" rx="6" fill="#F2EAE2" fill-opacity="0.20"/>
+ <rect x="72" y="220" width="430" height="12" rx="6" fill="#F2EAE2" fill-opacity="0.13"/>
+ <rect x="72" y="248" width="470" height="12" rx="6" fill="#F2EAE2" fill-opacity="0.09"/>
+ <rect x="72" y="276" width="360" height="12" rx="6" fill="#F2EAE2" fill-opacity="0.06"/>
+</g>
+<rect x="56" y="186" width="4" height="24" rx="2" fill="#D9707C"/>
+<g transform="translate(1108,110) scale(1)" opacity="0.75">
+ <circle cx="0" cy="0" r="28" fill="#F2EAE2" fill-opacity="0.05" stroke="#F2EAE2" stroke-opacity="0.18"/>
+ <text x="0" y="6" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="16" letter-spacing="1.2" fill="#F2EAE2" fill-opacity="0.62">DFT</text></g>
+</g><text x="72" y="512" font-family="IBM Plex Mono, monospace" font-size="17" letter-spacing="3.4" fill="#D9707C">SEO · 2026</text>
+<text x="72" y="566" font-family="Fraunces, Georgia, serif" font-weight="500" font-size="44" fill="#F2EAE2">Tematski autoritet</text>
+<text x="72" y="600" font-family="IBM Plex Sans, sans-serif" font-size="19" fill="#A69A8F">Zašto pozicija #1 više nije ista stvar</text>
+<rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#2E2622" stroke-width="1"/>
+</svg>

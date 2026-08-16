@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200',
+        url: 'https://www.duckfamilyteam.online/img/blog/seo-2026.png',
         width: 1200,
         height: 630,
         alt: 'SEO u 2026, strategija za Google rangiranje',
@@ -53,7 +53,7 @@ const articleSchema = {
   headline: 'SEO u 2026: Tematski autoritet, AI pretraga i ključne reči, šta zaista radi',
   description:
     'Kompletni SEO vodič za 2026. Tematski autoritet, Google SGE, E-E-A-T i Core Web Vitals strategije za firme u Srbiji.',
-  image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200',
+  image: 'https://www.duckfamilyteam.online/img/blog/seo-2026.png',
   datePublished: '2026-03-15',
   dateModified: '2026-06-23',
   wordCount: 2000,
@@ -125,7 +125,8 @@ export default function SEO2026Page() {
           </div>
 
           <Image
-            src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200"
+            src="/img/blog/seo-2026.svg"
+            unoptimized
             alt="SEO u 2026, strategija za Google rangiranje"
             width={1200}
             height={600}

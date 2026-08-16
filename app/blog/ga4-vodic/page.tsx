@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+        url: 'https://www.duckfamilyteam.online/img/blog/ga4-vodic.png',
         width: 1200,
         height: 630,
         alt: 'GA4 analitika',
@@ -51,7 +51,7 @@ const articleSchema = {
   headline: 'GA4 Vodič za preduzetnike: Podešavanje, konverzije i ključne metrike',
   description:
     'Kompletni GA4 vodič, kako podesiti Google Analytics 4, pratiti konverzije i iskoristiti podatke za pametnije marketinške odluke.',
-  image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+  image: 'https://www.duckfamilyteam.online/img/blog/ga4-vodic.png',
   datePublished: '2026-02-28',
   dateModified: '2026-06-23',
   wordCount: 1800,
@@ -129,7 +129,8 @@ export default function GA4VodicPage() {
           </div>
 
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200"
+            src="/img/blog/ga4-vodic.svg"
+            unoptimized
             alt="GA4 analitika, Duck Family Team"
             width={1200}
             height={600}

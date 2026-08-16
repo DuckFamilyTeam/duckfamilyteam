@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200&h=630',
+        url: 'https://www.duckfamilyteam.online/img/blog/astro-sajtovi.png',
         width: 1200,
         height: 630,
         alt: 'Astro Sajtovi, Duck Family Team',
@@ -47,7 +47,7 @@ const articleSchema = {
   headline: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
   description:
     'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript.',
-  image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
+  image: 'https://www.duckfamilyteam.online/img/blog/astro-sajtovi.png',
   datePublished: '2026-05-09',
   dateModified: '2026-05-09',
   author: {
@@ -124,7 +124,8 @@ export default function AstroSajtoviPage() {
           </div>
 
           <Image
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200"
+            src="/img/blog/astro-sajtovi.svg"
+            unoptimized
             alt="Astro Sajtovi, Duck Family Team web development"
             width={1200}
             height={600}

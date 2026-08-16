@@ -3,7 +3,8 @@ import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import CookieConsent from '@/components/CookieConsent'
-import CustomCursor from '@/components/CustomCursor'
+import Aurora from '@/components/Aurora'
+import MotionRuntime from '@/components/MotionRuntime'
 import { GA_MEASUREMENT_ID } from '@/lib/analytics'
 import './globals.css'
 
@@ -128,8 +129,13 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    // suppressHydrationWarning je ovde obavezan: inline skripta u <head> doda
+    // klasu `js` na <html> pre nego što React krene da hidratira, pa se server
+    // i klijent nužno razlikuju baš u tom atributu. Isti obrazac koriste i
+    // biblioteke za temu (next-themes). Ne utiče na decu, samo na ovaj element.
     <html
       lang="sr-Latn-RS"
+      suppressHydrationWarning
       className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}
     >
       <head>
@@ -141,11 +147,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {/* Bez JavaScripta AnimatedSection ostaje na opacity:0 zauvek. Ovaj blok
-            vraća sadržaj u vidljivo stanje kad skripte ne rade. */}
-        <noscript
+        {/* Sve što se skriva pre ulazne animacije skriveno je pod `.js` klasom.
+            Ova skripta je jedini način da se klasa postavi PRE prvog paint-a —
+            zato je inline i blokirajuća, a ne `next/script`. Ako JavaScript ne
+            radi, klase nema, ništa se ne skriva i ceo sadržaj je odmah vidljiv.
+            Time je i stari <noscript> blok postao nepotreban. */}
+        <script
           dangerouslySetInnerHTML={{
-            __html: `<style>[data-animated-section]{opacity:1!important;transform:none!important}</style>`,
+            __html: `document.documentElement.classList.add('js')`,
           }}
         />
       </head>
@@ -172,8 +181,17 @@ try {
           `}
         </Script>
 
+        {/* Traka napretka skrola i pozadinski slojevi stoje ispod sadržaja. */}
+        <div className="scroll-progress" data-scroll-progress aria-hidden="true" />
+        <Aurora />
+
         {children}
-        <CustomCursor />
+
+        {/* Custom cursor je uklonjen: sa svetlom koje prati miša i magnetnim
+            dugmadima prsten je postao vizuelni šum, `mix-blend-mode: difference`
+            je skup za GPU, a skrivanje sistemskog kursora smeta posetiocima
+            kojima ovaj sajt prodaje — vlasnicima lokalnih firmi. */}
+        <MotionRuntime />
         <CookieConsent />
         {/* Vercel Web Analytics — bez kolačića i bez ličnih podataka. */}
         <Analytics />

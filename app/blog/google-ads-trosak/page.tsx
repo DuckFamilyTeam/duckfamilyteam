@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+        url: 'https://www.duckfamilyteam.online/img/blog/google-ads-trosak.png',
         width: 1200,
         height: 630,
         alt: 'Google Ads analitika, troškovi bez konverzija',
@@ -53,7 +53,7 @@ const articleSchema = {
   headline: 'Zašto vaši Google oglasi troše novac bez konverzija? 7 razloga i rešenja',
   description:
     '7 glavnih razloga zašto Google Ads kampanje troše budžet bez rezultata, i kako svaki od njih rešiti.',
-  image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+  image: 'https://www.duckfamilyteam.online/img/blog/google-ads-trosak.png',
   datePublished: '2026-04-01',
   dateModified: '2026-06-23',
   wordCount: 1800,
@@ -125,7 +125,8 @@ export default function GoogleAdsTrosakPage() {
           </div>
 
           <Image
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
+            src="/img/blog/google-ads-trosak.svg"
+            unoptimized
             alt="Google Ads analitika, troškovi bez konverzija"
             width={1200}
             height={600}
