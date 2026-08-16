@@ -4,13 +4,7 @@ const nextConfig = {
     poweredByHeader: false,
     images: {
           formats: ['image/avif', 'image/webp'],
-          remotePatterns: [
-            {
-                      protocol: 'https',
-                      hostname: 'images.unsplash.com',
-            },
-                ],
-    },
+          },
     async redirects() {
           return [
             { source: '/google-ads', destination: '/usluge/google-ads', permanent: true },
@@ -28,11 +22,14 @@ const nextConfig = {
           // razmena nego zadržati 'unsafe-inline'.
           const csp = [
                   "default-src 'self'",
-                  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://www.google-analytics.com`,
+                  // va.vercel-scripts.com je nedostajao, pa je <Analytics /> iz
+                  // @vercel/analytics bio tiho blokiran CSP-om — komponenta je
+                  // stajala u layoutu, ali nijedan podatak nikad nije stigao.
+                  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com`,
                   "style-src 'self' 'unsafe-inline'",
-                  "img-src 'self' data: blob: https://images.unsplash.com https://www.google.com https://www.gstatic.com",
+                  "img-src 'self' data: blob: https://www.google.com https://www.gstatic.com",
                   "font-src 'self' data:",
-                  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
+                  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://va.vercel-scripts.com",
                   "frame-src https://www.google.com",
                   // Obe forme idu preko sopstvenih API ruta, pa Formspree više nije potreban.
                   "form-action 'self'",

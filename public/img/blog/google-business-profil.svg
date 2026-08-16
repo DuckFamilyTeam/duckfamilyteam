@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Google Business profil na mapi">
+<defs>
+  <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a1412"/><stop offset="1" stop-color="#14100E"/>
+  </linearGradient>
+  <radialGradient id="glow5" cx="0.24" cy="0.16" r="0.78">
+    <stop offset="0" stop-color="#B03A47" stop-opacity="0.40"/>
+    <stop offset="0.55" stop-color="#8C2438" stop-opacity="0.14"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow25" cx="0.86" cy="0.92" r="0.62">
+    <stop offset="0" stop-color="#8C2438" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="acc5" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#8C2438"/><stop offset="1" stop-color="#D9707C"/>
+  </linearGradient>
+  <linearGradient id="fade5" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#F2EAE2" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#F2EAE2" stop-opacity="0.15"/>
+  </linearGradient>
+  <pattern id="grid5" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#F2EAE2" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg5)"/>
+<rect width="1200" height="630" fill="url(#grid5)"/>
+<rect width="1200" height="630" fill="url(#glow5)"/>
+<rect width="1200" height="630" fill="url(#glow25)"/>
+<g>
+<rect x="676" y="120" width="500" height="440" rx="26" fill="#1E1815" fill-opacity="0.5" stroke="#2E2622"/>
+<line x1="700" y1="180" x2="1160" y2="260" stroke="#F2EAE2" stroke-opacity="0.1" stroke-width="14" stroke-linecap="round"/><line x1="700" y1="340" x2="1160" y2="300" stroke="#F2EAE2" stroke-opacity="0.08" stroke-width="14" stroke-linecap="round"/><line x1="700" y1="470" x2="1160" y2="430" stroke="#F2EAE2" stroke-opacity="0.07" stroke-width="14" stroke-linecap="round"/><line x1="820" y1="140" x2="880" y2="540" stroke="#F2EAE2" stroke-opacity="0.09" stroke-width="14" stroke-linecap="round"/><line x1="1000" y1="140" x2="1040" y2="540" stroke="#F2EAE2" stroke-opacity="0.07" stroke-width="14" stroke-linecap="round"/><circle cx="946" cy="286" r="56" fill="none" stroke="#D9707C" stroke-opacity="0.26" stroke-width="2"/><circle cx="946" cy="286" r="88" fill="none" stroke="#D9707C" stroke-opacity="0.16" stroke-width="2"/><circle cx="946" cy="286" r="124" fill="none" stroke="#D9707C" stroke-opacity="0.08" stroke-width="2"/>
+<g transform="translate(946,286)">
+ <path d="M0 34 C0 34 26 6 26 -12 A26 26 0 1 0 -26 -12 C-26 6 0 34 0 34 Z" fill="url(#acc5)"/>
+ <circle cx="0" cy="-12" r="9.5" fill="#14100E"/>
+</g>
+<g opacity="0.95">
+ <rect x="72" y="150" width="452" height="176" rx="18" fill="#1E1815" stroke="#2E2622"/>
+ <rect x="92" y="174" width="52" height="52" rx="13" fill="#8C2438" opacity="0.55"/>
+ <text x="118" y="207" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="17" letter-spacing="0.5" fill="#F2EAE2" fill-opacity="0.85">DFT</text>
+ <text x="162" y="196" font-family="Fraunces, Georgia, serif" font-weight="500" font-size="24" fill="#F2EAE2">Vaša firma</text>
+ <text x="162" y="222" font-family="IBM Plex Sans, sans-serif" font-size="15" fill="#A69A8F">Otvoreno · Zatvara se u 17</text>
+ <text x="92" y="270" font-size="22" fill="#E8B33A">★</text><text x="118" y="270" font-size="22" fill="#E8B33A">★</text><text x="144" y="270" font-size="22" fill="#E8B33A">★</text><text x="170" y="270" font-size="22" fill="#E8B33A">★</text><text x="196" y="270" font-size="22" fill="#E8B33A">★</text>
+ <text x="232" y="270" font-family="IBM Plex Sans, sans-serif" font-size="16" fill="#A69A8F">4,9 · 87 recenzija</text>
+ <rect x="92" y="288" width="126" height="22" rx="11" fill="#8C2438" opacity="0.5"/>
+ <text x="155" y="304" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#F2EAE2">POZOVI</text>
+ <rect x="228" y="288" width="126" height="22" rx="11" fill="#F2EAE2" fill-opacity="0.09"/>
+ <text x="291" y="304" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#A69A8F">RUTA</text>
+</g>
+<g transform="translate(1108,110) scale(1)" opacity="0.75">
+ <circle cx="0" cy="0" r="28" fill="#F2EAE2" fill-opacity="0.05" stroke="#F2EAE2" stroke-opacity="0.18"/>
+ <text x="0" y="6" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="16" letter-spacing="1.2" fill="#F2EAE2" fill-opacity="0.62">DFT</text></g>
+</g><text x="72" y="512" font-family="IBM Plex Mono, monospace" font-size="17" letter-spacing="3.4" fill="#D9707C">LOKALNI SEO · GBP</text>
+<text x="72" y="566" font-family="Fraunces, Georgia, serif" font-weight="500" font-size="44" fill="#F2EAE2">Profil koji donosi pozive</text>
+<text x="72" y="600" font-family="IBM Plex Sans, sans-serif" font-size="19" fill="#A69A8F">Besplatan alat koji većina zanemari</text>
+<rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#2E2622" stroke-width="1"/>
+</svg>

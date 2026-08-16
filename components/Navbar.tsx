@@ -65,7 +65,14 @@ export default function Navbar() {
     'https://maps.google.com/?cid=13771670212645560743&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed'
 
   return (
-    <header className="fixed w-full top-0 z-[100] bg-ink-bg/95 backdrop-blur-xl border-b border-ink-border">
+    // Traka je providnija na vrhu strane, a zgusne se čim se krene sa skrolom —
+    // `data-stuck` postavlja MotionRuntime iz iste rAF petlje kao i sve ostalo,
+    // pa ovde nema još jednog scroll listenera.
+    <header
+      data-header
+      data-stuck="false"
+      className="fixed w-full top-0 z-[100] bg-ink-bg/70 data-[stuck=true]:bg-ink-bg/95 backdrop-blur-xl border-b border-transparent data-[stuck=true]:border-ink-border"
+    >
       {/* Preskoči na sadržaj — vidljiv tek kad dobije fokus. */}
       <a
         href="#glavni-sadrzaj"
@@ -76,8 +83,8 @@ export default function Navbar() {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0" onClick={closeMobile}>
-            <span className="bg-ink-text rounded-xl p-1 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0 group" onClick={closeMobile}>
+            <span className="bg-ink-text rounded-xl p-1 flex-shrink-0 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
               <Image
                 src="/img/logo-za-nasu-agenciju.png"
                 alt="Duck Family Team logo"
@@ -97,6 +104,7 @@ export default function Navbar() {
             <div
               className="relative"
               ref={servicesRef}
+              data-dd={servicesOpen ? 'open' : 'closed'}
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
@@ -113,7 +121,7 @@ export default function Navbar() {
                 }`}
               >
                 Usluge
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <svg className="chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                   <path
                     d="M1 1L5 5L9 1"
                     stroke="currentColor"
@@ -123,18 +131,19 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <div
-                id="usluge-meni"
-                hidden={!servicesOpen}
-                className="absolute left-0 top-full pt-3"
-              >
-                <div className="bg-ink-surface border border-ink-border rounded-xl p-2 min-w-[240px] shadow-lg">
+              {/* Panel se više ne uklanja iz DOM-a preko `hidden`, jer bi to
+                  ubilo izlaznu animaciju. Umesto toga ide `visibility: hidden`
+                  sa zakašnjenjem (globals.css), pa ni fokus ne može da uđe u
+                  zatvoren meni. */}
+              <div id="usluge-meni" className="absolute left-0 top-full pt-3">
+                <div className="dd-panel bg-ink-surface border border-ink-border rounded-xl p-2 min-w-[240px] shadow-lg">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       href={service.href}
                       onClick={() => setServicesOpen(false)}
-                      className="block px-3 py-2.5 rounded-lg text-sm text-ink-muted hover:text-ink-text hover:bg-ink-surface-hover transition-colors whitespace-nowrap"
+                      tabIndex={servicesOpen ? undefined : -1}
+                      className="block px-3 py-2.5 rounded-lg text-sm text-ink-muted hover:text-ink-text hover:bg-ink-surface-hover whitespace-nowrap"
                     >
                       {service.label}
                     </Link>
@@ -146,7 +155,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-sans font-medium whitespace-nowrap transition-colors duration-200 ${
+                className={`nav-underline text-sm font-sans font-medium whitespace-nowrap transition-colors duration-200 ${
                   pathname.startsWith(link.href) && link.href !== '/'
                     ? 'text-ink-text'
                     : 'text-ink-muted hover:text-ink-text'
@@ -159,16 +168,17 @@ export default function Navbar() {
               href={googleReviewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-sans font-medium whitespace-nowrap text-ink-muted hover:text-ink-text transition-colors duration-200"
+              className="nav-underline text-sm font-sans font-medium whitespace-nowrap text-ink-muted hover:text-ink-text transition-colors duration-200"
             >
               Recenzije
             </a>
             <a
               href="tel:+381643877524"
               onClick={() => trackPhoneClick('navbar_desktop')}
-              className="inline-flex items-center gap-2 bg-wine hover:bg-wine-bright text-ink-text px-6 py-3 rounded-full text-sm font-sans font-semibold whitespace-nowrap transition-colors duration-200"
+              data-magnetic
+              className="btn-fx inline-flex items-center gap-2 bg-wine hover:bg-wine-bright text-ink-text px-6 py-3 rounded-full text-sm font-sans font-semibold whitespace-nowrap"
             >
-              Pozovite nas
+              <span>Pozovite nas</span>
             </a>
           </div>
 
@@ -180,16 +190,19 @@ export default function Navbar() {
             aria-expanded={mobileOpen}
             aria-controls="mobilni-meni"
           >
+            {/* 200ms i samo `transform` — `transition-all duration-300` je i
+                sporije nego što ikonica sme da bude, i animira svojstva koja se
+                uopšte ne menjaju. */}
             <span
-              className="block w-6 h-0.5 bg-ink-text mb-1.5 transition-all duration-300"
+              className="block w-6 h-0.5 bg-ink-text mb-1.5 transition-transform duration-200 ease-out"
               style={mobileOpen ? { transform: 'rotate(45deg) translate(3px, 8px)' } : {}}
             />
             <span
-              className="block w-6 h-0.5 bg-ink-text mb-1.5 transition-all duration-300"
+              className="block w-6 h-0.5 bg-ink-text mb-1.5 transition-opacity duration-200 ease-out"
               style={mobileOpen ? { opacity: 0 } : {}}
             />
             <span
-              className="block w-6 h-0.5 bg-ink-text transition-all duration-300"
+              className="block w-6 h-0.5 bg-ink-text transition-transform duration-200 ease-out"
               style={mobileOpen ? { transform: 'rotate(-45deg) translate(3px, -8px)' } : {}}
             />
           </button>
@@ -243,7 +256,7 @@ export default function Navbar() {
                 trackPhoneClick('navbar_mobilni')
                 closeMobile()
               }}
-              className="inline-flex items-center justify-center bg-wine hover:bg-wine-bright text-ink-text px-6 py-5 rounded-2xl text-center text-base font-sans font-semibold mt-4"
+              className="press inline-flex items-center justify-center bg-wine hover:bg-wine-bright text-ink-text px-6 py-5 rounded-2xl text-center text-base font-sans font-semibold mt-4 transition-colors"
             >
               Pozovite nas: +381 64 387 7524
             </a>

@@ -1,88 +1,39 @@
-'use client'
+import type { ReactNode } from 'react'
 
-import { useEffect, useRef, useState, ReactNode } from 'react'
+type Smer = 'up' | 'left' | 'right' | 'zoom' | 'clip'
 
 interface AnimatedSectionProps {
   children: ReactNode
   className?: string
   delay?: number
+  smer?: Smer
 }
 
 /**
  * Sekcija koja se pojavljuje pri skrolovanju.
  *
- * Dve stvari koje su ranije nedostajale:
- *  - Bez JavaScripta sadržaj je ostajao na opacity:0 zauvek. Sada nosi
- *    `data-animated-section`, a <noscript> blok u layoutu ga vraća u vidljivo
- *    stanje kad skripte ne rade.
- *  - `prefers-reduced-motion` se nije poštovao. Sada se animacija u tom slučaju
- *    potpuno preskače i sadržaj je odmah vidljiv.
+ * Ranije je ovo bila klijentska komponenta: svaka instanca je nosila sopstveni
+ * `useState`, `useEffect` i `IntersectionObserver`, a početno `opacity: 0` se
+ * postavljalo inline u Reactu — što znači da sadržaja nije bilo do hidratacije.
+ *
+ * Sada je serverska komponenta koja ispisuje samo `data-rv` atribut. Skrivanje
+ * radi CSS pod `.js` klasom (vidi globals.css), a jedan zajednički observer u
+ * MotionRuntime-u otkriva sve odjednom. Posledice:
+ *  - bez JavaScripta je sadržaj odmah vidljiv, bez `<noscript>` zakrpe,
+ *  - Googlebot vidi kompletan HTML od prvog bajta,
+ *  - trinaest klijentskih komponenti na početnoj strani je postalo nula.
+ *
+ * API je namerno ostao isti (`className`, `delay`), da postojeće stranice ne
+ * moraju da se diraju.
  */
 export default function AnimatedSection({
   children,
   className = '',
   delay = 0,
+  smer = 'up',
 }: AnimatedSectionProps) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [reducedMotion, setReducedMotion] = useState(false)
-
-  useEffect(() => {
-    setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-  }, [])
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      el.style.opacity = '1'
-      el.style.transform = 'none'
-      return
-    }
-
-    // Ako IntersectionObserver ne postoji, prikaži odmah umesto da sadržaj nestane.
-    if (typeof IntersectionObserver === 'undefined') {
-      el.style.opacity = '1'
-      el.style.transform = 'translateY(0)'
-      return
-    }
-
-    let timer: ReturnType<typeof setTimeout> | undefined
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          timer = setTimeout(() => {
-            el.style.opacity = '1'
-            el.style.transform = 'translateY(0)'
-          }, delay)
-          observer.unobserve(el)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    observer.observe(el)
-    return () => {
-      if (timer) clearTimeout(timer)
-      observer.disconnect()
-    }
-  }, [delay])
-
   return (
-    <div
-      ref={ref}
-      data-animated-section=""
-      className={className}
-      style={
-        reducedMotion
-          ? undefined
-          : {
-              opacity: 0,
-              transform: 'translateY(30px)',
-              transition: 'opacity 0.8s ease, transform 0.8s ease',
-            }
-      }
-    >
+    <div className={className} data-rv={smer} data-rv-delay={delay || undefined}>
       {children}
     </div>
   )

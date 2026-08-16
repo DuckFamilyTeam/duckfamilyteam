@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200',
+        url: 'https://www.duckfamilyteam.online/img/blog/google-business-profil.png',
         width: 1200,
         height: 630,
         alt: 'Google Business Profil na mapi',
@@ -49,7 +49,7 @@ const articleSchema = {
   headline: 'Google Business Profil: Zašto je vaš najjači marketinški alat',
   description:
     'Kako Google Business Profil gradi poverenje kod klijenata i donosi više poziva i poseta, za male, srednje i velike firme.',
-  image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200',
+  image: 'https://www.duckfamilyteam.online/img/blog/google-business-profil.png',
   datePublished: '2026-07-23',
   dateModified: '2026-07-23',
   wordCount: 1600,
@@ -127,7 +127,8 @@ export default function GoogleBusinessProfilPage() {
           </div>
 
           <Image
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200"
+            src="/img/blog/google-business-profil.svg"
+            unoptimized
             alt="Google Business Profil na mapi, Duck Family Team"
             width={1200}
             height={600}
