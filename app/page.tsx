@@ -13,6 +13,7 @@ import Metrics, { type Metrika } from '@/components/Metrics'
 import Testimonials from '@/components/Testimonials'
 import StickyCta from '@/components/StickyCta'
 import { getGoogleReviewsSummary, getGoogleReviews } from '@/lib/googleReviews'
+import { blogPosts } from '@/lib/blogPosts'
 import { faqPageSchema, homeFaqs } from '@/lib/faqs'
 
 export const metadata: Metadata = {
@@ -422,6 +423,73 @@ export default async function Home() {
               </h2>
               <FaqAccordion />
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* ── IZ BLOGA ──
+            Do 2026-08-19 početna nije linkovala nijedan tekst, samo `/blog`.
+            Search Console je pokazao posledicu: `/blog` i tri posta stajali su
+            kao „Otkrivena, trenutno nije indeksirana", jer su tekstovi visili
+            iza čvorišta koje ni samo nije indeksirano. Ova sekcija im daje
+            direktan link sa stranice koja jeste indeksirana i ima najviše
+            unutrašnjih linkova. */}
+        <section id="iz-bloga" className="py-20 px-6 md:px-12 text-ink-text">
+          <div className="max-w-7xl mx-auto">
+            <AnimatedSection>
+              <div className="flex flex-wrap items-end justify-between gap-4 mb-12">
+                <div>
+                  <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
+                    Iz bloga
+                  </div>
+                  <h2 className="font-display font-medium text-3xl md:text-5xl tracking-tight">
+                    Marketing bez filtera
+                  </h2>
+                </div>
+                <Link
+                  href="/blog"
+                  className="text-ink-text hover:text-wine-text transition-colors font-medium border-b border-ink-border pb-1"
+                >
+                  Svi tekstovi <span className="arrow-fx">→</span>
+                </Link>
+              </div>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {blogPosts.slice(0, 3).map((post, i) => (
+                <AnimatedSection key={post.slug} delay={i * 100}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl overflow-hidden flex flex-col h-full transition-colors"
+                  >
+                    <div className="h-44 relative overflow-hidden">
+                      <Image
+                        src={post.img}
+                        unoptimized
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <span className="absolute top-4 left-4 bg-wine text-ink-text text-[10px] font-mono uppercase px-3 py-1.5 rounded-full tracking-widest">
+                        {post.tag}
+                      </span>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-center gap-3 font-mono text-ink-muted text-xs uppercase tracking-widest mb-3">
+                        <span>{post.date}</span>
+                        <span>·</span>
+                        <span>{post.readTime} čitanja</span>
+                      </div>
+                      <h3 className="font-display font-medium text-lg mb-3 leading-snug">{post.title}</h3>
+                      <p className="text-ink-muted text-sm leading-relaxed flex-1">{post.excerpt}</p>
+                      <span className="text-sm font-medium flex items-center gap-2 mt-5">
+                        Pročitaj više <span className="arrow-fx">→</span>
+                      </span>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </section>
 
