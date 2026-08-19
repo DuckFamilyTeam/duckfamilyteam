@@ -1,25 +1,34 @@
 # Duck Family Team
 
-> Sertifikovana Google Ads agencija iz Srbije. Specijalizovani za PPC kampanje, SEO optimizaciju, GA4 analitiku i izradu ultrabrzih web sajtova. Primarno tržište: Srbija i region (BiH, Hrvatska, Crna Gora).
+> Google Ads, vođenje Google Business profila i izrada sajtova za male i lokalne firme u Srbiji. SEO nije zasebna naplaćena usluga, ugrađen je u izradu sajta i u vođenje Google Business profila.
 
 ## Osnovno
 
 - [Početna](https://www.duckfamilyteam.online/): Uvod u agenciju, usluge, rezultati i kontakt
+- [O nama](https://www.duckfamilyteam.online/o-nama): Ko stoji iza agencije i kako radimo
+- [Cenovnik](https://www.duckfamilyteam.online/cene): Pun i transparentan cenovnik svih usluga
+- [Kontakt](https://www.duckfamilyteam.online/kontakt): Kontakt forma, telefon i email
 - [Blog](https://www.duckfamilyteam.online/blog): Svi stručni tekstovi o Google Ads, SEO i web developmentu
 
 ## Usluge
 
-- [Google Ads Agencija Srbija](https://www.duckfamilyteam.online/google-ads): Profesionalne PPC kampanje — Search, Shopping, Display, Remarketing, Performance Max i lokalni oglasi za firme u Srbiji
-- [SEO Optimizacija Srbija](https://www.duckfamilyteam.online/seo-optimizacija): Tehničko SEO, on-page optimizacija, sadržajna strategija, lokalni SEO i link building za trajno Google rangiranje
-- [Izrada Web Sajtova Srbija](https://www.duckfamilyteam.online/izrada-sajtova): Ultrabrzi Next.js, React i Astro sajtovi sa Lighthouse 90+ skorom i kompletnom SEO optimizacijom
-- [GA4 analitika](https://www.duckfamilyteam.online/): Podešavanje konverzija, event trackinga i dashboarda za donosioce odluka
+- [Google Ads](https://www.duckfamilyteam.online/usluge/google-ads): Kampanje fokusirane na pozive i konverzije. Mesečno vođenje 200 evra, jednokratna postavka kampanje 70 evra po kampanji.
+- [Google Business profil](https://www.duckfamilyteam.online/usluge/google-business-profil): Vođenje profila, 8 objava i 8 fotografija mesečno, odgovaranje na recenzije i lokalni SEO. 100 evra mesečno.
+- [Izrada sajtova](https://www.duckfamilyteam.online/usluge/izrada-sajtova): Next.js i Astro sajtovi sa ugrađenom SEO optimizacijom. Sajt do 3 stranice 300 evra, višestranični sajt 600 evra.
+
+## Rezultati
+
+- [Rezultati](https://www.duckfamilyteam.online/rezultati): Pregled rezultata koje smemo da pokažemo brojkama
+- [Mobilni Vulkanizer Milan](https://www.duckfamilyteam.online/rezultati/mobilni-vulkanizer-milan): Jedini case study sa brojkama. Uloženo 3.550 evra kroz tri meseca, neto zarada 7.210 evra. Povraćaj od 203 odsto je obračun agencije na osnovu brojki koje je klijent dao usmeno, ne nezavisno verifikovan podatak.
 
 ## Blog / Sadržaj
 
-- [Astro Sajtovi — Island Architecture i Lighthouse 100](https://www.duckfamilyteam.online/blog/astro-sajtovi): Zašto su Astro sajtovi trenutno najbolja tehnologija za brze, SEO optimizovane web prezentacije
-- [Zašto Google Oglasi Troše Novac Bez Konverzija](https://www.duckfamilyteam.online/blog/google-ads-trosak): Najčešći razlozi niskog ROAS-a i kako ispraviti targeting, landing stranicu i conversion tracking
-- [SEO u 2026: Ključne Reči i Namera Korisnika](https://www.duckfamilyteam.online/blog/seo-2026): Aktuelne SEO strategije, tematski autoritet i promene u Google algoritmima za 2026. godinu
-- [GA4 Vodič za Preduzetnike](https://www.duckfamilyteam.online/blog/ga4-vodic): Kako podesiti Google Analytics 4 za praćenje prodaje i konverzija
+- [Koliko košta Google Ads u Srbiji](https://www.duckfamilyteam.online/blog/koliko-kosta-google-ads): Iz čega se sastoji trošak kampanje, kako Google naplaćuje klik, zašto prosečna cena klika za Srbiju ne postoji i kako se sopstvena procena izvlači iz Keyword Planner-a
+- [Google Business Profil](https://www.duckfamilyteam.online/blog/google-business-profil): Zašto je profil najjači, a najčešće zanemaren alat lokalne firme, i kako se podešava i optimizuje
+- [Astro sajtovi, Island Architecture i Lighthouse 100](https://www.duckfamilyteam.online/blog/astro-sajtovi): Zašto su Astro sajtovi trenutno najbolja tehnologija za brze, SEO optimizovane web prezentacije
+- [Zašto Google oglasi troše novac bez konverzija](https://www.duckfamilyteam.online/blog/google-ads-trosak): Najčešći razlozi niskog ROAS-a i kako ispraviti targeting, landing stranicu i merenje konverzija
+- [SEO u 2026, tematski autoritet i AI pretraga](https://www.duckfamilyteam.online/blog/seo-2026): Aktuelne SEO strategije, tematski autoritet i promene u Google algoritmima za 2026. godinu
+- [GA4 vodič za preduzetnike](https://www.duckfamilyteam.online/blog/ga4-vodic): Kako podesiti Google Analytics 4 za praćenje prodaje i konverzija
 
 ## Kontakt i profili
 

@@ -29,6 +29,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'koliko-kosta-google-ads',
+    img: '/img/blog/koliko-kosta-google-ads.jpg',
+    tag: 'Google Ads',
+    title: 'Koliko košta Google Ads u Srbiji, i kako se budžet stvarno računa',
+    excerpt:
+      'Prosečna cena klika za Srbiju ne postoji. Kako da izvučete svoju iz Keyword Planner-a, i iz čega se sastoji mesečni trošak kampanje.',
+    date: '2026-08-19',
+    readTime: '9 min',
+  },
+  {
     slug: 'google-business-profil',
     img: '/img/blog/google-business-profil.svg',
     tag: 'GBP',

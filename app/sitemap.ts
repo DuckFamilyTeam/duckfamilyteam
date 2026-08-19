@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog/koliko-kosta-google-ads`,
+      lastModified: new Date('2026-08-19'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/blog/google-business-profil`,
       lastModified: new Date('2026-07-23'),
       changeFrequency: 'monthly',
