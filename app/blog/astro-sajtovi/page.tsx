@@ -9,7 +9,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 export const metadata: Metadata = {
   title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
   description:
-    'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript, sve što Google voli.',
+    'Island Architecture, nulti JavaScript i Lighthouse 100. Zašto su Astro sajtovi danas najbrži izbor za SEO optimizovanu web prezentaciju.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
   },

@@ -49,7 +49,13 @@ export default function Testimonials({ recenzije }: { recenzije: GoogleReview[] 
               >
                 ”
               </span>
-              <div className="flex items-center gap-0.5" aria-label={`Ocena ${r.ocena} od 5`}>
+              {/*
+                `role="img"` nije ukras. `aria-label` na golom `div`-u je zabranjen jer div nema
+                implicitnu ulogu, pa ga čitači ekrana preskaču i ocena se ne pročita — same
+                zvezdice su `aria-hidden`. Sa ulogom `img` grupa se čita kao jedna slika sa
+                opisom. Nalaz Lighthouse audita `aria-prohibited-attr`, 2026-08-19.
+              */}
+              <div className="flex items-center gap-0.5" role="img" aria-label={`Ocena ${r.ocena} od 5`}>
                 {[1, 2, 3, 4, 5].map((z) => (
                   <svg
                     key={z}

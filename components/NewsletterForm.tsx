@@ -102,7 +102,8 @@ export default function NewsletterForm() {
         <span>
           Saglasan sam da primam povremene email poruke o novim tekstovima. Odjava je moguća u
           svakom trenutku. Detalji u{' '}
-          <Link href="/politika-privatnosti" className="text-wine-text hover:text-ink-text transition">
+          {/* Podvlačenje iz istog razloga kao u ContactForm: kontrast linka prema okolnom tekstu je 1.16:1. */}
+          <Link href="/politika-privatnosti" className="text-wine-text underline hover:text-ink-text transition">
             politici privatnosti
           </Link>
           .

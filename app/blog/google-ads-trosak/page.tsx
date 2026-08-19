@@ -9,7 +9,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 export const metadata: Metadata = {
   title: 'Zašto Google oglasi troše novac bez prodaje? 7 razloga',
   description:
-    'Saznajte 7 glavnih razloga zašto vaši Google Ads ne donose konverzije. Negativne ključne reči, landing stranica, Quality Score, Smart Bidding, sve što treba da znate.',
+    'Sedam razloga zašto Google Ads kampanja troši budžet bez konverzija: negativne ključne reči, landing stranica, Quality Score i Smart Bidding.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/google-ads-trosak',
   },

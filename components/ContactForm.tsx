@@ -206,7 +206,13 @@ export default function ContactForm() {
       </button>
       <p className="text-ink-muted text-xs text-center leading-relaxed">
         Slanjem prihvatate{' '}
-        <Link href="/politika-privatnosti" className="text-wine-text hover:text-ink-text transition">
+        {/*
+          `underline` je obavezan, ne stilski izbor. Vinski link na sivom tekstu ima kontrast
+          1.16:1, a WCAG traži 3:1 da bi se link razlikovao od okolnog teksta samo bojom. Bez
+          podvlačenja link je nevidljiv daltonistima. Nalaz Lighthouse audita `link-in-text-block`,
+          2026-08-19.
+        */}
+        <Link href="/politika-privatnosti" className="text-wine-text underline hover:text-ink-text transition">
           politiku privatnosti
         </Link>
         . Podatke koristimo isključivo da vam odgovorimo na upit.

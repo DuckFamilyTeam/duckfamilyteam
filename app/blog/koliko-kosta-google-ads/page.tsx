@@ -7,7 +7,7 @@ import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Koliko košta Google Ads u Srbiji: kako se računa mesečni budžet',
+  title: 'Koliko košta Google Ads u Srbiji',
   description:
     'Ne postoji prosečna cena klika za Srbiju. Iz čega se sastoji trošak Google Ads kampanje, kako da izvučete svoju cifru i šta se plaća agenciji.',
   alternates: {

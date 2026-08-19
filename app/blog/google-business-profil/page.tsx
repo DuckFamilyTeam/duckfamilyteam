@@ -9,7 +9,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 export const metadata: Metadata = {
   title: 'Google Business Profil: Zašto je vaš najjači marketinški alat',
   description:
-    'Kako Google Business Profil gradi poverenje kod klijenata i donosi više poziva i poseta, za male, srednje i velike firme. Kompletan vodič za podešavanje i optimizaciju.',
+    'Kako Google Business Profil gradi poverenje i donosi pozive, za male, srednje i velike firme. Vodič za podešavanje, kategorije i optimizaciju.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/google-business-profil',
   },
