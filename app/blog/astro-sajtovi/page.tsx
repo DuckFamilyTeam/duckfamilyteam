@@ -7,7 +7,7 @@ import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
+  title: 'Astro Sajtovi: Zašto Su Najbolji Izbor za Web',
   description:
     'Island Architecture, nulti JavaScript i Lighthouse 100. Zašto su Astro sajtovi danas najbrži izbor za SEO optimizovanu web prezentaciju.',
   alternates: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'Duck Family Team',
   ],
   openGraph: {
-    title: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
+    title: 'Astro Sajtovi: Zašto Su Najbolji Izbor za Web',
     description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',
     url: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
     type: 'article',

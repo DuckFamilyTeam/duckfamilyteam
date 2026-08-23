@@ -7,7 +7,7 @@ import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'GA4 Vodič za preduzetnike: Podešavanje, metrike i konverzije',
+  title: 'GA4 Vodič za preduzetnike: metrike i konverzije',
   description:
     'Kompletni GA4 vodič za firme u Srbiji. Kako podesiti Google Analytics 4, pratiti konverzije, razumeti ključne metrike i povezati sa Google Ads kampanjama.',
   alternates: {

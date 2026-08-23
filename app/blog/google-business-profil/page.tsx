@@ -7,7 +7,7 @@ import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Google Business Profil: Zašto je vaš najjači marketinški alat',
+  title: 'Google Business Profil: vaš najjači marketinški alat',
   description:
     'Kako Google Business Profil gradi poverenje i donosi pozive, za male, srednje i velike firme. Vodič za podešavanje, kategorije i optimizaciju.',
   alternates: {
