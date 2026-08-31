@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/usluge/google-business-profil`,
-      lastModified: new Date('2026-07-28'),
+      lastModified: new Date('2026-08-31'),
       changeFrequency: 'monthly',
       priority: 0.95,
     },
@@ -73,9 +73,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/blog`,
       // Datum poslednjeg objavljenog teksta. Menja se kad izađe nov post.
-      lastModified: new Date('2026-08-19'),
+      lastModified: new Date('2026-08-31'),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/cena-vodjenja-google-business-profila`,
+      lastModified: new Date('2026-08-31'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/blog/koliko-kosta-google-ads`,

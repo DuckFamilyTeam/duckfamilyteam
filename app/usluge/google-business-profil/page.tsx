@@ -211,7 +211,9 @@ export default function GoogleBusinessProfilPage() {
               Cenovni rangovi i od čega zavise
             </h2>
             <p className="text-ink-muted leading-relaxed mb-4 max-w-3xl">
-              Osnovna cena vođenja jednog Google Business profila je 100 evra mesečno i uključuje sve navedeno u prethodnoj sekciji. Konačna cena zavisi od:
+              Osnovna cena vođenja jednog Google Business profila je 100 evra mesečno i uključuje sve navedeno u prethodnoj sekciji. Pisali smo detaljnije{' '}
+              <Link href="/blog/cena-vodjenja-google-business-profila" className="text-wine-text underline hover:no-underline">od čega zavisi mesečna cena</Link>
+              {' '}vođenja GBP profila u Srbiji. Konačna cena kod nas zavisi od:
             </p>
             <ul className="text-ink-muted leading-relaxed mb-8 max-w-3xl list-disc pl-5 space-y-1">
               <li>Broja lokacija — firme sa više poslovnica ili franšize dobijaju poseban predlog cene po lokaciji.</li>
@@ -230,9 +232,6 @@ export default function GoogleBusinessProfilPage() {
               <Link href="/cene" className="text-wine-text underline hover:no-underline">opšti cenovnik</Link>
               {' '}ili zakažite besplatnu konsultaciju — u razgovoru od 15 minuta dobijate konkretan predlog, bez obaveze.
             </p>
-            {/* TODO (nedelja 2, posle 31.08.2026): kad se objavi tekst "Cena vođenja Google Business Profila
-                u Srbiji: od čega zavisi mesečna cena", dodati ovde direktan link na taj članak, npr. na frazu
-                "od čega zavisi cena" iznad. Plan: 06_SEO_i_Sadrzaj/Plan_sadrzaja_3_meseca_DuckFamilyTeam.xlsx */}
           </section>
 
           {/* ── ZAŠTO MI ── */}

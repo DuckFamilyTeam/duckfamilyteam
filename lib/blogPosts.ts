@@ -22,6 +22,16 @@ export type BlogPost = {
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'cena-vodjenja-google-business-profila',
+    img: '/img/blog/google-business-profil.svg',
+    tag: 'GBP',
+    title: 'Cena vođenja Google Business Profila u Srbiji: od čega zavisi mesečna cena',
+    excerpt:
+      'Google Business Profile je besplatan alat, ali vođenje nije. Šta pomera mesečnu cenu, kada se isplati raditi sami, i koliko mi naplaćujemo.',
+    date: '2026-08-31',
+    readTime: '6 min',
+  },
+  {
     slug: 'koliko-kosta-google-ads',
     img: '/img/blog/koliko-kosta-google-ads.jpg',
     tag: 'Google Ads',
