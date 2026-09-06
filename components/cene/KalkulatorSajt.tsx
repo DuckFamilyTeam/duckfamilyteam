@@ -5,7 +5,6 @@ import {
   tipoviBiznisa,
   dodaciSajt,
   rokovi,
-  cenovniRaspon,
   mesecnoOdrzavanje,
   napomenaODomenu,
   formatEvra,
@@ -24,7 +23,7 @@ export default function KalkulatorSajt() {
   const tip = tipoviBiznisa.find((t) => t.id === tipId) ?? tipoviBiznisa[0]
   const rok = rokovi.find((r) => r.id === rokId) ?? rokovi[0]
 
-  const { baza, dodaci, ukupnoPreRoka, ukupno } = useMemo(() => {
+  const ukupno = useMemo(() => {
     const baza = tip.cena ?? 0
     let dodaci = 0
     for (const dodatak of dodaciSajt) {
@@ -35,9 +34,7 @@ export default function KalkulatorSajt() {
         dodaci += dodatak.cena * (brojaci[dodatak.id] ?? 0)
       }
     }
-    const ukupnoPreRoka = baza + dodaci
-    const ukupno = ukupnoPreRoka * rok.mnozilac
-    return { baza, dodaci, ukupnoPreRoka, ukupno }
+    return (baza + dodaci) * rok.mnozilac
   }, [tip, prekidaci, brojaci, rok])
 
   const jeDrugo = tip.cena === null
@@ -144,30 +141,14 @@ export default function KalkulatorSajt() {
           </p>
         </div>
       ) : (
-        <>
-          <div className="font-mono text-xs text-ink-muted mb-4" aria-live="polite">
-            {formatEvra(baza)} (baza) + {formatEvra(dodaci)} (dodaci) = {formatEvra(ukupnoPreRoka)}
-            {rok.mnozilac !== 1 && <> × {rok.mnozilac.toFixed(2)} ({rok.naziv}) = {formatEvra(ukupno)}</>}
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4 mb-8" aria-live="polite">
-            <RezultatKartica
-              naslov="Minimum"
-              cena={formatEvra(ukupno * cenovniRaspon.minimum)}
-              opis="Cena za prvi ili drugi projekat dok skupljate reference. Ne ostajte ovde dugo."
-            />
-            <RezultatKartica
-              naslov="Preporučeno"
-              cena={formatEvra(ukupno * cenovniRaspon.preporuceno)}
-              opis="Fer cena za ovaj projekat."
-              istaknuto
-            />
-            <RezultatKartica
-              naslov="Premium"
-              cena={formatEvra(ukupno * cenovniRaspon.premium)}
-              opis="Kad imate samopouzdanje i klijenta koji ima para."
-            />
-          </div>
-        </>
+        <div className="mb-8" aria-live="polite">
+          <RezultatKartica
+            naslov="Cena za vaš projekat"
+            cena={formatEvra(ukupno)}
+            opis="Jednokratna cena izrade, na osnovu izabranog tipa biznisa, dodataka i roka."
+            istaknuto
+          />
+        </div>
       )}
 
       <div className="text-sm text-ink-muted space-y-2 border-t border-ink-border pt-6">

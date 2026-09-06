@@ -3,6 +3,9 @@
  *
  * Sve cene su u evrima, jednokratne osim gde je izričito naznačeno "mesečno".
  * Ovo je jedino mesto gde se brojevi menjaju — komponente samo čitaju odavde.
+ *
+ * Cene vezane za izradu sajta (tipoviBiznisa, dodaciSajt, mesecnoOdrzavanje)
+ * su 2026-09-06 snižene za 39% u odnosu na prvobitni predlog.
  */
 
 export type TipBiznisa = {
@@ -15,42 +18,42 @@ export type TipBiznisa = {
 
 export const tipoviBiznisa: TipBiznisa[] = [
   // Zdravlje
-  { id: 'stomatolog', naziv: 'Stomatolog', cena: 530, kategorija: 'Zdravlje' },
-  { id: 'privatna-klinika', naziv: 'Privatna klinika', cena: 800, kategorija: 'Zdravlje' },
-  { id: 'estetska-klinika', naziv: 'Estetska / kozmetička klinika', cena: 800, kategorija: 'Zdravlje' },
-  { id: 'veterinar', naziv: 'Veterinarska ambulanta', cena: 500, kategorija: 'Zdravlje' },
-  { id: 'apoteka', naziv: 'Apoteka', cena: 430, kategorija: 'Zdravlje' },
-  { id: 'optika', naziv: 'Optika', cena: 430, kategorija: 'Zdravlje' },
+  { id: 'stomatolog', naziv: 'Stomatolog', cena: 320, kategorija: 'Zdravlje' },
+  { id: 'privatna-klinika', naziv: 'Privatna klinika', cena: 490, kategorija: 'Zdravlje' },
+  { id: 'estetska-klinika', naziv: 'Estetska / kozmetička klinika', cena: 490, kategorija: 'Zdravlje' },
+  { id: 'veterinar', naziv: 'Veterinarska ambulanta', cena: 310, kategorija: 'Zdravlje' },
+  { id: 'apoteka', naziv: 'Apoteka', cena: 260, kategorija: 'Zdravlje' },
+  { id: 'optika', naziv: 'Optika', cena: 260, kategorija: 'Zdravlje' },
   // Pravo i finansije
-  { id: 'advokat', naziv: 'Advokatska kancelarija', cena: 750, kategorija: 'Pravo i finansije' },
-  { id: 'racunovodja', naziv: 'Računovodstvena agencija', cena: 530, kategorija: 'Pravo i finansije' },
-  { id: 'arhitekta', naziv: 'Arhitektonski biro', cena: 750, kategorija: 'Pravo i finansije' },
+  { id: 'advokat', naziv: 'Advokatska kancelarija', cena: 460, kategorija: 'Pravo i finansije' },
+  { id: 'racunovodja', naziv: 'Računovodstvena agencija', cena: 320, kategorija: 'Pravo i finansije' },
+  { id: 'arhitekta', naziv: 'Arhitektonski biro', cena: 460, kategorija: 'Pravo i finansije' },
   // Turizam i smeštaj
-  { id: 'hotel', naziv: 'Hotel / hostel', cena: 800, kategorija: 'Turizam i smeštaj' },
-  { id: 'glamping', naziv: 'Glamping', cena: 750, kategorija: 'Turizam i smeštaj' },
-  { id: 'apartmani', naziv: 'Apartmani / smeštaj', cena: 500, kategorija: 'Turizam i smeštaj' },
-  { id: 'turisticka-agencija', naziv: 'Turistička agencija', cena: 470, kategorija: 'Turizam i smeštaj' },
+  { id: 'hotel', naziv: 'Hotel / hostel', cena: 490, kategorija: 'Turizam i smeštaj' },
+  { id: 'glamping', naziv: 'Glamping', cena: 460, kategorija: 'Turizam i smeštaj' },
+  { id: 'apartmani', naziv: 'Apartmani / smeštaj', cena: 310, kategorija: 'Turizam i smeštaj' },
+  { id: 'turisticka-agencija', naziv: 'Turistička agencija', cena: 290, kategorija: 'Turizam i smeštaj' },
   // Ugostiteljstvo
-  { id: 'restoran', naziv: 'Restoran', cena: 430, kategorija: 'Ugostiteljstvo' },
-  { id: 'kafic', naziv: 'Kafić / bar', cena: 330, kategorija: 'Ugostiteljstvo' },
-  { id: 'pica', naziv: 'Picerija / fast food', cena: 370, kategorija: 'Ugostiteljstvo' },
-  { id: 'pekara', naziv: 'Pekara / poslastičarnica', cena: 300, kategorija: 'Ugostiteljstvo' },
+  { id: 'restoran', naziv: 'Restoran', cena: 260, kategorija: 'Ugostiteljstvo' },
+  { id: 'kafic', naziv: 'Kafić / bar', cena: 200, kategorija: 'Ugostiteljstvo' },
+  { id: 'pica', naziv: 'Picerija / fast food', cena: 230, kategorija: 'Ugostiteljstvo' },
+  { id: 'pekara', naziv: 'Pekara / poslastičarnica', cena: 180, kategorija: 'Ugostiteljstvo' },
   // Lepota i wellness
-  { id: 'frizer', naziv: 'Frizerski salon', cena: 370, kategorija: 'Lepota i wellness' },
-  { id: 'kozmeticki-salon', naziv: 'Kozmetički salon', cena: 400, kategorija: 'Lepota i wellness' },
-  { id: 'spa', naziv: 'Spa / wellness', cena: 470, kategorija: 'Lepota i wellness' },
-  { id: 'teretana', naziv: 'Teretana / fitnes', cena: 430, kategorija: 'Lepota i wellness' },
-  { id: 'yoga', naziv: 'Yoga / pilates studio', cena: 400, kategorija: 'Lepota i wellness' },
+  { id: 'frizer', naziv: 'Frizerski salon', cena: 230, kategorija: 'Lepota i wellness' },
+  { id: 'kozmeticki-salon', naziv: 'Kozmetički salon', cena: 240, kategorija: 'Lepota i wellness' },
+  { id: 'spa', naziv: 'Spa / wellness', cena: 290, kategorija: 'Lepota i wellness' },
+  { id: 'teretana', naziv: 'Teretana / fitnes', cena: 260, kategorija: 'Lepota i wellness' },
+  { id: 'yoga', naziv: 'Yoga / pilates studio', cena: 240, kategorija: 'Lepota i wellness' },
   // Edukacija i deca
-  { id: 'skola-jezika', naziv: 'Škola jezika / kurs', cena: 430, kategorija: 'Edukacija i deca' },
-  { id: 'vrtic', naziv: 'Privatni vrtić', cena: 470, kategorija: 'Edukacija i deca' },
-  { id: 'auto-skola', naziv: 'Auto škola', cena: 370, kategorija: 'Edukacija i deca' },
+  { id: 'skola-jezika', naziv: 'Škola jezika / kurs', cena: 260, kategorija: 'Edukacija i deca' },
+  { id: 'vrtic', naziv: 'Privatni vrtić', cena: 290, kategorija: 'Edukacija i deca' },
+  { id: 'auto-skola', naziv: 'Auto škola', cena: 230, kategorija: 'Edukacija i deca' },
   // Zanati i usluge
-  { id: 'auto-servis', naziv: 'Auto servis / mehaničar', cena: 400, kategorija: 'Zanati i usluge' },
-  { id: 'fotograf', naziv: 'Fotograf / studio', cena: 400, kategorija: 'Zanati i usluge' },
-  { id: 'zanatska-radnja', naziv: 'Zanatska radnja (stolar...)', cena: 400, kategorija: 'Zanati i usluge' },
-  { id: 'majstor', naziv: 'Majstor (vodoinstalater...)', cena: 330, kategorija: 'Zanati i usluge' },
-  { id: 'butik', naziv: 'Prodavnica / butik', cena: 330, kategorija: 'Zanati i usluge' },
+  { id: 'auto-servis', naziv: 'Auto servis / mehaničar', cena: 240, kategorija: 'Zanati i usluge' },
+  { id: 'fotograf', naziv: 'Fotograf / studio', cena: 240, kategorija: 'Zanati i usluge' },
+  { id: 'zanatska-radnja', naziv: 'Zanatska radnja (stolar...)', cena: 240, kategorija: 'Zanati i usluge' },
+  { id: 'majstor', naziv: 'Majstor (vodoinstalater...)', cena: 200, kategorija: 'Zanati i usluge' },
+  { id: 'butik', naziv: 'Prodavnica / butik', cena: 200, kategorija: 'Zanati i usluge' },
   // Ostalo
   { id: 'drugo', naziv: 'Drugo — moj biznis nije na listi', cena: null, kategorija: 'Ostalo' },
 ]
@@ -65,17 +68,17 @@ export type DodatakSajt = {
 }
 
 export const dodaciSajt: DodatakSajt[] = [
-  { id: 'rezervacije', naziv: 'Rezervacioni sistem', cena: 130, tip: 'prekidac' },
-  { id: 'dvojezicni', naziv: 'Dvojezičan sajt', cena: 100, tip: 'prekidac' },
-  { id: 'blog-cms', naziv: 'Blog / CMS modul', cena: 100, tip: 'prekidac' },
-  { id: 'kontakt-forma', naziv: 'Napredna kontakt forma', cena: 50, tip: 'prekidac' },
-  { id: 'seo', naziv: 'SEO paket (osnovna optimizacija)', cena: 100, tip: 'prekidac' },
-  { id: 'logo', naziv: 'Logo (ako ga nemate)', cena: 80, tip: 'prekidac' },
-  { id: 'tekstovi', naziv: 'Copywriting (mi pišemo tekstove)', cena: 60, tip: 'prekidac' },
-  { id: 'fotografije', naziv: 'Fotografije (mi obezbeđujemo)', cena: 50, tip: 'prekidac' },
-  { id: 'animacije', naziv: 'Animacije', cena: 60, tip: 'prekidac' },
-  { id: 'dodatne-stranice', naziv: 'Dodatna stranica (preko bazne)', cena: 50, tip: 'brojac', jedinica: 'stranica' },
-  { id: 'revizije', naziv: 'Dodatna revizija (preko 2 uključene)', cena: 30, tip: 'brojac', jedinica: 'revizija' },
+  { id: 'rezervacije', naziv: 'Rezervacioni sistem', cena: 80, tip: 'prekidac' },
+  { id: 'dvojezicni', naziv: 'Dvojezičan sajt', cena: 60, tip: 'prekidac' },
+  { id: 'blog-cms', naziv: 'Blog / CMS modul', cena: 60, tip: 'prekidac' },
+  { id: 'kontakt-forma', naziv: 'Napredna kontakt forma', cena: 30, tip: 'prekidac' },
+  { id: 'seo', naziv: 'SEO paket (osnovna optimizacija)', cena: 60, tip: 'prekidac' },
+  { id: 'logo', naziv: 'Logo (ako ga nemate)', cena: 50, tip: 'prekidac' },
+  { id: 'tekstovi', naziv: 'Copywriting (mi pišemo tekstove)', cena: 40, tip: 'prekidac' },
+  { id: 'fotografije', naziv: 'Fotografije (mi obezbeđujemo)', cena: 30, tip: 'prekidac' },
+  { id: 'animacije', naziv: 'Animacije', cena: 40, tip: 'prekidac' },
+  { id: 'dodatne-stranice', naziv: 'Dodatna stranica (preko bazne)', cena: 30, tip: 'brojac', jedinica: 'stranica' },
+  { id: 'revizije', naziv: 'Dodatna revizija (preko 2 uključene)', cena: 20, tip: 'brojac', jedinica: 'revizija' },
 ]
 
 export type Rok = {
@@ -90,14 +93,7 @@ export const rokovi: Rok[] = [
   { id: '3dana', naziv: '3 dana', mnozilac: 1.35 },
 ]
 
-/** Raspon oko izračunate cene: minimum, preporučeno (=100%), premium. */
-export const cenovniRaspon = {
-  minimum: 0.65,
-  preporuceno: 1,
-  premium: 1.15,
-}
-
-export const mesecnoOdrzavanje = 50
+export const mesecnoOdrzavanje = 30
 
 export const napomenaODomenu =
   'Domen kupujemo mi u vaše ime i registrujemo na vaš biznis, po ceni koja je aktuelna u tom trenutku. Osmišljavanje imena i povezivanje je besplatno.'

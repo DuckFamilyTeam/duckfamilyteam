@@ -70,6 +70,12 @@ const usluge = [
     naslov: 'Google Business profil',
     opis: 'Postavljanje i optimizacija profila da vas klijenti pronađu lokalno.',
   },
+  {
+    href: '/usluge/ai-agenti',
+    oznaka: 'Novo',
+    naslov: 'AI agenti i automatizacija',
+    opis: 'Agenti koji odgovaraju klijentima i zakazuju termine, i automatizacija ponavljajućih zadataka.',
+  },
 ]
 
 export default async function Home() {
@@ -267,7 +273,7 @@ export default async function Home() {
             <h2 className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4" data-rv="up">
               Izaberite šta vam je potrebno
             </h2>
-            <div className="grid md:grid-cols-3 gap-3.5" style={{ perspective: '1200px' }}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3.5" style={{ perspective: '1200px' }}>
               {usluge.map((u, i) => (
                 <Link
                   key={u.href}

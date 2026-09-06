@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/usluge/ai-agenti`,
+      lastModified: new Date('2026-09-06'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/rezultati`,
       lastModified: new Date('2026-07-28'),
       changeFrequency: 'monthly',
@@ -54,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/cene`,
-      lastModified: new Date('2026-07-28'),
+      lastModified: new Date('2026-09-06'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },

@@ -51,6 +51,7 @@ export default function Navbar() {
     { label: 'Google Ads kampanje', href: '/usluge/google-ads' },
     { label: 'Izrada sajtova', href: '/usluge/izrada-sajtova' },
     { label: 'Google Business profil', href: '/usluge/google-business-profil' },
+    { label: 'AI agenti i automatizacija', href: '/usluge/ai-agenti' },
   ]
 
   const navLinks = [

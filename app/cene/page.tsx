@@ -95,14 +95,35 @@ export default function CenePage() {
             <CenaKalkulator />
           </section>
 
-          {/* ── DODATNA USLUGA ── */}
+          {/* ── AI AGENTI I AUTOMATIZACIJA ── */}
           <section className="mb-16">
-            <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-8">
-              <h3 className="font-display font-medium text-xl mb-2">Izrada AI skilova i promptova</h3>
-              <p className="text-ink-muted text-sm leading-relaxed">
-                Za precizniju i bolju upotrebu veštačke inteligencije u poslovanju. Cena zavisi od obima, javite se za ponudu.
-              </p>
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">AI agenti i automatizacija</h2>
+            <p className="text-ink-muted mb-6 max-w-2xl">
+              Cena zavisi od obima i složenosti, javite se za besplatnu konsultaciju.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
+                <h3 className="font-display font-medium text-lg mb-2">Bot za odgovaranje i zakazivanje</h3>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  Agent koji na sajtu, WhatsApp-u ili Viberu odgovara na najčešća pitanja i pomaže oko zakazivanja termina, 0-24.
+                </p>
+              </div>
+              <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
+                <h3 className="font-display font-medium text-lg mb-2">Automatizacija internih zadataka</h3>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  AI skilovi i prompt-sistemi prilagođeni vašem poslovanju: izveštaji, obrada upita, mejlovi.
+                </p>
+              </div>
+              <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
+                <h3 className="font-display font-medium text-lg mb-2">AI agent po meri</h3>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  Nešto specifično što nije gore navedeno? Opišite problem, pravimo rešenje za taj slučaj.
+                </p>
+              </div>
             </div>
+            <Link href="/usluge/ai-agenti" className="text-wine-text hover:text-ink-text text-sm font-medium inline-flex items-center gap-2 transition-colors">
+              Više o AI agentima i automatizaciji <span className="arrow-fx">→</span>
+            </Link>
           </section>
 
           {/* ── FAQ ── */}
