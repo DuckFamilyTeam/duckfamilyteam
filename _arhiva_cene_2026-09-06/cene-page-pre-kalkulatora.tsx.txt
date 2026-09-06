@@ -1,21 +1,27 @@
+/**
+ * ARHIVA — verzija app/cene/page.tsx pre zamene statičkog cenovnika
+ * interaktivnim kalkulatorom (2026-09-06). Čuva se ovde radi mogućnosti
+ * povratka na staru verziju; ne kompajlira se (ekstenzija .tsx.txt, van
+ * app/ rute).
+ */
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
-import CenaKalkulator from '@/components/cene/CenaKalkulator'
 
 export const metadata: Metadata = {
-  title: 'Kalkulator cena',
+  title: 'Cene usluga',
   description:
-    'Izračunajte cenu za izradu sajta, Google Ads vođenje i Google Business profil na osnovu vašeg tipa biznisa i potreba. Pun, transparentan cenovnik.',
-  keywords: ['kalkulator cena sajta', 'cena izrade sajta', 'Google Ads kampanje cena', 'cena vođenja Google Business profila', 'Duck Family Team'],
+    'Google Ads vođenje 200 evra mesečno, Google Business profil 100 evra mesečno, izrada sajta od 50 evra. Pun, transparentan cenovnik.',
+  keywords: ['Google Ads kampanje cena', 'cena izrade sajta', 'cena vođenja Google Business profila', 'Duck Family Team'],
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/cene',
   },
   openGraph: {
-    title: 'Kalkulator cena | Duck Family Team',
-    description: 'Izračunajte cenu za izradu sajta, Google Ads i Google Business profil, prilagođeno vašem biznisu.',
+    title: 'Cene usluga | Duck Family Team',
+    description: 'Pun, transparentan cenovnik za Google Ads, Google Business profil i izradu sajta.',
     url: 'https://www.duckfamilyteam.online/cene',
     type: 'website',
   },
@@ -46,18 +52,27 @@ const faqSchema = {
       name: 'Šta ako mi treba samo jedna usluga, ne sve zajedno?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno — izaberite odgovarajući tab u kalkulatoru. Paket "sve na jednom mestu" je opcija za one koji žele kompletno vođenje na jednom mestu.',
+        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno po cenama iz tabele. Paket "sve na jednom mestu" je opcija za one koji žele kompletno vođenje na jednom mestu.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Da li su cene iz kalkulatora fiksne?',
+      name: 'Da li su sve cene fiksne?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cena za izradu sajta zavisi od tipa biznisa i izabranih dodataka, i prikazuje se kao raspon (minimum, preporučeno, premium). Google Ads i Google Business profil su fiksne, standardne cene. Za dodatne usluge, kao izrada AI skilova i promptova, cena zavisi od obima posla i dogovara se posebno.',
+        text: 'Za standardne usluge iz tabele, da, cena je fiksna. Za dodatne usluge, kao izrada AI skilova i promptova, cena zavisi od obima posla i dogovara se posebno.',
       },
     },
   ],
+}
+
+function PriceRow({ label, price }: { label: string; price: string }) {
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
+      <span className="text-ink-text">{label}</span>
+      <span className="font-mono text-wine-text whitespace-nowrap">{price}</span>
+    </div>
+  )
 }
 
 export default function CenePage() {
@@ -80,19 +95,61 @@ export default function CenePage() {
           {/* ── HERO ── */}
           <section className="mb-16">
             <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-              Kalkulator cena
+              Cene
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
               Koliko košta Google Ads, GBP i izrada sajta
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
-              Izaberite uslugu, tip biznisa i dodatke — cena se računa odmah, bez skrivenih troškova.
+              Cene usluge fizičkog lica, bez skrivenih troškova. Svaka stavka piše tačno šta dobijate.
             </p>
           </section>
 
-          {/* ── KALKULATOR ── */}
-          <section className="mb-16">
-            <CenaKalkulator />
+          {/* ── GOOGLE ADS ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Google Ads</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow label="Mesečno vođenje Google Ads kampanja" price="200 evra mesečno" />
+              <PriceRow label="Jednokratna postavka kampanje, bez mesečnog vođenja" price="70 evra po kampanji" />
+              <PriceRow label="Detaljna analiza naloga, sa istorijom kampanja i proverom konverzija" price="200 evra" />
+              <PriceRow label="Detaljna analiza naloga, samo trenutne aktivne kampanje" price="100 evra" />
+              <PriceRow label="Povezivanje GA4 sa Google Ads nalogom" price="50 evra" />
+              <PriceRow label="Povezivanje Google Business profila sa Google Ads nalogom" price="50 evra" />
+            </div>
+          </section>
+
+          {/* ── GBP ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Google Business profil</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow
+                label="Vođenje profila: 8 objava i 8 fotografija mesečno, odgovaranje na recenzije, optimizacija profila"
+                price="100 evra mesečno"
+              />
+            </div>
+          </section>
+
+          {/* ── IZRADA SAJTA ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Izrada i održavanje sajta</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow label="Sajt do 3 stranice (Next.js/Astro, SEO optimizovan)" price="300 evra" />
+              <PriceRow label="Višestranični sajt (Next.js/Astro, SEO optimizovan)" price="600 evra" />
+              <PriceRow label="Osnovni HTML sajt, jedna stranica" price="50 evra" />
+              <PriceRow label="Osnovni HTML sajt, više stranica" price="100 evra" />
+              <PriceRow label="Mesečno održavanje sajta: do 3 izmene mesečno, redovna kontrola stabilnosti" price="70 evra mesečno" />
+            </div>
+          </section>
+
+          {/* ── SVE NA JEDNOM MESTU ── */}
+          <section className="mb-12">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-4">Sve na jednom mestu</h2>
+            <div className="border border-ink-border rounded-2xl overflow-hidden">
+              <PriceRow
+                label="Kompletno vođenje: Google Ads, Google Business profil i sajt, sva odgovornost na nama"
+                price="300 evra mesečno"
+              />
+            </div>
           </section>
 
           {/* ── DODATNA USLUGA ── */}
