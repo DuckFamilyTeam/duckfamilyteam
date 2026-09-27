@@ -167,13 +167,13 @@ export default async function Home() {
                   ]}
                 />
 
-                <p
-                  className="text-base md:text-lg text-ink-muted leading-relaxed max-w-xl mb-8"
-                  // Samo klizanje, bez providnosti: ovaj pasus je LCP element na
-                  // telefonu, pa mora da bude vidljiv od prvog prikaza (vidi globals.css).
-                  data-hero-rise
-                  style={{ '--d': '160ms' } as React.CSSProperties}
-                >
+                {/* Bez animacije uopšte: ovaj pasus je LCP element na telefonu
+                    (izmereno, `lcp-breakdown-insight`). I `data-hero-rise` (bez
+                    providnosti, samo blagi translateY) je i dalje merio ~906ms
+                    „element render delay" na ovom elementu — iznad fold-a je
+                    uvek, nema šta da se „otkriva", pa je animacija uklonjena u
+                    celini umesto samo ublažena. */}
+                <p className="text-base md:text-lg text-ink-muted leading-relaxed max-w-xl mb-8">
                   Google Ads kampanje, Google Business profil i brzi sajtovi za lokalne biznise koji žele da ih klijenti stvarno pronađu.
                 </p>
 

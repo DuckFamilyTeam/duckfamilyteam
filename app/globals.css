@@ -177,16 +177,20 @@ main, header, footer { position: relative; z-index: 2; }
    ④ NASLOV KOJI SE SKLAPA REČ PO REČ
    Reči su podeljene na serveru, pa je ceo tekst u HTML-u od prve sekunde.
    ══════════════════════════════════════════════════════════════════════ */
+/* Bez `opacity: 0` na startu — namerno. H1 je iznad preloma na svakoj strani
+   koja koristi HeroTitle, pa reč koja bi startovala providna ne sme da čeka
+   sopstvenu CSS animaciju da bi je LCP algoritam ubrojao kao render. Tekst je
+   pun kontrast od prvog frejma, samo blago zamućen i pomeren — „ulazak" je i
+   dalje vidljiv, ali ništa nije sakriveno dok traje. */
 .js .word {
   display: inline-block;
-  opacity: 0;
   transform: translateY(calc(0.45em * var(--amp))) rotate(calc(2deg * var(--amp)));
   filter: blur(calc(8px * var(--amp)));
   animation: dft-word-in 560ms var(--ease-out) forwards;
   animation-delay: var(--d, 0ms);
 }
 @keyframes dft-word-in {
-  to { opacity: 1; transform: none; filter: blur(0); }
+  to { transform: none; filter: blur(0); }
 }
 
 /* Podvlaka koja se sama iscrtava. */
