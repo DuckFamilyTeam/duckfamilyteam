@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
 import { blogPosts } from '@/lib/blogPosts'
 import PodvucenaRec from '@/components/PodvucenaRec'
@@ -38,8 +37,6 @@ export default function BlogPage() {
       <Navbar />
       <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-
-          <BackButton />
 
           {/* ── HERO ── */}
           <section className="mb-16 max-w-2xl">

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import BackButton from '@/components/BackButton'
 import CenaKalkulator from '@/components/cene/CenaKalkulator'
 import PodvucenaRec from '@/components/PodvucenaRec'
 
@@ -68,8 +67,6 @@ export default function CenePage() {
       <Navbar />
       <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
-
-          <BackButton />
 
           {/* ── BREADCRUMB ── */}
           <nav className="mb-8 font-mono text-xs text-ink-muted flex items-center gap-2 uppercase tracking-widest" aria-label="Breadcrumb">
@@ -145,22 +142,12 @@ export default function CenePage() {
             </div>
           </section>
 
-          {/* ── CTA ── */}
-          <section className="bg-ink-surface border border-ink-border rounded-2xl p-10 md:p-16 text-center">
-            <h2 className="font-display font-medium text-3xl md:text-4xl mb-4">
-              Nije sigurno šta vam treba?
-            </h2>
-            <p className="text-ink-muted mb-8 max-w-xl mx-auto">
-              Besplatna konsultacija, pregledamo vaš biznis i predlažemo tačno ono što vam treba, ništa više.
-            </p>
-            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
-              Zakažite besplatnu konsultaciju
-            </Link>
-          </section>
-
         </div>
       </main>
-      <Footer />
+      <Footer
+        ctaHeading="Nije sigurno šta vam treba?"
+        ctaDescription="Besplatna konsultacija, pregledamo vaš biznis i predlažemo tačno ono što vam treba, ništa više."
+      />
     </>
   )
 }

@@ -10,7 +10,17 @@ import { trackEmailClick, trackPhoneClick, trackReviewClick } from '@/lib/analyt
 const googleMapsUrl = 'https://www.google.com/maps?cid=13771670212645560743'
 const googleReviewUrl = 'https://g.page/r/CachkcwXzR6_EBM/review'
 
-export default function Footer() {
+interface FooterProps {
+  // Svaka podstranica je ranije imala sopstvenu CTA kutiju ("Pokrenite kampanju...",
+  // "Želite sličan rezultat?"...) odmah iznad ovog bloka — dva poziva na akciju
+  // zaredom (vizuelna provera, krug 4, stavka Hijerarhija). Sad postoji samo JEDAN
+  // CTA blok po stranici: stranica prosledi svoju poruku ovamo, umesto da pravi
+  // drugu kutiju. Bez prop-a ostaje generičan naslov za početnu i ostale stranice.
+  ctaHeading?: string
+  ctaDescription?: string
+}
+
+export default function Footer({ ctaHeading, ctaDescription }: FooterProps = {}) {
   const godina = new Date().getFullYear()
   const pathname = usePathname()
 
@@ -32,10 +42,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid gap-12 md:gap-16 lg:grid-cols-2">
         {/* Left: Contact info */}
         <div className="space-y-8 md:space-y-10">
-          <h2 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight">
-            Vreme je da <br />
-            <span className="text-wine-text">pobedite.</span>
-          </h2>
+          <div className="space-y-3">
+            <h2 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight">
+              {ctaHeading ?? (
+                <>
+                  Vreme je da <br />
+                  <span className="text-wine-text">pobedite.</span>
+                </>
+              )}
+            </h2>
+            {ctaDescription && (
+              <p className="text-ink-muted text-base md:text-lg max-w-md">{ctaDescription}</p>
+            )}
+          </div>
           <div className="space-y-4">
             <p className="font-mono text-ink-muted text-xs uppercase tracking-widest">
               Direktna linija

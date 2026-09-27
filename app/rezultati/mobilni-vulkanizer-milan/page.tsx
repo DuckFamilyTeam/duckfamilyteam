@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import BackButton from '@/components/BackButton'
 import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
@@ -50,8 +49,6 @@ export default function MilanCaseStudyPage() {
       <Navbar />
       <main id="glavni-sadrzaj" className="bg-ink-bg text-ink-text pt-28 md:pt-40 pb-20 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
-
-          <BackButton />
 
           {/* ── BREADCRUMB ── */}
           <nav className="mb-8 font-mono text-xs text-ink-muted flex items-center gap-2 uppercase tracking-widest flex-wrap" aria-label="Breadcrumb">
@@ -154,22 +151,12 @@ export default function MilanCaseStudyPage() {
             </a>
           </section>
 
-          {/* ── CTA ── */}
-          <section className="bg-ink-surface border border-ink-border rounded-2xl p-10 md:p-16 text-center">
-            <h2 className="font-display font-medium text-3xl md:text-4xl mb-4">
-              Želite sličan rezultat?
-            </h2>
-            <p className="text-ink-muted mb-8 max-w-xl mx-auto">
-              Besplatna konsultacija, pogledamo vaš biznis i kažemo iskreno šta je realno da očekujete.
-            </p>
-            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
-              Zakažite besplatnu konsultaciju
-            </Link>
-          </section>
-
         </div>
       </main>
-      <Footer />
+      <Footer
+        ctaHeading="Želite sličan rezultat?"
+        ctaDescription="Besplatna konsultacija, pogledamo vaš biznis i kažemo iskreno šta je realno da očekujete."
+      />
     </>
   )
 }

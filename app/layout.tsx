@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
+import { Fraunces, IBM_Plex_Sans } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import CookieConsent from '@/components/CookieConsent'
@@ -10,9 +10,16 @@ import './globals.css'
 
 // latin-ext nosi č, ć, š, ž, đ — praktično svaka srpska rečenica ima bar jedno
 // od tih slova, pa je taj podskup na ovom sajtu kritičan, ne opcioni.
+//
+// Težina 400 je 2026-09-27 uklonjena radi LCP-a (manje font fajlova za preuzimanje
+// pre prvog prikaza). Provereno pre uklanjanja: `font-display` bez eksplicitne
+// `font-medium`/`font-semibold` klase (dakle na 400) postoji samo na par sitnih,
+// dekorativnih mesta (brojevi numerisanih listi u blogu, cifra u „step-dot" na
+// početnoj, ogroman upola providan navodnik u Testimonials) — tamo će sad pasti
+// na najbližu učitanu težinu (500), vizuelno gotovo neprimetno.
 const fraunces = Fraunces({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600'],
+  weight: ['500', '600'],
   variable: '--font-display',
   display: 'swap',
   preload: true,
@@ -21,6 +28,10 @@ const fraunces = Fraunces({
 // 600 je dodat 2026-09-27: dugmad (`font-semibold`), `font-bold` i <strong> su
 // tražili težinu koja nije bila učitana, pa ih je browser „podebljavao" sam
 // (lažni bold, razmazana slova na CTA dugmadima). Sada postoji prava 600 težina.
+// Sve tri težine (400/500/600) su i dalje potrebne: 600 nosi SVE primarne CTA
+// dugmad na sajtu (`font-semibold`, ~25 mesta), 500 je najčešća težina teksta na
+// sajtu, a 400 je podrazumevana težina pasusa. Nijedna se nije mogla ukloniti bez
+// vidljive štete, za razliku od Fraunces 400 i cele porodice IBM Plex Mono iznad.
 const plexSans = IBM_Plex_Sans({
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600'],
@@ -29,13 +40,12 @@ const plexSans = IBM_Plex_Sans({
   preload: true,
 })
 
-const plexMono = IBM_Plex_Mono({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500'],
-  variable: '--font-mono',
-  display: 'swap',
-  preload: false,
-})
+// IBM Plex Mono je 2026-09-27 uklonjen u celini radi LCP-a (treća samohostovana
+// porodica fontova, dodatni network zahtevi za sitne oznake/brojeve/cene koje se
+// pojavljuju odmah iznad preloma na svakoj stranici — breadcrumb, eyebrow, cene).
+// `font-mono` u tailwind.config.js sad vodi na sistemski monospace stek umesto na
+// ovu porodicu: brojevi i cene ostaju monospace (poravnati, fiksne širine cifara),
+// samo bez Plex Mono-ovih specifičnih slovnih oblika.
 
 const siteUrl = 'https://www.duckfamilyteam.online'
 
@@ -143,7 +153,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="sr-Latn-RS"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}
+      className={`${fraunces.variable} ${plexSans.variable}`}
     >
       <head>
         <script

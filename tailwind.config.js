@@ -31,7 +31,18 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-display)', 'serif'],
         sans: ['var(--font-sans)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        // IBM Plex Mono je uklonjen 2026-09-27 radi LCP-a (treća samohostovana
+        // porodica fontova). `font-mono` sad koristi sistemski monospace stek —
+        // brojevi, cene i sitne oznake ostaju poravnati/monospace, bez dodatnog
+        // network zahteva za font fajl.
+        mono: [
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Consolas',
+          '"Liberation Mono"',
+          'monospace',
+        ],
       },
       borderRadius: {
         '4xl': '2rem',
