@@ -23,7 +23,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'cena-vodjenja-google-business-profila',
-    img: '/img/blog/google-business-profil.svg',
+    img: '/img/blog/gbp-objave-i-fotografije.webp',
     tag: 'GBP',
     title: 'Cena vođenja Google Business Profila u Srbiji: od čega zavisi mesečna cena',
     excerpt:

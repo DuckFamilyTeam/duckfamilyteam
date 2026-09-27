@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'AI agenti i automatizacija',
   description:
-    'AI agenti koji odgovaraju klijentima i zakazuju termine 0-24, i automatizacija ponavljajućih zadataka u vašem poslovanju. Cena po dogovoru, besplatna konsultacija.',
+    'AI agenti koji odgovaraju klijentima i zakazuju termine 0-24, i automatizacija ponavljajućih zadataka u vašem poslovanju. Cena po dogovoru.',
   keywords: [
     'AI agent Srbija',
     'AI chatbot za biznis',
@@ -67,7 +69,7 @@ const faqSchema = {
       name: 'Koliko košta AI agent ili automatizacija?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cena zavisi od obima i složenosti — da li agent samo odgovara na pitanja ili se povezuje sa vašim sistemom za zakazivanje, koliko jezika govori, koliko zadataka automatizuje. Javite se za besplatnu konsultaciju i konkretnu ponudu.',
+        text: 'Cena zavisi od obima i složenosti: da li agent samo odgovara na pitanja ili se povezuje sa vašim sistemom za zakazivanje, koliko jezika govori, koliko zadataka automatizuje. Javite se za besplatnu konsultaciju i konkretnu ponudu.',
       },
     },
     {
@@ -80,7 +82,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Gde agent može da radi — sajt, WhatsApp, Viber?',
+      name: 'Gde agent može da radi: sajt, WhatsApp, Viber?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Zavisi od projekta. Najčešće su to sajt, WhatsApp ili Viber, ali se dogovara prema tome gde vaši klijenti stvarno pišu.',
@@ -91,7 +93,7 @@ const faqSchema = {
       name: 'Šta ako mi treba nešto specifično, van ovih primera?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Opišite konkretan zadatak ili problem — pravimo rešenje po meri, ne šablon.',
+        text: 'Opišite konkretan zadatak ili problem. Pravimo rešenje za taj slučaj, ne šablon.',
       },
     },
   ],
@@ -100,7 +102,7 @@ const faqSchema = {
 const usluge = [
   {
     title: 'Bot za odgovaranje i zakazivanje',
-    desc: 'Agent koji na sajtu, WhatsApp-u ili Viberu odgovara na najčešća pitanja klijenata i pomaže oko zakazivanja termina, 0-24. Za biznise gde ljudi pišu van radnog vremena — klinike, hoteli, restorani, saloni.',
+    desc: 'Agent koji na sajtu, WhatsApp-u ili Viberu odgovara na najčešća pitanja klijenata i pomaže oko zakazivanja termina, 0-24. Za biznise gde ljudi pišu van radnog vremena: klinike, hoteli, restorani, saloni.',
   },
   {
     title: 'Automatizacija internih zadataka',
@@ -108,7 +110,7 @@ const usluge = [
   },
   {
     title: 'AI agent po meri',
-    desc: 'Ako vam treba nešto specifično što nije gore navedeno, opišite problem — pravimo rešenje za taj konkretan slučaj.',
+    desc: 'Ako vam treba nešto specifično što nije gore navedeno, opišite problem. Pravimo rešenje za taj konkretan slučaj.',
   },
 ]
 
@@ -132,23 +134,36 @@ export default function AiAgentiPage() {
           </nav>
 
           {/* ── HERO ── */}
-          <section className="mb-20">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-              AI agenti i automatizacija
+          <section className="mb-20 grid lg:grid-cols-12 gap-10 lg:items-center">
+            <div className="lg:col-span-7">
+              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
+                AI agenti i automatizacija
+              </div>
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+                AI koji <PodvucenaRec>radi</PodvucenaRec> dok vi ne morate
+              </h1>
+              <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
+                Agenti koji odgovaraju klijentima i zakazuju termine, i automatizacija ponavljajućih zadataka u vašem poslovanju. Bez šablona: rešenje pravimo za vaš konkretan slučaj.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
+                  Besplatna konsultacija
+                </Link>
+                <Link href="#usluge" className="px-10 py-5 rounded-xl font-semibold text-base text-center border-2 border-ink-border hover:border-wine transition-colors">
+                  Pogledaj šta nudimo
+                </Link>
+              </div>
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
-              AI koji radi dok vi ne morate
-            </h1>
-            <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
-              Agenti koji odgovaraju klijentima i zakazuju termine, i automatizacija ponavljajućih zadataka u vašem poslovanju. Bez šablona — rešenje se pravi za vaš konkretan slučaj.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
-                Besplatna konsultacija
-              </Link>
-              <Link href="#usluge" className="px-10 py-5 rounded-xl font-semibold text-base text-center border-2 border-ink-border hover:border-wine transition-colors">
-                Pogledaj šta nudimo
-              </Link>
+            <div className="lg:col-span-5">
+              <Image
+                src="/img/usluge-ai-agenti.webp"
+                alt="Ilustracija: robot povezan sa oblačićem za razgovor i ikonicama automatizacije"
+                width={1000}
+                height={753}
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="w-full h-auto rounded-2xl border border-ink-border"
+                priority
+              />
             </div>
           </section>
 
@@ -196,7 +211,7 @@ export default function AiAgentiPage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Opišite šta vam treba, pregledamo i predlažemo konkretno rešenje i cenu.
             </p>
-            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
+            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
               Zatražite besplatnu procenu
             </Link>
           </section>

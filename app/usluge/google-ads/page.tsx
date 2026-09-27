@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Google Ads marketing i kampanje',
@@ -138,8 +140,8 @@ const kampanje = [
     desc: 'Google-ova kampanja koja automatski raspoređuje oglase na Search, Display, YouTube, Gmail i Maps.',
   },
   {
-    title: 'Google lokalne kampanje',
-    desc: 'Za biznise koji targetiraju kupce u Beogradu ili bilo kom gradu u Srbiji. Oglas se prikazuje ljudima u neposrednoj blizini.',
+    title: 'Lokalno ciljanje',
+    desc: 'Za biznise koji targetiraju kupce u Beogradu ili bilo kom gradu u Srbiji. Search i Performance Max kampanje ograničavamo na područje u kom radite.',
   },
 ]
 
@@ -196,23 +198,36 @@ export default function GoogleAdsPage() {
           </nav>
 
           {/* ── HERO ── */}
-          <section className="mb-20">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-              Google Ads marketing
+          <section className="mb-20 grid lg:grid-cols-12 gap-10 lg:items-center">
+            <div className="lg:col-span-7">
+              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
+                Google Ads marketing
+              </div>
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+                Google Ads kampanje koje dovode <PodvucenaRec>pozive</PodvucenaRec>
+              </h1>
+              <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
+                Kreiramo, optimizujemo i vodimo Google Search, Shopping, Display i Remarketing kampanje. Fokus je na pozivima i konverzijama, ne na broju klikova.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
+                  Besplatna konsultacija
+                </Link>
+                <Link href="#cena" className="px-10 py-5 rounded-xl font-semibold text-base text-center border-2 border-ink-border hover:border-wine transition-colors">
+                  Pogledaj cenu
+                </Link>
+              </div>
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
-              Google Ads kampanje koje dovode pozive
-            </h1>
-            <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
-              Kreiramo, optimizujemo i vodimo Google Search, Shopping, Display i Remarketing kampanje. Fokus je na pozivima i konverzijama, ne na broju klikova.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
-                Besplatna konsultacija
-              </Link>
-              <Link href="#cena" className="px-10 py-5 rounded-xl font-semibold text-base text-center border-2 border-ink-border hover:border-wine transition-colors">
-                Pogledaj cenu
-              </Link>
+            <div className="lg:col-span-5">
+              <Image
+                src="/img/usluge-google-ads.webp"
+                alt="Ilustracija: telefon koji zvoni od poziva sa Google Ads kampanje, sa grafikonom rasta pored"
+                width={1000}
+                height={753}
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="w-full h-auto rounded-2xl border border-ink-border"
+                priority
+              />
             </div>
           </section>
 
@@ -229,8 +244,8 @@ export default function GoogleAdsPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
-                <div className="font-display font-medium text-3xl text-wine-text mb-2">95%</div>
-                <div className="text-ink-muted text-sm">Google tržišno učešće u Srbiji</div>
+                <div className="font-display font-medium text-3xl text-wine-text mb-2">96,5%</div>
+                <div className="text-ink-muted text-sm">Google udeo u pretrazi u Srbiji (StatCounter, avgust 2026)</div>
               </div>
               <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
                 <div className="font-display font-medium text-3xl text-wine-text mb-2">24h</div>
@@ -241,7 +256,7 @@ export default function GoogleAdsPage() {
                 className="bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-6 transition-colors"
               >
                 <div className="font-display font-medium text-3xl text-wine-text mb-2">203%</div>
-                <div className="text-ink-muted text-sm">Povraćaj na uloženo, Mobilni Vulkanizer Milan, 3 meseca →</div>
+                <div className="text-ink-muted text-sm">Povraćaj na uloženo, Mobilni Vulkanizer Milan, 3 meseca (naš obračun) →</div>
               </Link>
             </div>
           </section>
@@ -272,7 +287,7 @@ export default function GoogleAdsPage() {
             <div className="space-y-4">
               {proces.map((item) => (
                 <div key={item.step} className="flex gap-6 bg-ink-surface border border-ink-border rounded-2xl p-6">
-                  <div className="font-mono text-2xl text-ink-border shrink-0 w-10">{item.step}</div>
+                  <div className="font-mono text-2xl text-ink-border-strong shrink-0 w-10">{item.step}</div>
                   <div>
                     <h3 className="font-display font-medium text-lg mb-1">{item.title}</h3>
                     <p className="text-ink-muted text-sm leading-relaxed">{item.desc}</p>
@@ -333,7 +348,7 @@ export default function GoogleAdsPage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Besplatna konsultacija, analiziramo vaš biznis i procenjujemo potencijal bez ikakve obaveze.
             </p>
-            <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
+            <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
               Zakažite besplatnu konsultaciju
             </Link>
           </section>

@@ -55,7 +55,7 @@ export const tipoviBiznisa: TipBiznisa[] = [
   { id: 'majstor', naziv: 'Majstor (vodoinstalater...)', cena: 200, kategorija: 'Zanati i usluge' },
   { id: 'butik', naziv: 'Prodavnica / butik', cena: 200, kategorija: 'Zanati i usluge' },
   // Ostalo
-  { id: 'drugo', naziv: 'Drugo — moj biznis nije na listi', cena: null, kategorija: 'Ostalo' },
+  { id: 'drugo', naziv: 'Drugo: moj biznis nije na listi', cena: null, kategorija: 'Ostalo' },
 ]
 
 export type DodatakSajt = {
@@ -77,8 +77,8 @@ export const dodaciSajt: DodatakSajt[] = [
   { id: 'tekstovi', naziv: 'Copywriting (mi pišemo tekstove)', cena: 40, tip: 'prekidac' },
   { id: 'fotografije', naziv: 'Fotografije (mi obezbeđujemo)', cena: 30, tip: 'prekidac' },
   { id: 'animacije', naziv: 'Animacije', cena: 40, tip: 'prekidac' },
-  { id: 'dodatne-stranice', naziv: 'Dodatna stranica (preko bazne)', cena: 30, tip: 'brojac', jedinica: 'stranica' },
-  { id: 'revizije', naziv: 'Dodatna revizija (preko 2 uključene)', cena: 20, tip: 'brojac', jedinica: 'revizija' },
+  { id: 'dodatne-stranice', naziv: 'Dodatna stranica (preko bazne)', cena: 30, tip: 'brojac', jedinica: 'stranici' },
+  { id: 'revizije', naziv: 'Dodatna revizija (preko 2 uključene)', cena: 20, tip: 'brojac', jedinica: 'reviziji' },
 ]
 
 export type Rok = {

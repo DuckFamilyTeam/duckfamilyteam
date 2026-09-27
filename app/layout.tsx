@@ -18,9 +18,12 @@ const fraunces = Fraunces({
   preload: true,
 })
 
+// 600 je dodat 2026-09-27: dugmad (`font-semibold`), `font-bold` i <strong> su
+// tražili težinu koja nije bila učitana, pa ih je browser „podebljavao" sam
+// (lažni bold, razmazana slova na CTA dugmadima). Sada postoji prava 600 težina.
 const plexSans = IBM_Plex_Sans({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   variable: '--font-sans',
   display: 'swap',
   preload: true,
@@ -83,9 +86,9 @@ export const metadata: Metadata = {
     description:
       'Google Ads kampanje, Google Business profil i brzi sajtovi. Merljivi rezultati, bez skrivenih troškova.',
   },
-  alternates: {
-    canonical: siteUrl,
-  },
+  // Namerno bez `alternates.canonical` na nivou layouta: taj canonical nasleđuje
+  // SVAKA stranica koja ne postavi sopstveni, pa je npr. 404 stranica tvrdila da
+  // je kanonska adresa početna. Svaka stranica postavlja svoj canonical sama.
   verification: {
     google: 'c13b37c4c11f0b33',
   },
@@ -156,16 +159,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             zato je inline i blokirajuća, a ne `next/script`. Ako JavaScript ne
             radi, klase nema, ništa se ne skriva i ceo sadržaj je odmah vidljiv.
             Time je i stari <noscript> blok postao nepotreban. */}
+        {/* Ista skripta odlučuje i da li se baner za kolačiće prikazuje: ako u
+            localStorage nema izbora, doda klasu `cc-open` pre prvog paint-a, pa
+            se baner iscrta zajedno sa sadržajem umesto posle hidracije (vidi
+            components/CookieConsent.tsx — to je ranije bio LCP element). */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.documentElement.classList.add('js')`,
+            __html: `(function(d){d.classList.add('js');try{if(!localStorage.getItem('cookie_consent'))d.classList.add('cc-open')}catch(e){d.classList.add('cc-open')}})(document.documentElement)`,
           }}
         />
       </head>
       <body className="font-sans antialiased bg-ink-bg text-ink-text">
-        {/* Consent Mode v2 — mora da se izvrši pre gtag.js.
-            Reklamni tagovi su uklonjeni sa sajta, pa se traži pristanak samo
-            za analitiku; ad_* ostaje trajno denied dok se Ads ne vrati. */}
+        {/* Consent Mode v2, osnovni režim. Ovde se samo pripremi `gtag` red i
+            podrazumevano stanje `denied`; sam gtag.js se učitava TEK posle
+            pristanka (loadGoogleAnalytics u CookieConsent.tsx), pa Google pre
+            izbora posetioca ne dobija nijedan zahtev. Reklamni tagovi su
+            uklonjeni sa sajta, pa se ad_* nikad ne odobrava. */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`
 window.dataLayer = window.dataLayer || [];
@@ -177,9 +186,16 @@ gtag('consent', 'default', {
   analytics_storage: 'denied',
   wait_for_update: 500
 });
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');
 try {
   if (localStorage.getItem('cookie_consent') === 'granted') {
     gtag('consent', 'update', { analytics_storage: 'granted' });
+    var s = document.createElement('script');
+    s.id = 'ga4-gtag';
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}';
+    document.head.appendChild(s);
   }
 } catch (e) {}
           `}
@@ -189,6 +205,10 @@ try {
         <div className="scroll-progress" data-scroll-progress aria-hidden="true" />
         <Aurora />
 
+        {/* Baner je prvi u redosledu tastature: ko ga vidi, do njega stiže prvim
+            Tab-om, a ne tek posle cele stranice. Kad je skriven, ne postoji za Tab. */}
+        <CookieConsent />
+
         {children}
 
         {/* Custom cursor je uklonjen: sa svetlom koje prati miša i magnetnim
@@ -196,22 +216,8 @@ try {
             je skup za GPU, a skrivanje sistemskog kursora smeta posetiocima
             kojima ovaj sajt prodaje — vlasnicima lokalnih firmi. */}
         <MotionRuntime />
-        <CookieConsent />
         {/* Vercel Web Analytics — bez kolačića i bez ličnih podataka. */}
         <Analytics />
-        {/* GA4 (Google Ads tag uklonjen — nalog se više ne koristi) */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-tags-config" strategy="afterInteractive">
-          {`
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
       </body>
     </html>
   )

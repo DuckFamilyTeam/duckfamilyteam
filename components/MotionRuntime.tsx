@@ -62,7 +62,11 @@ export default function MotionRuntime() {
             io.unobserve(el)
           })
         },
-        { threshold: 0.14, rootMargin: '0px 0px -6% 0px' },
+        // threshold 0 umesto 0.14: kod visokih sekcija (FAQ, blog na tabletu)
+        // udeo od 14% ponekad nijednom ne bude prijavljen tokom brzog skrola, pa
+        // je sekcija ostajala nevidljiva (snimak index 768, 2026-09-27: ~3.300 px
+        // praznog prostora). Dovoljno je da element uđe 8% u kadar.
+        { threshold: 0, rootMargin: '0px 0px -8% 0px' },
       )
       targets.forEach((el) => io.observe(el))
       cleanups.push(() => {
@@ -132,8 +136,14 @@ export default function MotionRuntime() {
       // odmah, bez animacije. Skup `cekaju` se prazni, pa ova petlja posle
       // par sekundi skrolovanja ne radi ništa.
       if (cekaju.size > 0) {
+        const donjaIvica = window.innerHeight
         cekaju.forEach((el) => {
-          if (el.getBoundingClientRect().bottom < 0) {
+          const r = el.getBoundingClientRect()
+          // Posle skrola, sve što je iznad kadra ili već u njemu mora biti
+          // vidljivo, bez obzira na to da li je observer stigao da javi prelazak
+          // praga. Na vrhu strane (y = 0) prvi ekran otkriva observer, sa
+          // zakašnjenjima za redosled (data-rv-delay).
+          if (r.bottom < 0 || (y > 0 && r.top < donjaIvica)) {
             el.classList.add('rv-in')
             cekaju.delete(el)
           }

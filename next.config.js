@@ -3,7 +3,11 @@ const nextConfig = {
     compress: true,
     poweredByHeader: false,
     images: {
-          formats: ['image/avif', 'image/webp'],
+          // Samo WebP. AVIF je isključen 2026-09-27: Next.js 14.x ima poznatu
+          // ranjivost u Image Optimization API-ju kad se služe AVIF fajlovi
+          // (GHSA-2xp9-vwfh-vxw4), a zakrpa postoji tek u 15.5.24+/16.x.
+          // WebP je ionako preporučeni podrazumevani format (znanje/06).
+          formats: ['image/webp'],
           },
     async redirects() {
           return [
@@ -60,6 +64,7 @@ const nextConfig = {
                     { key: 'Content-Security-Policy', value: csp },
                     { key: 'Permissions-Policy', value: permissionsPolicy },
                     { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+                    { key: 'Cross-Origin-Resource-Policy', value: 'same-site' },
                             ],
         },
             ]

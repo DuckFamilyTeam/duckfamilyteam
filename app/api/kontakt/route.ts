@@ -46,7 +46,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true })
   }
 
-  const { company: _honeypot, source, ...contact } = parsed.data
+  // Poslato brže nego što čovek može da popuni formu — isto kao honeypot.
+  if (typeof parsed.data.elapsed === 'number' && parsed.data.elapsed < 3000) {
+    return NextResponse.json({ ok: true })
+  }
+
+  const { company: _honeypot, elapsed: _elapsed, source, ...contact } = parsed.data
 
   try {
     const formspreeRes = await fetch(FORMSPREE_ENDPOINT, {
@@ -58,7 +63,9 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         ...contact,
         // Razdvaja ozbiljne upite od newsletter prijava u istom inboxu.
-        _subject: `Upit sa sajta${source ? ` — ${source}` : ''}`,
+        // CR/LF se izbacuju iz svega što ide u zaglavlje poruke (subject), da se
+        // kroz polje ne bi ubacilo dodatno zaglavlje (email header injection).
+        _subject: `Upit sa sajta${source ? `: ${source.replace(/[\r\n]+/g, ' ')}` : ''}`,
         stranica: source || '/',
       }),
     })

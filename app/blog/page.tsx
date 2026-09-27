@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
 import { blogPosts } from '@/lib/blogPosts'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -46,7 +47,7 @@ export default function BlogPage() {
               Blog
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
-              Marketing bez filtera
+              Marketing <PodvucenaRec>bez filtera</PodvucenaRec>
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed">
               Delimo strategije koje testiramo svakodnevno. Nema pametovanja, samo čisti podaci i saveti za veći profit.
@@ -55,20 +56,26 @@ export default function BlogPage() {
 
           {/* ── POSTS GRID ── */}
           <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-            {posts.map((post) => (
+            {posts.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl overflow-hidden flex flex-col transition-colors"
+                className={`group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl overflow-hidden flex flex-col transition-colors ${
+                  i === 0 ? 'md:col-span-2 lg:col-span-3 lg:flex-row' : ''
+                }`}
               >
-                <div className="h-48 relative overflow-hidden">
+                <div
+                  className={`relative overflow-hidden ${
+                    i === 0 ? 'h-56 md:h-72 lg:h-auto lg:min-h-[320px] lg:w-1/2 lg:shrink-0' : 'h-48'
+                  }`}
+                >
                   <Image
                     src={post.img}
                     unoptimized
                     alt={post.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes={i === 0 ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'}
                   />
                   <span className="absolute top-4 left-4 bg-wine text-ink-text text-[10px] font-mono uppercase px-3 py-1.5 rounded-full tracking-widest">
                     {post.tag}
@@ -80,7 +87,13 @@ export default function BlogPage() {
                     <span>·</span>
                     <span>{post.readTime} čitanja</span>
                   </div>
-                  <h2 className="font-display font-medium text-xl mb-3 leading-snug">{post.title}</h2>
+                  <h2
+                    className={`font-display font-medium mb-3 leading-snug ${
+                      i === 0 ? 'text-2xl md:text-3xl' : 'text-xl'
+                    }`}
+                  >
+                    {post.title}
+                  </h2>
                   <p className="text-ink-muted text-sm leading-relaxed mb-5 flex-1">{post.excerpt}</p>
                   <span className="text-sm font-medium flex items-center gap-2">
                     Pročitaj više

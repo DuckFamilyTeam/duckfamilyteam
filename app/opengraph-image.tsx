@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-export const alt = 'Duck Family Team — Google Ads, Google Business profil i izrada sajtova'
+export const alt = 'Duck Family Team: Google Ads, Google Business profil i izrada sajtova'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

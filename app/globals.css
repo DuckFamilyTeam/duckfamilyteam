@@ -182,7 +182,7 @@ main, header, footer { position: relative; z-index: 2; }
   opacity: 0;
   transform: translateY(calc(0.45em * var(--amp))) rotate(calc(2deg * var(--amp)));
   filter: blur(calc(8px * var(--amp)));
-  animation: dft-word-in 760ms var(--ease-out) forwards;
+  animation: dft-word-in 560ms var(--ease-out) forwards;
   animation-delay: var(--d, 0ms);
 }
 @keyframes dft-word-in {
@@ -200,15 +200,26 @@ main, header, footer { position: relative; z-index: 2; }
 .js .squiggle path {
   stroke-dasharray: 140;
   stroke-dashoffset: 140;
-  animation: dft-draw 820ms var(--ease-out) 900ms forwards;
+  animation: dft-draw 720ms var(--ease-out) 480ms forwards;
 }
 @keyframes dft-draw { to { stroke-dashoffset: 0; } }
 
 /* Ulaz ostatka hero sekcije, usklađen sa rečima naslova. */
 .js [data-hero-in] {
   opacity: 0;
-  animation: dft-fade-up 700ms var(--ease-out) forwards;
+  animation: dft-fade-up 520ms var(--ease-out) forwards;
   animation-delay: var(--d, 0ms);
+}
+/* Varijanta bez providnosti, za LCP tekst: vidljiv je od prvog prikaza, samo se
+   blago podigne na mesto. Element koji kreće sa opacity: 0 postaje LCP tek kad
+   se pojavi, pa bi animacija direktno pomerala LCP. */
+.js [data-hero-rise] {
+  animation: dft-rise 520ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes dft-rise {
+  from { transform: translateY(calc(10px * var(--amp))); }
+  to { transform: none; }
 }
 @keyframes dft-fade-up {
   from { opacity: 0; transform: translateY(calc(14px * var(--amp))); }
@@ -218,7 +229,7 @@ main, header, footer { position: relative; z-index: 2; }
 /* Hero slika: otkriva se odozdo, pa neprimetno „diše". */
 .js [data-hero-media] {
   clip-path: inset(0 0 100% 0);
-  animation: dft-media-in 950ms var(--ease-out) 300ms forwards;
+  animation: dft-media-in 800ms var(--ease-out) 120ms forwards;
   will-change: transform;
 }
 @keyframes dft-media-in { to { clip-path: inset(0 0 0 0); } }
@@ -444,6 +455,7 @@ details[data-faq][open] svg { transform: rotate(180deg); }
 
   .js [data-rv],
   .js [data-hero-in],
+  .js [data-hero-rise],
   .js .word {
     opacity: 1 !important;
     transform: none !important;
@@ -467,4 +479,27 @@ details[data-faq][open] svg { transform: rotate(180deg); }
 /* Hover efekti se ne primenjuju na dodir — tap bi ostavio „zaglavljen" hover. */
 @media not all and (hover: hover) {
   [data-tilt] { transform: none !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑬ BANER ZA KOLAČIĆE
+   U HTML-u je uvek; vidljiv je samo kad inline skripta u <head>-u postavi
+   `cc-open` (nema sačuvanog izbora). Tako se crta zajedno sa stranicom, ne
+   posle hidracije — ranije je baš on bio LCP element na telefonu.
+   ══════════════════════════════════════════════════════════════════════ */
+.cc-banner { display: none; }
+.cc-open .cc-banner { display: block; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ⑭ POTPIS — ručno iscrtana vinska linija ispod H1 na podstranicama
+   (components/Potpis.tsx). Bez JS-a i pod smanjenim pokretom stoji iscrtana.
+   ══════════════════════════════════════════════════════════════════════ */
+.potpis { display: block; width: 7.5rem; height: 0.9rem; overflow: visible; }
+.js .potpis path {
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: dft-draw 720ms var(--ease-out) 200ms forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .potpis path { animation: none; stroke-dashoffset: 0; }
 }

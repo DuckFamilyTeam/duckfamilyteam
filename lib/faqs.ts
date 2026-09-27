@@ -18,17 +18,17 @@ export const homeFaqs: Faq[] = [
   {
     question: 'Da li se bavite i SEO-om?',
     answer:
-      'SEO nije poseban paket kod nas. Ugrađen je u izradu sajta i u vođenje Google Business profila, kroz ključne reči, strukturu stranica i lokalni sadržaj. Prvi pomaci u organskim pozicijama se obično vide za 3 do 6 meseci.',
+      'Osnovna SEO optimizacija (meta podaci, struktura stranica, brzina učitavanja) ugrađena je u svaku izradu sajta i u vođenje Google Business profila, bez posebne naplate. Za dublju optimizaciju, istraživanje ključnih reči i sadržajnu strategiju, nudimo poseban SEO paket kao dodatak u kalkulatoru cena. Prvi pomaci u organskim pozicijama se obično vide za 3 do 6 meseci.',
   },
   {
-    question: 'Da li AI (SGE) menja način na koji se rangirate?',
+    question: 'Da li AI pregledi (AI Overviews) menjaju način na koji se rangirate?',
     answer:
-      'Menja. Google sve češće nudi generisan odgovor iznad rezultata, pa deo pretraga završi bez klika na sajt. Zato radimo na tome da vaš sadržaj bude jasan, potkrepljen i lak za citiranje, i da profil i sajt nose iste podatke o firmi.',
+      'Menjaju. Google sve češće nudi generisan odgovor iznad rezultata, pa deo pretraga završi bez klika na sajt. Zato radimo na tome da vaš sadržaj bude jasan, potkrepljen i lak za citiranje, i da profil i sajt nose iste podatke o firmi.',
   },
   {
     question: 'Koliko košta vaša usluga?',
     answer:
-      'Vođenje Google Ads kampanja je 200 evra mesečno, Google Business profil 100 evra mesečno, a izrada sajta ide od 50 do 600 evra, u zavisnosti od tipa. Ceo cenovnik je na stranici Cene, a besplatna konsultacija ne obavezuje ni na šta.',
+      'Vođenje Google Ads kampanja je 200 evra mesečno, Google Business profil 100 evra mesečno, a izrada sajta ide od 180 do 490 evra osnovne cene po tipu biznisa, uz dodatke po potrebi (rezervacije, blog, dvojezičnost, SEO paket i slično). Tačan iznos za vaš slučaj daje kalkulator na stranici Cene, a besplatna konsultacija ne obavezuje ni na šta.',
   },
   {
     question: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
@@ -38,7 +38,7 @@ export const homeFaqs: Faq[] = [
   {
     question: 'Koliko dugo traje izrada sajta?',
     answer:
-      'Jednostavna landing stranica je gotova za 5 do 7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2 do 4 nedelje, u zavisnosti od dostupnosti sadržaja i broja revizija sa vaše strane.',
+      'Fleksibilan rok je 14 dana. Ako vam treba brže, nudimo ubrzanu izradu za 7 ili za 3 dana, uz doplatu koju vidite u kalkulatoru na stranici Cene.',
   },
   {
     question: 'Već imam sajt, možete li ga samo poboljšati?',

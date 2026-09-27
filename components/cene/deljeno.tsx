@@ -1,6 +1,6 @@
 'use client'
 
-import type { ReactNode } from 'react'
+import { useRef, type KeyboardEvent, type ReactNode } from 'react'
 
 /**
  * Zajedničke, sitne UI komponente za sve kalkulatore na /cene.
@@ -116,23 +116,35 @@ export function Brojac({
 // ── Tab dugme (izbor kalkulatora) ───────────────────────────────────────────
 
 export function TabDugme({
+  id,
+  panelId,
   aktivan,
   onClick,
+  dugmeRef,
   children,
 }: {
+  id: string
+  panelId: string
   aktivan: boolean
   onClick: () => void
+  dugmeRef?: (el: HTMLButtonElement | null) => void
   children: ReactNode
 }) {
   return (
     <button
+      ref={dugmeRef}
+      id={id}
       type="button"
+      role="tab"
+      aria-selected={aktivan}
+      aria-controls={aktivan ? panelId : undefined}
+      // Samo aktivan tab je u redosledu Tab-a; ostali se biraju strelicama.
+      tabIndex={aktivan ? 0 : -1}
       onClick={onClick}
-      aria-pressed={aktivan}
-      className={`font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-full border transition-colors whitespace-nowrap ${
+      className={`font-mono text-xs uppercase tracking-widest px-4 py-3 rounded-full border transition-colors whitespace-nowrap ${
         aktivan
           ? 'bg-wine border-wine text-ink-text'
-          : 'border-ink-border text-ink-muted hover:text-ink-text hover:border-wine'
+          : 'border-ink-border-strong text-ink-muted hover:text-ink-text hover:border-wine-text'
       }`}
     >
       {children}
@@ -185,19 +197,37 @@ export function RadioPilule<T extends string>({
   vrednost: T
   onChange: (id: T) => void
 }) {
+  const refs = useRef<Array<HTMLButtonElement | null>>([])
+
+  // Pun ARIA radiogroup obrazac: jedan Tab ulazi u grupu, strelice menjaju izbor.
+  function naTastaturu(e: KeyboardEvent<HTMLDivElement>) {
+    const i = opcije.findIndex((o) => o.id === vrednost)
+    let sledeci = -1
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') sledeci = (i + 1) % opcije.length
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') sledeci = (i - 1 + opcije.length) % opcije.length
+    if (sledeci < 0) return
+    e.preventDefault()
+    onChange(opcije[sledeci].id)
+    refs.current[sledeci]?.focus()
+  }
+
   return (
-    <div role="radiogroup" aria-label={naziv} className="flex flex-wrap gap-2">
-      {opcije.map((opcija) => (
+    <div role="radiogroup" aria-label={naziv} className="flex flex-wrap gap-2" onKeyDown={naTastaturu}>
+      {opcije.map((opcija, i) => (
         <button
           key={opcija.id}
+          ref={(el) => {
+            refs.current[i] = el
+          }}
           type="button"
           role="radio"
           aria-checked={vrednost === opcija.id}
+          tabIndex={vrednost === opcija.id ? 0 : -1}
           onClick={() => onChange(opcija.id)}
-          className={`px-4 py-2 rounded-full border text-sm transition-colors ${
+          className={`px-4 py-2.5 rounded-full border text-sm transition-colors ${
             vrednost === opcija.id
               ? 'bg-wine border-wine text-ink-text'
-              : 'border-ink-border text-ink-muted hover:text-ink-text hover:border-wine'
+              : 'border-ink-border-strong text-ink-muted hover:text-ink-text hover:border-wine-text'
           }`}
         >
           {opcija.naziv}

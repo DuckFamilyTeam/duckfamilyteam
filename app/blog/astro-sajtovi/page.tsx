@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
+import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: 'Astro Sajtovi: Zašto Su Najbolji Izbor za Web',
+  title: { absolute: 'Astro sajtovi: zašto su najbolji izbor za web' },
   description:
     'Island Architecture, nulti JavaScript i Lighthouse 100. Zašto su Astro sajtovi danas najbrži izbor za SEO optimizovanu web prezentaciju.',
   alternates: {
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     'Duck Family Team',
   ],
   openGraph: {
-    title: 'Astro Sajtovi: Zašto Su Najbolji Izbor za Web',
+    title: 'Astro sajtovi: zašto su najbolji izbor za web',
     description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',
     url: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
     type: 'article',
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Astro Sajtovi: Zašto Su Trenutno Najbolja Tehnologija za Web',
+  headline: 'Astro sajtovi: zašto su trenutno najbolja tehnologija za web',
   description:
     'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript.',
   image: 'https://www.duckfamilyteam.online/img/blog/astro-sajtovi.png',
@@ -108,13 +109,14 @@ export default function AstroSajtoviPage() {
             <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               Web Development
             </span>
-            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+            <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
               Astro sajtovi: zašto su trenutno najbolja tehnologija za web?
             </h1>
+            <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Island Architecture, nulti JavaScript i Lighthouse score 100. Evo zašto Google obožava Astro sajtove, i zašto vaš biznis treba jedan.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-05-09">9. maj 2026.</time>
@@ -349,7 +351,7 @@ export default function AstroSajtoviPage() {
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-ink-bg rounded-2xl p-6 border border-wine">
-                  <h4 className="font-display font-medium text-wine-text mb-3 uppercase text-sm tracking-widest">Koristite Astro za</h4>
+                  <h3 className="font-display font-medium text-wine-text mb-3 uppercase text-sm tracking-widest">Koristite Astro za</h3>
                   <ul className="space-y-2 text-sm text-ink-muted">
                     {['Prezentacioni sajtovi biznisa', 'Blogovi i informativni portali', 'Landing stranice', 'Lokalni biznisi (maksimalan SEO)', 'Portfolio sajtovi', 'Dokumentacija'].map(item => (
                       <li key={item} className="flex items-center gap-2">
@@ -359,7 +361,7 @@ export default function AstroSajtoviPage() {
                   </ul>
                 </div>
                 <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
-                  <h4 className="font-display font-medium text-ink-text mb-3 uppercase text-sm tracking-widest">Koristite Next.js za</h4>
+                  <h3 className="font-display font-medium text-ink-text mb-3 uppercase text-sm tracking-widest">Koristite Next.js za</h3>
                   <ul className="space-y-2 text-sm text-ink-muted">
                     {['E-commerce prodavnice', 'Aplikacije sa loginom', 'Dashboard-i i admin paneli', 'Sajtovi sa bazom podataka', 'Real-time funkcionalnosti', 'SaaS platforme'].map(item => (
                       <li key={item} className="flex items-center gap-2">
@@ -410,11 +412,11 @@ export default function AstroSajtoviPage() {
 
               <div className="grid md:grid-cols-1 gap-6 max-w-xl">
                 <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
-                  <h4 className="font-display font-medium text-ink-text mb-2">Tepih Servis Jevtić</h4>
+                  <h3 className="font-display font-medium text-ink-text mb-2">Tepih Servis Jevtić</h3>
                   <p className="text-wine-text font-medium text-sm mb-3">TOP #2 na Google-u za "tepih servis" u Beogradu</p>
                   <p className="text-ink-muted text-sm mb-4">Čist Astro sajt sa visokim Lighthouse score-om. Klijenti pronalaze servis i šalju upite svaki dan putem organskog SEO-a.</p>
                   <a
-                    href="https://www.tepihservisjevtic.rs"
+                    href="https://tepihservisjevtic.rs"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-wine-text font-medium text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"

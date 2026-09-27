@@ -1,3 +1,5 @@
+import 'server-only'
+
 export type GoogleReviewsSummary = { rating: number; count: number }
 
 export type GoogleReview = {

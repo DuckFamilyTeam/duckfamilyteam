@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
+import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
   title: 'Koliko košta Google Ads u Srbiji',
@@ -156,13 +157,14 @@ export default function KolikoKostaGoogleAdsPage() {
             <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               Google Ads
             </span>
-            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+            <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
               Koliko košta Google Ads u Srbiji, i kako se budžet stvarno računa
             </h1>
+            <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Prosečna cena klika za Srbiju ne postoji. Svaka cifra koju vidite kao „prosek za naše tržište" je neko lepo zaokružio. Evo kako da izvučete svoju.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-08-19">19. avgust 2026.</time>
@@ -218,7 +220,7 @@ export default function KolikoKostaGoogleAdsPage() {
                   },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
-                    <div className="font-display text-3xl text-ink-border select-none shrink-0 w-8 text-right">{item.n}</div>
+                    <div className="font-display text-3xl text-ink-border-strong select-none shrink-0 w-8 text-right">{item.n}</div>
                     <div>
                       <div className="font-medium text-ink-text mb-1">{item.t}</div>
                       <p className="text-ink-muted text-sm leading-relaxed m-0">{item.d}</p>
@@ -320,7 +322,7 @@ export default function KolikoKostaGoogleAdsPage() {
                   },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
-                    <div className="font-display text-3xl text-ink-border select-none shrink-0 w-8 text-right">{item.n}</div>
+                    <div className="font-display text-3xl text-ink-border-strong select-none shrink-0 w-8 text-right">{item.n}</div>
                     <div>
                       <div className="font-medium text-ink-text mb-1">{item.t}</div>
                       <p className="text-ink-muted text-sm leading-relaxed m-0">{item.d}</p>

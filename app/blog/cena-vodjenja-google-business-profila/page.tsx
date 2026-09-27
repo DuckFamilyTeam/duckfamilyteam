@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
+import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: 'Cena vođenja Google Business Profila u Srbiji',
+  title: { absolute: 'Cena vođenja Google Business Profila u Srbiji' },
   description:
     'Google Business Profile je besplatan alat, ali vođenje nije. Razlažemo šta pomera mesečnu cenu, kada se isplati raditi sami, i koliko mi naplaćujemo.',
   alternates: {
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     authors: ['Duck Family Team'],
     images: [
       {
-        url: 'https://www.duckfamilyteam.online/img/blog/google-business-profil.png',
+        url: 'https://www.duckfamilyteam.online/img/blog/gbp-objave-i-fotografije.png',
         width: 1200,
         height: 630,
         alt: 'Cena vođenja Google Business Profila u Srbiji',
@@ -49,7 +50,7 @@ const articleSchema = {
   headline: 'Cena vođenja Google Business Profila u Srbiji: od čega zavisi mesečna cena',
   description:
     'Šta pomera mesečnu cenu vođenja Google Business Profila, zašto prosek za tržište nije dobar broj za oslanjanje, kada se isplati raditi sami, i koliko mi naplaćujemo.',
-  image: 'https://www.duckfamilyteam.online/img/blog/google-business-profil.png',
+  image: 'https://www.duckfamilyteam.online/img/blog/gbp-objave-i-fotografije.png',
   datePublished: '2026-08-31',
   dateModified: '2026-08-31',
   wordCount: 1050,
@@ -154,13 +155,14 @@ export default function CenaVodjenjaGbpPage() {
             <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               GBP
             </span>
-            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+            <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
               Cena vođenja Google Business Profila u Srbiji: od čega zavisi mesečna cena
             </h1>
+            <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Google ne naplaćuje profil, ali vođenje nije besplatno. Razlažemo šta pomera mesečnu cenu, i kada se uopšte isplati platiti nekom da to radi umesto vas.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-08-31">31. avgust 2026.</time>
@@ -170,9 +172,8 @@ export default function CenaVodjenjaGbpPage() {
           </div>
 
           <Image
-            src="/img/blog/google-business-profil.svg"
-            unoptimized
-            alt="Cena vođenja Google Business Profila u Srbiji, Duck Family Team"
+            src="/img/blog/gbp-objave-i-fotografije.webp"
+            alt="Ilustracija: telefon koji objavljuje fotografiju na Google Business profil, sa ocenom od pet zvezdica"
             width={1200}
             height={630}
             className="w-full h-[250px] md:h-[500px] object-cover rounded-2xl mb-12 md:mb-16 border border-ink-border"
@@ -225,7 +226,7 @@ export default function CenaVodjenjaGbpPage() {
                   },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
-                    <div className="font-display text-3xl text-ink-border select-none shrink-0 w-8 text-right">{item.n}</div>
+                    <div className="font-display text-3xl text-ink-border-strong select-none shrink-0 w-8 text-right">{item.n}</div>
                     <div>
                       <div className="font-medium text-ink-text mb-1">{item.t}</div>
                       <p className="text-ink-muted text-sm leading-relaxed m-0">{item.d}</p>

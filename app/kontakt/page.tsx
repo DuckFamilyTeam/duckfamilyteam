@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import ContactForm from '@/components/ContactForm'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -75,7 +76,7 @@ export default function KontaktPage() {
               Kontakt
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-2xl">
-              Zakažite besplatnu konsultaciju
+              Zakažite <PodvucenaRec>besplatnu</PodvucenaRec> konsultaciju
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
               Javite se telefonom, mejlom ili preko forme. Odgovaramo u najkraćem roku.

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Rezultati klijenata',
@@ -51,7 +52,7 @@ export default function RezultatiPage() {
               Rezultati
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
-              Rezultati, ne obećanja
+              <PodvucenaRec>Rezultati</PodvucenaRec>, ne obećanja
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
               Ovde stoji samo ono što možemo da dokažemo brojkama. Nema uniformnih citata petnaest zadovoljnih klijenata, ima jedan slučaj sa stvarnim ulaganjem i stvarnom zaradom, i žive Google recenzije na vrhu naše početne strane.
@@ -71,7 +72,7 @@ export default function RezultatiPage() {
                 Mobilni Vulkanizer Milan, 203 odsto povraćaja za tri meseca
               </h2>
               <p className="text-ink-muted leading-relaxed max-w-2xl mb-5">
-                3.550 evra uloženo, 7.210 evra neto zarade posle svih troškova, u tri meseca. Kampanja se i dalje vodi.
+                3.550 evra uloženo, 7.210 evra neto zarade posle svih troškova, u tri meseca. Povraćaj je naš obračun na osnovu brojki koje je dao klijent. Kampanja se i dalje vodi.
               </p>
               <div className="flex items-center gap-2 text-sm font-medium">
                 Pročitaj ceo slučaj →
