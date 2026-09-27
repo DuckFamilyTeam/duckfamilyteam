@@ -375,7 +375,7 @@ export default function SEO2026Page() {
                 Vaš sajt nije rangiran kako treba?
               </h3>
               <p className="mb-8 md:mb-10 text-ink-muted text-lg md:text-xl">
-                Radimo audit i pokazujemo vam tačno šta treba da se promeni da biste ušli u top 3 za ključne reči važne vašoj firmi u Srbiji.
+                Radimo audit i pokazujemo vam tačno šta treba da se promeni da biste bolje rangirali za ključne reči važne vašoj firmi u Srbiji.
               </p>
               <Link
                 href="/kontakt"

@@ -6,7 +6,7 @@
  * bili mrtvo slovo. Sve što treba da se izmeri mora da ide kroz `gtag('event', …)`.
  */
 
-export const GA_MEASUREMENT_ID = 'G-HW9597T7Y7'
+export const GA_MEASUREMENT_ID = 'G-H7W2R3L49D'
 
 type GtagParams = Record<string, string | number | boolean | undefined>
 
