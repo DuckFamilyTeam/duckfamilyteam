@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
+import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: 'SEO u 2026: vodič za tematski autoritet i AI pretragu',
+  title: { absolute: 'SEO u 2026: vodič za tematski autoritet i AI pretragu' },
   description:
     'Kompletni vodič za SEO u 2026. Tematski autoritet, Google SGE, E-E-A-T, Core Web Vitals i strategije koje zaista rade za firme u Srbiji.',
   alternates: {
@@ -109,13 +110,14 @@ export default function SEO2026Page() {
             <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               SEO Strategija 2026
             </span>
-            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+            <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
               SEO u 2026: tematski autoritet, AI pretraga i ključne reči
             </h1>
+            <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Google se menja. AI preuzima kontrolu. Evo kompletnog vodiča šta to znači za SEO strategiju u Srbiji u 2026. godini.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-03-15">15. mart 2026.</time>
@@ -208,7 +210,7 @@ export default function SEO2026Page() {
               </p>
               <ul className="space-y-4 pl-6 list-none">
                 {[
-                  { n: '1.', t: 'Pillar stranica', d: 'Glavna stranica koja sveobuhvatno pokriva temu (npr. "Kompletan vodič za Google Ads u Srbiji", 3000+ reči).' },
+                  { n: '1.', t: 'Pillar stranica', d: 'Glavna stranica koja temu pokriva u celini (npr. „Kompletan vodič za Google Ads u Srbiji", 3000+ reči).' },
                   { n: '2.', t: 'Cluster sadržaj', d: 'Serija dubinskih tekstova na uže podteme koji se linkuju ka pillar stranici i međusobno (npr. "Kako podesiti Smart Bidding", "Negativne ključne reči vodič", "Google Ads Quality Score").' },
                   { n: '3.', t: 'Interno linkovanje', d: 'Sistematično međusobno linkovanje srodnih stranica prenosi SEO vrednost i pomaže Google-u da razume strukturu vašeg znanja.' },
                   { n: '4.', t: 'Konzistentna objava', d: 'Redovni novi sadržaj signalizira Google-u da je sajt aktivan i relevantan, idealno jednom nedeljno.' },

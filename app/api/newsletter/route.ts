@@ -52,6 +52,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true })
   }
 
+  // Poslato brže nego što čovek može da popuni formu — isto kao honeypot.
+  if (typeof parsed.data.elapsed === 'number' && parsed.data.elapsed < 2000) {
+    return NextResponse.json({ ok: true })
+  }
+
   try {
     const formspreeRes = await fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',

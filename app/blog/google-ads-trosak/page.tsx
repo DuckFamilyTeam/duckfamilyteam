@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
+import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: 'Zašto Google oglasi troše novac bez prodaje? 7 razloga',
+  title: { absolute: 'Zašto Google oglasi troše novac bez prodaje? 7 razloga' },
   description:
     'Sedam razloga zašto Google Ads kampanja troši budžet bez konverzija: negativne ključne reči, landing stranica, Quality Score i Smart Bidding.',
   alternates: {
@@ -109,13 +110,14 @@ export default function GoogleAdsTrosakPage() {
             <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               Ekspertska Analiza
             </span>
-            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+            <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
               Zašto vaši Google oglasi troše novac bez konverzija? 7 razloga
             </h1>
+            <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Klikovi stižu, budžet nestaje, ali telefon ne zvoni? Evo surove istine o tome gde grešite, i kako to odmah popraviti.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-04-01">1. april 2026.</time>
@@ -232,7 +234,7 @@ export default function GoogleAdsTrosakPage() {
                 Quality Score je ocena od 1 do 10 koju Google daje svakoj ključnoj reči u vašoj kampanji. Ona se zasniva na: <strong>Expected CTR</strong> (koliko se očekuje da će korisnici kliknuti), <strong>Ad relevance</strong> (koliko je oglas relevantan za ključnu reč) i <strong>Landing page experience</strong> (kvalitet vaše stranice).
               </p>
               <p className="leading-relaxed">
-                Zašto je ovo ključno? Jer Quality Score direktno utiče na cenu klika. Sa Quality Score 10, možete plaćati i do <strong>50% manje</strong> po kliku nego konkurent sa Quality Score 5, čak i za iste pozicije. Loš Quality Score znači da plaćate penale za irelevantnost.
+                Zašto je ovo bitno? Jer Quality Score direktno utiče na cenu klika. Sa Quality Score 10, možete plaćati i do <strong>50% manje</strong> po kliku nego konkurent sa Quality Score 5, čak i za iste pozicije. Loš Quality Score znači da plaćate penale za irelevantnost.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-ink-border rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
@@ -270,7 +272,7 @@ export default function GoogleAdsTrosakPage() {
                 U Srbiji, <strong>više od 60% pretrage</strong> se odvija na mobilnim uređajima. Ali za mnoge industrije, konverzije i dalje dolaze pretežno sa desktopa jer korisnici istražuju na telefonu, a kupuju ili kontaktiraju sa računara. Ako tretirate sve uređaje jednako, plaćate previše za mobilne klikove koji retko konvertuju.
               </p>
               <p className="leading-relaxed">
-                Obrnuto važi za određene industrije, na primer hitne usluge (vodoinstalater, ključar, auto servis) imaju visoke mobilne konverzije jer korisnici direktno klikaju na telefon iz oglasa. Razumevanje ponašanja vaše publike je ključno.
+                Obrnuto važi za određene industrije, na primer hitne usluge (vodoinstalater, ključar, auto servis) imaju visoke mobilne konverzije jer korisnici direktno klikaju na telefon iz oglasa. Zato je važno da znate kako se vaša publika ponaša.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">

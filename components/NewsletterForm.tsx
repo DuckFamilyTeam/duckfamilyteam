@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { newsletterSchema } from '@/lib/validation'
+import { proveriNewsletter } from '@/lib/validacijaKlijent'
 import { trackLead } from '@/lib/analytics'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
@@ -10,6 +10,8 @@ type Status = 'idle' | 'sending' | 'success' | 'error'
 export default function NewsletterForm() {
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
+  // Trenutak prikaza forme — ruta odbacuje slanje brže od ljudskog.
+  const [prikazanaU] = useState(() => Date.now())
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -18,11 +20,13 @@ export default function NewsletterForm() {
       email: (form.elements.namedItem('email') as HTMLInputElement)?.value ?? '',
       consent: (form.elements.namedItem('consent') as HTMLInputElement)?.checked ?? false,
       company: (form.elements.namedItem('company') as HTMLInputElement)?.value ?? '',
+      elapsed: Date.now() - prikazanaU,
     }
 
-    const parsed = newsletterSchema.safeParse(data)
+    // Brza provera u browseru; merodavna je Zod schema na serveru (vidi lib/validacijaKlijent.ts).
+    const parsed = proveriNewsletter(data)
     if (!parsed.success) {
-      setError(parsed.error.issues[0]?.message ?? 'Proverite unete podatke.')
+      setError(Object.values(parsed.errors)[0] ?? 'Proverite unete podatke.')
       setStatus('error')
       return
     }
@@ -55,7 +59,7 @@ export default function NewsletterForm() {
   if (status === 'success') {
     return (
       <p role="status" aria-live="polite" className="text-ink-text text-base">
-        Prijava je zabeležena. Hvala — javljamo se kad izađe nov tekst.
+        Prijava je zabeležena. Hvala, javljamo se kad izađe nov tekst.
       </p>
     )
   }

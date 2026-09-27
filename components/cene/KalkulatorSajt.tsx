@@ -47,9 +47,9 @@ export default function KalkulatorSajt() {
           <span className="flex items-center justify-center h-7 w-7 rounded-full bg-wine text-ink-text font-mono text-sm shrink-0">
             1
           </span>
-          <h3 className="font-display font-medium text-xl">Tip biznisa</h3>
+          <h2 className="font-display font-medium text-xl">Tip biznisa</h2>
         </div>
-        <p className="text-sm text-ink-muted mb-5 ml-10">Glavni faktor — određuje baznu vrednost.</p>
+        <p className="text-sm text-ink-muted mb-5 ml-10">Glavni faktor, određuje osnovnu cenu.</p>
         <div className="ml-10">
           <label htmlFor="tip-biznisa" className="sr-only">
             Izaberite tip biznisa
@@ -67,7 +67,7 @@ export default function KalkulatorSajt() {
                   .map((t) => (
                     <option key={t.id} value={t.id}>
                       {t.naziv}
-                      {t.cena !== null ? ` — ${formatEvra(t.cena)}` : ''}
+                      {t.cena !== null ? `, ${formatEvra(t.cena)}` : ''}
                     </option>
                   ))}
               </optgroup>
@@ -83,7 +83,7 @@ export default function KalkulatorSajt() {
             <span className="flex items-center justify-center h-7 w-7 rounded-full bg-wine text-ink-text font-mono text-sm shrink-0">
               2
             </span>
-            <h3 className="font-display font-medium text-xl">Dodaci</h3>
+            <h2 className="font-display font-medium text-xl">Dodaci</h2>
           </div>
           <p className="text-sm text-ink-muted mb-5 ml-10">
             Svaki dodatak diže cenu po tome šta donosi klijentu.
@@ -125,7 +125,7 @@ export default function KalkulatorSajt() {
           <span className="flex items-center justify-center h-7 w-7 rounded-full bg-wine text-ink-text font-mono text-sm shrink-0">
             3
           </span>
-          <h3 className="font-display font-medium text-xl">Rok</h3>
+          <h2 className="font-display font-medium text-xl">Rok</h2>
         </div>
         <p className="text-sm text-ink-muted mb-5 ml-10">Kraći rok množi finalnu cenu.</p>
         <div className="ml-10">
@@ -137,7 +137,7 @@ export default function KalkulatorSajt() {
       {jeDrugo ? (
         <div className="border border-ink-border rounded-2xl p-8 text-center mb-8" aria-live="polite">
           <p className="text-ink-text">
-            Za biznise van liste cena se dogovara pojedinačno, na osnovu brifa.
+            Za biznise van liste cenu dogovaramo pojedinačno, kad nam opišete šta vam treba.
           </p>
         </div>
       ) : (

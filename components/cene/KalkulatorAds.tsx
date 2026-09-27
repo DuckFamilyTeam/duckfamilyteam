@@ -79,7 +79,7 @@ export default function KalkulatorAds() {
             id="ads-postavka-broj"
             naziv="Broj kampanja za postavku"
             cena={postavkaStavka.cena}
-            jedinica="kampanju"
+            jedinica="kampanji"
             vrednost={brojKampanja}
             onChange={setBrojKampanja}
             min={1}
@@ -88,7 +88,7 @@ export default function KalkulatorAds() {
       </div>
 
       <div className="border border-ink-border rounded-2xl p-6 md:p-8 mb-8">
-        <h3 className="font-display font-medium text-xl mb-4">Analiza naloga</h3>
+        <h2 className="font-display font-medium text-xl mb-4">Analiza naloga</h2>
         <RadioPilule naziv="Analiza naloga" opcije={analizaOpcije} vrednost={analizaId} onChange={setAnalizaId} />
       </div>
 

@@ -8,7 +8,7 @@ const url = 'https://www.duckfamilyteam.online/politika-privatnosti'
 export const metadata: Metadata = {
   title: 'Politika privatnosti',
   description:
-    'Koje podatke Duck Family Team prikuplja preko sajta, zašto ih obrađuje, koliko dugo ih čuva, kome ih prosleđuje i koja prava imate po Zakonu o zaštiti podataka o ličnosti.',
+    'Koje podatke Duck Family Team prikuplja preko sajta, zašto, koliko dugo ih čuva, kome ih prosleđuje i koja su vaša prava po Zakonu o zaštiti podataka.',
   alternates: { canonical: url },
   openGraph: {
     title: 'Politika privatnosti | Duck Family Team',
@@ -27,7 +27,7 @@ const breadcrumbSchema = {
   ],
 }
 
-const AZURIRANO = '13. avgust 2026.'
+const AZURIRANO = '27. septembar 2026.'
 
 export default function PolitikaPrivatnostiPage() {
   return (
@@ -60,7 +60,7 @@ export default function PolitikaPrivatnostiPage() {
             Politika privatnosti
           </h1>
           <p className="text-ink-muted leading-relaxed mb-12">
-            Poslednje ažuriranje: {AZURIRANO}. Ova politika objašnjava koje podatke o vama
+            Poslednje ažuriranje: {AZURIRANO} Ova politika objašnjava koje podatke o vama
             prikupljamo preko sajta duckfamilyteam.online, zašto ih obrađujemo, kome ih
             prosleđujemo i koja prava imate.
           </p>
@@ -69,19 +69,21 @@ export default function PolitikaPrivatnostiPage() {
             <section className="space-y-4">
               <h2 className="font-display font-medium text-2xl text-ink-text">1. Ko obrađuje vaše podatke</h2>
               <p>
-                Rukovalac podacima je <strong className="text-ink-text">Duck Family Team, Online Marketing</strong>,
-                Porodice Josipović 2, 11253 Sremčica, Beograd, Republika Srbija.
+                Rukovalac podacima je <strong className="text-ink-text">Nikola Stanković</strong>, fizičko lice
+                koje posluje pod imenom Duck Family Team, Porodice Josipović 2, 11253 Sremčica, Beograd,
+                Republika Srbija. Delatnost trenutno nije registrovana kao privredni subjekt (nema PIB ni
+                matični broj), pa se ovi podaci ne navode.
               </p>
               <p>
                 Kontakt za sva pitanja o podacima:{' '}
                 <a
                   href="mailto:stankovic.s.nikola@gmail.com"
-                  className="text-wine-text hover:text-ink-text transition"
+                  className="text-wine-text underline underline-offset-2 hover:text-ink-text transition"
                 >
                   stankovic.s.nikola@gmail.com
                 </a>{' '}
                 ili{' '}
-                <a href="tel:+381643877524" className="text-wine-text hover:text-ink-text transition">
+                <a href="tel:+381643877524" className="text-wine-text underline underline-offset-2 hover:text-ink-text transition">
                   +381 64 387 7524
                 </a>
                 .
@@ -156,15 +158,15 @@ export default function PolitikaPrivatnostiPage() {
               </p>
               <ul className="space-y-2 list-disc pl-5">
                 <li>
-                  <strong className="text-ink-text">Vercel Inc.</strong> — hosting sajta i anonimna
+                  <strong className="text-ink-text">Vercel Inc.</strong>: hosting sajta i anonimna
                   statistika poseta.
                 </li>
                 <li>
-                  <strong className="text-ink-text">Formspree Inc.</strong> — prosleđivanje poruka iz
+                  <strong className="text-ink-text">Formspree Inc.</strong>: prosleđivanje poruka iz
                   formi na našu email adresu.
                 </li>
                 <li>
-                  <strong className="text-ink-text">Google Ireland Ltd.</strong> — Google Analytics
+                  <strong className="text-ink-text">Google Ireland Ltd.</strong>: Google Analytics
                   4, samo uz vaš pristanak; i Google mape, samo ako sami kliknete da se mapa učita.
                 </li>
               </ul>
@@ -203,7 +205,7 @@ export default function PolitikaPrivatnostiPage() {
                 Za bilo koje od ovih prava pišite nam na{' '}
                 <a
                   href="mailto:stankovic.s.nikola@gmail.com"
-                  className="text-wine-text hover:text-ink-text transition"
+                  className="text-wine-text underline underline-offset-2 hover:text-ink-text transition"
                 >
                   stankovic.s.nikola@gmail.com
                 </a>
@@ -219,7 +221,7 @@ export default function PolitikaPrivatnostiPage() {
                 Detaljan spisak kolačića i način na koji možete da promenite svoj izbor nalazi se u{' '}
                 <Link
                   href="/politika-kolacica"
-                  className="text-wine-text hover:text-ink-text transition"
+                  className="text-wine-text underline underline-offset-2 hover:text-ink-text transition"
                 >
                   politici kolačića
                 </Link>
@@ -231,7 +233,7 @@ export default function PolitikaPrivatnostiPage() {
               <h2 className="font-display font-medium text-2xl text-ink-text">8. Bezbednost i izmene</h2>
               <p>
                 Sajt radi isključivo preko HTTPS veze, a pristup pristiglim porukama ima samo
-                vlasnik firme. Ako ovu politiku izmenimo, novi datum ažuriranja stoji na vrhu
+                Nikola Stanković, kao vlasnik. Ako ovu politiku izmenimo, novi datum ažuriranja stoji na vrhu
                 stranice.
               </p>
             </section>
@@ -240,7 +242,7 @@ export default function PolitikaPrivatnostiPage() {
           <div className="mt-16 p-6 bg-ink-surface border border-ink-border rounded-2xl">
             <p className="text-ink-muted text-sm leading-relaxed">
               Imate pitanje o svojim podacima?{' '}
-              <Link href="/kontakt" className="text-wine-text hover:text-ink-text transition">
+              <Link href="/kontakt" className="text-wine-text underline underline-offset-2 hover:text-ink-text transition">
                 Javite nam se
               </Link>{' '}
               i odgovorićemo konkretno, bez pravničkih fraza.

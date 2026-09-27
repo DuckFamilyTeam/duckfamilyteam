@@ -1,19 +1,21 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Slučaj: Mobilni Vulkanizer Milan',
   description:
-    'Milan je uložio 3.550 evra u Google Ads kampanju i sajt. Za tri meseca, neto zarada je iznosila 7.210 evra, 203 odsto povraćaja na uloženo.',
+    'Milan je uložio 3.550 evra u Google Ads kampanju i sajt. Za tri meseca neto zarada je bila 7.210 evra, 203 odsto povraćaja po našem obračunu.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/rezultati/mobilni-vulkanizer-milan',
   },
   openGraph: {
     title: 'Slučaj: Mobilni Vulkanizer Milan | Duck Family Team',
-    description: '203 odsto povraćaja na uloženo za tri meseca.',
+    description: '203 odsto povraćaja na uloženo za tri meseca, po našem obračunu na osnovu brojki klijenta.',
     url: 'https://www.duckfamilyteam.online/rezultati/mobilni-vulkanizer-milan',
     type: 'article',
   },
@@ -66,7 +68,7 @@ export default function MilanCaseStudyPage() {
               Google Ads &amp; SEO, mobilni servis za gume
             </div>
             <h1 className="font-display font-medium text-3xl md:text-5xl leading-[1.15] tracking-tight mb-6 max-w-3xl">
-              Mobilni Vulkanizer Milan: 203 odsto povraćaja za tri meseca
+              Mobilni Vulkanizer Milan: <PodvucenaRec>203 odsto</PodvucenaRec> povraćaja za tri meseca
             </h1>
           </section>
 
@@ -78,6 +80,20 @@ export default function MilanCaseStudyPage() {
                 <div className="text-ink-muted text-xs uppercase tracking-widest font-mono">{item.label}</div>
               </div>
             ))}
+          </section>
+
+          {/* ── VIZUAL ── */}
+          <section className="mb-16">
+            <div className="bg-ink-surface border border-ink-border rounded-2xl p-4 md:p-6">
+              <Image
+                src="/img/milan-vulkanizer-ilustracija.webp"
+                alt="Ilustracija: guma i servisno vozilo za mobilnu vulkanizersku uslugu, sa ikonicom poziva"
+                width={1200}
+                height={671}
+                sizes="(min-width: 1024px) 60vw, 90vw"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
           </section>
 
           {/* ── COPY ── */}
@@ -146,7 +162,7 @@ export default function MilanCaseStudyPage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Besplatna konsultacija, pogledamo vaš biznis i kažemo iskreno šta je realno da očekujete.
             </p>
-            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
+            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
               Zakažite besplatnu konsultaciju
             </Link>
           </section>

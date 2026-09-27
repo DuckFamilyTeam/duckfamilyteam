@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import CenaKalkulator from '@/components/cene/CenaKalkulator'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Kalkulator cena',
@@ -46,7 +47,7 @@ const faqSchema = {
       name: 'Šta ako mi treba samo jedna usluga, ne sve zajedno?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno — izaberite odgovarajući tab u kalkulatoru. Paket "sve na jednom mestu" je opcija za one koji žele kompletno vođenje na jednom mestu.',
+        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno. Izaberite odgovarajući tab u kalkulatoru. Paket „Sve na jednom mestu" je opcija za one koji žele kompletno vođenje na jednom mestu.',
       },
     },
     {
@@ -54,7 +55,7 @@ const faqSchema = {
       name: 'Da li su cene iz kalkulatora fiksne?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cena za izradu sajta zavisi od tipa biznisa i izabranih dodataka, i prikazuje se kao raspon (minimum, preporučeno, premium). Google Ads i Google Business profil su fiksne, standardne cene. Za dodatne usluge, kao izrada AI skilova i promptova, cena zavisi od obima posla i dogovara se posebno.',
+        text: 'Cena za izradu sajta zavisi od tipa biznisa, izabranih dodataka i roka, i kalkulator je prikazuje kao jedan iznos. Google Ads i Google Business profil su fiksne, standardne cene. Za dodatne usluge, kao izrada AI skilova i promptova, cena zavisi od obima posla i dogovara se posebno.',
       },
     },
   ],
@@ -83,10 +84,10 @@ export default function CenePage() {
               Kalkulator cena
             </div>
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
-              Koliko košta Google Ads, GBP i izrada sajta
+              Koliko <PodvucenaRec>košta</PodvucenaRec> Google Ads, GBP i izrada sajta
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
-              Izaberite uslugu, tip biznisa i dodatke — cena se računa odmah, bez skrivenih troškova.
+              Izaberite uslugu, tip biznisa i dodatke. Cena se računa odmah, bez skrivenih troškova.
             </p>
           </section>
 
@@ -152,7 +153,7 @@ export default function CenePage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Besplatna konsultacija, pregledamo vaš biznis i predlažemo tačno ono što vam treba, ništa više.
             </p>
-            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
+            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
               Zakažite besplatnu konsultaciju
             </Link>
           </section>

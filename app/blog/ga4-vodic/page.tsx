@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
 import NewsletterForm from '@/components/NewsletterForm'
+import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: 'GA4 Vodič za preduzetnike: metrike i konverzije',
+  title: { absolute: 'GA4 vodič za preduzetnike: metrike i konverzije' },
   description:
     'Kompletni GA4 vodič za firme u Srbiji. Kako podesiti Google Analytics 4, pratiti konverzije, razumeti ključne metrike i povezati sa Google Ads kampanjama.',
   alternates: {
@@ -113,13 +114,14 @@ export default function GA4VodicPage() {
             <span className="bg-wine text-ink-text text-[10px] md:text-[11px] font-mono uppercase px-4 py-1.5 md:px-5 md:py-2 rounded-full tracking-widest">
               GA4 Analitika
             </span>
-            <h1 className="font-display font-medium text-2xl md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
+            <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
               GA4 vodič za preduzetnike: podešavanje, konverzije i metrike
             </h1>
+            <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Google Analytics 4 je lavirint brojeva. Mi vam pokazujemo kako ga podesiti i šta zapravo treba da pratite da biste donosili pametne marketinške odluke.
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
               <span>Duck Family Team</span>
               <span>·</span>
               <time dateTime="2026-02-28">28. februar 2026.</time>
@@ -191,7 +193,7 @@ export default function GA4VodicPage() {
                   { n: '5', t: 'Povežite Google Search Console', d: 'GA4, Admin, Search Console Links. Dobijate uvid u organske ključne reči i klikove direktno u GA4.' },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
-                    <div className="font-display text-3xl text-ink-border select-none shrink-0 w-8 text-right">{item.n}</div>
+                    <div className="font-display text-3xl text-ink-border-strong select-none shrink-0 w-8 text-right">{item.n}</div>
                     <div>
                       <div className="font-medium text-ink-text mb-1">{item.t}</div>
                       <p className="text-ink-muted text-sm leading-relaxed m-0">{item.d}</p>

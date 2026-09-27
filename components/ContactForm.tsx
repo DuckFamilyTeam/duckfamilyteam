@@ -3,13 +3,13 @@
 import { useId, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { contactSchema } from '@/lib/validation'
+import { proveriKontakt } from '@/lib/validacijaKlijent'
 import { trackLead } from '@/lib/analytics'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 const fieldClass =
-  'w-full p-4 md:p-5 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text text-ink-text placeholder:text-ink-muted text-sm transition-colors'
+  'w-full p-4 md:p-5 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text aria-[invalid=true]:border-wine-text aria-[invalid=true]:border-2 text-ink-text placeholder:text-ink-muted text-sm transition-colors'
 
 const labelClass = 'block font-mono text-[11px] uppercase tracking-widest text-ink-muted mb-2'
 
@@ -26,6 +26,8 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [formError, setFormError] = useState('')
   const pathname = usePathname()
+  // Trenutak prikaza forme — ruta odbacuje slanje brže od ljudskog (vidi validation.ts).
+  const [prikazanaU] = useState(() => Date.now())
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -37,17 +39,13 @@ export default function ContactForm() {
       message: (form.elements.namedItem('message') as HTMLTextAreaElement)?.value ?? '',
       company: (form.elements.namedItem('company') as HTMLInputElement)?.value ?? '',
       source: pathname,
+      elapsed: Date.now() - prikazanaU,
     }
 
-    const parsed = contactSchema.safeParse(data)
+    // Brza provera u browseru; merodavna je Zod schema na serveru (vidi lib/validacijaKlijent.ts).
+    const parsed = proveriKontakt(data)
     if (!parsed.success) {
-      const fieldErrors: Record<string, string> = {}
-      for (const issue of parsed.error.issues) {
-        const field = issue.path[0]
-        if (typeof field === 'string' && !fieldErrors[field]) {
-          fieldErrors[field] = issue.message
-        }
-      }
+      const fieldErrors = parsed.errors
       setErrors(fieldErrors)
       setFormError('')
       setStatus('error')
@@ -200,7 +198,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full bg-wine hover:bg-wine-bright text-ink-text p-5 rounded-xl font-medium text-lg transition-colors disabled:opacity-60"
+        className="w-full bg-wine hover:bg-wine-bright text-ink-text px-5 py-5 rounded-xl font-medium text-base md:text-lg transition-colors disabled:opacity-60"
       >
         {status === 'sending' ? 'Slanje...' : 'Zakažite besplatnu konsultaciju'}
       </button>

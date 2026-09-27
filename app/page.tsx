@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
 import FaqAccordion from '@/components/FaqAccordion'
-import Marquee from '@/components/Marquee'
+import ClientLogos from '@/components/ClientLogos'
 import GoogleRating from '@/components/GoogleRating'
 import PhoneCta from '@/components/PhoneCta'
 import HeroTitle from '@/components/HeroTitle'
@@ -90,7 +90,7 @@ export default async function Home() {
     {
       broj: 203,
       sufiks: '%',
-      opis: 'Povraćaj na uloženo za tri meseca, Mobilni Vulkanizer Milan',
+      opis: 'Povraćaj na uloženo za tri meseca, Mobilni Vulkanizer Milan (naš obračun na osnovu brojki klijenta)',
       href: '/rezultati/mobilni-vulkanizer-milan',
     },
     ...(reviews
@@ -122,7 +122,7 @@ export default async function Home() {
                 <div
                   className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4"
                   data-hero-in
-                  style={{ '--d': '80ms' } as React.CSSProperties}
+                  style={{ '--d': '0ms' } as React.CSSProperties}
                 >
                   Google Ads i GBP agencija, Beograd
                 </div>
@@ -169,8 +169,10 @@ export default async function Home() {
 
                 <p
                   className="text-base md:text-lg text-ink-muted leading-relaxed max-w-xl mb-8"
-                  data-hero-in
-                  style={{ '--d': '620ms' } as React.CSSProperties}
+                  // Samo klizanje, bez providnosti: ovaj pasus je LCP element na
+                  // telefonu, pa mora da bude vidljiv od prvog prikaza (vidi globals.css).
+                  data-hero-rise
+                  style={{ '--d': '160ms' } as React.CSSProperties}
                 >
                   Google Ads kampanje, Google Business profil i brzi sajtovi za lokalne biznise koji žele da ih klijenti stvarno pronađu.
                 </p>
@@ -178,7 +180,7 @@ export default async function Home() {
                 <div
                   className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6"
                   data-hero-in
-                  style={{ '--d': '760ms' } as React.CSSProperties}
+                  style={{ '--d': '240ms' } as React.CSSProperties}
                 >
                   <Link
                     href="/kontakt"
@@ -193,7 +195,7 @@ export default async function Home() {
                 <div
                   className="mb-8"
                   data-hero-in
-                  style={{ '--d': '860ms' } as React.CSSProperties}
+                  style={{ '--d': '300ms' } as React.CSSProperties}
                 >
                   <Link
                     href="/rezultati"
@@ -207,7 +209,7 @@ export default async function Home() {
                   <div
                     className="mb-8"
                     data-hero-in
-                    style={{ '--d': '940ms' } as React.CSSProperties}
+                    style={{ '--d': '360ms' } as React.CSSProperties}
                   >
                     <GoogleRating summary={reviews} />
                   </div>
@@ -217,14 +219,14 @@ export default async function Home() {
                   href="/rezultati/mobilni-vulkanizer-milan"
                   className="flex items-baseline gap-4 border-t border-ink-border hover:border-ink-border-strong transition-colors pt-5 max-w-md group"
                   data-hero-in
-                  style={{ '--d': '1020ms' } as React.CSSProperties}
+                  style={{ '--d': '420ms' } as React.CSSProperties}
                 >
                   <div className="font-display font-semibold text-3xl text-wine-text leading-none">
                     203%
                   </div>
                   <p className="text-xs text-ink-muted leading-relaxed">
                     <strong className="text-ink-text font-medium">Mobilni Vulkanizer Milan.</strong>{' '}
-                    Povraćaj na uloženo za tri meseca, provereno, ne procenjeno.{' '}
+                    Povraćaj na uloženo za tri meseca, naš obračun na osnovu brojki klijenta.{' '}
                     <span className="text-wine-text group-hover:text-ink-text transition-colors">
                       Pogledaj kako <span className="arrow-fx">→</span>
                     </span>
@@ -251,7 +253,11 @@ export default async function Home() {
                     fill
                     sizes="(min-width: 1024px) 45vw, 100vw"
                     className="object-cover"
-                    priority
+                    // `eager` bez `priority`: na desktopu je slika u kadru i odmah dobija
+                    // visok prioritet; na telefonu je ispod prvog ekrana, pa više ne
+                    // otima propusni opseg tekstu i fontovima pre prvog prikaza
+                    // (ranije se preload-ovala sa fetchpriority=high i na telefonu).
+                    loading="eager"
                   />
                 </div>
                 <div
@@ -273,32 +279,66 @@ export default async function Home() {
             <h2 className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4" data-rv="up">
               Izaberite šta vam je potrebno
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3.5" style={{ perspective: '1200px' }}>
-              {usluge.map((u, i) => (
-                <Link
-                  key={u.href}
-                  href={u.href}
-                  data-tilt
-                  data-rv="up"
-                  data-rv-delay={i * 90}
-                  className="group bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 flex flex-col justify-between min-h-[200px]"
-                >
-                  <div>
-                    <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
-                      {u.oznaka}
+            {/* Asimetrični bento iz dizajn sistema (resursi_brenda.md, „Layout"):
+                Google Ads je najveća kartica, jer je to glavna usluga. Ranije su sve
+                četiri kartice bile iste veličine. */}
+            <div
+              className="grid sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-3.5"
+              style={{ perspective: '1200px' }}
+            >
+              {usluge.map((u, i) => {
+                const glavna = i === 0
+                return (
+                  <Link
+                    key={u.href}
+                    href={u.href}
+                    data-tilt
+                    data-rv="up"
+                    data-rv-delay={i * 90}
+                    className={`group bg-ink-surface hover:bg-ink-surface-hover border hover:border-wine rounded-2xl flex flex-col justify-between ${
+                      glavna
+                        ? 'sm:col-span-2 lg:row-span-2 border-ink-border-strong p-8 md:p-10 min-h-[260px] lg:min-h-[420px]'
+                        : `border-ink-border p-8 min-h-[200px] ${i === usluge.length - 1 ? 'lg:col-span-2' : ''}`
+                    }`}
+                  >
+                    <div>
+                      <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
+                        {u.oznaka}
+                      </div>
+                      <h3
+                        className={`font-display font-medium mb-2 ${
+                          glavna ? 'text-3xl md:text-4xl tracking-tight mb-4' : 'text-xl'
+                        }`}
+                      >
+                        {u.naslov}
+                      </h3>
+                      <p
+                        className={`text-ink-muted leading-relaxed ${
+                          glavna ? 'text-base md:text-lg max-w-md' : 'text-sm'
+                        }`}
+                      >
+                        {u.opis}
+                      </p>
                     </div>
-                    <h3 className="font-display font-medium text-xl mb-2">{u.naslov}</h3>
-                    <p className="text-sm text-ink-muted leading-relaxed">{u.opis}</p>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm font-medium mt-3.5">
-                    Pogledaj uslugu <span className="arrow-fx">→</span>
-                  </div>
-                </Link>
-              ))}
+                    {glavna && (
+                      <p className="font-mono text-sm text-ink-text mt-8">
+                        Mesečno vođenje <span className="text-wine-text">200 €</span>
+                        <span className="text-ink-muted"> · </span>
+                        postavka kampanje <span className="text-wine-text">70 €</span>
+                      </p>
+                    )}
+                    <div className="flex items-center gap-2 text-sm font-medium mt-3.5">
+                      Pogledaj uslugu <span className="arrow-fx">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
 
             <div className="mt-16 pt-12 border-t border-ink-border" data-rv="up">
-              <Marquee />
+              {/* Statičan red umesto beskonačne trake: sa samo četiri logotipa traka
+                  je na širokom ekranu prikazivala iste logotipe dvaput jedan do drugog. */}
+              <ClientLogos />
             </div>
           </div>
         </section>
@@ -386,24 +426,38 @@ export default async function Home() {
             {/* Ovde je ranije stajala ista fotografija kao u hero sekciji, drugi
                 put učitana. Zamenjena je sertifikatima — oni su dokaz za tvrdnju
                 „sertifikovana agencija" koja se ponavlja kroz ceo sajt, a do sada
-                su se videli samo na stranici O nama. */}
+                su se videli samo na stranici O nama. Prikazani kao tamne kartice sa
+                bedžom umesto sirovih belih screenshotova (dizajn-kritičar, 2026-09-27):
+                bela pozadina originalnih slika je bila najsvetlija površina na sajtu. */}
             <AnimatedSection className="grid grid-cols-2 gap-4" smer="left">
-              <Image
-                src="/img/nikola-stankovic-slika-sertifikata.png"
-                alt="Google sertifikat, Nikola Stanković"
-                width={400}
-                height={300}
-                sizes="(min-width: 768px) 20vw, 45vw"
-                className="rounded-2xl border border-ink-border w-full object-cover bg-ink-bg"
-              />
-              <Image
-                src="/img/andjela-slika-sertifikata.png"
-                alt="Google sertifikat, Anđela Stanković"
-                width={400}
-                height={300}
-                sizes="(min-width: 768px) 20vw, 45vw"
-                className="rounded-2xl border border-ink-border w-full object-cover bg-ink-bg"
-              />
+              <a
+                href="/img/nikola-stankovic-slika-sertifikata.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-ink-surface border border-ink-border rounded-2xl p-6 flex flex-col gap-3 hover:border-wine transition-colors"
+              >
+                <div className="w-12 h-12 rounded-full bg-wine/15 border border-wine flex items-center justify-center">
+                  <span className="font-mono text-wine-text text-xs font-semibold tracking-wide">GA</span>
+                </div>
+                <div>
+                  <p className="font-medium">Nikola Stanković</p>
+                  <p className="text-ink-muted text-sm">Google Ads sertifikat</p>
+                </div>
+              </a>
+              <a
+                href="/img/andjela-slika-sertifikata.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-ink-surface border border-ink-border rounded-2xl p-6 flex flex-col gap-3 hover:border-wine transition-colors"
+              >
+                <div className="w-12 h-12 rounded-full bg-wine/15 border border-wine flex items-center justify-center">
+                  <span className="font-mono text-wine-text text-xs font-semibold tracking-wide">GA</span>
+                </div>
+                <div>
+                  <p className="font-medium">Anđela Stanković</p>
+                  <p className="text-ink-muted text-sm">Google Ads sertifikat</p>
+                </div>
+              </a>
             </AnimatedSection>
             <AnimatedSection delay={100} smer="right">
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">O nama</div>

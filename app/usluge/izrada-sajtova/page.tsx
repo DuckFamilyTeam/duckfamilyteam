@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'Izrada sajtova i landing stranica',
@@ -77,7 +79,7 @@ const faqSchema = {
       name: 'Koliko košta izrada sajta?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sajt do 3 stranice, u Next.js ili Astro tehnologiji sa SEO optimizacijom, košta 300 evra. Višestranični sajt košta 600 evra. Osnovni HTML sajt, jedna stranica, košta 50 evra, a više stranica 100 evra. Mesečno održavanje sa do 3 izmene košta 70 evra mesečno.',
+        text: 'Osnovna cena zavisi od tipa biznisa i ide od 180 do 490 evra, plus dodaci po potrebi (rezervacioni sistem, dvojezičnost, blog, napredna kontakt forma, SEO paket, logo, tekstovi, fotografije, animacije, dodatne stranice). Fleksibilan rok izrade je 14 dana, ubrzana izrada za 7 ili 3 dana ide uz doplatu. Mesečno održavanje sa do 3 izmene košta 30 evra mesečno. Tačan iznos za vaš slučaj izračunava kalkulator na stranici Cene.',
       },
     },
     {
@@ -93,7 +95,7 @@ const faqSchema = {
       name: 'Da li će sajt biti optimizovan za Google?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Da. Svaki sajt uključuje meta opise, ključne reči po stranici, JSON-LD structured data, sitemap i brzo učitavanje. SEO nije posebna usluga, ugrađen je u samu izradu sajta.',
+        text: 'Da. Svaki sajt uključuje meta opise, ključne reči po stranici, JSON-LD structured data, sitemap i brzo učitavanje, bez posebne naplate. Za dublju optimizaciju nudimo poseban SEO paket kao dodatak, dostupan u kalkulatoru cena.',
       },
     },
     {
@@ -109,23 +111,23 @@ const faqSchema = {
 
 const tipovi = [
   {
-    title: 'Osnovni HTML sajt',
-    price: '50 - 100 evra',
-    desc: 'Jedna ili više statičnih stranica, bez CMS-a. Za jednostavno online prisustvo koje treba brzo i jeftino.',
+    title: 'Osnovna cena po tipu biznisa',
+    price: '180 - 490 evra',
+    desc: 'Next.js ili Astro sajt, SEO optimizovan. Tačna osnovna cena zavisi od tipa biznisa (npr. frizerski salon, stomatolog, hotel), vidi kalkulator.',
   },
   {
-    title: 'Sajt do 3 stranice',
-    price: '300 evra',
-    desc: 'Next.js ili Astro, SEO optimizovan. Početna, usluge i kontakt, sve što treba manjem lokalnom biznisu.',
+    title: 'Dodaci po potrebi',
+    price: 'od 20 evra',
+    desc: 'Rezervacioni sistem, dvojezičnost, blog/CMS, napredna kontakt forma, SEO paket, logo, tekstovi, fotografije, animacije, dodatne stranice ili revizije.',
   },
   {
-    title: 'Višestranični sajt',
-    price: '600 evra',
-    desc: 'Next.js ili Astro, sa blogom i više stranica usluga, svaka SEO optimizovana za svoju ključnu reč.',
+    title: 'Rok izrade',
+    price: '14 / 7 / 3 dana',
+    desc: 'Fleksibilan rok od 14 dana je uračunat u osnovnu cenu. Ubrzana izrada za 7 ili 3 dana ide uz doplatu.',
   },
   {
     title: 'Mesečno održavanje',
-    price: '70 evra / mesečno',
+    price: '30 evra / mesečno',
     desc: 'Do 3 izmene mesečno i redovna kontrola stabilnosti sajta, za klijente koji već imaju sajt kod nas.',
   },
 ]
@@ -159,23 +161,36 @@ export default function IzradaSajtovaPage() {
           </nav>
 
           {/* ── HERO ── */}
-          <section className="mb-20">
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-              Izrada sajtova
+          <section className="mb-20 grid lg:grid-cols-12 gap-10 lg:items-center">
+            <div className="lg:col-span-7">
+              <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
+                Izrada sajtova
+              </div>
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+                <PodvucenaRec>Brzi</PodvucenaRec> sajtovi koji rangiraju od prvog dana
+              </h1>
+              <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
+                Next.js i Astro sajtovi sa ugrađenom osnovnom SEO optimizacijom, bez posebne naplate, ključne reči i meta podaci su deo same izrade. Dublji SEO paket je dostupan kao dodatak, ako vam zatreba.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
+                  Besplatna konsultacija
+                </Link>
+                <Link href="#cena" className="px-10 py-5 rounded-xl font-semibold text-base text-center border-2 border-ink-border hover:border-wine transition-colors">
+                  Pogledaj cenu
+                </Link>
+              </div>
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
-              Brzi sajtovi koji rangiraju od prvog dana
-            </h1>
-            <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
-              Next.js i Astro sajtovi sa ugrađenom SEO optimizacijom. Nema odvojene, dodatno naplaćene SEO usluge, ključne reči i meta podaci su deo same izrade.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
-                Besplatna konsultacija
-              </Link>
-              <Link href="#cena" className="px-10 py-5 rounded-xl font-semibold text-base text-center border-2 border-ink-border hover:border-wine transition-colors">
-                Pogledaj cenu
-              </Link>
+            <div className="lg:col-span-5">
+              <Image
+                src="/img/usluge-izrada-sajtova.webp"
+                alt="Ilustracija: prozor sajta u izradi, sa munjom kao simbolom brzine učitavanja"
+                width={1000}
+                height={753}
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="w-full h-auto rounded-2xl border border-ink-border"
+                priority
+              />
             </div>
           </section>
 
@@ -195,10 +210,14 @@ export default function IzradaSajtovaPage() {
           {/* ── TIPOVI SAJTOVA ── */}
           <section id="cena" className="mb-20">
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-3">
-              Tipovi sajtova i cene
+              Kako se formira cena
             </h2>
             <p className="text-ink-muted mb-10">
-              Cena zavisi od broja stranica i tehnologije. Nema skrivenih troškova.
+              Cena zavisi od tipa biznisa, dodataka i roka izrade. Nema skrivenih troškova.{' '}
+              <Link href="/cene" className="text-wine-text underline underline-offset-2 hover:text-ink-text transition">
+                Izračunajte tačnu cenu za vaš sajt u kalkulatoru
+              </Link>
+              .
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {tipovi.map((item) => (
@@ -252,7 +271,7 @@ export default function IzradaSajtovaPage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Besplatna konsultacija, razgovaramo o vašim potrebama i predlažemo tačan obim posla.
             </p>
-            <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
+            <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
               Zatražite besplatnu procenu
             </Link>
           </section>

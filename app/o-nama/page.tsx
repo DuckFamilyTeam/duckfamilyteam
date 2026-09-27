@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
+import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
   title: 'O nama',
@@ -69,13 +70,13 @@ export default function ONamaPage() {
                 O nama
               </div>
               <h1 className="font-display font-medium text-4xl md:text-5xl leading-[1.1] tracking-tight mb-6">
-                Nikola i Anđela, tim iza Duck Family Team
+                <PodvucenaRec>Nikola i Anđela</PodvucenaRec>, tim iza Duck Family Team
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed mb-4">
-                "Duck" nije samo nadimak naše porodice, to je obećanje o lojalnosti. Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
+                „Duck“ nije samo nadimak naše porodice, to je obećanje o lojalnosti. Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
               </p>
               <p className="text-lg text-ink-muted leading-relaxed">
-                Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do e-commerce brendova, i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.
+                Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do srednjih kompanija — spremni smo i za e-commerce projekte, i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.
               </p>
             </div>
             <div className="relative">
@@ -96,26 +97,34 @@ export default function ONamaPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
-                <Image
-                  src="/img/nikola-stankovic-slika-sertifikata.png"
-                  alt="Nikola Stanković, sertifikovani Google Ads stručnjak"
-                  width={300}
-                  height={200}
-                  className="rounded-xl border border-ink-border w-full object-cover mb-4"
-                />
+                <div className="w-12 h-12 rounded-full bg-wine/15 border border-wine flex items-center justify-center mb-4">
+                  <span className="font-mono text-wine-text text-xs font-semibold tracking-wide">GA</span>
+                </div>
                 <h3 className="font-medium">Nikola Stanković</h3>
-                <p className="text-ink-muted text-sm">Sertifikovani Google Ads stručnjak</p>
+                <p className="text-ink-muted text-sm mb-4">Sertifikovani Google Ads stručnjak</p>
+                <a
+                  href="/img/nikola-stankovic-slika-sertifikata.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-wine-text text-xs font-mono uppercase tracking-widest hover:text-ink-text transition"
+                >
+                  Pogledaj sertifikat →
+                </a>
               </div>
               <div className="bg-ink-surface border border-ink-border rounded-2xl p-6">
-                <Image
-                  src="/img/andjela-slika-sertifikata.png"
-                  alt="Anđela Stanković, Google Ads i GA4 analitika ekspert"
-                  width={300}
-                  height={200}
-                  className="rounded-xl border border-ink-border w-full object-cover mb-4"
-                />
+                <div className="w-12 h-12 rounded-full bg-wine/15 border border-wine flex items-center justify-center mb-4">
+                  <span className="font-mono text-wine-text text-xs font-semibold tracking-wide">GA</span>
+                </div>
                 <h3 className="font-medium">Anđela Stanković</h3>
-                <p className="text-ink-muted text-sm">Google Ads i GA4 analitika ekspert</p>
+                <p className="text-ink-muted text-sm mb-4">Sertifikovani Google Ads stručnjak</p>
+                <a
+                  href="/img/andjela-slika-sertifikata.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-wine-text text-xs font-mono uppercase tracking-widest hover:text-ink-text transition"
+                >
+                  Pogledaj sertifikat →
+                </a>
               </div>
             </div>
           </section>
@@ -128,7 +137,7 @@ export default function ONamaPage() {
             <p className="text-ink-muted mb-8 max-w-xl mx-auto">
               Besplatna konsultacija, bez obaveze.
             </p>
-            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
+            <Link href="/kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20">
               Zakažite besplatnu konsultaciju
             </Link>
           </section>

@@ -3,6 +3,14 @@ const nextConfig = {
     compress: true,
     poweredByHeader: false,
     images: {
+          // AVIF vraćen 2026-09-27 na Next.js 16.3.6: ranjivost GHSA-2xp9-vwfh-vxw4
+          // (Next.js 14.x Image Optimization API) je zakrpljena u 15.5.24+/16.x.
+          // Merenje istog dana (/_next/image, w=828, q=75, lokalno):
+          // fotografija (andjela-i-nikola hero) 52.136 → 34.971 B (-33%),
+          // Higgsfield ilustracije 9.122→8.180 B i 12.156→8.064 B (-10% / -34%).
+          // Lighthouse mobilni na `/` i `/usluge/ai-agenti` bez regresije na
+          // LCP/CLS/TBT posle uključivanja (vidi 05_Odrzavanje_Backup/
+          // 2026-09-27-cene-pravni-nextjs-vizuali.md, dopuna).
           formats: ['image/avif', 'image/webp'],
           },
     async redirects() {
@@ -60,6 +68,7 @@ const nextConfig = {
                     { key: 'Content-Security-Policy', value: csp },
                     { key: 'Permissions-Policy', value: permissionsPolicy },
                     { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+                    { key: 'Cross-Origin-Resource-Policy', value: 'same-site' },
                             ],
         },
             ]

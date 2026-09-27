@@ -28,11 +28,8 @@ export default function Footer() {
       id="kontakt"
       className="bg-ink-bg pt-20 pb-12 px-6 md:px-12 text-ink-text border-t border-ink-border"
     >
-      <div
-        className={`max-w-7xl mx-auto grid gap-12 md:gap-16 ${
-          prikaziFormu ? 'lg:grid-cols-2' : ''
-        }`}
-      >
+      {prikaziFormu && (
+      <div className="max-w-7xl mx-auto grid gap-12 md:gap-16 lg:grid-cols-2">
         {/* Left: Contact info */}
         <div className="space-y-8 md:space-y-10">
           <h2 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight">
@@ -114,23 +111,26 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right: Contact form — izostavljena na /kontakt, vidi gore. */}
-        {prikaziFormu && (
+        {/* Right: Contact form */}
           <div className="bg-ink-surface border border-ink-border p-8 md:p-14 rounded-[2rem] relative mt-8 lg:mt-0">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-wine text-ink-text px-6 py-2 rounded-full text-[10px] font-mono uppercase tracking-widest whitespace-nowrap">
               Ostavi poruku
             </div>
             <ContactForm />
           </div>
-        )}
       </div>
+      )}
 
-      <div className="max-w-7xl mx-auto mt-16 rounded-[1.5rem] overflow-hidden border border-ink-border">
+      <div
+        className={`max-w-7xl mx-auto rounded-[1.5rem] overflow-hidden border border-ink-border ${
+          prikaziFormu ? 'mt-16' : ''
+        }`}
+      >
         <MapEmbed />
       </div>
 
       <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-ink-border flex flex-col md:flex-row justify-between items-center gap-6 text-ink-muted text-xs font-mono uppercase tracking-widest text-center">
-        <p>© {godina} Duck Family Team, Online Marketing. Sva prava zadržana.</p>
+        <p>© {godina} Nikola Stanković — Duck Family Team. Sva prava zadržana.</p>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
           <Link href="/" className="hover:text-ink-text transition">
             Početna

@@ -1,5 +1,11 @@
 import { z } from 'zod'
 
+// Zod 4 pri prvoj validaciji proba `new Function` da bi ubrzao parsiranje. Naš CSP
+// ne dozvoljava eval, pa je ta proba na svakoj stranici sa formom ostavljala
+// CSP prijavu u konzoli (Lighthouse „inspector-issues", 2026-09-27). Forme su
+// male, JIT ovde ne donosi ništa merljivo, pa se isključuje.
+z.config({ jitless: true })
+
 export const contactSchema = z.object({
   name: z
     .string()
@@ -39,6 +45,12 @@ export const contactSchema = z.object({
   company: z.string().max(200).optional(),
   /** Sa koje stranice je upit poslat — da se u inboxu zna odakle je stigao. */
   source: z.string().trim().max(200).optional().or(z.literal('')),
+  /**
+   * Koliko je milisekundi prošlo od prikaza forme do slanja. Čovek ne popuni
+   * ime i telefon za manje od ~3 sekunde; skripta to radi odmah. Kao i kod
+   * honeypot-a, odluku donosi ruta (lažni uspeh), ne schema.
+   */
+  elapsed: z.number().int().min(0).max(86_400_000).optional(),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>
@@ -55,6 +67,8 @@ export const newsletterSchema = z.object({
   }),
   /** Honeypot — vidi objašnjenje uz isto polje u contactSchema. */
   company: z.string().max(200).optional(),
+  /** Vreme od prikaza forme do slanja, u ms — vidi isto polje u contactSchema. */
+  elapsed: z.number().int().min(0).max(86_400_000).optional(),
 })
 
 export type NewsletterFormData = z.infer<typeof newsletterSchema>

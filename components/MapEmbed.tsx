@@ -25,7 +25,12 @@ export default function MapEmbed() {
         height="320"
         style={{ border: 0 }}
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
+        // Bez `sandbox` atributa, namerno: Google mapa u sandbox-u bez dozvole za
+        // sopstveni origin ne učitava pločice (testirano 2026-09-27), a ta dozvola
+        // uz dozvolu za skripte obara bezbednosnu proveru agencije. Rizik je ograničen drugačije: okvir
+        // je sa drugog origin-a (google.com), CSP `frame-src` dozvoljava samo
+        // google.com, a mapa se učitava tek na klik.
+        referrerPolicy="strict-origin-when-cross-origin"
         title="Duck Family Team - Online Marketing na Google mapi"
         className="grayscale-[40%] block"
       />
@@ -33,7 +38,7 @@ export default function MapEmbed() {
   }
 
   return (
-    <div className="h-[320px] bg-ink-surface flex flex-col items-center justify-center text-center gap-4 px-6">
+    <div className="min-h-[200px] md:min-h-[240px] py-8 bg-ink-surface flex flex-col items-center justify-center text-center gap-4 px-6">
       <p className="text-ink-text font-medium">Porodice Josipović 2, Sremčica, Beograd</p>
       <p className="text-ink-muted text-xs max-w-sm leading-relaxed">
         Mapu učitava Google. Klikom prihvatate da se vaša IP adresa prosledi Google-u i da Google

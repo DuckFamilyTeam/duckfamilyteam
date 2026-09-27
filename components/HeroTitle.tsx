@@ -22,7 +22,10 @@ export default function HeroTitle({
   return (
     <h1 className={className}>
       {reci.map((deo, i) => {
-        const delay = 120 + index * 58
+        // Ceo naslov je sklopljen za ~0,25 s. Ranije je poslednja reč kretala
+        // posle 0,5 s, a podnaslov tek posle 0,62 s, pa je LCP na telefonu čekao
+        // animaciju (LCP element je podnaslov, izmereno 2026-09-27).
+        const delay = 40 + index * 35
         index += 1
         const style = { '--d': `${delay}ms` } as React.CSSProperties
         if (typeof deo === 'string') {

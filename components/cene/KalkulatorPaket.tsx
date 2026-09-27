@@ -28,11 +28,11 @@ export default function KalkulatorPaket() {
 
       <div className="border border-ink-border rounded-2xl overflow-hidden mb-8">
         <div className="flex justify-between p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
-          <span className="text-ink-text">Google Ads — mesečno vođenje</span>
+          <span className="text-ink-text">Google Ads, mesečno vođenje</span>
           <span className="font-mono text-ink-muted">{formatEvra(adsVodjenje)}</span>
         </div>
         <div className="flex justify-between p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
-          <span className="text-ink-text">Google Business profil — vođenje</span>
+          <span className="text-ink-text">Google Business profil, vođenje</span>
           <span className="font-mono text-ink-muted">{formatEvra(gbpOsnovnaCena)}</span>
         </div>
         <div className="flex justify-between p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
@@ -53,7 +53,7 @@ export default function KalkulatorPaket() {
       <div className="text-center">
         <Link
           href="/kontakt"
-          className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20"
+          className="bg-wine hover:bg-wine-bright text-ink-text px-6 sm:px-10 py-5 rounded-xl font-semibold text-base inline-block transition-colors shadow-lg shadow-wine/20"
         >
           Zakažite besplatnu konsultaciju
         </Link>

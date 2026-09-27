@@ -28,7 +28,7 @@ const breadcrumbSchema = {
   ],
 }
 
-const AZURIRANO = '13. avgust 2026.'
+const AZURIRANO = '27. septembar 2026.'
 
 const kolacici = [
   {
@@ -77,7 +77,7 @@ export default function PolitikaKolacicaPage() {
             Politika kolačića
           </h1>
           <p className="text-ink-muted leading-relaxed mb-12">
-            Poslednje ažuriranje: {AZURIRANO}. Sajt koristi minimum kolačića: jedan da zapamti vaš
+            Poslednje ažuriranje: {AZURIRANO} Sajt koristi minimum kolačića: jedan da zapamti vaš
             izbor i, samo ako pristanete, Google Analytics za statistiku posete. Reklamnih kolačića
             nema.
           </p>
@@ -122,6 +122,11 @@ export default function PolitikaKolacicaPage() {
                 Šta se učitava tek na klik
               </h2>
               <p>
+                Google Analytics se <strong className="text-ink-text">ne učitava uopšte</strong> dok
+                u baneru ne kliknete „Prihvatam". Do tada Google sa ovog sajta ne dobija nijedan
+                zahtev, ni sa kolačićima ni bez njih.
+              </p>
+              <p>
                 Google mapa u dnu stranice se <strong className="text-ink-text">ne učitava sama</strong>.
                 Dok ne kliknete „Prikaži mapu", Google ne dobija vašu IP adresu i ne postavlja svoje
                 kolačiće. Isto važi i za mapu na stranici kontakta.
@@ -160,7 +165,7 @@ export default function PolitikaKolacicaPage() {
                 Kompletan pregled podataka koje obrađujemo i vaših prava nalazi se u{' '}
                 <Link
                   href="/politika-privatnosti"
-                  className="text-wine-text hover:text-ink-text transition"
+                  className="text-wine-text underline underline-offset-2 hover:text-ink-text transition"
                 >
                   politici privatnosti
                 </Link>
