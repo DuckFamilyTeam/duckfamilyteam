@@ -82,6 +82,7 @@ export default function ONamaPage() {
                 alt="Anđela i Nikola Stanković, Google Ads stručnjaci, Duck Family Team"
                 width={600}
                 height={500}
+                priority
                 className="rounded-2xl border border-ink-border w-full object-cover"
               />
             </div>

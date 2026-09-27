@@ -88,6 +88,7 @@ export default function MilanCaseStudyPage() {
                 width={1200}
                 height={671}
                 sizes="(min-width: 1024px) 60vw, 90vw"
+                priority
                 className="w-full h-auto rounded-xl"
               />
             </div>

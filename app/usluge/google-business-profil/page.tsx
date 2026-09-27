@@ -38,7 +38,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Vođenje Google Business profila',
   description:
-    'Agencija za vođenje Google Business profila za firme u Srbiji: objave, fotografije, odgovaranje na recenzije i optimizacija profila za lokalnu pretragu. Cena od 100 evra mesečno.',
+    'Agencija za vođenje Google Business profila za firme u Srbiji: objave, fotografije, odgovaranje na recenzije i optimizacija profila za lokalnu pretragu. Cena 100 evra mesečno po profilu.',
   provider: {
     '@type': 'Organization',
     name: 'Duck Family Team',
@@ -77,7 +77,7 @@ const faqSchema = {
       name: 'Koliko košta vođenje Google Business profila?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Osnovna cena vođenja jednog Google Business profila kod nas je 100 evra mesečno i uključuje 8 objava, 8 fotografija, odgovaranje na recenzije i optimizaciju profila. Konačna cena zavisi od broja lokacija i stanja profila na startu.',
+        text: 'Cena vođenja jednog Google Business profila kod nas je 100 evra mesečno i uključuje 8 objava, 8 fotografija, odgovaranje na recenzije i optimizaciju profila. Za više lokacija se cena računa po profilu, a dostupno je i pojačano objavljivanje (16 umesto 8 objava mesečno) za dodatnih 50 evra mesečno.',
       },
     },
     {
@@ -165,7 +165,7 @@ export default function GoogleBusinessProfilPage() {
                 Agencija za vođenje Google Business profila: <PodvucenaRec>jasna cena</PodvucenaRec>, merljivi rezultati
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
-                Tražite pouzdanu agenciju za Google Business profil koja profesionalno vodi vaš GBP nalog? Duck Family Team vodi profile lokalnih biznisa u Beogradu po transparentnoj, fiksnoj ceni, bez skrivenih troškova. Ispod pronalazite tačnu cenu vođenja GBP-a, šta je uključeno u uslugu i zašto klijenti biraju baš nas.
+                Tražite pouzdanu agenciju za Google Business profil koja profesionalno vodi vaš GBP nalog? Duck Family Team vodi profile lokalnih biznisa u Beogradu po jasnoj, fiksnoj ceni po profilu, bez skrivenih troškova. Ispod pronalazite tačnu cenu vođenja GBP-a, šta je uključeno u uslugu i zašto klijenti biraju baš nas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/#kontakt" className="bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base text-center transition-colors shadow-lg shadow-wine/20">
@@ -220,24 +220,23 @@ export default function GoogleBusinessProfilPage() {
           {/* ── CENA ── */}
           <section id="cena" className="mb-20">
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
-              Cenovni rangovi i od čega zavise
+              Cena i šta je uključeno
             </h2>
             <p className="text-ink-muted leading-relaxed mb-4 max-w-3xl">
-              Osnovna cena vođenja jednog Google Business profila je 100 evra mesečno i uključuje sve navedeno u prethodnoj sekciji. Pisali smo detaljnije{' '}
-              <Link href="/blog/cena-vodjenja-google-business-profila" className="text-wine-text underline hover:no-underline">od čega zavisi mesečna cena</Link>
-              {' '}vođenja GBP profila u Srbiji. Konačna cena kod nas zavisi od:
+              Vođenje jednog Google Business profila kod nas košta fiksnih 100 evra mesečno i uključuje sve navedeno u prethodnoj sekciji. Pisali smo detaljnije o{' '}
+              <Link href="/blog/cena-vodjenja-google-business-profila" className="text-wine-text underline hover:no-underline">ceni vođenja GBP profila</Link>
+              {' '}u Srbiji. Ako imate više lokacija, cena se računa po profilu — svaki dodatni profil je +100 evra mesečno:
             </p>
             <ul className="text-ink-muted leading-relaxed mb-8 max-w-3xl list-disc pl-5 space-y-1">
-              <li>Broja lokacija: firme sa više poslovnica ili franšize dobijaju poseban predlog cene po lokaciji.</li>
-              <li>Stanja profila na startu: zapušten ili duže neažuriran profil zahteva dodatno uređenje pre prelaska na redovno mesečno vođenje.</li>
-              <li>Obima objava i fotografija ako želite više od standardnih 8 + 8 mesečno.</li>
+              <li>Više lokacija ili poslovnica: svaki dodatni profil se naplaćuje kao poseban profil, +100 evra mesečno.</li>
+              <li>Pojačano objavljivanje: 16 umesto standardnih 8 objava i 8 fotografija mesečno, uz doplatu od 50 evra mesečno.</li>
             </ul>
             <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="font-medium text-lg mb-1">Vođenje Google Business profila</h3>
                 <p className="text-ink-muted text-sm">8 objava i 8 fotografija mesečno, odgovaranje na recenzije, optimizacija profila.</p>
               </div>
-              <span className="font-mono text-wine-text text-lg whitespace-nowrap">od 100 evra mesečno</span>
+              <span className="font-mono text-wine-text text-lg whitespace-nowrap">100 evra mesečno</span>
             </div>
             <p className="text-ink-muted leading-relaxed max-w-3xl">
               Za tačan predlog cene prilagođen vašem biznisu, pogledajte i naš{' '}
