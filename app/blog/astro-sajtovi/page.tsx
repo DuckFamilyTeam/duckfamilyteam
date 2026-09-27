@@ -413,8 +413,8 @@ export default function AstroSajtoviPage() {
               <div className="grid md:grid-cols-1 gap-6 max-w-xl">
                 <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
                   <h3 className="font-display font-medium text-ink-text mb-2">Tepih Servis Jevtić</h3>
-                  <p className="text-wine-text font-medium text-sm mb-3">TOP #2 na Google-u za "tepih servis" u Beogradu</p>
-                  <p className="text-ink-muted text-sm mb-4">Čist Astro sajt sa visokim Lighthouse score-om. Klijenti pronalaze servis i šalju upite svaki dan putem organskog SEO-a.</p>
+                  <p className="text-wine-text font-medium text-sm mb-3">Dok smo vodili njihovu kampanju, bili su na 2. mestu na Google-u za "tepih servis" u Beogradu</p>
+                  <p className="text-ink-muted text-sm mb-4">Čist Astro sajt sa visokim Lighthouse score-om. Dok smo sarađivali, klijenti su servis pronalazili i slali upite putem organskog SEO-a.</p>
                   <a
                     href="https://tepihservisjevtic.rs"
                     target="_blank"

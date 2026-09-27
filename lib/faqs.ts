@@ -33,7 +33,7 @@ export const homeFaqs: Faq[] = [
   {
     question: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',
     answer:
-      'Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do e-commerce brendova i srednjih kompanija. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
+      'Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do srednjih kompanija — spremni smo i za e-commerce projekte. Strategiju i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.',
   },
   {
     question: 'Koliko dugo traje izrada sajta?',

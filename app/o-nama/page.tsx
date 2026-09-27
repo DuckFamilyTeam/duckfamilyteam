@@ -76,7 +76,7 @@ export default function ONamaPage() {
                 „Duck“ nije samo nadimak naše porodice, to je obećanje o lojalnosti. Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
               </p>
               <p className="text-lg text-ink-muted leading-relaxed">
-                Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do e-commerce brendova, i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.
+                Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do srednjih kompanija — spremni smo i za e-commerce projekte, i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.
               </p>
             </div>
             <div className="relative">
@@ -116,7 +116,7 @@ export default function ONamaPage() {
                   <span className="font-mono text-wine-text text-xs font-semibold tracking-wide">GA</span>
                 </div>
                 <h3 className="font-medium">Anđela Stanković</h3>
-                <p className="text-ink-muted text-sm mb-4">Google Ads i GA4 analitika ekspert</p>
+                <p className="text-ink-muted text-sm mb-4">Sertifikovani Google Ads stručnjak</p>
                 <a
                   href="/img/andjela-slika-sertifikata.png"
                   target="_blank"
