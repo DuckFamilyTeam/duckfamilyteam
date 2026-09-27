@@ -337,7 +337,7 @@ export default function GA4VodicPage() {
                 Bonus: ROI (Return on Investment)
               </h2>
               <p className="leading-relaxed">
-                Uložili ste 1.000 evra u marketing. Dobili ste 5.000 evra prodaje. <strong className="text-wine-text font-medium">Profit je 5x.</strong> To je jedini broj koji vaš direktor zaista želi da vidi.
+                Uložili ste 1.000 evra u marketing. Dobili ste 5.000 evra prodaje. <strong className="text-wine-text font-medium">Prihod je 5x uloženog (ROAS 5x).</strong> To je jedan od brojeva koje vaš direktor zaista želi da vidi.
               </p>
               <p className="leading-relaxed">
                 GA4 može automatski da prati koliko donosi svaki izvor saobraćaja ako ispravno podesite{' '}

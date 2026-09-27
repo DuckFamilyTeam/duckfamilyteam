@@ -73,7 +73,7 @@ export default function ONamaPage() {
                 „Duck“ nije samo nadimak naše porodice, to je obećanje o lojalnosti. Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
               </p>
               <p className="text-lg text-ink-muted leading-relaxed">
-                Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do srednjih kompanija — spremni smo i za e-commerce projekte, i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.
+                Radimo sa firmama svih veličina, od lokalnih zanatlija i salona do srednjih kompanija, spremni smo i za e-commerce projekte, i budžet uvek prilagođavamo realnim mogućnostima i ciljevima klijenta.
               </p>
             </div>
             <div className="relative">

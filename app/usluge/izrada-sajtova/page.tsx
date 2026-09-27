@@ -86,7 +86,7 @@ const faqSchema = {
       name: 'Koliko dugo traje izrada sajta?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Landing stranica je gotova za 5 do 7 radnih dana. Kompletan poslovni sajt sa više stranica traje 2 do 4 nedelje, u zavisnosti od dostupnosti sadržaja i broja izmena sa vaše strane.',
+        text: 'Fleksibilan rok je 14 dana, u zavisnosti od dostupnosti sadržaja i broja izmena sa vaše strane. Ako vam treba brže, nudimo ubrzanu izradu za 7 ili za 3 dana, uz doplatu koju vidite u kalkulatoru na stranici Cene.',
       },
     },
     {

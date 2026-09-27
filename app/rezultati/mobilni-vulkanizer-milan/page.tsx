@@ -83,8 +83,8 @@ export default function MilanCaseStudyPage() {
           <section className="mb-16">
             <div className="bg-ink-surface border border-ink-border rounded-2xl p-4 md:p-6">
               <Image
-                src="/img/milan-vulkanizer-ilustracija.webp"
-                alt="Ilustracija: guma i servisno vozilo za mobilnu vulkanizersku uslugu, sa ikonicom poziva"
+                src="/img/milan-vulkanizer-sajt-screenshot.webp"
+                alt="Snimak sajta mobilnivulkanizermilan.com, sajta koji smo napravili za Milana"
                 width={1200}
                 height={671}
                 sizes="(min-width: 1024px) 60vw, 90vw"

@@ -72,7 +72,7 @@ export const dodaciSajt: DodatakSajt[] = [
   { id: 'dvojezicni', naziv: 'Dvojezičan sajt', cena: 60, tip: 'prekidac' },
   { id: 'blog-cms', naziv: 'Blog / CMS modul', cena: 60, tip: 'prekidac' },
   { id: 'kontakt-forma', naziv: 'Napredna kontakt forma', cena: 30, tip: 'prekidac' },
-  { id: 'seo', naziv: 'SEO paket (osnovna optimizacija)', cena: 60, tip: 'prekidac' },
+  { id: 'seo', naziv: 'SEO paket (dublja optimizacija)', cena: 60, tip: 'prekidac' },
   { id: 'logo', naziv: 'Logo (ako ga nemate)', cena: 50, tip: 'prekidac' },
   { id: 'tekstovi', naziv: 'Copywriting (mi pišemo tekstove)', cena: 40, tip: 'prekidac' },
   { id: 'fotografije', naziv: 'Fotografije (mi obezbeđujemo)', cena: 30, tip: 'prekidac' },

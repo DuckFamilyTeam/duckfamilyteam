@@ -253,7 +253,7 @@ export default function CenaVodjenjaGbpPage() {
                 </p>
               </div>
               <p className="leading-relaxed text-sm">
-                Radimo kao fizičko lice, pa cena ne podrazumeva fakturu sa PDVom ili PIBom, i tako je i naplaćujemo.
+                Radimo kao fizičko lice, cena je krajnja i tako je i naplaćujemo, bez posredničke fakture za firme.
               </p>
             </div>
 

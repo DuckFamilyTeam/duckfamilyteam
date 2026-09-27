@@ -149,7 +149,7 @@ export default function Footer({ ctaHeading, ctaDescription }: FooterProps = {})
       </div>
 
       <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-ink-border flex flex-col md:flex-row justify-between items-center gap-6 text-ink-muted text-xs font-mono uppercase tracking-widest text-center">
-        <p>© {godina} Nikola Stanković — Duck Family Team. Sva prava zadržana.</p>
+        <p>© {godina} Nikola Stanković, Duck Family Team. Sva prava zadržana.</p>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
           <Link href="/" className="hover:text-ink-text transition">
             Početna

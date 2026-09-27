@@ -80,7 +80,7 @@ export default function NewsletterForm() {
             placeholder="vasa@adresa.rs"
             aria-invalid={status === 'error' ? true : undefined}
             aria-describedby={status === 'error' ? 'newsletter-greska' : undefined}
-            className="w-full p-4 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text text-ink-text placeholder:text-ink-muted text-sm transition-colors"
+            className="w-full p-4 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text aria-[invalid=true]:border-wine-text aria-[invalid=true]:border-2 text-ink-text placeholder:text-ink-muted text-sm transition-colors"
           />
         </div>
         <button

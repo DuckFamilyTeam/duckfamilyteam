@@ -134,7 +134,7 @@ const sta_radimo = [
 const zasto_mi = [
   { title: 'Rezultati koji se mere, ne obećavaju', desc: 'Brojevi iz izveštaja, ne uopštene tvrdnje o „boljoj vidljivosti“.' },
   { title: 'Direktna komunikacija', desc: 'Sa timom koji vodi vaš profil, bez agencijskog žargona i posrednika.' },
-  { title: 'Transparentna, fiksna cena', desc: 'Bez skrivenih troškova i bez dugoročne ugovorne obaveze.' },
+  { title: 'Transparentna cena', desc: 'Bez skrivenih troškova i bez dugoročne ugovorne obaveze.' },
   { title: 'Poznavanje lokalnog tržišta', desc: 'Tim koji razume lokalnu pretragu i kupce u Srbiji, ne generičku šablonsku uslugu.' },
 ]
 
