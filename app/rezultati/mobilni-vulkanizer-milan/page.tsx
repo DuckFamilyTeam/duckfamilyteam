@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PodvucenaRec from '@/components/PodvucenaRec'
+import BrowserFrame from '@/components/BrowserFrame'
 
 export const metadata: Metadata = {
   title: 'Slučaj: Mobilni Vulkanizer Milan',
@@ -64,35 +65,28 @@ export default function MilanCaseStudyPage() {
             <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Google Ads &amp; SEO, mobilni servis za gume
             </div>
-            <h1 className="font-display font-medium text-3xl md:text-5xl leading-[1.15] tracking-tight mb-6 max-w-3xl">
+            {/* md:text-6xl, ne text-5xl: isti razlog kao na o-nama — najmanji
+                H1 na sajtu je bio prebliz veličini Footer CTA naslova
+                (vizuelna provera, krug 8). */}
+            {/* text-4xl na mobilnom (ne text-3xl): dosledno ostalim H1
+                na sajtu. text-balance i širi max-w sprečavaju usamljenu reč
+                u poslednjem redu ("meseca" samo, krug 9). */}
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-4xl text-balance">
               Mobilni Vulkanizer Milan: <PodvucenaRec>203 odsto</PodvucenaRec> povraćaja za tri meseca
             </h1>
           </section>
 
-          {/* ── BROJKE ── */}
-          <section className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+          {/* ── BROJKE ──
+              grid-cols-2 sve do lg (ne md): na 600-1023px je mreža 2x4 kartice
+              premale za "3.550 €" i "3 meseca" u jednom redu, pa se broj lomi
+              u dva reda (vizuelna provera, krug 7, ispravka 4c). */}
+          <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
             {brojke.map((item) => (
               <div key={item.label} className="bg-ink-surface border border-ink-border rounded-2xl p-6 text-center">
-                <div className="font-display font-medium text-2xl md:text-3xl text-wine-text mb-1">{item.value}</div>
+                <div className="font-display font-medium text-2xl md:text-3xl text-wine-text mb-1 whitespace-nowrap">{item.value}</div>
                 <div className="text-ink-muted text-xs uppercase tracking-widest font-mono">{item.label}</div>
               </div>
             ))}
-          </section>
-
-          {/* ── VIZUAL ── */}
-          <section className="mb-16">
-            <div className="bg-ink-surface border border-ink-border rounded-2xl p-4 md:p-6">
-              <Image
-                src="/img/milan-vulkanizer-sajt-screenshot.webp"
-                alt="Snimak sajta mobilnivulkanizermilan.com, sajta koji smo napravili za Milana"
-                width={1200}
-                height={671}
-                sizes="(min-width: 1024px) 60vw, 90vw"
-                priority
-                fetchPriority="high"
-                className="w-full h-auto rounded-xl"
-              />
-            </div>
           </section>
 
           {/* ── COPY ── */}
@@ -129,28 +123,71 @@ export default function MilanCaseStudyPage() {
             </ul>
           </section>
 
-          {/* ── SAJT KOJI SMO MU IZRADILI ── */}
-          <section className="mb-16 max-w-3xl bg-ink-surface border border-ink-border rounded-2xl p-8 md:p-10">
-            <div className="font-mono text-xs uppercase tracking-widest text-wine-text mb-3">
-              Izrada sajta
+          {/* ── SAJT KOJI SMO MU IZRADILI ──
+              Snimak Milanovog sajta stoji OVDE, uz karticu "Izrada sajta",
+              a ne odmah ispod trake sa 4 brojke — na staroj poziciji je
+              izgledao kao dokaz za 203%, a dokazuje samo da sajt postoji
+              (vizuelna provera, krug 7, ispravka 5e). */}
+          <section className="mb-16">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+              <div className="lg:col-span-5 bg-ink-surface border border-ink-border rounded-2xl p-8 md:p-10">
+                <div className="font-mono text-xs uppercase tracking-widest text-wine-text mb-3">
+                  Izrada sajta
+                </div>
+                <h2 className="font-display font-medium text-2xl md:text-3xl mb-4">
+                  Moderan, brz i SEO, AEO i GEO optimizovan sajt
+                </h2>
+                <p className="text-ink-text leading-relaxed mb-8">
+                  Pored kampanje i profila, izradili smo Milanu potpuno nov sajt: brzo učitavanje na mobilnom, čista struktura za Google pretragu (SEO), sadržaj pripremljen da ga citiraju AI asistenti poput Google AI Overviews i ChatGPT-a (AEO i GEO), i jasan poziv na akciju za svakog posetioca.
+                </p>
+                <a
+                  href="https://www.mobilnivulkanizermilan.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 whitespace-nowrap border border-ink-border-strong hover:border-wine text-ink-text px-8 py-4 rounded-xl font-medium transition-colors text-sm md:text-base"
+                >
+                  Posetite sajt
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+
+              <div className="lg:col-span-7">
+                {/* Desktop/tablet: pun okvir pretraživača */}
+                <BrowserFrame
+                  url="mobilnivulkanizermilan.com"
+                  caption="mobilnivulkanizermilan.com · sajt koji smo izradili · snimak septembar 2026."
+                  className="hidden sm:block"
+                >
+                  <Image
+                    src="/img/milan-vulkanizer-sajt-screenshot.webp"
+                    alt="Naslovna strana sajta mobilnivulkanizermilan.com koji smo izradili za Milana"
+                    width={1264}
+                    height={800}
+                    sizes="(min-width: 1024px) 55vw, 90vw"
+                    className="w-full h-auto"
+                  />
+                </BrowserFrame>
+
+                {/* Mobilni: uzak okvir sa stvarnim mobilnim prikazom sajta, ne umanjen desktop */}
+                <figure className="sm:hidden">
+                  <div className="max-w-[260px] mx-auto rounded-2xl overflow-hidden border border-ink-border bg-ink-surface">
+                    <Image
+                      src="/img/milan-vulkanizer-sajt-mobilni.webp"
+                      alt="Mobilni prikaz sajta mobilnivulkanizermilan.com koji smo izradili za Milana"
+                      width={382}
+                      height={760}
+                      sizes="260px"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <figcaption className="font-mono text-[11px] text-ink-muted mt-3 uppercase tracking-widest text-center">
+                    mobilnivulkanizermilan.com · snimak septembar 2026.
+                  </figcaption>
+                </figure>
+              </div>
             </div>
-            <h2 className="font-display font-medium text-2xl md:text-3xl mb-4">
-              Moderan, brz i SEO, AEO i GEO optimizovan sajt
-            </h2>
-            <p className="text-ink-text leading-relaxed mb-8">
-              Pored kampanje i profila, izradili smo Milanu potpuno nov sajt: brzo učitavanje na mobilnom, čista struktura za Google pretragu (SEO), sadržaj pripremljen da ga citiraju AI asistenti poput Google AI Overviews i ChatGPT-a (AEO i GEO), i jasan poziv na akciju za svakog posetioca.
-            </p>
-            <a
-              href="https://www.mobilnivulkanizermilan.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-wine hover:bg-wine-bright text-ink-text px-10 py-5 rounded-xl font-semibold text-base transition-colors shadow-lg shadow-wine/20"
-            >
-              Posetite sajt
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
           </section>
 
         </div>

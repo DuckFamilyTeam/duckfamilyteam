@@ -250,7 +250,7 @@ export default function PolitikaPrivatnostiPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer containerClassName="max-w-3xl" />
     </>
   )
 }

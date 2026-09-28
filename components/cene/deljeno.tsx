@@ -141,7 +141,7 @@ export function TabDugme({
       // Samo aktivan tab je u redosledu Tab-a; ostali se biraju strelicama.
       tabIndex={aktivan ? 0 : -1}
       onClick={onClick}
-      className={`font-mono text-xs uppercase tracking-widest px-4 py-3 rounded-full border transition-colors whitespace-nowrap ${
+      className={`font-mono text-[11px] sm:text-xs uppercase tracking-widest px-3 sm:px-4 py-3 min-h-11 rounded-full sm:rounded-full border transition-colors text-center leading-tight sm:whitespace-nowrap ${
         aktivan
           ? 'bg-wine border-wine text-ink-text'
           : 'border-ink-border-strong text-ink-muted hover:text-ink-text hover:border-wine-text'

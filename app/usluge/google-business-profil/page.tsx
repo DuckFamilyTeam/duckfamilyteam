@@ -159,10 +159,12 @@ export default function GoogleBusinessProfilPage() {
           <section className="mb-20 grid lg:grid-cols-12 gap-10 lg:items-center">
             <div className="lg:col-span-7">
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-                Google Business profil
+                Vođenje profila i objave
               </div>
-              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
-                Agencija za vođenje Google Business profila: <PodvucenaRec>jasna cena</PodvucenaRec>, merljivi rezultati
+              {/* Zarez zalepljen uz "jasna cena" unutar PodvucenaRec, isti
+                  razlog kao na o-nama i rezultatima (krug 10). */}
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
+                Agencija za vođenje Google Business profila: <PodvucenaRec>jasna cena,</PodvucenaRec> merljivi rezultati
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
                 Tražite pouzdanu agenciju za Google Business profil koja profesionalno vodi vaš GBP nalog? Duck Family Team vodi profile lokalnih biznisa u Beogradu po jasnoj, fiksnoj ceni po profilu, bez skrivenih troškova. Ispod pronalazite tačnu cenu vođenja GBP-a, šta je uključeno u uslugu i zašto klijenti biraju baš nas.
@@ -177,9 +179,13 @@ export default function GoogleBusinessProfilPage() {
               </div>
             </div>
             <div className="lg:col-span-5">
+              {/* .svg, ne obojena tezga sa tendom: generička "lokalni biznis"
+                  ikona (vizuelna provera krug 7, stavka 9). Novi crtež je
+                  uzdržana linija u jeziku ostalih ilustracija. */}
               <Image
-                src="/img/usluge-google-business-profil.webp"
-                alt="Ilustracija: lokacija na mapi iznad prodavnice, sa pet zvezdica ocene"
+                src="/img/usluge-google-business-profil.svg"
+                unoptimized
+                alt="Radnja sa pet zvezdica ocene, Google Business profil"
                 width={1000}
                 height={753}
                 sizes="(min-width: 1024px) 40vw, 90vw"

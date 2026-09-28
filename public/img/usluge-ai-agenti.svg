@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="753" viewBox="0 0 1000 753" role="img" aria-label="AI agent: poruka, automatizacija, zakazan termin">
+<defs>
+  <linearGradient id="bg9" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a1412"/><stop offset="1" stop-color="#14100E"/>
+  </linearGradient>
+  <radialGradient id="glow9" cx="0.5" cy="0.42" r="0.62">
+    <stop offset="0" stop-color="#8C2438" stop-opacity="0.32"/>
+    <stop offset="0.55" stop-color="#8C2438" stop-opacity="0.13"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid9" width="34" height="34" patternUnits="userSpaceOnUse">
+    <path d="M34 0H0V34" fill="none" stroke="#F2EAE2" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1000" height="753" fill="url(#bg9)"/>
+<rect width="1000" height="753" fill="url(#grid9)"/>
+<rect width="1000" height="753" fill="url(#glow9)"/>
+
+<ellipse cx="500" cy="380" rx="260" ry="102" fill="none" stroke="#F2EAE2" stroke-opacity="0.14" stroke-width="1.5" transform="rotate(-4 500 380)"/>
+<!-- poruka klijenta -->
+<rect x="110" y="248" width="176" height="106" rx="20" fill="none" stroke="#F2EAE2" stroke-width="3"/>
+<path d="M138 354 L138 383 L172 354 Z" fill="none" stroke="#F2EAE2" stroke-width="3" stroke-linejoin="round"/>
+<line x1="138" y1="292" x2="248" y2="292" stroke="#F2EAE2" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+<line x1="138" y1="318" x2="210" y2="318" stroke="#F2EAE2" stroke-opacity="0.32" stroke-width="5" stroke-linecap="round"/>
+<line x1="292" y1="305" x2="370" y2="305" stroke="#F2EAE2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<!-- centralni cvor: automatizacija, pravi zupčanik -->
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(0.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(45.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(90.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(135.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(180.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(225.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(270.0)"/>
+<rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(315.0)"/>
+<circle cx="500" cy="305" r="62" fill="#8C2438" fill-opacity="0.9"/>
+<circle cx="500" cy="305" r="62" fill="none" stroke="#F2EAE2" stroke-width="3"/>
+<circle cx="500" cy="305" r="22" fill="none" stroke="#F2EAE2" stroke-width="4"/>
+<line x1="630" y1="305" x2="708" y2="305" stroke="#F2EAE2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<!-- rezultat: zakazan termin (kalendar sa kvacicom) -->
+<rect x="708" y="240" width="176" height="140" rx="18" fill="none" stroke="#F2EAE2" stroke-width="3"/>
+<line x1="708" y1="278" x2="884" y2="278" stroke="#F2EAE2" stroke-opacity="0.4" stroke-width="2.5"/>
+<line x1="744" y1="222" x2="744" y2="256" stroke="#F2EAE2" stroke-width="3" stroke-linecap="round"/>
+<line x1="848" y1="222" x2="848" y2="256" stroke="#F2EAE2" stroke-width="3" stroke-linecap="round"/>
+<circle cx="796" cy="330" r="30" fill="#B03A47"/>
+<path d="M782 330 l10 10 20 -22" fill="none" stroke="#F2EAE2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="200" cy="500" r="5" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.5"/>
+<circle cx="820" cy="500" r="4" fill="#B03A47" opacity="0.65"/>
+<circle cx="640" cy="200" r="5" fill="#F2EAE2" opacity="0.3"/>
+
+<rect x="0.5" y="0.5" width="999" height="752" fill="none" stroke="#2E2622" stroke-width="1"/>
+</svg>

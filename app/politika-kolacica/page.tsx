@@ -175,7 +175,7 @@ export default function PolitikaKolacicaPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer containerClassName="max-w-3xl" />
     </>
   )
 }

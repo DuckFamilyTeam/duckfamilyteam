@@ -200,7 +200,7 @@ export default function GoogleAdsPage() {
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
                 Google Ads marketing
               </div>
-              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
                 Google Ads kampanje koje dovode <PodvucenaRec>pozive</PodvucenaRec>
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">

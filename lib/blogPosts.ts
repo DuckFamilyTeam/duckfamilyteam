@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'koliko-kosta-google-ads',
-    img: '/img/blog/koliko-kosta-google-ads.jpg',
+    img: '/img/blog/koliko-kosta-google-ads.svg',
     tag: 'Google Ads',
     title: 'Koliko košta Google Ads u Srbiji, i kako se budžet stvarno računa',
     excerpt:

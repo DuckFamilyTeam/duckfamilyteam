@@ -134,9 +134,9 @@ export default function AiAgentiPage() {
           <section className="mb-20 grid lg:grid-cols-12 gap-10 lg:items-center">
             <div className="lg:col-span-7">
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-                AI agenti i automatizacija
+                Odgovori i zakazivanje 0-24
               </div>
-              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
                 AI koji <PodvucenaRec>radi</PodvucenaRec> dok vi ne morate
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
@@ -152,9 +152,15 @@ export default function AiAgentiPage() {
               </div>
             </div>
             <div className="lg:col-span-5">
+              {/* .svg, ne generisani robot sa antenom: ista zamerka kao na
+                  blogu, robot glava sa antenom je generička AI-marketing
+                  ikona (vizuelna provera krug 7, stavka 9). Novi crtež je u
+                  jeziku ostalih ilustracija i priča konkretnu priču: poruka →
+                  automatizacija → zakazan termin. */}
               <Image
-                src="/img/usluge-ai-agenti.webp"
-                alt="Ilustracija: robot povezan sa oblačićem za razgovor i ikonicama automatizacije"
+                src="/img/usluge-ai-agenti.svg"
+                unoptimized
+                alt="Poruka klijenta, automatski odgovor i zakazan termin, bez ljudske intervencije"
                 width={1000}
                 height={753}
                 sizes="(min-width: 1024px) 40vw, 90vw"

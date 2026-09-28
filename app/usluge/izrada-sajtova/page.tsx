@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PodvucenaRec from '@/components/PodvucenaRec'
+import BrowserFrame from '@/components/BrowserFrame'
 
 export const metadata: Metadata = {
   title: 'Izrada sajtova i landing stranica',
@@ -161,9 +162,9 @@ export default function IzradaSajtovaPage() {
           <section className="mb-20 grid lg:grid-cols-12 gap-10 lg:items-center">
             <div className="lg:col-span-7">
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-                Izrada sajtova
+                Next.js i Astro sajtovi
               </div>
-              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
                 <PodvucenaRec>Brzi</PodvucenaRec> sajtovi koji rangiraju od prvog dana
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
@@ -189,6 +190,39 @@ export default function IzradaSajtovaPage() {
                 priority
               />
             </div>
+          </section>
+
+          {/* ── PRIMER SAJTA ──
+              Dodatni dokaz da "brz sajt koji rangira" nije samo tvrdnja: isti
+              snimak kao na studiji slučaja Milan (vizuelna provera, krug 7,
+              ispravka 5g). */}
+          <section className="mb-20">
+            <div className="font-mono text-xs uppercase tracking-widest text-wine-text mb-3">
+              Primer sajta koji smo izradili
+            </div>
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-6 max-w-2xl">
+              Milanov mobilni servis za gume, izrađen i optimizovan kod nas
+            </h2>
+            <BrowserFrame
+              url="mobilnivulkanizermilan.com"
+              caption="mobilnivulkanizermilan.com · snimak septembar 2026."
+              className="max-w-3xl"
+            >
+              <Image
+                src="/img/milan-vulkanizer-sajt-screenshot.webp"
+                alt="Naslovna strana sajta mobilnivulkanizermilan.com koji smo izradili za Milana"
+                width={1264}
+                height={800}
+                sizes="(min-width: 1024px) 55vw, 90vw"
+                className="w-full h-auto"
+              />
+            </BrowserFrame>
+            <Link
+              href="/rezultati/mobilni-vulkanizer-milan"
+              className="inline-flex items-center gap-2 text-wine-text hover:text-ink-text font-medium mt-4 text-sm"
+            >
+              Pogledajte ceo slučaj, 203 odsto povraćaja za tri meseca →
+            </Link>
           </section>
 
           {/* ── ZAŠTO ── */}

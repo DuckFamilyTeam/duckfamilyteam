@@ -42,8 +42,13 @@ export default function CenaKalkulator() {
 
   return (
     <div>
+      {/* Mreža 2x2 na < 640px: sa flex-wrap su se četiri pilule različite
+          dužine lomile u tri neravna reda ("Izrada sajta" + "Google Ads",
+          pa "Google Business profil", pa "Sve na jednom mestu" sama), pa je
+          kalkulator padao ispod preloma na 390px (vizuelna provera, krug 7,
+          ispravka 4d). */}
       <div
-        className="flex flex-wrap gap-2 mb-10"
+        className="grid grid-cols-2 gap-2 mb-10 sm:flex sm:flex-wrap"
         role="tablist"
         aria-label="Izbor kalkulatora"
         onKeyDown={naTastaturu}

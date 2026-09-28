@@ -117,12 +117,14 @@ export default function GoogleBusinessProfilPage() {
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
               Besplatan je, prati vas svaki dan na vrhu pretrage i gradi poverenje pre nego što neko uopšte klikne na vaš sajt. A opet, većina firmi ga podesi jednom i nikad se ne vrati.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-6 [&>*]:whitespace-nowrap font-mono text-[11px] text-ink-muted uppercase tracking-widest">
-              <span>Duck Family Team</span>
-              <span>·</span>
-              <time dateTime="2026-07-23">23. jul 2026.</time>
-              <span>·</span>
-              <span>9 min čitanja</span>
+            {/* Razdelnik "·" grupisan UZ sledecu stavku (ne sopstveni flex
+                child): na uskom ekranu se lomi zajedno s njom, pa ne ostaje
+                da visi sam na kraju reda (vizuelna provera, krug 7,
+                ispravka 4b). */}
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
+              <span className="whitespace-nowrap">Duck Family Team</span>
+              <span className="whitespace-nowrap">· <time dateTime="2026-07-23">23. jul 2026.</time></span>
+              <span className="whitespace-nowrap">· 9 min čitanja</span>
             </div>
           </div>
 
@@ -337,15 +339,24 @@ export default function GoogleBusinessProfilPage() {
             </ul>
           </div>
 
-          {/* Newsletter — prijava ide preko sopstvene /api/newsletter rute. */}
-          <div className="mt-12 p-8 md:p-10 bg-ink-surface border border-ink-border rounded-2xl text-center">
-            <h3 className="font-display font-medium text-xl md:text-2xl text-ink-text mb-3">
-              Javljamo se kad izađe nov tekst
-            </h3>
-            <p className="text-ink-muted text-sm mb-6 max-w-md mx-auto leading-relaxed">
-              Jedna analiza tržišta mesečno, bez spama. Odjava je moguća u svakom trenutku.
-            </p>
-            <NewsletterForm />
+          {/* Newsletter — traka od jednog reda, ne još jedna CTA kutija sa
+              velikim naslovom. Ranije je ovde stajao pun boks odmah iznad
+              "Nazad na sve blogove" i Footer-ovog "Vreme je da pobedite.",
+              pa je članak imao tri poziva na akciju zaredom (vizuelna
+              provera, krug 7, ispravka 3). Prijava ide preko sopstvene
+              /api/newsletter rute. */}
+          <div className="mt-12 py-8 border-t border-b border-ink-border flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
+            <div className="md:max-w-xs">
+              <p className="font-mono text-xs uppercase tracking-widest text-wine-text mb-1">
+                Newsletter
+              </p>
+              <p className="text-ink-muted text-sm">
+                Jedna analiza tržišta mesečno, bez spama.
+              </p>
+            </div>
+            <div className="w-full md:w-auto md:flex-1 md:max-w-md">
+              <NewsletterForm />
+            </div>
           </div>
 
           {/* Back to blog */}
@@ -362,7 +373,7 @@ export default function GoogleBusinessProfilPage() {
           </div>
         </article>
       </main>
-      <Footer />
+      <Footer containerClassName="max-w-4xl" />
     </>
   )
 }

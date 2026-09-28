@@ -80,7 +80,7 @@ export default function CenePage() {
             <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Kalkulator cena
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl text-balance">
               Koliko <PodvucenaRec>košta</PodvucenaRec> Google Ads, GBP i izrada sajta
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">

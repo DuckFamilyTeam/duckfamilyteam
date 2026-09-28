@@ -18,9 +18,21 @@ interface FooterProps {
   // drugu kutiju. Bez prop-a ostaje generičan naslov za početnu i ostale stranice.
   ctaHeading?: string
   ctaDescription?: string
+  // Kontejner završnog bloka i mape mora da prati kontejner GLAVNOG sadržaja
+  // stranice koja poziva Footer — sadržaj nije iste širine na svim stranicama
+  // (početna i blog lista koriste max-w-7xl, članci max-w-4xl, sve ostale
+  // podstranice max-w-5xl). Podrazumevano max-w-5xl jer to koristi većina
+  // podstranica; početna, blog lista i članci ga eksplicitno menjaju.
+  // (vizuelna provera krug 8: max-w-5xl svuda je popravio podstranice ali
+  // pokvario početnu i blog listu, gde je sadržaj širi.)
+  containerClassName?: string
 }
 
-export default function Footer({ ctaHeading, ctaDescription }: FooterProps = {}) {
+export default function Footer({
+  ctaHeading,
+  ctaDescription,
+  containerClassName = 'max-w-5xl',
+}: FooterProps = {}) {
   const godina = new Date().getFullYear()
   const pathname = usePathname()
 
@@ -39,11 +51,15 @@ export default function Footer({ ctaHeading, ctaDescription }: FooterProps = {})
       className="bg-ink-bg pt-20 pb-12 px-6 md:px-12 text-ink-text border-t border-ink-border"
     >
       {prikaziFormu && (
-      <div className="max-w-7xl mx-auto grid gap-12 md:gap-16 lg:grid-cols-2">
+      <div className={`${containerClassName} mx-auto grid gap-12 md:gap-16 lg:grid-cols-2`}>
         {/* Left: Contact info */}
         <div className="space-y-8 md:space-y-10">
           <div className="space-y-3">
-            <h2 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight">
+            {/* Naslov završnog bloka je namerno JEDAN korak ispod H1 stranice
+                (clamp, ne text-6xl): zatvaranje ne sme da nadjača otvaranje,
+                vizuelna provera krug 7, ispravka 1. Odnos prema najmanjem H1
+                na sajtu (md:text-5xl = 48px) ostaje ≥ 1,3:1 na svim širinama. */}
+            <h2 className="font-display font-medium text-[clamp(2rem,3.2vw,2.75rem)] leading-[1.15] tracking-tight">
               {ctaHeading ?? (
                 <>
                   Vreme je da <br />
@@ -140,8 +156,12 @@ export default function Footer({ ctaHeading, ctaDescription }: FooterProps = {})
       </div>
       )}
 
+      {/* Isti kontejner kao glavni sadržaj stranice (vidi containerClassName
+          gore) — ranije je ovde bilo fiksno max-w-7xl ili max-w-5xl, pa je
+          leva ivica skakala u odnosu na sadržaj na nekim stranicama
+          (vizuelna provera krug 7 ispravka 2, krug 8 regresija). */}
       <div
-        className={`max-w-7xl mx-auto rounded-[1.5rem] overflow-hidden border border-ink-border ${
+        className={`${containerClassName} mx-auto rounded-[1.5rem] overflow-hidden border border-ink-border ${
           prikaziFormu ? 'mt-16' : ''
         }`}
       >

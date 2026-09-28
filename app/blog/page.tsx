@@ -43,7 +43,7 @@ export default function BlogPage() {
             <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
               Blog
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
               Marketing <PodvucenaRec>bez filtera</PodvucenaRec>
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed">
@@ -103,23 +103,32 @@ export default function BlogPage() {
             ))}
           </section>
 
-          {/* ── NEWSLETTER CTA ── */}
-          <section className="bg-ink-surface border border-ink-border rounded-2xl p-10 md:p-16 text-center">
-            <h2 className="font-display font-medium text-3xl md:text-4xl mb-4">
-              Želite savete direktno u inbox?
-            </h2>
-            <p className="text-ink-muted mb-8 max-w-xl mx-auto">
-              Šaljemo jednu analizu tržišta mesečno. Bez spama, samo konkretni primeri kako da poboljšate prodaju.
-            </p>
+          {/* ── NEWSLETTER ──
+              Namerno traka od jednog reda, ne još jedna puna CTA kutija sa
+              velikim naslovom: stajala je odmah iznad završnog Footer bloka,
+              pa je posetilac video dva poziva na akciju zaredom (vizuelna
+              provera, krug 7, ispravka 3). Footer ispod nosi jedini "veliki"
+              poziv na akciju na stranici. */}
+          <section className="border-t border-b border-ink-border py-8 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
+            <div className="md:max-w-xs">
+              <p className="font-mono text-xs uppercase tracking-widest text-wine-text mb-1">
+                Newsletter
+              </p>
+              <p className="text-ink-muted text-sm">
+                Jedna analiza tržišta mesečno, bez spama.
+              </p>
+            </div>
             {/* Ranije je ovde stajala forma sa action="https://formspree.io/f/…",
                 koju CSP pravilo `form-action 'self'` blokira. Prijava sada ide
                 preko sopstvene /api/newsletter rute, sa saglasnošću i honeypot-om. */}
-            <NewsletterForm />
+            <div className="w-full md:w-auto md:flex-1 md:max-w-md">
+              <NewsletterForm />
+            </div>
           </section>
 
         </div>
       </main>
-      <Footer />
+      <Footer containerClassName="max-w-7xl" />
     </>
   )
 }

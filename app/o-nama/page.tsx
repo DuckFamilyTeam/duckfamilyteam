@@ -64,10 +64,20 @@ export default function ONamaPage() {
           <section className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-                O nama
+                Upoznajte tim
               </div>
-              <h1 className="font-display font-medium text-4xl md:text-5xl leading-[1.1] tracking-tight mb-6">
-                <PodvucenaRec>Nikola i Anđela</PodvucenaRec>, tim iza Duck Family Team
+              {/* md:text-6xl, ne text-5xl: o-nama je imalo najmanji H1 na
+                  sajtu (48px), gotovo isti kao završni CTA naslov u Footer-u
+                  (44px) — odnos 1,09:1 umesto traženih 1,3:1 (vizuelna
+                  provera, krug 8). Sad je 60px, isto kao ostale podstranice. */}
+              {/* Zarez je NAMERNO unutar PodvucenaRec (ne odmah posle
+                  zatvorenog span-a): sa text-balance je granica elementa
+                  brojana kao mesto preloma, pa je zarez znao da ostane sam
+                  na početku sledećeg reda (krug 10, nova greška). Zarez
+                  zalepljen uz "Anđela" to sprečava — potez ispod ide i
+                  ispod zareza, neprimetno. */}
+              <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
+                <PodvucenaRec>Nikola i Anđela,</PodvucenaRec> tim iza Duck Family Team
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed mb-4">
                 „Duck“ nije samo nadimak naše porodice, to je obećanje o lojalnosti. Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
@@ -77,14 +87,19 @@ export default function ONamaPage() {
               </p>
             </div>
             <div className="relative">
+              {/* Namerno DRUGI kadar iste radne sesije, ne ista fotografija kao
+                  na početnoj (koja koristi širi, zatamnjeni ambijentalni kadar
+                  za hero pozadinu). Ovde je kadar iz istog snimka, ali blizu
+                  na ruke, notes i tastaturu — vizuelna provera krug 7, stavka
+                  Vizuali, ispravka 7. */}
               <Image
-                src="/img/andjela-i-nikola-u-radnoj-sobi-1.png"
-                alt="Anđela i Nikola Stanković, Google Ads stručnjaci, Duck Family Team"
-                width={600}
-                height={500}
+                src="/img/andjela-i-nikola-detalj-rada.webp"
+                alt="Anđela i Nikola Stanković rade zajedno, beleške i analitika na laptopu, Duck Family Team"
+                width={1085}
+                height={600}
                 priority
                 fetchPriority="high"
-                className="rounded-2xl border border-ink-border w-full object-cover"
+                className="rounded-2xl border border-ink-border w-full aspect-[6/5] object-cover"
               />
             </div>
           </section>

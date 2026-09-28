@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PodvucenaRec from '@/components/PodvucenaRec'
+import BrowserFrame from '@/components/BrowserFrame'
+
+const brojke = [
+  { label: 'Uloženo', value: '3.550 €' },
+  { label: 'Period', value: '3 meseca' },
+  { label: 'Neto zarada', value: '7.210 €' },
+  { label: 'Povraćaj', value: '203%' },
+]
 
 export const metadata: Metadata = {
   title: 'Rezultati klijenata',
@@ -46,33 +55,67 @@ export default function RezultatiPage() {
           {/* ── HERO ── */}
           <section className="mb-16">
             <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-              Rezultati
+              Ono što možemo da dokažemo
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl">
-              <PodvucenaRec>Rezultati</PodvucenaRec>, ne obećanja
+            {/* Zarez zalepljen uz "Rezultati" unutar PodvucenaRec, isti
+                razlog kao na o-nama (krug 10): sa text-balance element-granica
+                posle </PodvucenaRec> je mesto preloma, pa bi zarez ostao sam
+                na početku sledećeg reda. */}
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-3xl text-balance">
+              <PodvucenaRec>Rezultati,</PodvucenaRec> ne obećanja
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
               Ovde stoji samo ono što možemo da dokažemo brojkama. Nema uniformnih citata petnaest zadovoljnih klijenata, ima jedan slučaj sa stvarnim ulaganjem i stvarnom zaradom, i žive Google recenzije na vrhu naše početne strane.
             </p>
           </section>
 
-          {/* ── CASE STUDY KARTICA ── */}
+          {/* ── CASE STUDY KARTICA ──
+              Ranije samo tekstualna kartica, cela stranica se svodila na
+              jedan pasus. Sad nosi traku od 4 brojke i sličicu istog snimka
+              sa studije slučaja, kao dodatni dokaz (vizuelna provera, krug 7,
+              ispravka 5f). */}
           <section>
             <Link
               href="/rezultati/mobilni-vulkanizer-milan"
               className="group block bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 md:p-10 transition-colors"
             >
-              <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
-                Google Ads &amp; SEO
-              </div>
-              <h2 className="font-display font-medium text-2xl md:text-3xl mb-3">
-                Mobilni Vulkanizer Milan, 203 odsto povraćaja za tri meseca
-              </h2>
-              <p className="text-ink-muted leading-relaxed max-w-2xl mb-5">
-                3.550 evra uloženo, 7.210 evra neto zarade posle svih troškova, u tri meseca. Povraćaj je naš obračun na osnovu brojki koje je dao klijent. Kampanja se i dalje vodi.
-              </p>
-              <div className="flex items-center gap-2 text-sm font-medium">
-                Pročitaj ceo slučaj →
+              {/* lg, ne md: na 768px bi 7/12 kolona bila preuska za naslov i
+                  4 statistike (isti problem kao na studiji slučaja, krug 8). */}
+              <div className="grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7">
+                  <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
+                    Google Ads &amp; SEO
+                  </div>
+                  <h2 className="font-display font-medium text-2xl md:text-3xl mb-3">
+                    Mobilni Vulkanizer Milan, 203 odsto povraćaja za tri meseca
+                  </h2>
+                  <p className="text-ink-muted leading-relaxed mb-6">
+                    3.550 evra uloženo, 7.210 evra neto zarade posle svih troškova, u tri meseca. Povraćaj je naš obračun na osnovu brojki koje je dao klijent. Kampanja se i dalje vodi.
+                  </p>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+                    {brojke.map((item) => (
+                      <div key={item.label} className="bg-ink-bg border border-ink-border rounded-xl p-3 text-center">
+                        <div className="font-display font-medium text-lg text-wine-text mb-0.5 whitespace-nowrap">{item.value}</div>
+                        <div className="text-ink-muted text-[10px] uppercase tracking-widest font-mono">{item.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-medium">
+                    Pročitaj ceo slučaj →
+                  </div>
+                </div>
+                <div className="lg:col-span-5">
+                  <BrowserFrame url="mobilnivulkanizermilan.com" className="pointer-events-none">
+                    <Image
+                      src="/img/milan-vulkanizer-sajt-screenshot.webp"
+                      alt="Naslovna strana sajta mobilnivulkanizermilan.com koji smo izradili za Milana"
+                      width={1264}
+                      height={800}
+                      sizes="(min-width: 768px) 35vw, 90vw"
+                      className="w-full h-auto"
+                    />
+                  </BrowserFrame>
+                </div>
               </div>
             </Link>
           </section>

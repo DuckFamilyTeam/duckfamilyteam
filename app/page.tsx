@@ -555,7 +555,7 @@ export default async function Home() {
 
       </main>
       <StickyCta />
-      <Footer />
+      <Footer containerClassName="max-w-7xl" />
     </>
   )
 }

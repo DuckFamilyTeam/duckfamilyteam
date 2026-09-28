@@ -70,9 +70,9 @@ export default function KontaktPage() {
           {/* ── HERO ── */}
           <section className="mb-16">
             <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
-              Kontakt
+              Besplatna konsultacija
             </div>
-            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-2xl">
+            <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-2xl text-balance">
               Zakažite <PodvucenaRec>besplatnu</PodvucenaRec> konsultaciju
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
