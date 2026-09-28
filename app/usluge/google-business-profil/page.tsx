@@ -231,7 +231,7 @@ export default function GoogleBusinessProfilPage() {
             <p className="text-ink-muted leading-relaxed mb-4 max-w-3xl">
               Vođenje jednog Google Business profila kod nas košta fiksnih 100 evra mesečno i uključuje sve navedeno u prethodnoj sekciji. Pisali smo detaljnije o{' '}
               <Link href="/blog/cena-vodjenja-google-business-profila" className="text-wine-text underline hover:no-underline">ceni vođenja GBP profila</Link>
-              {' '}u Srbiji. Ako imate više lokacija, cena se računa po profilu — svaki dodatni profil je +100 evra mesečno:
+              {' '}u Srbiji. Ako imate više lokacija, cena se računa po profilu, i svaki dodatni profil je +100 evra mesečno:
             </p>
             <ul className="text-ink-muted leading-relaxed mb-8 max-w-3xl list-disc pl-5 space-y-1">
               <li>Više lokacija ili poslovnica: svaki dodatni profil se naplaćuje kao poseban profil, +100 evra mesečno.</li>

@@ -166,6 +166,8 @@ export default function MilanCaseStudyPage() {
                     width={1264}
                     height={800}
                     sizes="(min-width: 1024px) 55vw, 90vw"
+                    priority
+                    fetchPriority="high"
                     className="w-full h-auto"
                   />
                 </BrowserFrame>
@@ -179,6 +181,8 @@ export default function MilanCaseStudyPage() {
                       width={382}
                       height={760}
                       sizes="260px"
+                      priority
+                      fetchPriority="high"
                       className="w-full h-auto"
                     />
                   </div>

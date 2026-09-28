@@ -224,7 +224,7 @@ export default function GoogleAdsPage() {
               <Image
                 src="/img/usluge-google-ads.svg"
                 unoptimized
-                alt="Pretraga sa oznakom oglasa, klik u sredini i grafikon rasta konverzija"
+                alt="Pretraga sa oznakom oglasa, poziv u sredini i dnevnik primljenih poziva"
                 width={1000}
                 height={753}
                 sizes="(min-width: 1024px) 40vw, 90vw"
