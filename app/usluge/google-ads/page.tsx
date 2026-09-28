@@ -216,9 +216,15 @@ export default function GoogleAdsPage() {
               </div>
             </div>
             <div className="lg:col-span-5">
+              {/* .svg, u istom jeziku kao AI agenti/GBP/blog ilustracije (tanka
+                  parchment linija, wine akcenat, bez teksta i brojki u slici),
+                  zamenjuje stari sjajni raster sa telefonom i nišanom
+                  (vizuelna provera krug 9/10, stavka Vizuali: "dva jezika
+                  heroja"). Priča: pretraga → klik na oglas → rast. */}
               <Image
-                src="/img/usluge-google-ads.webp"
-                alt="Ilustracija: telefon koji zvoni od poziva sa Google Ads kampanje, sa grafikonom rasta pored"
+                src="/img/usluge-google-ads.svg"
+                unoptimized
+                alt="Pretraga sa oznakom oglasa, klik u sredini i grafikon rasta konverzija"
                 width={1000}
                 height={753}
                 sizes="(min-width: 1024px) 40vw, 90vw"

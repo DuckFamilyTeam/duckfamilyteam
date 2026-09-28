@@ -180,9 +180,16 @@ export default function IzradaSajtovaPage() {
               </div>
             </div>
             <div className="lg:col-span-5">
+              {/* .svg, u istom jeziku kao AI agenti/GBP/blog ilustracije (tanka
+                  parchment linija, wine akcenat, bez teksta i brojki u slici),
+                  zamenjuje stari sjajni raster sa munjom i perspektivnom mrežom
+                  (vizuelna provera krug 9/10, stavka Vizuali: "dva jezika
+                  heroja"). Wireframe stranice u prozoru pregledača, sa
+                  kursorom koji klikće na dugme. */}
               <Image
-                src="/img/usluge-izrada-sajtova.webp"
-                alt="Ilustracija: prozor sajta u izradi, sa munjom kao simbolom brzine učitavanja"
+                src="/img/usluge-izrada-sajtova.svg"
+                unoptimized
+                alt="Wireframe stranice sajta u prozoru pregledača, sa kursorom koji klikće na dugme za akciju"
                 width={1000}
                 height={753}
                 sizes="(min-width: 1024px) 40vw, 90vw"

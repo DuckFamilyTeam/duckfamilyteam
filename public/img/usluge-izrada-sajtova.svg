@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="753" viewBox="0 0 1000 753" role="img" aria-label="Sajt: wireframe stranice u prozoru pregledača, sa dugmetom za akciju">
+<defs>
+  <linearGradient id="bg12" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a1412"/><stop offset="1" stop-color="#14100E"/>
+  </linearGradient>
+  <radialGradient id="glow12" cx="0.5" cy="0.4" r="0.62">
+    <stop offset="0" stop-color="#8C2438" stop-opacity="0.32"/>
+    <stop offset="0.55" stop-color="#8C2438" stop-opacity="0.13"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid12" width="34" height="34" patternUnits="userSpaceOnUse">
+    <path d="M34 0H0V34" fill="none" stroke="#F2EAE2" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1000" height="753" fill="url(#bg12)"/>
+<rect width="1000" height="753" fill="url(#grid12)"/>
+<rect width="1000" height="753" fill="url(#glow12)"/>
+
+<ellipse cx="500" cy="420" rx="270" ry="106" fill="none" stroke="#F2EAE2" stroke-opacity="0.14" stroke-width="1.5" transform="rotate(-3 500 420)"/>
+<!-- prozor pregledaca -->
+<rect x="250" y="170" width="500" height="400" rx="16" fill="none" stroke="#F2EAE2" stroke-width="3"/>
+<line x1="250" y1="216" x2="750" y2="216" stroke="#F2EAE2" stroke-opacity="0.4" stroke-width="2"/>
+<circle cx="280" cy="193" r="6" fill="#8C2438"/>
+<circle cx="304" cy="193" r="6" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.6"/>
+<circle cx="328" cy="193" r="6" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.6"/>
+<!-- hero blok sajta, placeholder za sliku -->
+<rect x="280" y="242" width="440" height="132" rx="8" fill="none" stroke="#F2EAE2" stroke-width="2" stroke-opacity="0.5"/>
+<line x1="280" y1="242" x2="720" y2="374" stroke="#F2EAE2" stroke-opacity="0.18" stroke-width="1.5"/>
+<line x1="720" y1="242" x2="280" y2="374" stroke="#F2EAE2" stroke-opacity="0.18" stroke-width="1.5"/>
+<!-- naslov i podnaslov -->
+<line x1="280" y1="402" x2="500" y2="402" stroke="#F2EAE2" stroke-width="6" stroke-linecap="round" opacity="0.65"/>
+<line x1="280" y1="424" x2="600" y2="424" stroke="#F2EAE2" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+<!-- dugme -->
+<rect x="280" y="452" width="150" height="46" rx="23" fill="#8C2438"/>
+<line x1="305" y1="475" x2="405" y2="475" stroke="#F2EAE2" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<!-- kursor klika na dugme -->
+<path d="M448 486 L448 540 L461 528 L472 550 L482 545 L471 523 L490 521 Z" fill="#F2EAE2"/>
+<!-- dve kartice sadrzaja -->
+<rect x="280" y="522" width="205" height="40" rx="6" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.35"/>
+<rect x="515" y="522" width="205" height="40" rx="6" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.35"/>
+<circle cx="200" cy="560" r="5" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.5"/>
+<circle cx="820" cy="560" r="4" fill="#B03A47" opacity="0.65"/>
+<circle cx="640" cy="200" r="5" fill="#F2EAE2" opacity="0.3"/>
+
+<rect x="0.5" y="0.5" width="999" height="752" fill="none" stroke="#2E2622" stroke-width="1"/>
+</svg>

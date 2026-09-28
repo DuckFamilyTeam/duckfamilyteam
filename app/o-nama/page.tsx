@@ -104,6 +104,67 @@ export default function ONamaPage() {
             </div>
           </section>
 
+          {/* ── KAKO RADIMO ──
+              Popunjava prazninu koju je vizuelna provera tri puta primetila
+              (krug 8, 9, 10, preostala ispravka 2): o-nama nije imalo ništa
+              osim heroja i sertifikata. Namerno DRUGAČIJA kompozicija od
+              vertikalne linije sa tačkama „Naš proces" na početnoj i od ravne
+              liste kartica „Kako vodimo kampanju" na /usluge/google-ads:
+              horizontalna traka od 4 koraka, veliki serifni broj i sitna
+              ručno iscrtana wine linija (isti potez kao PodvucenaRec) kao
+              razdelnik — signature element ovde prvi put služi kao razdelnik
+              unutar sekcije, ne samo ispod naslova (stavka 8). Koraci su isti
+              koje sajt već obećava drugde (kontakt CTA-ovi, cene, Footer). */}
+          <section className="mb-16">
+            <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-3">
+              Kako radimo
+            </h2>
+            <p className="text-ink-muted mb-10 max-w-2xl">
+              Isti tok za svakog klijenta, bez obzira na uslugu.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+              {[
+                {
+                  n: '01',
+                  t: 'Poziv ili poruka',
+                  d: 'Javite se telefonom, mejlom ili preko forme za besplatnu konsultaciju, bez obaveze.',
+                },
+                {
+                  n: '02',
+                  t: 'Predlog i cena',
+                  d: 'Pregledamo vaš biznis i predlažemo tačno ono što vam treba, sa jasnom cenom unapred.',
+                },
+                {
+                  n: '03',
+                  t: 'Radimo',
+                  d: 'Svaku kampanju, sajt ili GBP profil radimo nas dvoje lično, ne prosleđujemo nalog nepoznatom timu.',
+                },
+                {
+                  n: '04',
+                  t: 'Rezultati i izveštaj',
+                  d: 'Pratimo performanse i šaljemo mesečne izveštaje sa konkretnim brojkama, ne uopštenim frazama.',
+                },
+              ].map((item) => (
+                <div key={item.n}>
+                  <div className="font-display font-medium text-4xl md:text-5xl text-wine-text mb-2">
+                    {item.n}
+                  </div>
+                  <svg viewBox="0 0 60 10" className="w-12 h-2.5 mb-4" aria-hidden="true" focusable="false">
+                    <path
+                      d="M2 6C10 2 16 8 26 5C36 2 42 8 58 4"
+                      stroke="#8C2438"
+                      strokeWidth="2.2"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <h3 className="font-display font-medium text-lg mb-2">{item.t}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{item.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* ── SERTIFIKATI ── */}
           <section className="mb-16">
             <h2 className="font-display font-medium text-2xl md:text-3xl tracking-tight mb-6">
