@@ -139,8 +139,8 @@ export default function AstroSajtoviPage() {
           <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-ink-muted text-base md:text-xl">
 
             <p className="leading-relaxed">
-              U svetu web razvoja, svake godine se pojavljuje novi framework koji obećava sve. Ali Astro je nešto drugačije. Od svog lansiranja, Astro je preuzeo primat u kategoriji performansi, i to nije slučajno. Iza toga stoji fundamentalno drugačiji pristup tome{' '}
-              <strong className="text-ink-text font-medium">šta web sajt treba da radi</strong>.
+              Pravimo sajtove u dve tehnologije, Astro i Next.js. Skoro svaki razgovor sa klijentom dođe do istog pitanja: koja je bolja. Nijedna. One rešavaju različite probleme, a pogrešan izbor se plaća ili brzinom sajta ili mesecima dodatnog posla. Ovaj tekst objašnjava gde je granica i kako da prepoznate{' '}
+              <strong className="text-ink-text font-medium">na kojoj strani je vaš sajt</strong>.
             </p>
 
             {/* Šta je Astro */}
@@ -149,14 +149,17 @@ export default function AstroSajtoviPage() {
                 Šta je zapravo Astro?
               </h2>
               <p className="leading-relaxed">
-                Astro je web framework koji je kreiran sa jednom misijom: <strong className="text-ink-text font-medium">isporučiti manje JavaScript-a</strong>. Dok Next.js, Nuxt i ostali frameworki šalju tone JS-a klijentu, čak i za statičan sadržaj koji mu ne treba, Astro ide suprotnim putem.
+                Astro polazi od jedne pretpostavke: <strong className="text-ink-text font-medium">većini stranica JavaScript u pregledaču uopšte ne treba</strong>. Tekst, slike, cenovnik, radno vreme, mapa. Sve je to HTML. Astro zato podrazumevano ne pošalje ni jednu liniju JS-a, pa ga vi dodajete samo tamo gde stvarno postoji interakcija.
+              </p>
+              <p className="leading-relaxed">
+                Next.js polazi od druge pretpostavke, i ima dobar razlog: da stranica jeste aplikacija. Zato u pregledač šalje React, pa dobijate stanje, rutiranje, forme koje reaguju bez osvežavanja i sve ostalo što aplikacija traži. Taj runtime nije trošak nego alat. Samo se plaća i kada vam ne treba.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
-                    Ključna razlika
+                    Razlika u pristupu
                   </strong>
-                  Tradicionalni JavaScript frameworki šalju kompletan JS bundle klijentu. Astro šalje HTML i CSS, bez ijedne linije JavaScript-a, osim ako vi to eksplicitno ne tražite za specifičnu komponentu.
+                  Astro počinje od nule JavaScript-a i vi ga dodajete kad zatreba. Next.js počinje od React aplikacije i vi je skraćujete. Oba stižu do brzog sajta. Pitanje je samo koliko posla ima između, a to zavisi od toga šta stranica radi.
                 </p>
               </div>
             </div>
@@ -164,10 +167,10 @@ export default function AstroSajtoviPage() {
             {/* Island Architecture */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Island Architecture, revolucija u web razvoju
+                Island Architecture, kako Astro bira šta dobija JavaScript
               </h2>
               <p className="leading-relaxed">
-                Astro-ov "tajni recept" zove se <strong className="text-ink-text font-medium">Island Architecture</strong> (arhitektura ostrva). Ideja je jednostavna, ali genijalna:
+                Astro to radi kroz <strong className="text-ink-text font-medium">Island Architecture</strong>, arhitekturu ostrva. Princip je jednostavan:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
@@ -184,7 +187,7 @@ export default function AstroSajtoviPage() {
                 </li>
               </ul>
               <p className="leading-relaxed">
-                Rezultat? Sajt se učitava <strong className="text-ink-text font-medium">3 do 10 puta brže</strong> od ekvivalentnog Next.js sajta, uz isti vizuelni izgled i funkcionalnost.
+                Rezultat je stranica koja u pregledač pošalje tačno onoliko JavaScript-a koliko na njoj ima ostrva. Na prezentacionom sajtu to je često nula. Koliko se to na kraju vidi u sekundama zavisi od sadržaja, slika, fontova i hostinga, pa <strong className="text-ink-text font-medium">brojku ne dajemo unapred</strong>, nego je izmerimo na vašem sajtu.
               </p>
 
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
@@ -192,7 +195,7 @@ export default function AstroSajtoviPage() {
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Primer iz prakse
                   </strong>
-                  Zamislite restoran sajt. 95% sadržaja je statičan (meni, adresa, radno vreme). Samo kontakt forma treba JavaScript. Astro šalje JS samo za tu formu, a sve ostalo učitava kao čisti HTML. Rezultat: sajt se otvara za manje od 0.5 sekunde.
+                  Zamislite sajt restorana. Skoro sve je statično: meni, adresa, radno vreme. Samo rezervacija treba JavaScript. Astro pošalje JS za tu jednu formu, a sve ostalo stigne kao gotov HTML. Da je ista stranica React aplikacija, pregledač bi morao da preuzme i pokrene framework samo da bi ispisao meni koji se ne menja.
                 </p>
               </div>
             </div>
@@ -200,7 +203,7 @@ export default function AstroSajtoviPage() {
             {/* Lighthouse Score */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Lighthouse 100/100, nije mit
+                Lighthouse 100/100, i šta ta cifra zaista znači
               </h2>
               <p className="leading-relaxed">
                 Google Lighthouse je alat koji meri kvalitet web sajtova ocenama od 0 do 100 u 4 kategorije: performanse, pristupačnost, best practices i SEO. Astro sajtovi rutinski postižu:
@@ -223,38 +226,41 @@ export default function AstroSajtoviPage() {
               </div>
 
               <p className="leading-relaxed">
-                Poređenja radi, prosečni WordPress sajt postiže 40 do 60 poena za performanse. Čak i dobro optimizovani Next.js sajtovi retko prelaze 95. Astro dostiže 100 bez posebnog truda.
+                Na sadržajnoj stranici Astro tu cifru dobija podrazumevano, jer nema JavaScript-a koji bi odložio prikaz. Next.js do visokih ocena takođe stiže, ali se tamo na tome radi: šta ide na server, šta u pregledač, šta se učitava kasnije. Taj posao radimo i naplaćujemo kao deo izrade. Razlika nije u tome da li je moguće, nego koliko košta da bude tako.
+              </p>
+              <p className="leading-relaxed">
+                I jedna ograda, da se cifra ne čita pogrešno. Lighthouse meri jednu posetu u kontrolisanim uslovima, na simuliranom telefonu i simuliranoj mreži. Ono što Google koristi za rangiranje su podaci od stvarnih korisnika, a oni umeju da izgledaju drugačije. Zato ocenu gledamo kao alat za otkrivanje problema, ne kao rezultat sam po sebi.
               </p>
             </div>
 
             {/* Zašto Google voli Astro */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Zašto Google obožava Astro sajtove?
+                Core Web Vitals, gde se razlika zaista vidi
               </h2>
               <p className="leading-relaxed">
-                Google rangira sajtove prema desecima faktora, ali <strong className="text-wine-text">Core Web Vitals su postali jedan od najvažnijih</strong>. Ovo su 3 ključne metrike:
+                Google rangira sajtove prema desecima faktora, ali <strong className="text-wine-text">Core Web Vitals su postali jedan od najvažnijih</strong>. Mere se tri stvari:
               </p>
               <ul className="space-y-5 pl-6 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">1.</span>
                   <div>
                     <strong className="text-ink-text font-medium">LCP (Largest Contentful Paint)</strong>
-                    <p className="text-ink-muted text-base mt-1">Koliko brzo se pojavljuje najveći element na stranici. Astro postiže manje od 1.2s (odlično), dok WordPress prosečno 3 do 5s (loše).</p>
+                    <p className="text-ink-muted text-base mt-1">Koliko brzo se pojavi najveći element na stranici. Google kao dobro računa sve do 2,5 sekunde. Kad u pregledaču nema JavaScript-a koji prvo mora da se preuzme i pokrene, ta granica se lakše drži.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">2.</span>
                   <div>
                     <strong className="text-ink-text font-medium">FID / INP (Interaction to Next Paint)</strong>
-                    <p className="text-ink-muted text-base mt-1">Odzivnost sajta na interakcije korisnika. Sa minimalnim JavaScript-om, Astro postiže skoro nulto kašnjenje.</p>
+                    <p className="text-ink-muted text-base mt-1">Koliko sajt brzo odgovori na klik ili dodir. Što manje JavaScript-a drži glavnu nit, to je odziv bolji. Na stranici bez ostrva nema šta da je zadrži.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">3.</span>
                   <div>
                     <strong className="text-ink-text font-medium">CLS (Cumulative Layout Shift)</strong>
-                    <p className="text-ink-muted text-base mt-1">Stabilnost layouta tokom učitavanja. Astro generiše savršen statičan HTML koji ne "skače".</p>
+                    <p className="text-ink-muted text-base mt-1">Da li sadržaj skače dok se stranica učitava. Gotov HTML sa zadatim dimenzijama slika nema odakle da skoči. Isto važi i za Next.js kad se dimenzije postave, samo se tamo na to mora paziti.</p>
                   </div>
                 </li>
               </ul>
@@ -263,7 +269,7 @@ export default function AstroSajtoviPage() {
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Direktna veza
                   </strong>
-                  Google je zvanično potvrdio da Core Web Vitals utiču na rangiranje. Bolji Vitals znače višu poziciju u pretrazi. Astro sajtovi uvek imaju dobre Vitals, pa su uvek konkurentni na Google-u.
+                  Google je potvrdio da Core Web Vitals ulaze u rangiranje. Oni nisu najvažniji faktor, ali su jedan od onih na koje stvarno možete da utičete. Astro na sadržajnim stranicama ulazi u to sa prednošću, jer najčešći izvor problema, JavaScript koji blokira glavnu nit, tamo prosto ne postoji.
                 </p>
               </div>
             </div>
@@ -271,10 +277,10 @@ export default function AstroSajtoviPage() {
             {/* SEO Prednosti */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                SEO prednosti koje nema nijedan drugi framework
+                SEO koji dobijate bez dodatnog rada
               </h2>
               <p className="leading-relaxed">
-                Astro nije samo brz, on je dizajniran da bude SEO mašina od prvog dana.
+                Veći deo SEO osnove Astro daje podrazumevano, bez podešavanja. Next.js ima ekvivalent za svaku stavku sa ove liste, samo se neke uključuju ručno i neke zahtevaju odluku:
               </p>
               <ul className="space-y-4 pl-6 list-none">
                 {[
@@ -295,8 +301,8 @@ export default function AstroSajtoviPage() {
                     desc: 'Astro generiše sitemap.xml koji Google koristi za indeksiranje. Svaka nova strana se automatski prijavljuje Google-u.',
                   },
                   {
-                    title: 'Perfektni Core Web Vitals',
-                    desc: 'Bez JavaScript-a nema blokiranja renderovanja, pa su vitali savršeni. Direktan uticaj na SEO ranking.',
+                    title: 'Core Web Vitals bez borbe',
+                    desc: 'Bez JavaScript-a nema šta da odloži prikaz, pa se dobre vrednosti dobijaju same. U Next.js-u se do istog dolazi, ali uz rad.',
                   },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-3">
@@ -316,7 +322,7 @@ export default function AstroSajtoviPage() {
                 Astro vs Next.js, kada koristiti šta?
               </h2>
               <p className="leading-relaxed">
-                I Astro i Next.js su odlični frameworki. Ali nisu za isti tip projekata. Evo kada koristiti koji:
+                Oba su ozbiljna, oba koristimo, i nijedno nije rezervno rešenje. Razlikuju se po tome za koji tip projekta su pravljena. Zvezdice ispod su naša ocena iz prakse, ne merenje:
               </p>
 
               <div className="overflow-x-auto">
@@ -337,7 +343,7 @@ export default function AstroSajtoviPage() {
                       { crit: 'Blog / Sadržaj', astro: '★★★★★', next: '★★★★' },
                       { crit: 'Autentifikacija', astro: '★★★', next: '★★★★★' },
                       { crit: 'Baza podataka', astro: '★★', next: '★★★★★' },
-                      { crit: 'Lighthouse Score', astro: '100/100', next: '90-97/100' },
+                      { crit: 'JS u pregledaču, podrazumevano', astro: 'nula', next: 'React runtime' },
                     ].map((row, i) => (
                       <tr key={row.crit} className={i % 2 === 0 ? 'bg-ink-surface' : 'bg-ink-bg'}>
                         <td className="p-4 font-medium text-ink-text">{row.crit}</td>
@@ -376,10 +382,10 @@ export default function AstroSajtoviPage() {
             {/* Vercel */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Vercel, dobar dom za Astro sajtove
+                Vercel, gde hostujemo i jedne i druge
               </h2>
               <p className="leading-relaxed">
-                Astro sajtove hostujemo na <strong className="text-ink-text font-medium">Vercel platformi</strong>, globalnoj CDN mreži koja servira sadržaj sa najbližeg servera svakom korisniku.
+                I Astro i Next.js sajtove hostujemo na <strong className="text-ink-text font-medium">Vercel platformi</strong>, globalnoj CDN mreži koja sadržaj servira sa servera najbližeg korisniku. Ovaj sajt koji sada čitate radi na Next.js-u, na istoj platformi.
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
@@ -407,7 +413,7 @@ export default function AstroSajtoviPage() {
                 Naši Astro sajtovi, realni rezultati
               </h2>
               <p className="leading-relaxed">
-                Duck Family Team je do sada izradio Astro sajtove za srpske lokalne biznise. Rezultati su konzistentno dobri:
+                Jedan naš Astro sajt za lokalni biznis u Srbiji:
               </p>
 
               <div className="grid md:grid-cols-1 gap-6 max-w-xl">
@@ -433,39 +439,42 @@ export default function AstroSajtoviPage() {
             {/* Zaključak */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Zaključak: da li vaš biznis treba Astro sajt?
+                Zaključak: Astro ili Next.js za vaš sajt?
               </h2>
               <p className="leading-relaxed">
-                Ako imate prezentacioni sajt, blog, landing stranicu ili sajt za lokalni biznis, odgovor je gotovo uvek <strong className="text-wine-text">da</strong>. Astro vam daje:
+                Postoji jedno pitanje koje razrešava skoro svaki slučaj: <strong className="text-wine-text">da li vaša stranica prikazuje sadržaj ili radi nešto</strong>. Ako prikazuje, idite na Astro. Ako radi, idite na Next.js.
               </p>
-              <ul className="space-y-3 pl-6 list-none">
-                <li className="flex items-start gap-3">
-                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
-                  <span>Performanse koje Google nagrađuje višim pozicijama</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
-                  <span>SEO optimizaciju od prvog dana bez dodatnih podešavanja</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
-                  <span>Brzo učitavanje na mobilnim uređajima (70%+ saobraćaja)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
-                  <span>Lighthouse Score 100 koji konkurencija teško dostiže</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-wine-text font-bold text-xl leading-none">✓</span>
-                  <span>Klijente koji vas pronalaze organskim putem, besplatno i svaki dan</span>
-                </li>
-              </ul>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-ink-bg rounded-2xl p-6 border border-wine">
+                  <h3 className="font-display font-medium text-wine-text mb-3 uppercase text-sm tracking-widest">Astro, ako vam treba</h3>
+                  <ul className="space-y-3 text-base text-ink-muted">
+                    <li className="flex items-start gap-3"><span className="text-wine-text font-bold leading-none">✓</span><span>Prezentacioni sajt, blog ili landing stranica</span></li>
+                    <li className="flex items-start gap-3"><span className="text-wine-text font-bold leading-none">✓</span><span>Učitavanje na telefonu koje nema šta da ga zadrži</span></li>
+                    <li className="flex items-start gap-3"><span className="text-wine-text font-bold leading-none">✓</span><span>Core Web Vitals koji se drže sami, bez stalnog nadzora</span></li>
+                    <li className="flex items-start gap-3"><span className="text-wine-text font-bold leading-none">✓</span><span>Jeftinije održavanje, jer ima manje pokretnih delova</span></li>
+                  </ul>
+                </div>
+                <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
+                  <h3 className="font-display font-medium text-ink-text mb-3 uppercase text-sm tracking-widest">Next.js, ako vam treba</h3>
+                  <ul className="space-y-3 text-base text-ink-muted">
+                    <li className="flex items-start gap-3"><span className="text-ink-muted font-bold leading-none">✓</span><span>Prodavnica, korpa, plaćanje, stanje artikala</span></li>
+                    <li className="flex items-start gap-3"><span className="text-ink-muted font-bold leading-none">✓</span><span>Nalozi i login, lični deo sajta za svakog korisnika</span></li>
+                    <li className="flex items-start gap-3"><span className="text-ink-muted font-bold leading-none">✓</span><span>Baza podataka, pretraga, filteri, kalkulatori</span></li>
+                    <li className="flex items-start gap-3"><span className="text-ink-muted font-bold leading-none">✓</span><span>Sajt koji će rasti u aplikaciju, pa da se ne seli kasnije</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <p className="leading-relaxed">
+                Granica nije uvek čista i to je u redu. Prezentacioni sajt kojem za godinu treba zakazivanje termina i korisnički nalozi je od početka Next.js posao, ne Astro. Isto tako, prodavnica od dvanaest proizvoda bez naloga i bez stanja lager liste je Astro posao. Zato pitamo šta sajt treba da radi <strong className="text-ink-text font-medium">za dve godine</strong>, ne samo na dan predaje.
+              </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
-                    Naša preporuka
+                    Kako mi biramo
                   </strong>
-                  Za lokalne biznise u Srbiji, Astro sajt uz Google Ads je trenutno moćna kombinacija za brzo sticanje novih klijenata. Organski SEO kroz Astro donosi besplatan saobraćaj, dok Google Ads odmah dovodi kupce dok SEO raste.
+                  Ne počinjemo od tehnologije. Prvo popišemo šta sajt treba da radi, pa izbor ispadne sam. Kod lokalnih biznisa to najčešće ispadne Astro, jer im sajt prikazuje usluge i prima upite. Sajt koji sada čitate je Next.js, jer ima kalkulator cena, forme i sadržaj koji se povlači u toku rada. Nijedan od ta dva izbora nije kompromis.
                 </p>
               </div>
             </div>
@@ -475,10 +484,10 @@ export default function AstroSajtoviPage() {
             {/* CTA */}
             <div className="text-center py-4 md:py-6">
               <h3 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text mb-6 leading-tight">
-                Želite Astro sajt koji rangira?
+                Niste sigurni koja vam tehnologija treba?
               </h3>
               <p className="mb-8 md:mb-10 text-ink-muted text-lg md:text-xl">
-                Duck Family Team pravi brze Astro i Next.js sajtove sa kompletnom SEO optimizacijom. Vaši klijenti će vas pronaći odmah.
+                Recite nam šta sajt treba da radi, a izbor tehnologije je naš posao. Pravimo i Astro i Next.js sajtove, sa SEO osnovom postavljenom od prvog dana.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
