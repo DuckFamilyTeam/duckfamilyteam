@@ -22,6 +22,26 @@ export type BlogPost = {
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'google-business-profil-za-apoteke',
+    img: '/img/blog/gbp-za-apoteke.svg',
+    tag: 'GBP',
+    title: 'Google Business Profile za apoteke: kako da vas pacijenti pronađu na Google mapi',
+    excerpt:
+      'Pretraga apoteke je skoro uvek hitna. Zato je radno vreme najvažnije polje profila, a Zakon o lekovima postavlja granicu koju druge delatnosti nemaju.',
+    date: '2026-10-05',
+    readTime: '7 min',
+  },
+  {
+    slug: 'google-business-profil-vise-lokacija',
+    img: '/img/blog/gbp-vise-lokacija.svg',
+    tag: 'GBP',
+    title: 'Google Business profili za firme sa više lokacija (lanci i franšize)',
+    excerpt:
+      'Lanac ne vodi jedan profil, nego jedan po poslovnici. Kako se ta struktura postavlja bez duplikata, bez doorway stranica i bez rizika od suspenzije.',
+    date: '2026-10-05',
+    readTime: '8 min',
+  },
+  {
     slug: 'cena-vodjenja-google-business-profila',
     img: '/img/blog/gbp-objave-i-fotografije.webp',
     tag: 'GBP',
@@ -55,9 +75,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'astro-sajtovi',
     img: '/img/blog/astro-sajtovi.svg',
     tag: 'Web Development',
-    title: 'Astro sajtovi: zašto su trenutno najbolja tehnologija za web?',
+    title: 'Astro sajtovi: kada su najbolji izbor, a kada nisu',
     excerpt:
-      'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove i zašto vaš biznis treba jedan.',
+      'Island Architecture, nulti JavaScript i Lighthouse score 100. Za koje sajtove je Astro prava odluka, a za koje je Next.js bolji.',
     date: '2026-05-09',
     readTime: '8 min',
   },

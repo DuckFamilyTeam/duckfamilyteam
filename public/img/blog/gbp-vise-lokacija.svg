@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Jedan brend u sredini povezan tankim linijama sa cetiri odvojena profila na mapi">
+<defs>
+  <linearGradient id="bg12" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a1412"/><stop offset="1" stop-color="#14100E"/>
+  </linearGradient>
+  <radialGradient id="glow12" cx="0.5" cy="0.42" r="0.62">
+    <stop offset="0" stop-color="#8C2438" stop-opacity="0.30"/>
+    <stop offset="0.55" stop-color="#8C2438" stop-opacity="0.12"/>
+    <stop offset="1" stop-color="#8C2438" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid12" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#F2EAE2" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg12)"/>
+<rect width="1200" height="630" fill="url(#grid12)"/>
+<rect width="1200" height="630" fill="url(#glow12)"/>
+
+<ellipse cx="600" cy="508" rx="400" ry="62" fill="none" stroke="#F2EAE2" stroke-opacity="0.14" stroke-width="1.5"/>
+<ellipse cx="600" cy="508" rx="268" ry="40" fill="none" stroke="#F2EAE2" stroke-opacity="0.07" stroke-width="1"/>
+
+<path d="M600 300 C492 356 376 404 300 428" fill="none" stroke="#F2EAE2" stroke-opacity="0.26" stroke-width="1.5"/>
+<path d="M600 300 C552 356 492 404 452 430" fill="none" stroke="#F2EAE2" stroke-opacity="0.26" stroke-width="1.5"/>
+<path d="M600 300 C648 356 708 404 748 430" fill="none" stroke="#F2EAE2" stroke-opacity="0.26" stroke-width="1.5"/>
+<path d="M600 300 C708 356 824 404 900 428" fill="none" stroke="#F2EAE2" stroke-opacity="0.26" stroke-width="1.5"/>
+
+<circle cx="600" cy="236" r="78" fill="#8C2438" fill-opacity="0.85"/>
+<circle cx="600" cy="236" r="78" fill="none" stroke="#F2EAE2" stroke-width="2.5"/>
+<circle cx="600" cy="236" r="104" fill="none" stroke="#F2EAE2" stroke-opacity="0.2" stroke-width="1.5"/>
+<path d="M566 252 L588 252 L588 212 L612 212 L612 252 L634 252" fill="none" stroke="#F2EAE2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M566 268 L634 268" fill="none" stroke="#F2EAE2" stroke-width="3.5" stroke-linecap="round"/>
+
+<g fill="none" stroke="#F2EAE2" stroke-width="3">
+  <path d="M300 352 C272 352 251 373 251 400 C251 434 300 480 300 480 C300 480 349 434 349 400 C349 373 328 352 300 352 Z"/>
+  <path d="M452 356 C424 356 403 377 403 404 C403 438 452 484 452 484 C452 484 501 438 501 404 C501 377 480 356 452 356 Z"/>
+  <path d="M748 356 C720 356 699 377 699 404 C699 438 748 484 748 484 C748 484 797 438 797 404 C797 377 776 356 748 356 Z"/>
+  <path d="M900 352 C872 352 851 373 851 400 C851 434 900 480 900 480 C900 480 949 434 949 400 C949 373 928 352 900 352 Z"/>
+</g>
+<circle cx="300" cy="400" r="20" fill="#B03A47"/>
+<circle cx="452" cy="404" r="20" fill="#B03A47"/>
+<circle cx="748" cy="404" r="20" fill="#B03A47"/>
+<circle cx="900" cy="400" r="20" fill="#B03A47"/>
+
+<path d="M196 548 A120 120 0 0 1 1004 548" fill="none" stroke="#D9707C" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+
+<circle cx="178" cy="232" r="6" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.45"/>
+<circle cx="1038" cy="296" r="4" fill="#B03A47" opacity="0.7"/>
+<circle cx="146" cy="408" r="5" fill="#F2EAE2" opacity="0.22"/>
+<circle cx="1062" cy="452" r="6" fill="none" stroke="#F2EAE2" stroke-width="2" opacity="0.3"/>
+
+<rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#2E2622" stroke-width="1"/>
+</svg>
