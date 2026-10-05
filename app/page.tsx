@@ -17,9 +17,17 @@ import { blogPosts } from '@/lib/blogPosts'
 import { faqPageSchema, homeFaqs } from '@/lib/faqs'
 
 export const metadata: Metadata = {
-  title: 'Google Ads i GBP agencija Beograd | Duck Family Team',
+  // Naslov i opis prepisani 2026-10-05 po GSC podacima (stavka 78), ne po pretpostavci.
+  // Prikaze na početnu donose upiti `reklamiranje firme` (9 prikaza, poz. 7,1),
+  // `digitalni marketing` (5, poz. 7,8), `lokalni seo` (4, poz. 1), `online marketing`
+  // i `reklamiranje na internetu` (poz. 1). Stari naslov je imao dva problema:
+  // (1) akronim „GBP" ne prepoznaje onaj ko traži `reklamiranje firme`;
+  // (2) „Beograd" protivreči `_KLIJENT_INFO.md`, gde područje opsluživanja JESTE Srbija,
+  //     a pozicioniranje izričito kaže da se ne takmičimo za „izrada sajtova Beograd".
+  //     GSC uz to beleži i upit `family team raska`, dakle ni saobraćaj nije samo Beograd.
+  title: 'Reklamiranje firme na Google-u | Duck Family Team',
   description:
-    'Google Ads kampanje i izrada sajtova sa ugrađenim SEO-om. Fokus na pozivima, ne na klikovima. Besplatna konsultacija za firme u Srbiji.',
+    'Vodimo Google Ads kampanje i Google Business profil, i pravimo sajtove sa ugrađenim SEO-om. Fokus na pozivima, ne na klikovima. Besplatna konsultacija.',
   // Bez kose crte na kraju, da se poklopi sa sitemap.ts.
   alternates: { canonical: 'https://www.duckfamilyteam.online' },
 }

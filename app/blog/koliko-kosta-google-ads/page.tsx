@@ -7,7 +7,9 @@ import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: 'Koliko košta Google Ads u Srbiji',
+  // `budžet` dodat u naslov 2026-10-05: stranica je na poz. 11 za upit `google ads budžet`,
+  // a ta reč je dotad postojala samo u opisu, ne i u naslovu (stavka 78).
+  title: 'Koliko košta Google Ads: cena i budžet',
   description:
     'Ne postoji prosečna cena klika za Srbiju. Iz čega se sastoji trošak Google Ads kampanje, kako da izvučete svoju cifru i šta se plaća agenciji.',
   alternates: {
