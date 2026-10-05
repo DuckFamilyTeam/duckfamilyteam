@@ -91,6 +91,7 @@ export default function CenePage() {
           {/* ── KALKULATOR ── */}
           <section className="mb-16">
             <CenaKalkulator />
+            <p className="text-sm text-ink-muted mt-6">Sve prikazane cene su konačne.</p>
           </section>
 
           {/* ── AI AGENTI I AUTOMATIZACIJA ── */}

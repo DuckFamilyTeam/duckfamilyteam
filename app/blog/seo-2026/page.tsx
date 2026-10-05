@@ -9,7 +9,7 @@ import Potpis from '@/components/Potpis'
 export const metadata: Metadata = {
   title: { absolute: 'SEO u 2026: vodič za tematski autoritet i AI pretragu' },
   description:
-    'Kompletni vodič za SEO u 2026. Tematski autoritet, Google SGE, E-E-A-T, Core Web Vitals i strategije koje zaista rade za firme u Srbiji.',
+    'Kompletni vodič za SEO u 2026. Tematski autoritet, Google AI Overviews, E-E-A-T, Core Web Vitals i strategije koje zaista rade za firme u Srbiji.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/seo-2026',
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'SEO optimizacija Srbija 2026',
     'Google algoritam 2026',
     'tematski autoritet SEO',
-    'Google SGE Srbija',
+    'Google AI Overviews Srbija',
     'E-E-A-T SEO',
     'Core Web Vitals 2026',
     'ključne reči namera korisnika',
@@ -52,10 +52,10 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'SEO u 2026: Tematski autoritet, AI pretraga i ključne reči, šta zaista radi',
   description:
-    'Kompletni SEO vodič za 2026. Tematski autoritet, Google SGE, E-E-A-T i Core Web Vitals strategije za firme u Srbiji.',
+    'Kompletni SEO vodič za 2026. Tematski autoritet, Google AI Overviews, E-E-A-T i Core Web Vitals strategije za firme u Srbiji.',
   image: 'https://www.duckfamilyteam.online/img/blog/seo-2026.png',
   datePublished: '2026-03-15',
-  dateModified: '2026-06-23',
+  dateModified: '2026-10-05',
   wordCount: 2000,
   author: {
     '@type': 'Organization',
@@ -139,7 +139,7 @@ export default function SEO2026Page() {
           {/* Content */}
           <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-ink-muted text-base md:text-xl">
             <p className="leading-relaxed">
-              <strong className="text-ink-text font-medium">SEO u 2026. godini nije isti kao 2021.</strong> Google je prošao kroz više fundamentalnih promena algoritma, uveo AI generisane odgovore (SGE), i sve više kažnjava sajtove koji pokušavaju da "hakuju" sistem umesto da zaista pomognu korisnicima. Za firme u Srbiji, ovo je i izazov i prilika, jer srpski konkurenti još uvek uglavnom koriste zastarele taktike.
+              <strong className="text-ink-text font-medium">SEO u 2026. godini nije isti kao 2021.</strong> Google je prošao kroz više fundamentalnih promena algoritma, uveo AI generisane odgovore (AI Overviews), i sve više kažnjava sajtove koji pokušavaju da "hakuju" sistem umesto da zaista pomognu korisnicima. Za firme u Srbiji, ovo je i izazov i prilika, jer srpski konkurenti još uvek uglavnom koriste zastarele taktike.
             </p>
             <p className="leading-relaxed">
               U ovom tekstu ćemo pokriti sve što treba da znate o modernom SEO-u: od promena u Google algoritmu, kroz tematski autoritet i E-E-A-T, do konkretnih taktika za lokalne firme u Srbiji.
@@ -251,10 +251,10 @@ export default function SEO2026Page() {
             {/* SEO 5 */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Google SGE i AI pretraga, šta to znači za vaš saobraćaj?
+                Google AI Overviews i AI pretraga, šta to znači za vaš saobraćaj?
               </h2>
               <p className="leading-relaxed">
-                Google Search Generative Experience (SGE) i AI Overviews su drastično promenili izgled stranica sa rezultatima. AI sada generiše sažetak odgovora <em>pre</em> organskih rezultata, što je dovelo do pada klika na organske rezultate za određene tipove upita.
+                Google AI Overviews, funkcija koja se u fazi eksperimenta zvala Search Generative Experience (SGE), drastično je promenila izgled stranica sa rezultatima. AI sada generiše sažetak odgovora <em>pre</em> organskih rezultata, što je dovelo do pada klika na organske rezultate za određene tipove upita.
               </p>
               <p className="leading-relaxed">
                 <strong>Koji upiti su najviše pogođeni?</strong> Jednostavni faktografski upiti ("koliko košta", "šta je", "kako se zove"). Za ove pretrage, korisnici često dobiju odgovor direktno od AI-a bez klikanja.

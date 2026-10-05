@@ -7,9 +7,9 @@ import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Astro sajtovi: zašto su najbolji izbor za web' },
+  title: { absolute: 'Astro sajtovi: kada su najbolji izbor, a kada nisu' },
   description:
-    'Island Architecture, nulti JavaScript i Lighthouse 100. Zašto su Astro sajtovi danas najbrži izbor za SEO optimizovanu web prezentaciju.',
+    'Island Architecture, nulti JavaScript i Lighthouse 100. Za koje sajtove je Astro najbolji izbor, a kada je Next.js prava odluka.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
   },
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     'Duck Family Team',
   ],
   openGraph: {
-    title: 'Astro sajtovi: zašto su najbolji izbor za web',
-    description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. Otkrijte zašto Google voli Astro sajtove.',
+    title: 'Astro sajtovi: kada su najbolji izbor, a kada nisu',
+    description: 'Island Architecture, nulti JavaScript i Lighthouse score 100. I jasna granica: kada je Astro prava odluka, a kada Next.js.',
     url: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
     type: 'article',
     publishedTime: '2026-05-09',
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Astro sajtovi: zašto su trenutno najbolja tehnologija za web',
+  headline: 'Astro sajtovi: kada su najbolji izbor, a kada nisu',
   description:
-    'Otkrijte zašto su Astro sajtovi trenutno broj 1 izbor za brze, SEO optimizovane web prezentacije. Island Architecture, Lighthouse 100, nulti JavaScript.',
+    'Za koje sajtove je Astro najbolji izbor, a za koje Next.js. Island Architecture, Lighthouse 100, nulti JavaScript i jasna granica između dve tehnologije.',
   image: 'https://www.duckfamilyteam.online/img/blog/astro-sajtovi.png',
   datePublished: '2026-05-09',
-  dateModified: '2026-05-09',
+  dateModified: '2026-10-05',
   author: {
     '@type': 'Organization',
     name: 'Duck Family Team',
@@ -108,11 +108,11 @@ export default function AstroSajtoviPage() {
               Web Development
             </span>
             <h1 className="font-display font-medium text-[2rem] md:text-4xl lg:text-5xl text-ink-text mt-6 mb-6 md:mb-8 leading-tight px-2">
-              Astro sajtovi: zašto su trenutno najbolja tehnologija za web?
+              Astro sajtovi: kada su najbolji izbor, a kada nisu?
             </h1>
             <Potpis className="mx-auto -mt-1 mb-8" />
             <p className="text-lg md:text-2xl text-ink-muted max-w-2xl mx-auto leading-relaxed">
-              Island Architecture, nulti JavaScript i Lighthouse score 100. Evo zašto Google obožava Astro sajtove, i zašto vaš biznis treba jedan.
+              Island Architecture, nulti JavaScript i Lighthouse score 100. Evo za koje sajtove je Astro prava odluka, a za koje je Next.js bolji.
             </p>
             {/* Razdelnik "·" grupisan UZ sledecu stavku (ne sopstveni flex
                 child): na uskom ekranu se lomi zajedno s njom, pa ne ostaje
