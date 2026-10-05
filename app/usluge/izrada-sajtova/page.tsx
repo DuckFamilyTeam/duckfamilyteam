@@ -5,11 +5,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PodvucenaRec from '@/components/PodvucenaRec'
 import BrowserFrame from '@/components/BrowserFrame'
+import { sajtCenaMin, sajtCenaMax, sajtBrojTipovaBiznisa, mesecnoOdrzavanje } from '@/lib/cenaPodaci'
 
 export const metadata: Metadata = {
   title: 'Izrada sajtova i landing stranica',
   description:
-    'Next.js i Astro sajtovi optimizovani za Google od prvog dana. Sajt do 3 stranice od 300 evra, višestranični sajt od 600 evra. Besplatna konsultacija.',
+    `Next.js i Astro sajtovi optimizovani za Google od prvog dana. Osnovna cena od ${sajtCenaMin} do ${sajtCenaMax} evra po tipu biznisa, uz dodatke po potrebi. Besplatna konsultacija.`,
   keywords: [
     'izrada sajtova Beograd',
     'izrada sajtova',
@@ -53,11 +54,15 @@ const serviceSchema = {
     { '@type': 'City', name: 'Beograd' },
   ],
   serviceType: 'Izrada web sajtova',
+  // AggregateOffer, ne Offer: cena nije jedna, nego opseg po tipu biznisa.
+  // Brojevi se izvode iz `lib/cenaPodaci.ts`, da ne mogu da se raziđu sa kalkulatorom.
   offers: {
-    '@type': 'Offer',
+    '@type': 'AggregateOffer',
     priceCurrency: 'EUR',
-    price: '300',
-    description: 'Sajt do 3 stranice, 300 evra.',
+    lowPrice: String(sajtCenaMin),
+    highPrice: String(sajtCenaMax),
+    offerCount: String(sajtBrojTipovaBiznisa),
+    description: `Osnovna cena izrade sajta zavisi od tipa biznisa i ide od ${sajtCenaMin} do ${sajtCenaMax} evra, uz dodatke po potrebi.`,
   },
 }
 
@@ -79,7 +84,7 @@ const faqSchema = {
       name: 'Koliko košta izrada sajta?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Osnovna cena zavisi od tipa biznisa i ide od 180 do 490 evra, plus dodaci po potrebi (rezervacioni sistem, dvojezičnost, blog, napredna kontakt forma, SEO paket, logo, tekstovi, fotografije, animacije, dodatne stranice). Fleksibilan rok izrade je 14 dana, ubrzana izrada za 7 ili 3 dana ide uz doplatu. Mesečno održavanje sa do 3 izmene košta 30 evra mesečno. Tačan iznos za vaš slučaj izračunava kalkulator na stranici Cene.',
+        text: `Osnovna cena zavisi od tipa biznisa i ide od ${sajtCenaMin} do ${sajtCenaMax} evra, plus dodaci po potrebi (rezervacioni sistem, dvojezičnost, blog, napredna kontakt forma, SEO paket, logo, tekstovi, fotografije, animacije, dodatne stranice). Fleksibilan rok izrade je 14 dana, ubrzana izrada za 7 ili 3 dana ide uz doplatu. Mesečno održavanje sa do 3 izmene košta ${mesecnoOdrzavanje} evra mesečno. Tačan iznos za vaš slučaj izračunava kalkulator na stranici Cene.`,
       },
     },
     {
@@ -112,7 +117,7 @@ const faqSchema = {
 const tipovi = [
   {
     title: 'Osnovna cena po tipu biznisa',
-    price: '180 - 490 evra',
+    price: `${sajtCenaMin} - ${sajtCenaMax} evra`,
     desc: 'Next.js ili Astro sajt, SEO optimizovan. Tačna osnovna cena zavisi od tipa biznisa (npr. frizerski salon, stomatolog, hotel), vidi kalkulator.',
   },
   {
@@ -127,7 +132,7 @@ const tipovi = [
   },
   {
     title: 'Mesečno održavanje',
-    price: '30 evra / mesečno',
+    price: `${mesecnoOdrzavanje} evra / mesečno`,
     desc: 'Do 3 izmene mesečno i redovna kontrola stabilnosti sajta, za klijente koji već imaju sajt kod nas.',
   },
 ]

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
 import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
@@ -54,8 +55,8 @@ const serviceSchema = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'EUR',
-    price: '100',
-    description: 'Vođenje profila, 100 evra mesečno.',
+    price: String(gbpOsnovnaCena),
+    description: `Vođenje profila, ${gbpOsnovnaCena} evra mesečno.`,
   },
 }
 

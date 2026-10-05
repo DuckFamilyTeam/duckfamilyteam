@@ -7,6 +7,8 @@
  * schema i vidljivi sadržaj generišu iz iste liste.
  */
 
+import { sajtCenaMin, sajtCenaMax, gbpOsnovnaCena, adsVodjenjeCena } from '@/lib/cenaPodaci'
+
 export type Faq = { question: string; answer: string }
 
 export const homeFaqs: Faq[] = [
@@ -28,7 +30,7 @@ export const homeFaqs: Faq[] = [
   {
     question: 'Koliko košta vaša usluga?',
     answer:
-      'Vođenje Google Ads kampanja je 200 evra mesečno, Google Business profil 100 evra mesečno, a izrada sajta ide od 180 do 490 evra osnovne cene po tipu biznisa, uz dodatke po potrebi (rezervacije, blog, dvojezičnost, SEO paket i slično). Tačan iznos za vaš slučaj daje kalkulator na stranici Cene, a besplatna konsultacija ne obavezuje ni na šta.',
+      `Vođenje Google Ads kampanja je ${adsVodjenjeCena} evra mesečno, Google Business profil ${gbpOsnovnaCena} evra mesečno, a izrada sajta ide od ${sajtCenaMin} do ${sajtCenaMax} evra osnovne cene po tipu biznisa, uz dodatke po potrebi (rezervacije, blog, dvojezičnost, SEO paket i slično). Tačan iznos za vaš slučaj daje kalkulator na stranici Cene, a besplatna konsultacija ne obavezuje ni na šta.`,
   },
   {
     question: 'Radite li sa manjim biznisima ili samo sa velikim firmama?',

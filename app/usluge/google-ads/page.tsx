@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { adsVodjenjeCena } from '@/lib/cenaPodaci'
 import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
@@ -56,8 +57,8 @@ const serviceSchema = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'EUR',
-    price: '200',
-    description: 'Mesečno vođenje Google Ads kampanja, 200 evra mesečno.',
+    price: String(adsVodjenjeCena),
+    description: `Mesečno vođenje Google Ads kampanja, ${adsVodjenjeCena} evra mesečno.`,
   },
 }
 

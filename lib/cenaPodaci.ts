@@ -93,6 +93,24 @@ export const rokovi: Rok[] = [
   { id: '3dana', naziv: '3 dana', mnozilac: 1.35 },
 ]
 
+/**
+ * Opseg baznih cena izrade sajta, IZVEDEN iz `tipoviBiznisa` gore.
+ *
+ * Namerno se računa, a ne piše kao broj. Metapodaci i `AggregateOffer` schema na
+ * `/usluge/izrada-sajtova` su do 2026-10-05 nosili staru cenu (300/600 evra) i posle
+ * sniženja od 2026-09-06, jer su brojevi bili prepisani na ruku i promakli pri usklađivanju.
+ * Dok se čitaju odavde, ne mogu da se raziđu.
+ *
+ * `null` (tip biznisa „Drugo", cena po dogovoru) se ne računa u opseg.
+ */
+const bazneCeneSajta = tipoviBiznisa
+  .map((t) => t.cena)
+  .filter((cena): cena is number => cena !== null)
+
+export const sajtCenaMin = Math.min(...bazneCeneSajta)
+export const sajtCenaMax = Math.max(...bazneCeneSajta)
+export const sajtBrojTipovaBiznisa = bazneCeneSajta.length
+
 export const mesecnoOdrzavanje = 30
 
 export const napomenaODomenu =
@@ -117,6 +135,14 @@ export const adsStavke: AdsStavka[] = [
   { id: 'ga4-konekcija', naziv: 'Povezivanje GA4 sa Ads nalogom', cena: 50, ucestalost: 'jednokratno' },
   { id: 'gbp-konekcija', naziv: 'Povezivanje Google Business profila sa Ads nalogom', cena: 50, ucestalost: 'jednokratno' },
 ]
+
+/**
+ * Mesečno vođenje Google Ads kampanja, izvedeno iz `adsStavke`.
+ * Isti razlog kao `sajtCenaMin`/`sajtCenaMax`: da schema i vidljiv tekst ne mogu da odu
+ * u različite brojeve kad se cenovnik promeni.
+ */
+export const adsVodjenjeCena =
+  adsStavke.find((s) => s.id === 'vodjenje')?.cena ?? 200
 
 export type AnalizaOpcija = {
   id: 'bez' | 'puna' | 'aktivne'
