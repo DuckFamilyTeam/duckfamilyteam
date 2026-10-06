@@ -200,7 +200,7 @@ export default function ContactForm() {
         disabled={status === 'sending'}
         className="w-full bg-wine hover:bg-wine-bright text-ink-text px-5 py-5 rounded-xl font-medium text-base md:text-lg transition-colors disabled:opacity-60"
       >
-        {status === 'sending' ? 'Slanje...' : 'Zakažite besplatnu konsultaciju'}
+        {status === 'sending' ? 'Slanje…' : 'Zakažite besplatnu konsultaciju'}
       </button>
       <p className="text-ink-muted text-xs text-center leading-relaxed">
         Slanjem prihvatate{' '}

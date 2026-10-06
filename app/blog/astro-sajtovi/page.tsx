@@ -175,7 +175,7 @@ export default function AstroSajtoviPage() {
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>
-                  <span>Stranica se sastoji od "ostrva", interaktivnih komponenti</span>
+                  <span>Stranica se sastoji od „ostrva“, interaktivnih komponenti</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>
@@ -183,7 +183,7 @@ export default function AstroSajtoviPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>
-                  <span>Samo "ostrva" dobijaju JavaScript, i to samo kada je potrebno</span>
+                  <span>Samo „ostrva“ dobijaju JavaScript, i to samo kada je potrebno</span>
                 </li>
               </ul>
               <p className="leading-relaxed">
@@ -419,13 +419,13 @@ export default function AstroSajtoviPage() {
               <div className="grid md:grid-cols-1 gap-6 max-w-xl">
                 <div className="bg-ink-bg rounded-2xl p-6 border border-ink-border">
                   <h3 className="font-display font-medium text-ink-text mb-2">Tepih Servis Jevtić</h3>
-                  <p className="text-wine-text font-medium text-sm mb-3">Dok smo vodili njihovu kampanju, bili su na 2. mestu na Google-u za "tepih servis" u Beogradu</p>
+                  <p className="text-wine-text font-medium text-sm mb-3">Dok smo vodili njihovu kampanju, bili su na 2. mestu na Google-u za „tepih servis“ u Beogradu</p>
                   <p className="text-ink-muted text-sm mb-4">Čist Astro sajt sa visokim Lighthouse score-om. Dok smo sarađivali, klijenti su servis pronalazili i slali upite putem organskog SEO-a.</p>
                   <a
                     href="https://tepihservisjevtic.rs"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-wine-text font-medium text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
+                    className="text-wine-text font-medium text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-[gap] duration-200"
                   >
                     Poseti sajt
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

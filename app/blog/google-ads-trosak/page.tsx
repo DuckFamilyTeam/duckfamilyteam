@@ -174,7 +174,7 @@ export default function GoogleAdsTrosakPage() {
                 Zamislite da kliknete na oglas "dubinsko pranje tepiha Beograd", a sajt vas odvede na početnu stranicu gde se priča o istoriji firme i čišćenju prozora. <span className="text-wine-text font-medium">Kupac odlazi u roku od 3 sekunde.</span>
               </p>
               <p className="leading-relaxed">
-                Oglas je obećanje, a vaša stranica mora biti <strong className="text-ink-text font-medium">ispunjenje tog obećanja</strong>. Mora postojati savršena koherentnost između naslova oglasa, ključnih reči i sadržaja stranice. Google to naziva "message match", i direktno utiče na vaš Quality Score.
+                Oglas je obećanje, a vaša stranica mora biti <strong className="text-ink-text font-medium">ispunjenje tog obećanja</strong>. Mora postojati savršena koherentnost između naslova oglasa, ključnih reči i sadržaja stranice. Google to naziva „message match“, i direktno utiče na vaš Quality Score.
               </p>
               <p className="leading-relaxed">
                 Osim relevantnosti, problemi su i tehničke prirode. Ako stranica ne učitava za ispod 3 sekunde na mobilnom telefonu, gubi se prosečno 53% posetilaca. U Srbiji, gde se više od 65% pretrage odvija na mobilnim uređajima, ovo je kritično.

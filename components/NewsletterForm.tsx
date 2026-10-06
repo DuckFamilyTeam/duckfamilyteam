@@ -88,7 +88,7 @@ export default function NewsletterForm() {
           disabled={status === 'sending'}
           className="bg-wine hover:bg-wine-bright text-ink-text px-6 py-4 rounded-xl font-medium text-sm whitespace-nowrap transition-colors disabled:opacity-60"
         >
-          {status === 'sending' ? 'Slanje...' : 'Prijavi se'}
+          {status === 'sending' ? 'Slanje…' : 'Prijavi se'}
         </button>
       </div>
 

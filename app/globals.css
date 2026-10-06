@@ -29,6 +29,9 @@
 }
 
 html {
+  /* Tamna tema: bez ovoga Chrome crta svetle scrollbar-e i native kontrole
+     (select, date picker, autofill) po svetloj shemi, pa iskaču iz palete. */
+  color-scheme: dark;
   scroll-behavior: smooth;
   /* Fiksni Navbar je ~64px; bez ovoga svaki skok na #kontakt, #proces…
      završi sa naslovom sekcije sakrivenim iza menija. */

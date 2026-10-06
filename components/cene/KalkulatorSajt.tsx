@@ -58,7 +58,7 @@ export default function KalkulatorSajt() {
             id="tip-biznisa"
             value={tipId}
             onChange={(e) => setTipId(e.target.value)}
-            className="w-full bg-ink-bg border border-ink-border-strong rounded-xl px-4 py-3 text-ink-text focus:outline-none focus:border-wine"
+            className="w-full bg-ink-bg border border-ink-border-strong rounded-xl px-4 py-3 text-ink-text focus:outline-none focus-visible:ring-2 focus-visible:ring-wine-text focus:border-wine"
           >
             {kategorije.map((kategorija) => (
               <optgroup key={kategorija} label={kategorija}>
