@@ -139,7 +139,7 @@ export default function SEO2026Page() {
           {/* Content */}
           <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-ink-muted text-base md:text-xl">
             <p className="leading-relaxed">
-              <strong className="text-ink-text font-medium">SEO u 2026. godini nije isti kao 2021.</strong> Google je prošao kroz više fundamentalnih promena algoritma, uveo AI generisane odgovore (AI Overviews), i sve više kažnjava sajtove koji pokušavaju da "hakuju" sistem umesto da zaista pomognu korisnicima. Za firme u Srbiji, ovo je i izazov i prilika, jer srpski konkurenti još uvek uglavnom koriste zastarele taktike.
+              <strong className="text-ink-text font-medium">SEO u 2026. godini nije isti kao 2021.</strong> Google je prošao kroz više fundamentalnih promena algoritma, uveo AI generisane odgovore (AI Overviews), i sve više kažnjava sajtove koji pokušavaju da „hakuju“ sistem umesto da zaista pomognu korisnicima. Za firme u Srbiji, ovo je i izazov i prilika, jer srpski konkurenti još uvek uglavnom koriste zastarele taktike.
             </p>
             <p className="leading-relaxed">
               U ovom tekstu ćemo pokriti sve što treba da znate o modernom SEO-u: od promena u Google algoritmu, kroz tematski autoritet i E-E-A-T, do konkretnih taktika za lokalne firme u Srbiji.
@@ -151,10 +151,10 @@ export default function SEO2026Page() {
                 Šta se zapravo promenilo u Google algoritmu?
               </h2>
               <p className="leading-relaxed">
-                Google više ne "čita reči", on <strong className="text-ink-text font-medium">razume kontekst i nameru</strong>. Uz BERT (2019), MUM (2021) i Gemini integraciju (2024-2026), Google je prešao sa jednostavnog keyword matchinga na duboko razumevanje semantičkih odnosa između pojmova.
+                Google više ne „čita reči“, on <strong className="text-ink-text font-medium">razume kontekst i nameru</strong>. Uz BERT (2019), MUM (2021) i Gemini integraciju (2024-2026), Google je prešao sa jednostavnog keyword matchinga na duboko razumevanje semantičkih odnosa između pojmova.
               </p>
               <p className="leading-relaxed">
-                Šta to praktično znači? Kada neko ukuca "Google Ads agencija Srbija", Google razume da ta osoba:
+                Šta to praktično znači? Kada neko ukuca „Google Ads agencija Srbija“, Google razume da ta osoba:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 {[
@@ -183,7 +183,7 @@ export default function SEO2026Page() {
                 Da. Ali njihova uloga se drastično promenila.
               </p>
               <p className="leading-relaxed">
-                Ključne reči nisu nestale, ali one više nisu <em>pokretač</em> SEO strategije, već njen <em>vodič</em>. Umesto da pitate "za koje ključne reči treba da se rangiram?", pravo pitanje je "koja pitanja i probleme moja ciljna publika ima, i kako mogu da na njih odgovorim bolje od svih konkurenata?"
+                Ključne reči nisu nestale, ali one više nisu <em>pokretač</em> SEO strategije, već njen <em>vodič</em>. Umesto da pitate „za koje ključne reči treba da se rangiram?“, pravo pitanje je "koja pitanja i probleme moja ciljna publika ima, i kako mogu da na njih odgovorim bolje od svih konkurenata?"
               </p>
               <p className="leading-relaxed">
                 Ranije: nabaciti ključnu reč što više puta jednako rangiranje.<br />
@@ -192,7 +192,7 @@ export default function SEO2026Page() {
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-ink-border rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-ink-muted uppercase text-xs md:text-sm tracking-widest block mb-2">Primer</strong>
-                  Blog koji 50 puta ponavlja "SEO agencija Beograd" će biti potučen od strane kvalitetnog teksta koji detaljno analizira konkretne SEO rezultate, sa primerima, podacima i ekspertskim uvidima, čak i ako tu frazu pominje samo 3 do 4 puta.
+                  Blog koji 50 puta ponavlja „SEO agencija Beograd“ će biti potučen od strane kvalitetnog teksta koji detaljno analizira konkretne SEO rezultate, sa primerima, podacima i ekspertskim uvidima, čak i ako tu frazu pominje samo 3 do 4 puta.
                 </p>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function SEO2026Page() {
               <ul className="space-y-4 pl-6 list-none">
                 {[
                   { n: '1.', t: 'Pillar stranica', d: 'Glavna stranica koja temu pokriva u celini (npr. „Kompletan vodič za Google Ads u Srbiji", 3000+ reči).' },
-                  { n: '2.', t: 'Cluster sadržaj', d: 'Serija dubinskih tekstova na uže podteme koji se linkuju ka pillar stranici i međusobno (npr. "Kako podesiti Smart Bidding", "Negativne ključne reči vodič", "Google Ads Quality Score").' },
+                  { n: '2.', t: 'Cluster sadržaj', d: 'Serija dubinskih tekstova na uže podteme koji se linkuju ka pillar stranici i međusobno (npr. „Kako podesiti Smart Bidding“, „Negativne ključne reči vodič“, „Google Ads Quality Score“).' },
                   { n: '3.', t: 'Interno linkovanje', d: 'Sistematično međusobno linkovanje srodnih stranica prenosi SEO vrednost i pomaže Google-u da razume strukturu vašeg znanja.' },
                   { n: '4.', t: 'Konzistentna objava', d: 'Redovni novi sadržaj signalizira Google-u da je sajt aktivan i relevantan, idealno jednom nedeljno.' },
                 ].map((item) => (
@@ -257,13 +257,13 @@ export default function SEO2026Page() {
                 Google AI Overviews, funkcija koja se u fazi eksperimenta zvala Search Generative Experience (SGE), drastično je promenila izgled stranica sa rezultatima. AI sada generiše sažetak odgovora <em>pre</em> organskih rezultata, što je dovelo do pada klika na organske rezultate za određene tipove upita.
               </p>
               <p className="leading-relaxed">
-                <strong>Koji upiti su najviše pogođeni?</strong> Jednostavni faktografski upiti ("koliko košta", "šta je", "kako se zove"). Za ove pretrage, korisnici često dobiju odgovor direktno od AI-a bez klikanja.
+                <strong>Koji upiti su najviše pogođeni?</strong> Jednostavni faktografski upiti („koliko košta“, „šta je“, „kako se zove“). Za ove pretrage, korisnici često dobiju odgovor direktno od AI-a bez klikanja.
               </p>
               <p className="leading-relaxed">
-                <strong>Koji upiti su najmanje pogođeni?</strong> Kompleksne pretrage sa personalnom namerom, lokalne pretrage ("frizer Beograd"), transakcione pretrage ("kupi auto karike Srbija"), pretrage gde korisnici žele da vide više opcija i porede.
+                <strong>Koji upiti su najmanje pogođeni?</strong> Kompleksne pretrage sa personalnom namerom, lokalne pretrage („frizer Beograd“), transakcione pretrage („kupi auto karike Srbija“), pretrage gde korisnici žele da vide više opcija i porede.
               </p>
               <p className="leading-relaxed">
-                Strategija: fokusirajte se na <strong>long-tail ključne reči</strong> sa jasnom transakcionom ili lokalnom namerom. "SEO optimizacija za mali biznis Beograd" je mnogo teže za AI da zadovolji direktno nego "šta je SEO".
+                Strategija: fokusirajte se na <strong>long-tail ključne reči</strong> sa jasnom transakcionom ili lokalnom namerom. „SEO optimizacija za mali biznis Beograd“ je mnogo teže za AI da zadovolji direktno nego „šta je SEO“.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-ink-border rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
@@ -284,7 +284,7 @@ export default function SEO2026Page() {
               <ul className="space-y-3 pl-6 list-none">
                 {[
                   { m: 'LCP (Largest Contentful Paint)', v: 'ispod 2.5 sekunde, koliko brzo se prikazuje glavni sadržaj' },
-                  { m: 'CLS (Cumulative Layout Shift)', v: 'ispod 0.1, koliko se stranica "skače" tokom učitavanja' },
+                  { m: 'CLS (Cumulative Layout Shift)', v: 'ispod 0.1, koliko se stranica „skače“ tokom učitavanja' },
                   { m: 'INP (Interaction to Next Paint)', v: 'ispod 200ms, koliko brzo stranica reaguje na klikove' },
                 ].map((item) => (
                   <li key={item.m} className="flex items-start gap-3">
@@ -307,7 +307,7 @@ export default function SEO2026Page() {
                 Za firme koje rade u Srbiji sa fizičkom lokacijom, <strong>lokalni SEO je možda najveća prilika u 2026</strong>. Zašto? Jer srpske firme u ogromnoj većini ignorišu Google Business Profil, ne prikupljaju recenzije i ne optimizuju za lokalne ključne reči.
               </p>
               <p className="leading-relaxed">
-                Pretraga "advokat Beograd" prikazuje Map Pack, tri lokalna rezultata na vrhu stranice. Kompanija koja se pojavljuje u Map Pack-u za relevantne lokalne pretrage dobija vidljivost ekvivalentnu prvoj organskoj poziciji, bez plaćanja Google Ads-a.
+                Pretraga „advokat Beograd“ prikazuje Map Pack, tri lokalna rezultata na vrhu stranice. Kompanija koja se pojavljuje u Map Pack-u za relevantne lokalne pretrage dobija vidljivost ekvivalentnu prvoj organskoj poziciji, bez plaćanja Google Ads-a.
               </p>
               <p className="leading-relaxed">
                 Lokalni SEO checklist za firme u Srbiji:

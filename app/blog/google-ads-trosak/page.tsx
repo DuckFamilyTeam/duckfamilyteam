@@ -149,10 +149,10 @@ export default function GoogleAdsTrosakPage() {
                 1. Ne gađate nameru, već samo reč
               </h2>
               <p className="leading-relaxed">
-                Ovo je najčešća greška. Ako prodajete "luksuzne satove", a vaš oglas se pojavljuje za pretragu "kako popraviti stari sat", vi gubite novac. Platili ste klik osobi koja želi <strong className="text-ink-text font-medium">besplatan savet</strong>, a ne <strong className="text-ink-text font-medium">novi proizvod</strong>.
+                Ovo je najčešća greška. Ako prodajete „luksuzne satove“, a vaš oglas se pojavljuje za pretragu „kako popraviti stari sat“, vi gubite novac. Platili ste klik osobi koja želi <strong className="text-ink-text font-medium">besplatan savet</strong>, a ne <strong className="text-ink-text font-medium">novi proizvod</strong>.
               </p>
               <p className="leading-relaxed">
-                U srpskom kontekstu ovo je posebno izraženo. Mnoge firme targetuju generičke reči poput "advokat", "zubar" ili "auto servis", a da ne specificiraju lokaciju, tip usluge ili nameru kupca. Rezultat: platite klik studenta koji istražuje profesije, a ne klijenta koji traži vašu uslugu.
+                U srpskom kontekstu ovo je posebno izraženo. Mnoge firme targetuju generičke reči poput „advokat“, „zubar“ ili „auto servis“, a da ne specificiraju lokaciju, tip usluge ili nameru kupca. Rezultat: platite klik studenta koji istražuje profesije, a ne klijenta koji traži vašu uslugu.
               </p>
               <p className="leading-relaxed">
                 Postoje četiri tipa pretražnog namere: <strong>informational</strong> (žele da uče), <strong>navigational</strong> (traže specifičan sajt), <strong>commercial investigation</strong> (porede opcije) i <strong>transactional</strong> (spremni da kupe). Vi plaćate samo za poslednje dve.
@@ -160,7 +160,7 @@ export default function GoogleAdsTrosakPage() {
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
-                  Koristite negativne ključne reči i fokusirajte se na "Buyer Intent" termine: "prodaja satova cena Beograd", "kupovina luksuznog sata" umesto samo "satovi". Revidirajte Search Terms izveštaj svake nedelje i dodajte irelevantne pretrage u negativnu listu.
+                  Koristite negativne ključne reči i fokusirajte se na „Buyer Intent“ termine: „prodaja satova cena Beograd“, „kupovina luksuznog sata“ umesto samo „satovi“. Revidirajte Search Terms izveštaj svake nedelje i dodajte irelevantne pretrage u negativnu listu.
                 </p>
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function GoogleAdsTrosakPage() {
                 2. Landing stranica je hladan tuš
               </h2>
               <p className="leading-relaxed">
-                Zamislite da kliknete na oglas "dubinsko pranje tepiha Beograd", a sajt vas odvede na početnu stranicu gde se priča o istoriji firme i čišćenju prozora. <span className="text-wine-text font-medium">Kupac odlazi u roku od 3 sekunde.</span>
+                Zamislite da kliknete na oglas „dubinsko pranje tepiha Beograd“, a sajt vas odvede na početnu stranicu gde se priča o istoriji firme i čišćenju prozora. <span className="text-wine-text font-medium">Kupac odlazi u roku od 3 sekunde.</span>
               </p>
               <p className="leading-relaxed">
                 Oglas je obećanje, a vaša stranica mora biti <strong className="text-ink-text font-medium">ispunjenje tog obećanja</strong>. Mora postojati savršena koherentnost između naslova oglasa, ključnih reči i sadržaja stranice. Google to naziva „message match“, i direktno utiče na vaš Quality Score.
@@ -215,12 +215,12 @@ export default function GoogleAdsTrosakPage() {
                 Negativne ključne reči su možda <strong>najjači alat za smanjenje troškova</strong> u Google Ads-u, i najzanemareniji. Bez robusne liste negativnih reči, vaši oglasi se prikazuju za irelevantne pretrage i vi plaćate za klikove koji nikada neće konvertovati.
               </p>
               <p className="leading-relaxed">
-                Tipičan primer za srpsko tržište: firma koja nudi plaćene računovodstvene usluge prikazuje oglas za pretragu "besplatni računovodstveni program". Ili agencija za nekretnine koja želi kupce prikazuje se za "iznajmljivanje stanova". To su realni troškovi bez ikakvog potencijala za konverziju.
+                Tipičan primer za srpsko tržište: firma koja nudi plaćene računovodstvene usluge prikazuje oglas za pretragu „besplatni računovodstveni program“. Ili agencija za nekretnine koja želi kupce prikazuje se za „iznajmljivanje stanova“. To su realni troškovi bez ikakvog potencijala za konverziju.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
-                  Izgradite negativnu listu pre pokretanja kampanje: dodajte "besplatan", "kako", "sam", "DIY", "šta je", "Wikipedia" i slično. Svake nedelje pregledajte Search Terms izveštaj i dodajte nove negativne reči.
+                  Izgradite negativnu listu pre pokretanja kampanje: dodajte „besplatan“, „kako“, „sam“, „DIY“, „šta je“, „Wikipedia“ i slično. Svake nedelje pregledajte Search Terms izveštaj i dodajte nove negativne reči.
                 </p>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function GoogleAdsTrosakPage() {
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Rešenje</strong>
-                  U Google Ads, proverite izveštaj "Devices" i vidite CPA po uređaju. Podesite bid adjustments za mobilne, tablet i desktop posebno. Za mobilne oglasnike, koristite Call Extensions i Click-to-Call da iskoristite prirodnu prednost mobilnih uređaja.
+                  U Google Ads, proverite izveštaj „Devices“ i vidite CPA po uređaju. Podesite bid adjustments za mobilne, tablet i desktop posebno. Za mobilne oglasnike, koristite Call Extensions i Click-to-Call da iskoristite prirodnu prednost mobilnih uređaja.
                 </p>
               </div>
             </div>
@@ -288,7 +288,7 @@ export default function GoogleAdsTrosakPage() {
                 Bonus: praćenje atribucije i multi-touch putanja
               </h2>
               <p className="leading-relaxed">
-                Čak i kada sve gore navedeno uradite ispravno, može doći do problema sa <strong>atribucijom</strong>. Korisnik može videti vaš oglas, otići bez konverzije, a potom se vratiti organskim putem ili direktno, i tada konvertovati. Ako koristite "Last Click" atribucioni model, Google Ads nikada neće dobiti zasluge za tu konverziju, čak i ako je oglas bio ključni okidač.
+                Čak i kada sve gore navedeno uradite ispravno, može doći do problema sa <strong>atribucijom</strong>. Korisnik može videti vaš oglas, otići bez konverzije, a potom se vratiti organskim putem ili direktno, i tada konvertovati. Ako koristite „Last Click“ atribucioni model, Google Ads nikada neće dobiti zasluge za tu konverziju, čak i ako je oglas bio ključni okidač.
               </p>
               <p className="leading-relaxed">
                 Moderni Google Ads preporučuje <strong>Data-driven attribution</strong> koji koristi mašinsko učenje za pravednu raspodelu zasluga kroz ceo put kupca. Ovo daje algoritmu tačniju sliku i dugoročno dovodi do boljih rezultata.

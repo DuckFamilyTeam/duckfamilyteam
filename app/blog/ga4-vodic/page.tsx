@@ -252,7 +252,7 @@ export default function GA4VodicPage() {
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Gde naći
                   </strong>
-                  Reports, Engagement, Conversions. Podešavate šta je "konverzija" za vas (klik na telefon, kupovina, prijava na newsletter).
+                  Reports, Engagement, Conversions. Podešavate šta je „konverzija“ za vas (klik na telefon, kupovina, prijava na newsletter).
                 </p>
               </div>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-ink-border rounded-r-xl shadow-sm">
@@ -318,7 +318,7 @@ export default function GA4VodicPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>
-                  <span>Klik na CTA dugme ("Zakaži konsultaciju")</span>
+                  <span>Klik na CTA dugme („Zakaži konsultaciju“)</span>
                 </li>
               </ul>
               <p className="leading-relaxed">

@@ -146,7 +146,7 @@ export default function GoogleBusinessProfilPage() {
               <strong className="text-wine-text font-medium">local pack</strong>, i ako vas tu nema, taj klijent je već otišao kod nekog drugog. Nikad neće ni saznati da postojite.
             </p>
             <p className="leading-relaxed">
-              Google Business Profil, skraćeno <strong className="text-ink-text font-medium">GBP</strong> (nekadašnji Google My Business optimizacija je i dalje čest naziv koji ljudi kucaju u pretragu), nije "još jedna stavka na spisku obaveza". Za veliku većinu lokalnih firmi u Srbiji to je{' '}
+              Google Business Profil, skraćeno <strong className="text-ink-text font-medium">GBP</strong> (nekadašnji Google My Business optimizacija je i dalje čest naziv koji ljudi kucaju u pretragu), nije „još jedna stavka na spisku obaveza“. Za veliku većinu lokalnih firmi u Srbiji to je{' '}
               <strong className="text-ink-text font-medium">prva stranica koju klijent vidi</strong>, pre sajta, pre društvenih mreža, pre bilo čega drugog. Zato je optimizacija GBP-a jedan od najisplativijih poteza u lokalnom SEO-u u Srbiji, i upravo zato zaslužuje mnogo više pažnje nego što obično dobija.
             </p>
 
@@ -177,7 +177,7 @@ export default function GoogleBusinessProfilPage() {
               </p>
               <div className="space-y-4">
                 {[
-                  { n: 'Mala', t: 'Zanatlije, saloni, mobilni servisi', d: 'Za veliki broj malih firmi u Srbiji profil je praktično cela online prisutnost, jedina "stranica" koju klijent ikad vidi. Radno vreme, poziv jednim klikom, pravac do vas. Ovde svaka nedovršena stavka direktno znači propušten posao.' },
+                  { n: 'Mala', t: 'Zanatlije, saloni, mobilni servisi', d: 'Za veliki broj malih firmi u Srbiji profil je praktično cela online prisutnost, jedina „stranica“ koju klijent ikad vidi. Radno vreme, poziv jednim klikom, pravac do vas. Ovde svaka nedovršena stavka direktno znači propušten posao.' },
                   { n: 'Srednja', t: 'Firme sa nekoliko lokacija ili širim spektrom usluga', d: 'Ovde je ključna doslednost, isti naziv, adresa i telefon na sajtu, profilu i svim direktorijumima, i sekcija usluga koja se poklapa sa onim što piše na sajtu. Google danas aktivno upoređuje jedno sa drugim.' },
                   { n: 'Velika', t: 'Lanci i firme sa 10+ lokacija', d: 'Individualno upravljanje profilima više nije opcija. Google nudi grupno upravljanje (Business Groups) i grupnu verifikaciju za 10 i više lokacija, jedan nalog, jedinstven pregled svih podružnica, kontrola pristupa za tim i dosledan brend na svakoj adresi.' },
                 ].map((item) => (
@@ -209,7 +209,7 @@ export default function GoogleBusinessProfilPage() {
                   <strong className="text-ink-muted uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Šta ovo znači u praksi?
                   </strong>
-                  Recenzije nisu "lepa stvar da imate", one su direktan faktor rangiranja i direktan faktor odluke. Traženje recenzije od svakog zadovoljnog klijenta je jedna od retkih besplatnih akcija koja istovremeno podiže i poziciju i poverenje.
+                  Recenzije nisu „lepa stvar da imate“, one su direktan faktor rangiranja i direktan faktor odluke. Traženje recenzije od svakog zadovoljnog klijenta je jedna od retkih besplatnih akcija koja istovremeno podiže i poziciju i poverenje.
                 </p>
               </div>
             </div>
@@ -223,11 +223,11 @@ export default function GoogleBusinessProfilPage() {
               </p>
               <div className="space-y-4">
                 {[
-                  { n: '1', t: 'Tačna primarna kategorija', d: 'Ovo je pojedinačno najvažniji faktor rangiranja profila. "Vodoinstalater" i "Hitne vodoinstalaterske usluge" nisu ista kategorija, birajte onu koja najpreciznije opisuje osnovnu delatnost, ne najširu.' },
+                  { n: '1', t: 'Tačna primarna kategorija', d: 'Ovo je pojedinačno najvažniji faktor rangiranja profila. „Vodoinstalater“ i „Hitne vodoinstalaterske usluge“ nisu ista kategorija, birajte onu koja najpreciznije opisuje osnovnu delatnost, ne najširu.' },
                   { n: '2', t: 'Dosledno ime, adresa, telefon (NAP)', d: 'Identični podaci na sajtu, profilu i svim direktorijumima gde ste pomenuti. Google unakrsno proverava ove podatke, nedoslednost direktno šteti poverenju algoritma u vaš profil.' },
                   { n: '3', t: 'Pravilna verifikacija', d: 'Bez verifikovanog profila nemate pristup punoj funkcionalnosti niti kredibilitet kod Google-a. Za firme sa jednom lokacijom ide standardnim putem, za 10+ lokacija postoji grupna (chain) verifikacija.' },
                   { n: '4', t: 'Storefront ili uslužna zona', d: 'Ako klijenti dolaze kod vas, prodavnica, salon, ordinacija, koristite fizičku adresu. Ako vi idete kod klijenata, mobilni vulkanizer, majstor, dostava, podesite uslužnu zonu i sakrijte adresu. Mešanje ova dva modela zbunjuje i Google i klijente.' },
-                  { n: '5', t: 'Sekcija usluga usklađena sa sajtom', d: 'Google danas aktivno poredi šta piše u "Services" tabu profila sa onim što piše na vašem sajtu, kako bi proverio da li je firma zaista aktivna i relevantna za te usluge.' },
+                  { n: '5', t: 'Sekcija usluga usklađena sa sajtom', d: 'Google danas aktivno poredi šta piše u „Services“ tabu profila sa onim što piše na vašem sajtu, kako bi proverio da li je firma zaista aktivna i relevantna za te usluge.' },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
                     <div className="font-display text-3xl text-ink-border-strong select-none shrink-0 w-8 text-right">{item.n}</div>
@@ -289,7 +289,7 @@ export default function GoogleBusinessProfilPage() {
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
-                  <span className="text-ink-muted">Ubacivanje ključnih reči u naziv firme ("Vulkanizer Beograd Najbrže"), kršenje Google pravila koje može dovesti do suspenzije profila.</span>
+                  <span className="text-ink-muted">Ubacivanje ključnih reči u naziv firme („Vulkanizer Beograd Najbrže“), kršenje Google pravila koje može dovesti do suspenzije profila.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✗</span>
