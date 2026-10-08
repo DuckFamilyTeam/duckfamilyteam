@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 // Zod 4 pri prvoj validaciji proba `new Function` da bi ubrzao parsiranje. Naš CSP
 // ne dozvoljava eval, pa je ta proba na svakoj stranici sa formom ostavljala
-// CSP prijavu u konzoli (Lighthouse „inspector-issues", 2026-09-27). Forme su
+// CSP prijavu u konzoli (Lighthouse „inspector-issues“, 2026-09-27). Forme su
 // male, JIT ovde ne donosi ništa merljivo, pa se isključuje.
 z.config({ jitless: true })
 

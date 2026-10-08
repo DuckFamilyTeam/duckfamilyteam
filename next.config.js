@@ -3,14 +3,17 @@ const nextConfig = {
     compress: true,
     poweredByHeader: false,
     images: {
-          // AVIF vraćen 2026-09-27 na Next.js 16.3.6: ranjivost GHSA-2xp9-vwfh-vxw4
-          // (Next.js 14.x Image Optimization API) je zakrpljena u 15.5.24+/16.x.
-          // Merenje istog dana (/_next/image, w=828, q=75, lokalno):
-          // fotografija (andjela-i-nikola hero) 52.136 → 34.971 B (-33%),
-          // Higgsfield ilustracije 9.122→8.180 B i 12.156→8.064 B (-10% / -34%).
-          // Lighthouse mobilni na `/` i `/usluge/ai-agenti` bez regresije na
-          // LCP/CLS/TBT posle uključivanja (vidi 05_Odrzavanje_Backup/
-          // 2026-09-27-cene-pravni-nextjs-vizuali.md, dopuna).
+          // AVIF kao IZLAZNI format (Next ga servira pregledačima koji ga podržavaju).
+          // Napomena o ranjivosti GHSA-2xp9-vwfh-vxw4 (RCE kroz libheif u sharp-u):
+          // pogođene su verzije >=10.0.0 <15.5.24 i <16.3.3, a ranjivo je
+          // DEKODIRANJE AVIF ULAZA, ne izbor izlaznog formata. Zakrpa je privremeno
+          // isključila optimizaciju AVIF ulaznih fajlova. Ovaj sajt je na 16.3.8,
+          // svi izvori slika su lokalni (.webp, .png, .svg) i `remotePatterns`
+          // nije podešen, pa ne postoji put kojim bi neko podmetnuo AVIF ulaz.
+          // Merenje 2026-09-27 (/_next/image, w=828, q=75, lokalno): fotografija
+          // (andjela-i-nikola hero) 52.136 → 34.971 B (-33%), Higgsfield
+          // ilustracije 9.122→8.180 B i 12.156→8.064 B, bez regresije na
+          // LCP/CLS/TBT (vidi 05_Odrzavanje_Backup/2026-09-27-cene-pravni-nextjs-vizuali.md).
           formats: ['image/avif', 'image/webp'],
           },
     async redirects() {

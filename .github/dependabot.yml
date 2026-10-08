@@ -1,0 +1,17 @@
+# Nedeljna provera npm zavisnosti. Dodato 2026-10-08 posle nalaza da je
+# `npm audit --omit=dev` tiho skočio sa 0 na 2 high (sharp, source-map-js)
+# između dve sesije, a niko to nije primetio dok nije pokrenuta ručna provera.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Belgrade
+    open-pull-requests-limit: 5
+    groups:
+      sitne-izmene:
+        update-types:
+          - minor
+          - patch

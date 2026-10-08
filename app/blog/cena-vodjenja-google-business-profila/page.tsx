@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
+import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
 
 export const metadata: Metadata = {
   title: { absolute: 'Cena vođenja Google Business Profila u Srbiji' },
@@ -82,43 +83,38 @@ const breadcrumbSchema = {
   ],
 }
 
+/**
+ * Jedan izvor za FAQ: i JSON-LD i vidljiva sekcija se generišu odavde.
+ * Google traži da FAQPage markup odgovara vidljivom tekstu; do 2026-10-08
+ * ova četiri pitanja su postojala samo u schemi (stavka 83).
+ */
+const faqs: { q: string; a: string }[] = [
+  {
+    q: 'Da li je Google Business Profile besplatan?',
+    a: 'Da, kreiranje profila, objave i odgovaranje na recenzije su besplatni i dostupni svakom vlasniku firme. Ono što se naplaćuje jeste rad nekoga ko profil vodi umesto vas, ne sam alat.',
+  },
+  {
+    q: 'Koliko košta vođenje Google Business Profila?',
+    a: `Kod nas je cena fiksna, ${gbpOsnovnaCena} evra mesečno, i uključuje osam objava, osam fotografija, odgovaranje na sve recenzije i tekuću optimizaciju profila. Firme sa više lokacija dobijaju predlog po profilu.`,
+  },
+  {
+    q: 'Kada se isplati samostalno voditi profil, a kada platiti nekom drugom?',
+    a: 'Samostalno vođenje ima smisla kod jedne lokacije, malo recenzija mesečno i kad postoji vreme za redovnu nedeljnu objavu. Plaćeno vođenje ima smisla kad broj lokacija pređe jednu ili kad profil realno neće biti prioritet.',
+  },
+  {
+    q: 'Šta tačno utiče na cenu vođenja profila?',
+    a: 'Najviše utiču broj lokacija, broj i vrsta recenzija koje treba obraditi, učestalost objava i obim optimizacije i praćenja profila. Više lokacija ili recenzija znači veći mesečni obim posla.',
+  },
+]
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Da li je Google Business Profile besplatan?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Da, kreiranje profila, objave i odgovaranje na recenzije su besplatni i dostupni svakom vlasniku firme. Ono što se naplaćuje jeste rad nekoga ko profil vodi umesto vas, ne sam alat.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Koliko košta vođenje Google Business Profila?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Kod nas je cena fiksna, 100 evra mesečno, i uključuje osam objava, osam fotografija, odgovaranje na sve recenzije i tekuću optimizaciju profila. Firme sa više lokacija dobijaju predlog po profilu.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kada se isplati samostalno voditi profil, a kada platiti nekom drugom?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Samostalno vođenje ima smisla kod jedne lokacije, malo recenzija mesečno i kad postoji vreme za redovnu nedeljnu objavu. Plaćeno vođenje ima smisla kad broj lokacija pređe jednu ili kad profil realno neće biti prioritet.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Šta tačno utiče na cenu vođenja profila?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Najviše utiču broj lokacija, broj i vrsta recenzija koje treba obraditi, učestalost objava i obim optimizacije i praćenja profila. Više lokacija ili recenzija znači veći mesečni obim posla.',
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 }
 
 export default function CenaVodjenjaGbpPage() {
@@ -200,7 +196,7 @@ export default function CenaVodjenjaGbpPage() {
                 Šta zapravo određuje cenu
               </h2>
               <p className="leading-relaxed">
-                Cena vođenja Google Business Profila zavisi od količine posla, ne od toga koliko je sam alat „vredan". Nekoliko stavki najviše utiče na mesečni iznos.
+                Cena vođenja Google Business Profila zavisi od količine posla, ne od toga koliko je sam alat „vredan“. Nekoliko stavki najviše utiče na mesečni iznos.
               </p>
               <div className="space-y-4">
                 {[
@@ -244,14 +240,14 @@ export default function CenaVodjenjaGbpPage() {
                 Ako pretražite koliko košta vođenje Google Business profila u Srbiji, naći ćete brojke koje se razlikuju i po tri, četiri puta. Razlog obično nije to što neko laže, nego što se pod istim nazivom prodaju različite stvari.
               </p>
               <p className="leading-relaxed">
-                Jedna agencija pod „vođenje profila" podrazumeva samo objave, bez odgovaranja na recenzije. Druga uključuje i recenzije, ali ne i fotografije. Treća ima sve to plus mesečni izveštaj sa brojkama. Poređenje tri cene bez poređenja tri liste onoga što je uključeno ne govori ništa korisno.
+                Jedna agencija pod „vođenje profila“ podrazumeva samo objave, bez odgovaranja na recenzije. Druga uključuje i recenzije, ali ne i fotografije. Treća ima sve to plus mesečni izveštaj sa brojkama. Poređenje tri cene bez poređenja tri liste onoga što je uključeno ne govori ništa korisno.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Naš broj, ne prosek
                   </strong>
-                  Mi vođenje Google Business profila naplaćujemo 100 evra mesečno, a u tu cenu ulazi osam objava mesečno, osam fotografija, odgovaranje na sve recenzije i tekuća optimizacija profila. Ako negde vidite nižu cenu, prvo proverite da li su unutra iste stavke. Ako je cena viša, isto pravilo važi.
+                  Mi vođenje Google Business profila naplaćujemo {gbpOsnovnaCena} evra mesečno, a u tu cenu ulazi osam objava mesečno, osam fotografija, odgovaranje na sve recenzije i tekuća optimizacija profila. Ako negde vidite nižu cenu, prvo proverite da li su unutra iste stavke. Ako je cena viša, isto pravilo važi.
                 </p>
               </div>
               <p className="leading-relaxed text-sm">
@@ -283,7 +279,7 @@ export default function CenaVodjenjaGbpPage() {
                 Kako mi naplaćujemo
               </h2>
               <p className="leading-relaxed">
-                Najčešće pitanje glasi otprilike ovako: cena gbp mesečno, koliko košta gbp, dajte mi konačan broj. Naša cena za vođenje Google Business Profila je fiksna, 100 evra mesečno, bez obzira na to koliko recenzija tog meseca stigne ili koliko posla ima oko fotografija. U tu cenu ulazi sledeće.
+                Najčešće pitanje glasi otprilike ovako: cena gbp mesečno, koliko košta gbp, dajte mi konačan broj. Naša cena za vođenje Google Business Profila je fiksna, {gbpOsnovnaCena} evra mesečno, bez obzira na to koliko recenzija tog meseca stigne ili koliko posla ima oko fotografija. U tu cenu ulazi sledeće.
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 {[
@@ -302,8 +298,26 @@ export default function CenaVodjenjaGbpPage() {
                 Firme sa više od jedne lokacije dobijaju predlog po profilu, jer se posao množi sa brojem lokacija i ne ostaje isti. Ako vodite lanac ili franšizu, javite se za tačan predlog za vaš broj poslovnica.
               </p>
               <p className="leading-relaxed">
-                Ako niste sigurni da li vam se isplati da neko drugi vodi vaš profil, najbrži način da saznate jeste da nam pošaljete link do svog GBP naloga. Pogledaćemo ga i reći vam iskreno da li tu ima šta da se popravi, i koliko bi to približno koštalo za vaš slučaj.
+                Ako niste sigurni da li vam se isplati da neko drugi vodi vaš profil, najbrži način da saznate jeste da nam pošaljete link do svog GBP naloga. Pogledaćemo ga i reći vam iskreno da li tu ima šta da se popravi, i koliko bi to približno koštalo za vaš slučaj. Ceo opis posla je na stranici{' '}
+                <Link href="/usluge/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">
+                  agencija za Google Business profil
+                </Link>
+                .
               </p>
+            </div>
+
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Česta pitanja
+              </h2>
+              <div className="space-y-4">
+                {faqs.map((f) => (
+                  <div key={f.q} className="bg-ink-bg rounded-xl p-5 md:p-6">
+                    <h3 className="font-medium text-ink-text mb-2">{f.q}</h3>
+                    <p className="text-ink-muted text-base leading-relaxed m-0">{f.a}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <hr className="border-ink-border my-8 md:my-12" />

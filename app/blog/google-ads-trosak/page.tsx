@@ -140,7 +140,7 @@ export default function GoogleAdsTrosakPage() {
           <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-ink-muted text-base md:text-xl">
             <p className="leading-relaxed">
               Mnogi vlasnici biznisa uđu u svet Google Ads-a sa uverenjem:{' '}
-              <strong className="text-ink-text font-medium">"Ako platim klik, dobiću kupca."</strong> Realnost je često brutalno drugačija. Google je mašina koja će vrlo rado potrošiti svaki vaš cent ako joj precizno ne kažete šta želite. U ovom tekstu ćemo proći kroz <strong>7 najčešćih razloga</strong> zašto Google Ads kampanje u Srbiji troše budžet bez rezultata, i šta konkretno možete da uradite.
+              <strong className="text-ink-text font-medium">„Ako platim klik, dobiću kupca.“</strong> Realnost je često brutalno drugačija. Google je mašina koja će vrlo rado potrošiti svaki vaš cent ako joj precizno ne kažete šta želite. U ovom tekstu ćemo proći kroz <strong>7 najčešćih razloga</strong> zašto Google Ads kampanje u Srbiji troše budžet bez rezultata, i šta konkretno možete da uradite.
             </p>
 
             {/* RAZLOG 1 */}
@@ -288,7 +288,7 @@ export default function GoogleAdsTrosakPage() {
                 Bonus: praćenje atribucije i multi-touch putanja
               </h2>
               <p className="leading-relaxed">
-                Čak i kada sve gore navedeno uradite ispravno, može doći do problema sa <strong>atribucijom</strong>. Korisnik može videti vaš oglas, otići bez konverzije, a potom se vratiti organskim putem ili direktno, i tada konvertovati. Ako koristite „Last Click“ atribucioni model, Google Ads nikada neće dobiti zasluge za tu konverziju, čak i ako je oglas bio ključni okidač.
+                Čak i kada sve gore navedeno uradite ispravno, može doći do problema sa <strong>atribucijom</strong>. Korisnik može videti vaš oglas, otići bez konverzije, a potom se vratiti organskim putem ili direktno, i tada konvertovati. Ako koristite „Last Click“ atribucioni model, Google Ads nikada neće dobiti zasluge za tu konverziju, čak i ako je baš oglas pokrenuo kupovinu.
               </p>
               <p className="leading-relaxed">
                 Moderni Google Ads preporučuje <strong>Data-driven attribution</strong> koji koristi mašinsko učenje za pravednu raspodelu zasluga kroz ceo put kupca. Ovo daje algoritmu tačniju sliku i dugoročno dovodi do boljih rezultata.

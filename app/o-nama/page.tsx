@@ -8,7 +8,7 @@ import PodvucenaRec from '@/components/PodvucenaRec'
 export const metadata: Metadata = {
   title: 'O nama',
   description:
-    'Nikola i Anđela, tim iza Duck Family Team. Sertifikovani Google Ads stručnjaci koji lično rade na svakoj kampanji i sajtu.',
+    'Nikola i Anđela, tim iza Duck Family Team. Sertifikovani Google Ads stručnjaci koji lično rade na svakoj kampanji, Google Business profilu i sajtu.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/o-nama',
   },
@@ -108,8 +108,8 @@ export default function ONamaPage() {
               Popunjava prazninu koju je vizuelna provera tri puta primetila
               (krug 8, 9, 10, preostala ispravka 2): o-nama nije imalo ništa
               osim heroja i sertifikata. Namerno DRUGAČIJA kompozicija od
-              vertikalne linije sa tačkama „Naš proces" na početnoj i od ravne
-              liste kartica „Kako vodimo kampanju" na /usluge/google-ads:
+              vertikalne linije sa tačkama „Naš proces“ na početnoj i od ravne
+              liste kartica „Kako vodimo kampanju“ na /usluge/google-ads:
               horizontalna traka od 4 koraka, veliki serifni broj i sitna
               ručno iscrtana wine linija (isti potez kao PodvucenaRec) kao
               razdelnik — signature element ovde prvi put služi kao razdelnik

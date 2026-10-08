@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   // Prikaze na početnu donose upiti `reklamiranje firme` (9 prikaza, poz. 7,1),
   // `digitalni marketing` (5, poz. 7,8), `lokalni seo` (4, poz. 1), `online marketing`
   // i `reklamiranje na internetu` (poz. 1). Stari naslov je imao dva problema:
-  // (1) akronim „GBP" ne prepoznaje onaj ko traži `reklamiranje firme`;
-  // (2) „Beograd" protivreči `_KLIJENT_INFO.md`, gde područje opsluživanja JESTE Srbija,
-  //     a pozicioniranje izričito kaže da se ne takmičimo za „izrada sajtova Beograd".
+  // (1) akronim „GBP“ ne prepoznaje onaj ko traži `reklamiranje firme`;
+  // (2) „Beograd“ protivreči `_KLIJENT_INFO.md`, gde područje opsluživanja JESTE Srbija,
+  //     a pozicioniranje izričito kaže da se ne takmičimo za „izrada sajtova Beograd“.
   //     GSC uz to beleži i upit `family team raska`, dakle ni saobraćaj nije samo Beograd.
   title: 'Reklamiranje firme na Google-u | Duck Family Team',
   description:
@@ -143,9 +143,9 @@ export default async function Home() {
                     'Klijenti',
                     'koji',
                     {
-                      // Zarez mora da bude unutar iste „reči" kao i podvučeni
+                      // Zarez mora da bude unutar iste „reči“ kao i podvučeni
                       // deo — inače podela na reči ubaci razmak i dobije se
-                      // „zovu , ne".
+                      // „zovu , ne“.
                       node: (
                         <>
                           <span className="squiggle">
@@ -178,8 +178,8 @@ export default async function Home() {
                 {/* Bez animacije uopšte: ovaj pasus je LCP element na telefonu
                     (izmereno, `lcp-breakdown-insight`). I `data-hero-rise` (bez
                     providnosti, samo blagi translateY) je i dalje merio ~906ms
-                    „element render delay" na ovom elementu — iznad fold-a je
-                    uvek, nema šta da se „otkriva", pa je animacija uklonjena u
+                    „element render delay“ na ovom elementu — iznad fold-a je
+                    uvek, nema šta da se „otkriva“, pa je animacija uklonjena u
                     celini umesto samo ublažena. */}
                 <p className="text-base md:text-lg text-ink-muted leading-relaxed max-w-xl mb-8">
                   Google Ads kampanje, Google Business profil i brzi sajtovi za lokalne biznise koji žele da ih klijenti stvarno pronađu.
@@ -287,7 +287,7 @@ export default async function Home() {
             <h2 className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4" data-rv="up">
               Izaberite šta vam je potrebno
             </h2>
-            {/* Asimetrični bento iz dizajn sistema (resursi_brenda.md, „Layout"):
+            {/* Asimetrični bento iz dizajn sistema (resursi_brenda.md, „Layout“):
                 Google Ads je najveća kartica, jer je to glavna usluga. Ranije su sve
                 četiri kartice bile iste veličine. */}
             <div
@@ -433,7 +433,7 @@ export default async function Home() {
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Ovde je ranije stajala ista fotografija kao u hero sekciji, drugi
                 put učitana. Zamenjena je sertifikatima — oni su dokaz za tvrdnju
-                „sertifikovana agencija" koja se ponavlja kroz ceo sajt, a do sada
+                „sertifikovana agencija“ koja se ponavlja kroz ceo sajt, a do sada
                 su se videli samo na stranici O nama. Prikazani kao tamne kartice sa
                 bedžom umesto sirovih belih screenshotova (dizajn-kritičar, 2026-09-27):
                 bela pozadina originalnih slika je bila najsvetlija površina na sajtu. */}
@@ -497,7 +497,7 @@ export default async function Home() {
         {/* ── IZ BLOGA ──
             Do 2026-08-19 početna nije linkovala nijedan tekst, samo `/blog`.
             Search Console je pokazao posledicu: `/blog` i tri posta stajali su
-            kao „Otkrivena, trenutno nije indeksirana", jer su tekstovi visili
+            kao „Otkrivena, trenutno nije indeksirana“, jer su tekstovi visili
             iza čvorišta koje ni samo nije indeksirano. Ova sekcija im daje
             direktan link sa stranice koja jeste indeksirana i ima najviše
             unutrašnjih linkova. */}

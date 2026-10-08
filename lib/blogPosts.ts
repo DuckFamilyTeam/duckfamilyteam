@@ -12,10 +12,10 @@ export type BlogPost = {
 /**
  * Jedan izvor istine za listu blog postova.
  *
- * Koriste ga i `/blog` i sekcija „Iz bloga" na početnoj. Ranije je lista
+ * Koriste ga i `/blog` i sekcija „Iz bloga“ na početnoj. Ranije je lista
  * postojala samo u `app/blog/page.tsx`, pa početna nije linkovala nijedan
  * tekst — Search Console je 2026-08-19 pokazao posledicu: `/blog` i tri posta
- * stajali su kao „Otkrivena, trenutno nije indeksirana", jer su tekstovi bili
+ * stajali su kao „Otkrivena, trenutno nije indeksirana“, jer su tekstovi bili
  * dostupni samo preko čvorišta koje ni samo nije indeksirano.
  *
  * Redosled je hronološki, najnoviji prvi. Početna prikazuje prva tri.

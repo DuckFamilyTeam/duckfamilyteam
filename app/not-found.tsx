@@ -6,7 +6,11 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: '404, stranica nije pronađena',
   description: 'Ova stranica ne postoji ili je premeštena.',
-  robots: { index: false, follow: false },
+  // `null` briše `robots` nasleđen iz layouta (`index, follow`). Next za
+  // not-found sam dodaje `noindex`, pa sa `null` ostaje tačno jedan robots tag.
+  // Ranije je ovde stajalo `{ index: false, follow: false }`, što je uz Next-ov
+  // automatski tag davalo dva robots taga na istoj stranici.
+  robots: null,
 }
 
 export default function NotFound() {

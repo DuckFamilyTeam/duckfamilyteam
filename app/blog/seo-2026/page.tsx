@@ -210,7 +210,7 @@ export default function SEO2026Page() {
               </p>
               <ul className="space-y-4 pl-6 list-none">
                 {[
-                  { n: '1.', t: 'Pillar stranica', d: 'Glavna stranica koja temu pokriva u celini (npr. „Kompletan vodič za Google Ads u Srbiji", 3000+ reči).' },
+                  { n: '1.', t: 'Pillar stranica', d: 'Glavna stranica koja temu pokriva u celini (npr. „Kompletan vodič za Google Ads u Srbiji“, 3000+ reči).' },
                   { n: '2.', t: 'Cluster sadržaj', d: 'Serija dubinskih tekstova na uže podteme koji se linkuju ka pillar stranici i međusobno (npr. „Kako podesiti Smart Bidding“, „Negativne ključne reči vodič“, „Google Ads Quality Score“).' },
                   { n: '3.', t: 'Interno linkovanje', d: 'Sistematično međusobno linkovanje srodnih stranica prenosi SEO vrednost i pomaže Google-u da razume strukturu vašeg znanja.' },
                   { n: '4.', t: 'Konzistentna objava', d: 'Redovni novi sadržaj signalizira Google-u da je sajt aktivan i relevantan, idealno jednom nedeljno.' },

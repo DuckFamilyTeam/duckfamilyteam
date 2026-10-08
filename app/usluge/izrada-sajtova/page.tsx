@@ -170,7 +170,7 @@ export default function IzradaSajtovaPage() {
                 Next.js i Astro sajtovi
               </div>
               <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
-                <PodvucenaRec>Brzi</PodvucenaRec> sajtovi koji rangiraju od prvog dana
+                <PodvucenaRec>Brzi</PodvucenaRec> sajtovi, optimizovani za Google od prvog dana
               </h1>
               <p className="text-lg text-ink-muted leading-relaxed max-w-2xl mb-8">
                 Next.js i Astro sajtovi sa ugrađenom osnovnom SEO optimizacijom, bez posebne naplate, ključne reči i meta podaci su deo same izrade. Dublji SEO paket je dostupan kao dodatak, ako vam zatreba.

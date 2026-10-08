@@ -46,7 +46,7 @@ const faqSchema = {
       name: 'Šta ako mi treba samo jedna usluga, ne sve zajedno?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno. Izaberite odgovarajući tab u kalkulatoru. Paket „Sve na jednom mestu" je opcija za one koji žele kompletno vođenje na jednom mestu.',
+        text: 'Svaka usluga, Google Ads, Google Business profil i izrada sajta, naplaćuje se pojedinačno. Izaberite odgovarajući tab u kalkulatoru. Paket „Sve na jednom mestu“ je opcija za one koji žele kompletno vođenje na jednom mestu.',
       },
     },
     {

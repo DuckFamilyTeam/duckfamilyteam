@@ -15,7 +15,7 @@ export const homeFaqs: Faq[] = [
   {
     question: 'Zašto Google Ads umesto društvenih mreža?',
     answer:
-      'Google Ads hvata ljude u momentu namere. Dok na društvenim mrežama ometate ljude u zabavi, na Google-u se pojavljujete tačno onda kada neko traži vaše rešenje. To je razlika između „sviđanja" i „kupovine".',
+      'Google Ads hvata ljude u momentu namere. Dok na društvenim mrežama ometate ljude u zabavi, na Google-u se pojavljujete tačno onda kada neko traži vaše rešenje. To je razlika između „sviđanja“ i „kupovine“.',
   },
   {
     question: 'Da li se bavite i SEO-om?',
@@ -55,7 +55,7 @@ export const homeFaqs: Faq[] = [
   {
     question: 'Da li garantujete prvo mesto na Google-u?',
     answer:
-      'Nijedna ozbiljna agencija ne može da garantuje tačnu poziciju, jer Google algoritam nije pod nečijom kontrolom. Ono što garantujemo je transparentan rad, primenu proverenih SEO i Google Ads tehnika i mesečno izveštavanje o napretku.',
+      'Nijedna ozbiljna agencija ne može da garantuje tačnu poziciju, jer Google algoritam nije pod nečijom kontrolom. Ono što garantujemo je transparentan rad, primena proverenih SEO i Google Ads tehnika i mesečno izveštavanje o napretku.',
   },
 ]
 

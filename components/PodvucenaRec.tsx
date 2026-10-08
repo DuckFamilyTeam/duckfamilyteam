@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 /**
  * Ključna reč u naslovu, podvučena ručno iscrtanom vinskom linijom — potpis
  * brenda iz dizajn sistema (resursi_brenda.md: „ispod ključne reči u
- * naslovima"). Isti crtež i ista animacija kao „zovu" u heroju početne strane
+ * naslovima"). Isti crtež i ista animacija kao „zovu“ u heroju početne strane
  * (globals.css, `.squiggle`); bez JavaScripta i pod smanjenim pokretom linija
  * stoji iscrtana.
  */

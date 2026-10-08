@@ -101,7 +101,7 @@ export const rokovi: Rok[] = [
  * sniženja od 2026-09-06, jer su brojevi bili prepisani na ruku i promakli pri usklađivanju.
  * Dok se čitaju odavde, ne mogu da se raziđu.
  *
- * `null` (tip biznisa „Drugo", cena po dogovoru) se ne računa u opseg.
+ * `null` (tip biznisa „Drugo“, cena po dogovoru) se ne računa u opseg.
  */
 const bazneCeneSajta = tipoviBiznisa
   .map((t) => t.cena)

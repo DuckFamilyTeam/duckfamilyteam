@@ -123,12 +123,12 @@ export default function PolitikaKolacicaPage() {
               </h2>
               <p>
                 Google Analytics se <strong className="text-ink-text">ne učitava uopšte</strong> dok
-                u baneru ne kliknete „Prihvatam". Do tada Google sa ovog sajta ne dobija nijedan
+                u baneru ne kliknete „Prihvatam“. Do tada Google sa ovog sajta ne dobija nijedan
                 zahtev, ni sa kolačićima ni bez njih.
               </p>
               <p>
                 Google mapa u dnu stranice se <strong className="text-ink-text">ne učitava sama</strong>.
-                Dok ne kliknete „Prikaži mapu", Google ne dobija vašu IP adresu i ne postavlja svoje
+                Dok ne kliknete „Prikaži mapu“, Google ne dobija vašu IP adresu i ne postavlja svoje
                 kolačiće. Isto važi i za mapu na stranici kontakta.
               </p>
             </section>

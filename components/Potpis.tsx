@@ -1,9 +1,9 @@
 /**
  * Potpis brenda: ručno iscrtana vinska linija.
  *
- * Dizajn sistem (resursi_brenda.md, „Signature element") traži je ispod ključne
+ * Dizajn sistem (resursi_brenda.md, „Signature element“) traži je ispod ključne
  * reči u naslovima i kao razdelnik sekcija. Do 2026-09-27 postojala je samo
- * ispod „zovu" u heroju početne strane; na podstranicama je nije bilo nigde.
+ * ispod „zovu“ u heroju početne strane; na podstranicama je nije bilo nigde.
  * Ovde se koristi kao razdelnik odmah ispod H1 svake podstranice.
  *
  * Ista putanja kao na početnoj, crta se jednom pri učitavanju (globals.css,

@@ -159,7 +159,7 @@ export default function GA4VodicPage() {
                 Google je u julu 2023. ugasio Universal Analytics. GA4 je sada jedina opcija, i za razliku od prethodnika, <strong className="text-ink-text font-medium">zasnovan je na event-based modelu</strong>, a ne na session-based pristupu. To znači mnogo detaljnije praćenje ponašanja korisnika.
               </p>
               <p className="leading-relaxed">
-                Ključne prednosti GA4 za firme u Srbiji koje ulažu u digitalni marketing:
+                Najvažnije prednosti GA4 za firme u Srbiji koje ulažu u digitalni marketing:
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 {[
@@ -186,7 +186,7 @@ export default function GA4VodicPage() {
               </p>
               <div className="space-y-4">
                 {[
-                  { n: '1', t: 'Kreirajte GA4 Property', d: 'Na analytics.google.com, Admin, Create Property. Izaberite timezone "Europe/Belgrade" i valutu EUR ili RSD.' },
+                  { n: '1', t: 'Kreirajte GA4 Property', d: 'Na analytics.google.com, Admin, Create Property. Izaberite timezone „Europe/Belgrade“ i valutu EUR ili RSD.' },
                   { n: '2', t: 'Instalirajte Google Tag Manager', d: 'Koristite GTM (tagmanager.google.com) umesto direktnog GA4 koda na sajtu. GTM vam daje fleksibilnost za dodavanje svih budućih tagova bez menjanja koda.' },
                   { n: '3', t: 'Povežite GA4 sa Google Ads', d: 'U GA4, Admin, Google Ads Links, Link Account. Ovo vam daje uvid u koje Google Ads kampanje donose konverzije direktno u Google Ads interfejsu.' },
                   { n: '4', t: 'Podesite konverzije', d: 'GA4 automatski prati neke evente, ali morate označiti koje su vam konverzije. Idite na Admin, Conversions, Mark as conversion za svaki važan event.' },
@@ -215,7 +215,7 @@ export default function GA4VodicPage() {
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 {[
-                  { e: 'phone_click', d: 'Klik na "tel:" link, kritično za servise, lekare, advokate' },
+                  { e: 'phone_click', d: 'Klik na „tel:“ link, kritično za servise, lekare, advokate' },
                   { e: 'form_submit', d: 'Svaki popunjen kontakt formular ili prijava' },
                   { e: 'purchase', d: 'Kupovina u e-commerce prodavnici' },
                   { e: 'file_download', d: 'Preuzimanje cenovnika, kataloga ili brošure' },
@@ -231,7 +231,7 @@ export default function GA4VodicPage() {
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-wine rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">Pro tip</strong>
-                  U GTM-u, koristite "Click URL contains tel:" trigger za automatsko praćenje klikova na telefone. Ovo radi na svim stranicama bez menjanja koda sajta.
+                  U GTM-u, koristite „Click URL contains tel:“ trigger za automatsko praćenje klikova na telefone. Ovo radi na svim stranicama bez menjanja koda sajta.
                 </p>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function GA4VodicPage() {
               </h2>
               <p className="leading-relaxed">
                 Ovo je <strong className="text-ink-text font-medium">najvažnija metrika</strong>. Period. Zašto? Zato što vam kaže:{' '}
-                <span className="text-wine-text font-medium">"Koliko ljudi koji dođu na sajt zapravo nešto uradi?"</span>
+                <span className="text-wine-text font-medium">„Koliko ljudi koji dođu na sajt zapravo nešto uradi?“</span>
               </p>
               <p className="leading-relaxed">
                 Možete imati 10.000 posetilaca mesečno, ali ako nijedan ne popuni formular, ne nazove, ili ne kupi, vi trošite pare na vetar.
@@ -294,7 +294,7 @@ export default function GA4VodicPage() {
                 3. Event Tracking (praćenje akcija korisnika)
               </h2>
               <p className="leading-relaxed">
-                GA4 nije kao stari Universal Analytics. Sve je bazirano na <strong className="text-ink-text font-medium">"Events"</strong> (događajima).
+                GA4 nije kao stari Universal Analytics. Sve je bazirano na <strong className="text-ink-text font-medium">„Events“</strong> (događajima).
               </p>
               <p className="leading-relaxed">
                 To znači da možete da pratite bukvalno svaki klik koji korisnik napravi:
@@ -302,7 +302,7 @@ export default function GA4VodicPage() {
               <ul className="space-y-3 pl-6 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>
-                  <span>Klik na telefon ("Click to Call")</span>
+                  <span>Klik na telefon („Click to Call“)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>

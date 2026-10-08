@@ -64,6 +64,13 @@ html {
 .js [data-rv='right'] { transform: translateX(calc(28px * var(--amp))); }
 .js [data-rv='zoom']  { transform: scale(calc(1 - 0.04 * var(--amp))); filter: blur(calc(4px * var(--amp))); }
 .js [data-rv='clip']  { opacity: 1; clip-path: inset(0 0 100% 0); }
+/* Ispod 768 px kolone stoje jedna ispod druge, pa je pomak udesno gurao element
+   preko desne ivice i davao horizontalni skrol od 4 px na početnoj (sekcija
+   „O nama“, 320 i 390 px) sve dok se sekcija ne otkrije. Pomak ulevo ne pravi
+   skrol (prelivanje levo od početka se ne skroluje), pa ostaje kakav jeste. */
+@media (max-width: 767px) {
+  .js [data-rv='right'] { transform: translateY(calc(22px * var(--amp))); }
+}
 
 .js [data-rv].rv-in {
   opacity: 1;

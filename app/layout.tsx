@@ -14,7 +14,7 @@ import './globals.css'
 // Težina 400 je 2026-09-27 uklonjena radi LCP-a (manje font fajlova za preuzimanje
 // pre prvog prikaza). Provereno pre uklanjanja: `font-display` bez eksplicitne
 // `font-medium`/`font-semibold` klase (dakle na 400) postoji samo na par sitnih,
-// dekorativnih mesta (brojevi numerisanih listi u blogu, cifra u „step-dot" na
+// dekorativnih mesta (brojevi numerisanih listi u blogu, cifra u „step-dot“ na
 // početnoj, ogroman upola providan navodnik u Testimonials) — tamo će sad pasti
 // na najbližu učitanu težinu (500), vizuelno gotovo neprimetno.
 const fraunces = Fraunces({
@@ -26,7 +26,7 @@ const fraunces = Fraunces({
 })
 
 // 600 je dodat 2026-09-27: dugmad (`font-semibold`), `font-bold` i <strong> su
-// tražili težinu koja nije bila učitana, pa ih je browser „podebljavao" sam
+// tražili težinu koja nije bila učitana, pa ih je browser „podebljavao“ sam
 // (lažni bold, razmazana slova na CTA dugmadima). Sada postoji prava 600 težina.
 // Sve tri težine (400/500/600) su i dalje potrebne: 600 nosi SVE primarne CTA
 // dugmad na sajtu (`font-semibold`, ~25 mesta), 500 je najčešća težina teksta na
@@ -60,11 +60,11 @@ const ORGANIZATION_ID = `${siteUrl}/#organizacija`
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Google Ads Agencija Srbija | SEO & GA4 Analitika | Duck Family Team',
+    default: 'Google Ads i Google Business profil | Duck Family Team',
     template: '%s | Duck Family Team',
   },
   description:
-    'Sertifikovani Google Ads stručnjaci iz Srbije. Povećajte prodaju uz precizno targetiranje, istraživanje ključnih reči i naprednu GA4 analitiku. Duck Family Team, transparentan rad i merljivi rezultati.',
+    'Google Ads kampanje, Google Business profil, sajtovi i AI agenti za firme u Srbiji. Merimo pozive i upite, ne klikove. Besplatna konsultacija.',
   authors: [{ name: 'Duck Family Team', url: siteUrl }],
   creator: 'Duck Family Team',
   publisher: 'Duck Family Team',
@@ -86,13 +86,13 @@ export const metadata: Metadata = {
     locale: 'sr_RS',
     url: siteUrl,
     siteName: 'Duck Family Team',
-    title: 'Duck Family Team | Eksperti za Google Ads i SEO u Srbiji',
+    title: 'Duck Family Team | Google Ads i Google Business profil',
     description:
       'Pretvaramo klikove u kupce. Google Ads kampanje, Google Business profil i brzi sajtovi, sa merenjem koje pokazuje šta donosi upite.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Duck Family Team | Google Ads & SEO Agencija',
+    title: 'Duck Family Team | Google Ads i Google Business profil',
     description:
       'Google Ads kampanje, Google Business profil i brzi sajtovi. Merljivi rezultati, bez skrivenih troškova.',
   },
@@ -110,7 +110,7 @@ const webSiteSchema = {
   '@id': `${siteUrl}/#sajt`,
   name: 'Duck Family Team',
   url: siteUrl,
-  description: 'Google Ads agencija u Srbiji. Specijalizovani za PPC, SEO i GA4 analitiku.',
+  description: 'Agencija za Google Ads, Google Business profil, izradu sajtova i AI agente za firme u Srbiji.',
   inLanguage: 'sr-Latn-RS',
   publisher: { '@id': ORGANIZATION_ID },
 }
@@ -126,7 +126,7 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/img/logo-za-nasu-agenciju.png`,
   image: `${siteUrl}/img/logo-za-nasu-agenciju.png`,
-  description: 'Google Ads agencija u Srbiji. Specijalizovani za PPC, SEO i GA4 analitiku.',
+  description: 'Agencija za Google Ads, Google Business profil, izradu sajtova i AI agente za firme u Srbiji.',
   telephone: '+381643877524',
   email: 'stankovic.s.nikola@gmail.com',
   address: {
@@ -141,7 +141,7 @@ const organizationSchema = {
   areaServed: 'RS',
   sameAs: ['https://www.instagram.com/duckfamilyteam/', googleMapsUrl],
   priceRange: '$$',
-  serviceType: ['Google Ads', 'SEO Optimizacija', 'GA4 Analitika', 'Digitalni Marketing'],
+  serviceType: ['Google Ads', 'Google Business profil', 'Izrada sajtova', 'AI agenti'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

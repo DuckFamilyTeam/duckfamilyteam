@@ -5,6 +5,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
+import { adsStavke, adsVodjenjeCena } from '@/lib/cenaPodaci'
+
+const adsPostavkaCena = adsStavke.find((s) => s.id === 'postavka')?.cena ?? 70
 
 export const metadata: Metadata = {
   // `budžet` dodat u naslov 2026-10-05: stranica je na poz. 11 za upit `google ads budžet`,
@@ -86,43 +89,38 @@ const breadcrumbSchema = {
   ],
 }
 
+/**
+ * Jedan izvor za FAQ: i JSON-LD i vidljiva sekcija se generišu odavde.
+ * Google traži da FAQPage markup odgovara vidljivom tekstu; do 2026-10-08
+ * ova četiri pitanja su postojala samo u schemi (stavka 83).
+ */
+const faqs: { q: string; a: string }[] = [
+  {
+    q: 'Koliki je minimalni budžet za Google Ads?',
+    a: 'Google Ads nema propisan minimalni budžet. Vi zadajete prosečan dnevni budžet kampanje i možete ga menjati u svakom trenutku. Pitanje nije koliki je minimum koji Google traži, nego koliko klikova mesečno vam treba da biste dobili dovoljno konverzija za odluku.',
+  },
+  {
+    q: 'Koliko je prosečna cena klika u Srbiji?',
+    a: 'Jedinstvena prosečna cena klika za Srbiju ne postoji, jer se cena formira po aukciji za svaku pojedinačnu pretragu i razlikuje se po delatnosti, gradu, uređaju i dobu dana. Svoju procenu izvlačite iz Keyword Planner-a, iz kolona sa procenom ponude za vrh stranice.',
+  },
+  {
+    q: 'Da li dnevni budžet može da se prekorači?',
+    a: 'Na pojedinačan dan potrošnja može da ide do dvostrukog prosečnog dnevnog budžeta, ali u obračunskom periodu Google neće naplatiti više od 30,4 puta prosečan dnevni budžet. Broj 30,4 je prosečan broj dana u mesecu, 365 podeljeno sa 12.',
+  },
+  {
+    q: 'Koliko košta vođenje Google Ads kampanja u agenciji?',
+    a: `Kod nas mesečno vođenje kampanja košta ${adsVodjenjeCena} evra, a jednokratna postavka kampanje bez mesečnog vođenja ${adsPostavkaCena} evra po kampanji. To je odvojeno od budžeta koji plaćate Google-u.`,
+  },
+]
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Koliki je minimalni budžet za Google Ads?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Google Ads nema propisan minimalni budžet. Vi zadajete prosečan dnevni budžet kampanje i možete ga menjati u svakom trenutku. Pitanje nije koliki je minimum koji Google traži, nego koliko klikova mesečno vam treba da biste dobili dovoljno konverzija za odluku.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Koliko je prosečna cena klika u Srbiji?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Jedinstvena prosečna cena klika za Srbiju ne postoji, jer se cena formira po aukciji za svaku pojedinačnu pretragu i razlikuje se po delatnosti, gradu, uređaju i dobu dana. Svoju procenu izvlačite iz Keyword Planner-a, iz kolona sa procenom ponude za vrh stranice.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Da li dnevni budžet može da se prekorači?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Na pojedinačan dan potrošnja može da ide do dvostrukog prosečnog dnevnog budžeta, ali u obračunskom periodu Google neće naplatiti više od 30,4 puta prosečan dnevni budžet. Broj 30,4 je prosečan broj dana u mesecu, 365 podeljeno sa 12.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Koliko košta vođenje Google Ads kampanja u agenciji?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Kod nas mesečno vođenje kampanja košta 200 evra, a jednokratna postavka kampanje bez mesečnog vođenja 70 evra po kampanji. To je odvojeno od budžeta koji plaćate Google-u.',
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 }
 
 export default function KolikoKostaGoogleAdsPage() {
@@ -194,7 +192,7 @@ export default function KolikoKostaGoogleAdsPage() {
           <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-12 lg:p-16 space-y-10 md:space-y-12 text-ink-muted text-base md:text-xl">
             <p className="leading-relaxed">
               Pitanje stigne skoro uvek u istom obliku:{' '}
-              <em className="text-ink-text not-italic font-medium">„Koliko mi treba mesečno za Google oglase?"</em>{' '}
+              <em className="text-ink-text not-italic font-medium">„Koliko mi treba mesečno za Google oglase?“</em>{' '}
               Čovek očekuje jedan broj. Mi na to pitanje ne možemo pošteno da odgovorimo jednim brojem, i nijedna agencija ne može, a da ne pogađa.
             </p>
             <p className="leading-relaxed">
@@ -206,7 +204,7 @@ export default function KolikoKostaGoogleAdsPage() {
                 Tri različita troška koja ljudi zovu istim imenom
               </h2>
               <p className="leading-relaxed">
-                Najveći deo zabune oko cene dolazi odatle što se tri odvojene stavke guraju pod jednu reč. Kad neko kaže „Google Ads me košta 300 evra", to može da znači bilo koju od njih.
+                Najveći deo zabune oko cene dolazi odatle što se tri odvojene stavke guraju pod jednu reč. Kad neko kaže „Google Ads me košta 300 evra“, to može da znači bilo koju od njih.
               </p>
               <div className="space-y-4">
                 {[
@@ -218,7 +216,7 @@ export default function KolikoKostaGoogleAdsPage() {
                   {
                     n: '2',
                     t: 'Rad na kampanji',
-                    d: 'Ono što plaćate čoveku ili agenciji koja kampanju postavlja i vodi. Kod nas je to 200 evra mesečno za vođenje, ili 70 evra po kampanji za jednokratnu postavku bez vođenja. Odvojeno od budžeta i nikad se ne uzima kao procenat potrošnje.',
+                    d: `Ono što plaćate čoveku ili agenciji koja kampanju postavlja i vodi. Kod nas je to ${adsVodjenjeCena} evra mesečno za vođenje, ili ${adsPostavkaCena} evra po kampanji za jednokratnu postavku bez vođenja. Odvojeno od budžeta i nikad se ne uzima kao procenat potrošnje.`,
                   },
                   {
                     n: '3',
@@ -287,13 +285,13 @@ export default function KolikoKostaGoogleAdsPage() {
 
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
-                Zašto „prosečna cena klika za Srbiju" ne postoji
+                Zašto „prosečna cena klika za Srbiju“ ne postoji
               </h2>
               <p className="leading-relaxed">
                 Pošto se cena formira po aukciji, ona se menja po delatnosti, po gradu, po uređaju, po dobu dana i po tome ko je taj mesec odlučio da pojača oglašavanje. Klik za hitnu intervenciju vodoinstalatera i klik za prodaju sadnica nisu isti proizvod i nemaju razloga da koštaju slično.
               </p>
               <p className="leading-relaxed">
-                Zato tekstove koji vam nude jedan broj kao „prosek za srpsko tržište" tretirajte kao dekoraciju. Nije da je broj nužno pogrešan, nego{' '}
+                Zato tekstove koji vam nude jedan broj kao „prosek za srpsko tržište“ tretirajte kao dekoraciju. Nije da je broj nužno pogrešan, nego{' '}
                 <strong className="text-ink-text font-medium">ne odnosi se ni na šta što vi prodajete</strong>. Vaš broj postoji, samo ga treba izvući.
               </p>
             </div>
@@ -310,7 +308,7 @@ export default function KolikoKostaGoogleAdsPage() {
                   {
                     n: '1',
                     t: 'Otvorite alat i unesite prave fraze',
-                    d: 'Ne unosite naziv svoje delatnosti, nego ono što kupac stvarno kuca. „Vulkanizer non stop Novi Sad", ne „vulkanizerske usluge". Deset do dvadeset fraza je sasvim dovoljno za prvu procenu.',
+                    d: 'Ne unosite naziv svoje delatnosti, nego ono što kupac stvarno kuca. „Vulkanizer non stop Novi Sad“, ne „vulkanizerske usluge“. Deset do dvadeset fraza je sasvim dovoljno za prvu procenu.',
                   },
                   {
                     n: '2',
@@ -430,6 +428,20 @@ export default function KolikoKostaGoogleAdsPage() {
               <p className="leading-relaxed">
                 Prosečnu cenu klika za Srbiju nemojte tražiti jer je nema. Izvucite svoju iz Keyword Planner-a, uzmite viši raspon, pa unazad od vrednosti klijenta izračunajte budžet. Ako brojke ne izlaze, to ste saznali besplatno.
               </p>
+            </div>
+
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Česta pitanja
+              </h2>
+              <div className="space-y-4">
+                {faqs.map((f) => (
+                  <div key={f.q} className="bg-ink-bg rounded-xl p-5 md:p-6">
+                    <h3 className="font-medium text-ink-text mb-2">{f.q}</h3>
+                    <p className="text-ink-muted text-base leading-relaxed m-0">{f.a}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Izvori */}

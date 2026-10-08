@@ -9,7 +9,7 @@ import Potpis from '@/components/Potpis'
 export const metadata: Metadata = {
   title: { absolute: 'Astro sajtovi: kada su najbolji izbor, a kada nisu' },
   description:
-    'Island Architecture, nulti JavaScript i Lighthouse 100. Za koje sajtove je Astro najbolji izbor, a kada je Next.js prava odluka.',
+    'Astro sajtovi: Island Architecture, nulti JavaScript i Lighthouse 100. Za koje sajtove je Astro najbolji izbor, a kada je Next.js prava odluka.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/astro-sajtovi',
   },
@@ -402,7 +402,7 @@ export default function AstroSajtoviPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-wine-text font-bold text-2xl leading-none">→</span>
-                  <span><strong className="text-ink-text">99.99% uptime</strong>, vaš sajt je uvek dostupan</span>
+                  <span><strong className="text-ink-text">Vraćanje prethodne verzije</strong>, ako izmena nešto pokvari, prethodna verzija sajta se vraća bez ponovne izgradnje</span>
                 </li>
               </ul>
             </div>

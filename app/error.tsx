@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 /**
  * Greška pri renderovanju stranice. Posetilac nikad ne vidi tehničku poruku ni
- * stack trace, samo objašnjenje i put nazad (skills/10, „Greške i logovanje").
+ * stack trace, samo objašnjenje i put nazad (skills/10, „Greške i logovanje“).
  * Navbar i futer su u stranicama, ne u layoutu, pa ih ovde nema.
  */
 export default function Greska({ reset }: { error: Error & { digest?: string }; reset: () => void }) {

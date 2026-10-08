@@ -9,7 +9,7 @@ const TELEFON_PRIKAZ = '064 387 7524'
  * Klikabilan broj telefona za telo stranice.
  *
  * Do sada je broj postojao samo u meniju i u futeru — na sajtu čiji je naslov
- * „Klijenti koji zovu" i koji prodaje „kampanje koje dovode pozive". Svaki klik
+ * „Klijenti koji zovu“ i koji prodaje „kampanje koje dovode pozive“. Svaki klik
  * se meri, što ranije nije bio slučaj nigde.
  */
 export default function PhoneCta({

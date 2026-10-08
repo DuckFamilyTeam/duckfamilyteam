@@ -16,7 +16,7 @@ const brojke = [
 export const metadata: Metadata = {
   title: 'Rezultati klijenata',
   description:
-    'Stvarni, proverljivi rezultati klijenata Duck Family Team. Bez izmišljenih testimonijala, samo brojke koje možemo da dokažemo.',
+    'Stvarni, proverljivi rezultati klijenata Duck Family Team, sa studijom slučaja Mobilnog Vulkanizera Milana. Bez izmišljenih testimonijala, samo dokazive brojke.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/rezultati',
   },
@@ -65,7 +65,7 @@ export default function RezultatiPage() {
               <PodvucenaRec>Rezultati,</PodvucenaRec> ne obećanja
             </h1>
             <p className="text-lg text-ink-muted leading-relaxed max-w-2xl">
-              Ovde stoji samo ono što možemo da dokažemo brojkama. Nema uniformnih citata petnaest zadovoljnih klijenata, ima jedan slučaj sa stvarnim ulaganjem i stvarnom zaradom, i žive Google recenzije na vrhu naše početne strane.
+              Ovde stoji samo ono što možemo da dokažemo brojkama. Nema uniformnih citata petnaest zadovoljnih klijenata, ima jedan slučaj sa stvarnim ulaganjem i stvarnom zaradom, i žive Google recenzije na našoj početnoj strani.
             </p>
           </section>
 
@@ -77,11 +77,14 @@ export default function RezultatiPage() {
           <section>
             <Link
               href="/rezultati/mobilni-vulkanizer-milan"
-              className="group block bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-8 md:p-10 transition-colors"
+              className="group block bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-5 sm:p-8 md:p-10 transition-colors"
             >
               {/* lg, ne md: na 768px bi 7/12 kolona bila preuska za naslov i
                   4 statistike (isti problem kao na studiji slučaja, krug 8). */}
-              <div className="grid lg:grid-cols-12 gap-8 items-center">
+              {/* `grid-cols-1` (minmax(0,1fr)) ispod lg: bez njega je kolona
+                  bila široka koliko pun red adrese u BrowserFrame-u, pa je na
+                  320 px kartica izlazila 14 do 26 px van ekrana. */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
                   <div className="font-mono text-[11px] uppercase tracking-widest text-wine-text mb-3.5">
                     Google Ads &amp; SEO

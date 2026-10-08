@@ -8,7 +8,7 @@ import PodvucenaRec from '@/components/PodvucenaRec'
 export const metadata: Metadata = {
   title: 'AI agenti i automatizacija',
   description:
-    'AI agenti koji odgovaraju klijentima i zakazuju termine 0-24, i automatizacija ponavljajućih zadataka u vašem poslovanju. Cena po dogovoru.',
+    'AI agenti koji odgovaraju klijentima i zakazuju termine 0-24, i automatizacija ponavljajućih zadataka u vašem poslovanju. Cena se dogovara po projektu.',
   keywords: [
     'AI agent Srbija',
     'AI chatbot za biznis',

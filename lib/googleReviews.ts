@@ -33,8 +33,8 @@ type PlaceDetails = {
 const LANGUAGE_CODE = 'sr-Latn'
 
 /**
- * Polja `rating` i `userRatingCount` spadaju u SKU „Place Details Enterprise",
- * a `reviews` u skuplji „Place Details Enterprise + Atmosphere". Google
+ * Polja `rating` i `userRatingCount` spadaju u SKU „Place Details Enterprise“,
+ * a `reviews` u skuplji „Place Details Enterprise + Atmosphere“. Google
  * naplaćuje po zahtevu, po najskupljem traženom polju, pa je jedan spojen
  * poziv jeftiniji od dva odvojena.
  *
@@ -82,7 +82,7 @@ function uLatinicu(tekst: string): string {
     }
 
     // Veliko slovo. Kod digrafa (Љ, Њ, Џ) pismo zavisi od onoga što sledi:
-    // „ЉУБАВ" → „LJUBAV", ali „Љубав" → „Ljubav".
+    // „ЉУБАВ“ → „LJUBAV“, ali „Љубав“ → „Ljubav“.
     if (zamena.length > 1) {
       const sledeci = tekst[i + 1] ?? ''
       const sveVelikim = sledeci !== '' && sledeci === sledeci.toUpperCase() && CIRILICA[sledeci.toLowerCase()]
@@ -95,7 +95,7 @@ function uLatinicu(tekst: string): string {
 }
 
 /**
- * „pre 3 nedelje", „prošlog meseca"…
+ * „pre 3 nedelje“, „prošlog meseca“…
  *
  * Google vraća i gotov opis (`relativePublishTimeDescription`), ali on ostaje
  * ćirilicom čak i uz `languageCode=sr-Latn`. Zato se računa iz `publishTime`,
@@ -169,7 +169,7 @@ export async function getGoogleReviewsSummary(): Promise<GoogleReviewsSummary | 
 }
 
 /**
- * Pojedinačne recenzije sa Google profila, za sekciju „Šta kažu klijenti".
+ * Pojedinačne recenzije sa Google profila, za sekciju „Šta kažu klijenti“.
  *
  * Namerno se ne prikazuje ništa dok API ne vrati stvarne recenzije: sekcija sa
  * izmišljenim citatima je i zavaravanje kupca i rizik za poverenje, a Google

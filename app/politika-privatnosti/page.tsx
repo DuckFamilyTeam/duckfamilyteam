@@ -190,7 +190,7 @@ export default function PolitikaPrivatnostiPage() {
             <section className="space-y-4">
               <h2 className="font-display font-medium text-2xl text-ink-text">6. Vaša prava</h2>
               <p>
-                Po Zakonu o zaštiti podataka o ličnosti („Službeni glasnik RS", br. 87/2018) imate
+                Po Zakonu o zaštiti podataka o ličnosti („Službeni glasnik RS“, br. 87/2018) imate
                 pravo da:
               </p>
               <ul className="space-y-2 list-disc pl-5">

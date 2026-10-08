@@ -178,7 +178,7 @@ export default function GoogleBusinessProfilPage() {
               <div className="space-y-4">
                 {[
                   { n: 'Mala', t: 'Zanatlije, saloni, mobilni servisi', d: 'Za veliki broj malih firmi u Srbiji profil je praktično cela online prisutnost, jedina „stranica“ koju klijent ikad vidi. Radno vreme, poziv jednim klikom, pravac do vas. Ovde svaka nedovršena stavka direktno znači propušten posao.' },
-                  { n: 'Srednja', t: 'Firme sa nekoliko lokacija ili širim spektrom usluga', d: 'Ovde je ključna doslednost, isti naziv, adresa i telefon na sajtu, profilu i svim direktorijumima, i sekcija usluga koja se poklapa sa onim što piše na sajtu. Google danas aktivno upoređuje jedno sa drugim.' },
+                  { n: 'Srednja', t: 'Firme sa nekoliko lokacija ili širim spektrom usluga', d: 'Ovde je najvažnija doslednost, isti naziv, adresa i telefon na sajtu, profilu i svim direktorijumima, i sekcija usluga koja se poklapa sa onim što piše na sajtu. Google danas aktivno upoređuje jedno sa drugim.' },
                   { n: 'Velika', t: 'Lanci i firme sa 10+ lokacija', d: 'Individualno upravljanje profilima više nije opcija. Google nudi grupno upravljanje (Business Groups) i grupnu verifikaciju za 10 i više lokacija, jedan nalog, jedinstven pregled svih podružnica, kontrola pristupa za tim i dosledan brend na svakoj adresi.' },
                 ].map((item) => (
                   <div key={item.n} className="flex gap-4 bg-ink-bg rounded-xl p-4">
@@ -335,7 +335,7 @@ export default function GoogleBusinessProfilPage() {
             <ul className="space-y-2">
               <li><Link href="/blog/seo-2026" className="text-wine-text hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
               <li><Link href="/blog/ga4-vodic" className="text-wine-text hover:text-ink-text font-medium">GA4 vodič za preduzetnike →</Link></li>
-              <li><Link href="/usluge/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">Vođenje Google Business profila, naša usluga →</Link></li>
+              <li><Link href="/usluge/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">Agencija za Google Business profil: šta radimo i koliko košta →</Link></li>
             </ul>
           </div>
 

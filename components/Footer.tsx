@@ -38,7 +38,7 @@ export default function Footer({
 
   // Stranica /kontakt ima sopstvenu formu u glavnom sadržaju. Footer se
   // renderuje na svakoj stranici, pa su se tamo pojavljivale dve identične
-  // forme jedna ispod druge — posetilac ne zna koja je „prava", a i sam upit
+  // forme jedna ispod druge — posetilac ne zna koja je „prava“, a i sam upit
   // deluje kao da se traži dvaput.
   //
   // Provera ide preko putanje, a ne preko propa, da se ne bi zaboravila kad se

@@ -99,7 +99,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Koja kategorija je tačna za apoteku?',
-    a: 'Google traži da kategorija dopuni rečenicu „ova firma JESTE ___", ne „ova firma IMA ___". Za apoteku je to Apoteka kao primarna kategorija. Sekundarne se dodaju samo ako stvarno opisuju šta apoteka jeste, i to u najmanjem mogućem broju.',
+    a: 'Google traži da kategorija dopuni rečenicu „ova firma JESTE ___“, ne „ova firma IMA ___“. Za apoteku je to Apoteka kao primarna kategorija. Sekundarne se dodaju samo ako stvarno opisuju šta apoteka jeste, i to u najmanjem mogućem broju.',
   },
   {
     q: 'Da li objave na profilu podižu poziciju apoteke u pretrazi?',
@@ -261,7 +261,7 @@ export default function GbpZaApotekePage() {
                 Granica koju postavlja Zakon o lekovima
               </h2>
               <p className="leading-relaxed">
-                Ovo je deo koji apoteku razlikuje od svake druge lokalne firme, i razlog zašto se savet tipa „objavljujte dva puta nedeljno o svojim proizvodima" na apoteku ne primenjuje.
+                Ovo je deo koji apoteku razlikuje od svake druge lokalne firme, i razlog zašto se savet tipa „objavljujte dva puta nedeljno o svojim proizvodima“ na apoteku ne primenjuje.
               </p>
               <p className="leading-relaxed">
                 <strong className="text-ink-text font-medium">Član 118. Zakona o lekovima i medicinskim sredstvima zabranjuje oglašavanje široj javnosti lekova koji se izdaju isključivo na lekarski recept.</strong> Zabrana se odnosi i na lekove koji se izdaju na teret zdravstvenog osiguranja, kao i na lekove za pojedine bolesti. Način oglašavanja onoga što je dozvoljeno uređuje poseban pravilnik, koji traži da oglašavanje bude objektivno i da ne dovodi u zabludu.
@@ -302,7 +302,7 @@ export default function GbpZaApotekePage() {
                 {[
                   {
                     t: 'Primarna kategorija: Apoteka',
-                    d: 'Google traži da kategorija dopuni rečenicu „ova firma JESTE ___", ne „ova firma IMA ___". Dakle Apoteka, a ne Prodavnica kozmetike zato što imate i kozmetiku. Sekundarnih kategorija što je moguće manje, i samo ako stvarno opisuju šta apoteka jeste.',
+                    d: 'Google traži da kategorija dopuni rečenicu „ova firma JESTE ___“, ne „ova firma IMA ___“. Dakle Apoteka, a ne Prodavnica kozmetike zato što imate i kozmetiku. Sekundarnih kategorija što je moguće manje, i samo ako stvarno opisuju šta apoteka jeste.',
                   },
                   {
                     t: 'Radno vreme, pa onda prazničko',

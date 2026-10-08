@@ -33,7 +33,7 @@ export function openCookieSettings(): void {
  * Ranije se gtag.js učitavao na svakoj stranici odmah, sa `denied` stanjem
  * (napredni režim). To i dalje šalje Google-u zahteve bez kolačića pre izbora,
  * a EDPB smernice 2/2023 obuhvataju i takve pingove. Sada Google ne dobija
- * ništa dok posetilac ne klikne „Prihvatam". Usput stranica za posetioca koji
+ * ništa dok posetilac ne klikne „Prihvatam“. Usput stranica za posetioca koji
  * nije pristao ne preuzima ~150 KB tuđeg JavaScript-a.
  */
 export function loadGoogleAnalytics(): void {
@@ -141,7 +141,7 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => handleChoice(true)}
-            // Isti izgled kao „Odbijam": izbor ne sme da bude vizuelno usmeren
+            // Isti izgled kao „Odbijam“: izbor ne sme da bude vizuelno usmeren
             // ka prihvatanju (EDPB smernice 3/2022 o obmanjujućem dizajnu).
             className="flex-1 md:flex-none border border-ink-border-strong hover:border-wine-text text-ink-text px-5 py-3 rounded-xl text-sm font-medium transition-colors"
           >

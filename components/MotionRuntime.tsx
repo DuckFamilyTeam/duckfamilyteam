@@ -40,7 +40,7 @@ export default function MotionRuntime() {
 
             if (!entry.isIntersecting) {
               // Element koji je već iznad vidnog polja posetilac nikada neće
-              // „ući" u kadar odozdo, pa bi ostao zauvek na opacity: 0. To se
+              // „ući“ u kadar odozdo, pa bi ostao zauvek na opacity: 0. To se
               // dešava kad se stigne na sred stranice: preko sidra (#proces),
               // preko vraćene pozicije skrola posle navigacije nazad, ili kad
               // browser obnovi poziciju posle osvežavanja.
@@ -128,8 +128,8 @@ export default function MotionRuntime() {
 
       // IntersectionObserver javlja samo prelaske praga. Kad posetilac skokne
       // preko cele sekcije odjednom — sidro (#proces), skok na kraj tastaturom,
-      // vraćena pozicija skrola — element pređe iz „ispod ekrana" pravo u
-      // „iznad ekrana", nijednom ne dodirnuvši kadar, i observer ćuti. Takav
+      // vraćena pozicija skrola — element pređe iz „ispod ekrana“ pravo u
+      // „iznad ekrana“, nijednom ne dodirnuvši kadar, i observer ćuti. Takav
       // element bi ostao nevidljiv do osvežavanja stranice.
       //
       // Zato se ovde dovršava posao: sve što je ostalo iza leđa prikazuje se
@@ -252,7 +252,7 @@ export default function MotionRuntime() {
         const onLeave = () => {
           if (raf !== undefined) cancelAnimationFrame(raf)
           raf = undefined
-          // Povratak je opružan — dugme se „vraća na mesto", ne teleportuje.
+          // Povratak je opružan — dugme se „vraća na mesto“, ne teleportuje.
           el.style.transition = 'transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1)'
           el.style.transform = ''
           window.setTimeout(() => { el.style.transition = '' }, 440)
