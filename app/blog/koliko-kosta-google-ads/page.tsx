@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: 'https://www.duckfamilyteam.online/blog/koliko-kosta-google-ads',
     type: 'article',
     publishedTime: '2026-08-19',
-    modifiedTime: '2026-08-19',
+    modifiedTime: '2026-10-08',
     authors: ['Duck Family Team'],
     images: [
       {
@@ -58,7 +58,7 @@ const articleSchema = {
     'Iz čega se sastoji trošak Google Ads kampanje, kako Google naplaćuje klik, kako se izvlači sopstvena procena cene klika i šta se plaća agenciji.',
   image: 'https://www.duckfamilyteam.online/img/blog/koliko-kosta-google-ads.jpg',
   datePublished: '2026-08-19',
-  dateModified: '2026-08-19',
+  dateModified: '2026-10-08',
   wordCount: 1900,
   author: {
     '@type': 'Organization',

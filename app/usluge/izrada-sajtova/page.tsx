@@ -260,6 +260,10 @@ export default function IzradaSajtovaPage() {
               <Link href="/cene" className="text-wine-text underline underline-offset-2 hover:text-ink-text transition">
                 Izračunajte tačnu cenu za vaš sajt u kalkulatoru
               </Link>
+              , a šta sve ulazi u cenu sajta i kako da uporedite dve ponude piše u tekstu{' '}
+              <Link href="/blog/koliko-kosta-izrada-sajta" className="text-wine-text underline underline-offset-2 hover:text-ink-text transition">
+                koliko košta izrada sajta
+              </Link>
               .
             </p>
             <div className="grid md:grid-cols-2 gap-4">

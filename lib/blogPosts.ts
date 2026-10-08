@@ -22,6 +22,16 @@ export type BlogPost = {
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'koliko-kosta-izrada-sajta',
+    img: '/img/blog/koliko-kosta-izrada-sajta.svg',
+    tag: 'Web Development',
+    title: 'Koliko košta izrada sajta u Srbiji, i šta ulazi u cenu',
+    excerpt:
+      'Četiri troška koja se zovu istim imenom, naše cene bez zaokruživanja i šest pitanja koja treba postaviti pre nego što potpišete bilo čiju ponudu.',
+    date: '2026-10-08',
+    readTime: '7 min',
+  },
+  {
     slug: 'google-business-profil-za-apoteke',
     img: '/img/blog/gbp-za-apoteke.svg',
     tag: 'GBP',

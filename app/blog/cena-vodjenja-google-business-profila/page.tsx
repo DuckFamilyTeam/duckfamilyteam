@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://www.duckfamilyteam.online/blog/cena-vodjenja-google-business-profila',
     type: 'article',
     publishedTime: '2026-08-31',
-    modifiedTime: '2026-08-31',
+    modifiedTime: '2026-10-08',
     authors: ['Duck Family Team'],
     images: [
       {
@@ -52,7 +52,7 @@ const articleSchema = {
     'Šta pomera mesečnu cenu vođenja Google Business Profila, zašto prosek za tržište nije dobar broj za oslanjanje, kada se isplati raditi sami, i koliko mi naplaćujemo.',
   image: 'https://www.duckfamilyteam.online/img/blog/gbp-objave-i-fotografije.png',
   datePublished: '2026-08-31',
-  dateModified: '2026-08-31',
+  dateModified: '2026-10-08',
   wordCount: 1050,
   author: {
     '@type': 'Organization',
