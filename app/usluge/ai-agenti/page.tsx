@@ -171,12 +171,13 @@ export default function AiAgentiPage() {
           </section>
 
           {/* ── KAKO IZGLEDA JEDAN RAZGOVOR ──
-              Konkretan tok kao tri povezane kartice, NE ponavlja hero SVG
-              (velika scena, orbita, dijagram) nego sitne, ravne ikonice u
-              horizontalnom nizu sa strelicama — nov kompozicijski obrazac na
-              stranici (vizuelna provera, krug 10, preostala ispravka 2:
-              "drugačije telo AI agenata", stavke 7 Raznolikost i 9
-              Originalnost). */}
+              Do 2026-10-08 ovde su stajale tri kartice („Klijent piše poruku“ →
+              „Agent odgovara“ → „Termin se zakazuje“), kompoziciono iste kao
+              „Šta nudimo“ odmah ispod. Dizajn-kritičar ih je dva kruga zaredom
+              (11 i 12) tražio kao pravi razgovor: uzak prozor, poruka klijenta
+              sa vremenom, odgovor agenta sa wine ivicom, potvrda termina.
+              Tekst je ilustrativan primer i tako je i označen ispod prozora,
+              ne tvrdnja o stvarnom klijentu. */}
           <section className="mb-20">
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-3">
               Kako izgleda jedan razgovor
@@ -184,60 +185,52 @@ export default function AiAgentiPage() {
             <p className="text-ink-muted mb-10 max-w-2xl">
               Konkretan tok, od prve poruke do zakazanog termina, bez vašeg učešća.
             </p>
-            <div className="flex flex-col md:flex-row md:items-stretch gap-4">
-              <div className="flex-1 bg-ink-surface border border-ink-border rounded-2xl p-6">
-                <div className="w-14 h-14 rounded-full bg-wine/15 border border-wine flex items-center justify-center mb-5">
-                  <svg width="26" height="26" viewBox="0 0 56 56" fill="none" aria-hidden="true">
-                    <rect x="14" y="17" width="28" height="20" rx="8" stroke="#F2EAE2" strokeWidth="2.5" />
-                    <path d="M20 37 L20 44 L28 37 Z" stroke="#F2EAE2" strokeWidth="2.5" strokeLinejoin="round" />
-                    <circle cx="22" cy="27" r="2" fill="#F2EAE2" />
-                    <circle cx="28" cy="27" r="2" fill="#F2EAE2" />
-                    <circle cx="34" cy="27" r="2" fill="#F2EAE2" />
-                  </svg>
+            <figure className="max-w-[560px] m-0">
+              <div className="bg-ink-surface border border-ink-border rounded-2xl overflow-hidden">
+                <div className="flex items-center gap-3 px-5 py-3 border-b border-ink-border">
+                  <span className="w-2.5 h-2.5 rounded-full bg-wine shrink-0" aria-hidden="true" />
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-ink-muted">
+                    AI agent frizerskog salona
+                  </span>
                 </div>
-                <div className="font-mono text-xs text-ink-muted mb-2">01</div>
-                <h3 className="font-display font-medium text-lg mb-2">Klijent piše poruku</h3>
-                <p className="text-ink-muted text-sm leading-relaxed">
-                  Na sajtu, WhatsApp-u ili Viberu, u bilo koje doba dana ili noći.
-                </p>
+                <ol className="list-none m-0 p-5 md:p-6 space-y-5">
+                  <li className="flex flex-col items-start">
+                    <span className="font-mono text-[11px] text-ink-muted mb-1.5">Klijent · 23:40</span>
+                    <p className="m-0 max-w-[85%] bg-ink-bg border border-ink-border rounded-2xl rounded-tl-md px-4 py-3 text-sm md:text-base text-ink-text leading-relaxed">
+                      Dobro veče, imate li slobodan termin za šišanje u subotu pre podne?
+                    </p>
+                  </li>
+                  <li className="flex flex-col items-end">
+                    <span className="font-mono text-[11px] text-ink-muted mb-1.5">AI agent · 23:40</span>
+                    <p className="m-0 max-w-[85%] bg-ink-surface border border-wine rounded-2xl rounded-tr-md px-4 py-3 text-sm md:text-base text-ink-text leading-relaxed">
+                      Dobro veče! U subotu je slobodno u 9:30 i u 11:00, a šišanje traje oko 45 minuta. Koji termin vam odgovara?
+                    </p>
+                  </li>
+                  <li className="flex flex-col items-start">
+                    <span className="font-mono text-[11px] text-ink-muted mb-1.5">Klijent · 23:41</span>
+                    <p className="m-0 max-w-[85%] bg-ink-bg border border-ink-border rounded-2xl rounded-tl-md px-4 py-3 text-sm md:text-base text-ink-text leading-relaxed">
+                      U 11:00, hvala.
+                    </p>
+                  </li>
+                  <li className="flex justify-center pt-1">
+                    <div className="flex items-center gap-3 bg-ink-bg border border-ink-border rounded-xl px-4 py-3">
+                      <span className="w-7 h-7 rounded-full bg-wine flex items-center justify-center shrink-0" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                          <path d="M5 12.5l4.5 4.5L19 7.5" stroke="#F2EAE2" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                      <span className="text-sm text-ink-text">
+                        <strong className="font-medium">Termin zakazan:</strong> subota, 11:00, šišanje.{' '}
+                        <span className="text-ink-muted">Upisan u kalendar.</span>
+                      </span>
+                    </div>
+                  </li>
+                </ol>
               </div>
-
-              <div className="hidden md:flex items-center justify-center text-wine-text text-2xl shrink-0" aria-hidden="true">→</div>
-              <div className="flex md:hidden items-center justify-center text-wine-text text-2xl" aria-hidden="true">↓</div>
-
-              <div className="flex-1 bg-ink-surface border border-ink-border rounded-2xl p-6">
-                <div className="w-14 h-14 rounded-full bg-wine/15 border border-wine flex items-center justify-center mb-5">
-                  <svg width="26" height="26" viewBox="0 0 56 56" fill="none" aria-hidden="true">
-                    <path d="M28 14 L31 25 L42 28 L31 31 L28 42 L25 31 L14 28 L25 25 Z" fill="#F2EAE2" />
-                  </svg>
-                </div>
-                <div className="font-mono text-xs text-ink-muted mb-2">02</div>
-                <h3 className="font-display font-medium text-lg mb-2">Agent odgovara i predlaže termin</h3>
-                <p className="text-ink-muted text-sm leading-relaxed">
-                  Prepoznaje pitanje, odgovara na srpskom i odmah nudi slobodan termin, bez čekanja na čoveka.
-                </p>
-              </div>
-
-              <div className="hidden md:flex items-center justify-center text-wine-text text-2xl shrink-0" aria-hidden="true">→</div>
-              <div className="flex md:hidden items-center justify-center text-wine-text text-2xl" aria-hidden="true">↓</div>
-
-              <div className="flex-1 bg-ink-surface border border-ink-border rounded-2xl p-6">
-                <div className="w-14 h-14 rounded-full bg-wine/15 border border-wine flex items-center justify-center mb-5">
-                  <svg width="26" height="26" viewBox="0 0 56 56" fill="none" aria-hidden="true">
-                    <rect x="14" y="18" width="28" height="24" rx="4" stroke="#F2EAE2" strokeWidth="2.5" />
-                    <line x1="14" y1="25" x2="42" y2="25" stroke="#F2EAE2" strokeOpacity="0.4" strokeWidth="1.5" />
-                    <line x1="20" y1="14" x2="20" y2="20" stroke="#F2EAE2" strokeWidth="2.5" strokeLinecap="round" />
-                    <line x1="36" y1="14" x2="36" y2="20" stroke="#F2EAE2" strokeWidth="2.5" strokeLinecap="round" />
-                    <path d="M22 33 l5 5 9 -10" stroke="#F2EAE2" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                  </svg>
-                </div>
-                <div className="font-mono text-xs text-ink-muted mb-2">03</div>
-                <h3 className="font-display font-medium text-lg mb-2">Termin se zakazuje</h3>
-                <p className="text-ink-muted text-sm leading-relaxed">
-                  Klijent potvrđuje, termin upada u kalendar, a vi dobijate gotov dogovoren posao.
-                </p>
-              </div>
-            </div>
+              <figcaption className="font-mono text-[11px] text-ink-muted mt-3 uppercase tracking-widest">
+                Ilustrativan primer, ne razgovor stvarnog klijenta
+              </figcaption>
+            </figure>
           </section>
 
           {/* ── ŠTA NUDIMO ── */}
