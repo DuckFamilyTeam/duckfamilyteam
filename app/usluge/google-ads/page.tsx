@@ -262,7 +262,7 @@ export default function GoogleAdsPage() {
                 className="bg-ink-surface hover:bg-ink-surface-hover border border-ink-border hover:border-wine rounded-2xl p-6 transition-colors"
               >
                 <div className="font-display font-medium text-3xl text-wine-text mb-2">306%</div>
-                <div className="text-ink-muted text-sm">Povraćaj na uloženo, Mobilni Vulkanizer Milan, 6 meseci (naš obračun) →</div>
+                <div className="text-ink-muted text-sm">Povraćaj na uloženo, Mobilni Vulkanizer Milan, 5 meseci (naš obračun) →</div>
               </Link>
             </div>
           </section>

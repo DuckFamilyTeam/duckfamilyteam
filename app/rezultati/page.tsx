@@ -8,7 +8,7 @@ import BrowserFrame from '@/components/BrowserFrame'
 
 const brojke = [
   { label: 'Uloženo', value: '7.150 €' },
-  { label: 'Period', value: '6 meseci' },
+  { label: 'Period', value: '5 meseci' },
   { label: 'Neto zarada', value: '21.850 €' },
   { label: 'Povraćaj', value: '306%' },
 ]
@@ -90,10 +90,10 @@ export default function RezultatiPage() {
                     Google Ads &amp; SEO
                   </div>
                   <h2 className="font-display font-medium text-2xl md:text-3xl mb-3">
-                    Mobilni Vulkanizer Milan, 306 odsto povraćaja za šest meseci
+                    Mobilni Vulkanizer Milan, 306 odsto povraćaja za pet meseci
                   </h2>
                   <p className="text-ink-muted leading-relaxed mb-6">
-                    7.150 evra uloženo, 21.850 evra neto zarade posle svih troškova, u šest meseci. Povraćaj je naš obračun na osnovu brojki koje je dao klijent. Kampanja se i dalje vodi.
+                    7.150 evra uloženo, 21.850 evra neto zarade posle svih troškova, u pet meseci. Povraćaj je naš obračun na osnovu brojki koje je dao klijent. Kampanja se i dalje vodi.
                   </p>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
                     {brojke.map((item) => (

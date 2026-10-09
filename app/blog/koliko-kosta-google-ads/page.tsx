@@ -378,7 +378,7 @@ export default function KolikoKostaGoogleAdsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 {[
                   { k: '7.150 €', v: 'uloženo' },
-                  { k: '6 meseci', v: 'trajanje' },
+                  { k: '5 meseci', v: 'trajanje' },
                   { k: '21.850 €', v: 'neto zarada' },
                   { k: '306%', v: 'povraćaj' },
                 ].map((item) => (
