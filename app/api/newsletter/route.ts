@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { newsletterSchema } from '@/lib/validation'
 import { checkRateLimit, clientIp, isSameOrigin } from '@/lib/rateLimit'
+import { proveriTurnstile } from '@/lib/turnstile'
 
 /**
  * Prijave na newsletter idu na zaseban Formspree endpoint ako je podešen.
@@ -55,6 +56,19 @@ export async function POST(req: NextRequest) {
   // Poslato brže nego što čovek može da popuni formu — isto kao honeypot.
   if (typeof parsed.data.elapsed === 'number' && parsed.data.elapsed < 2000) {
     return NextResponse.json({ ok: true })
+  }
+
+  // Cloudflare Turnstile (samo ako su oba ključa postavljena, vidi lib/turnstile.ts).
+  // Za razliku od honeypot-a, ovde se vraća jasna greška: odbijen token češće
+  // znači istekao token kod čoveka nego bota, pa čovek treba da zna šta da uradi.
+  if (!(await proveriTurnstile(parsed.data.turnstileToken, clientIp(req.headers)))) {
+    return NextResponse.json(
+      {
+        ok: false,
+        errors: { form: 'Automatska provera nije prošla. Sačekajte sekundu i pošaljite ponovo.' },
+      },
+      { status: 400 },
+    )
   }
 
   try {

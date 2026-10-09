@@ -24,6 +24,7 @@ export type KontaktPodaci = {
   company: string
   source: string
   elapsed: number
+  turnstileToken?: string
 }
 
 export function proveriKontakt(ulaz: KontaktPodaci): Rezultat<KontaktPodaci> {
@@ -54,7 +55,13 @@ export function proveriKontakt(ulaz: KontaktPodaci): Rezultat<KontaktPodaci> {
   return Object.keys(errors).length ? { success: false, errors } : { success: true, data }
 }
 
-export type NewsletterPodaci = { email: string; consent: boolean; company: string; elapsed: number }
+export type NewsletterPodaci = {
+  email: string
+  consent: boolean
+  company: string
+  elapsed: number
+  turnstileToken?: string
+}
 
 export function proveriNewsletter(ulaz: NewsletterPodaci): Rezultat<NewsletterPodaci> {
   const data = { ...ulaz, email: ulaz.email.trim() }

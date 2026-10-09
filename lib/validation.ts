@@ -51,6 +51,11 @@ export const contactSchema = z.object({
    * honeypot-a, odluku donosi ruta (lažni uspeh), ne schema.
    */
   elapsed: z.number().int().min(0).max(86_400_000).optional(),
+  /**
+   * Cloudflare Turnstile token, kad je provera uključena (lib/turnstile.ts).
+   * Bez ovog polja Zod bi token tiho izbacio kao nepoznat ključ.
+   */
+  turnstileToken: z.string().max(2048).optional(),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>
@@ -69,6 +74,8 @@ export const newsletterSchema = z.object({
   company: z.string().max(200).optional(),
   /** Vreme od prikaza forme do slanja, u ms — vidi isto polje u contactSchema. */
   elapsed: z.number().int().min(0).max(86_400_000).optional(),
+  /** Turnstile token — vidi isto polje u contactSchema. */
+  turnstileToken: z.string().max(2048).optional(),
 })
 
 export type NewsletterFormData = z.infer<typeof newsletterSchema>

@@ -25,6 +25,8 @@ const nextConfig = {
     },
     async headers() {
           const isDev = process.env.NODE_ENV !== 'production'
+          // Cloudflare Turnstile (components/Turnstile.tsx) samo ako je ključ postavljen pri build-u.
+          const cf = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ? ' https://challenges.cloudflare.com' : ''
           // Napomena o 'unsafe-inline' u script-src: Next.js App Router ubacuje
           // sopstvene inline skripte za streaming payload (self.__next_f.push).
           // Jedina alternativa je nonce preko middleware-a, a nonce mora biti
@@ -36,12 +38,12 @@ const nextConfig = {
                   // va.vercel-scripts.com je nedostajao, pa je <Analytics /> iz
                   // @vercel/analytics bio tiho blokiran CSP-om — komponenta je
                   // stajala u layoutu, ali nijedan podatak nikad nije stigao.
-                  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com`,
+                  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com${cf}`,
                   "style-src 'self' 'unsafe-inline'",
                   "img-src 'self' data: blob: https://www.google.com https://www.gstatic.com",
                   "font-src 'self' data:",
                   "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://va.vercel-scripts.com",
-                  "frame-src https://www.google.com",
+                  `frame-src https://www.google.com${cf}`,
                   // Obe forme idu preko sopstvenih API ruta, pa Formspree više nije potreban.
                   "form-action 'self'",
                   "base-uri 'self'",

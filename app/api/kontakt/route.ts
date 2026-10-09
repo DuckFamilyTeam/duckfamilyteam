@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { contactSchema } from '@/lib/validation'
 import { checkRateLimit, clientIp, isSameOrigin } from '@/lib/rateLimit'
+import { proveriTurnstile } from '@/lib/turnstile'
 
 const FORMSPREE_ENDPOINT =
   process.env.FORMSPREE_CONTACT_ENDPOINT ?? 'https://formspree.io/f/mgoppzqp'
@@ -51,7 +52,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true })
   }
 
-  const { company: _honeypot, elapsed: _elapsed, source, ...contact } = parsed.data
+  const { company: _honeypot, elapsed: _elapsed, turnstileToken: _token, source, ...contact } = parsed.data
+
+  // Cloudflare Turnstile (samo ako su oba ključa postavljena, vidi lib/turnstile.ts).
+  // Za razliku od honeypot-a, ovde se vraća jasna greška: odbijen token češće
+  // znači istekao token kod čoveka nego bota, pa čovek treba da zna šta da uradi.
+  if (!(await proveriTurnstile(parsed.data.turnstileToken, clientIp(req.headers)))) {
+    return NextResponse.json(
+      {
+        ok: false,
+        errors: { form: 'Automatska provera nije prošla. Sačekajte sekundu i pošaljite ponovo.' },
+      },
+      { status: 400 },
+    )
+  }
 
   try {
     const formspreeRes = await fetch(FORMSPREE_ENDPOINT, {

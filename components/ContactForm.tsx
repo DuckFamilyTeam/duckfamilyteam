@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { proveriKontakt } from '@/lib/validacijaKlijent'
 import { trackLead } from '@/lib/analytics'
+import Turnstile, { turnstileUkljucen } from '@/components/Turnstile'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
@@ -28,6 +29,9 @@ export default function ContactForm() {
   const pathname = usePathname()
   // Trenutak prikaza forme — ruta odbacuje slanje brže od ljudskog (vidi validation.ts).
   const [prikazanaU] = useState(() => Date.now())
+  // Turnstile token (prazan dok provera traje ili ako je isključena) i signal za nov token posle slanja.
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstileReset, setTurnstileReset] = useState(0)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -40,6 +44,7 @@ export default function ContactForm() {
       company: (form.elements.namedItem('company') as HTMLInputElement)?.value ?? '',
       source: pathname,
       elapsed: Date.now() - prikazanaU,
+      turnstileToken,
     }
 
     // Brza provera u browseru; merodavna je Zod schema na serveru (vidi lib/validacijaKlijent.ts).
@@ -55,6 +60,14 @@ export default function ContactForm() {
         const el = form.elements.namedItem(firstInvalid)
         if (el instanceof HTMLElement) el.focus()
       }
+      return
+    }
+
+    if (turnstileUkljucen && !turnstileToken) {
+      setFormError(
+        'Automatska provera još traje. Sačekajte sekundu i pošaljite ponovo, ili nas pozovite na 064 387 7524.',
+      )
+      setStatus('error')
       return
     }
 
@@ -82,6 +95,9 @@ export default function ContactForm() {
     } catch {
       setFormError('Došlo je do greške. Pozovite nas ili pokušajte ponovo.')
       setStatus('error')
+    } finally {
+      // Token važi za jedno slanje.
+      setTurnstileReset((n) => n + 1)
     }
   }
 
@@ -194,6 +210,8 @@ export default function ContactForm() {
         <label htmlFor={id('company')}>Ne popunjavajte ovo polje</label>
         <input id={id('company')} type="text" name="company" tabIndex={-1} autoComplete="off" />
       </div>
+
+      <Turnstile onToken={setTurnstileToken} resetSignal={turnstileReset} />
 
       <button
         type="submit"

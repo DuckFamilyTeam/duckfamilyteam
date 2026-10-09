@@ -152,7 +152,7 @@ export default function PolitikaPrivatnostiPage() {
             <section className="space-y-4">
               <h2 className="font-display font-medium text-2xl text-ink-text">4. Kome se podaci prosleđuju</h2>
               <p>
-                Koristimo nekoliko spoljnih servisa koji u našem ime obrađuju podatke. Svi su
+                Koristimo nekoliko spoljnih servisa koji u naše ime obrađuju podatke. Svi su
                 izabrani tako da imaju sopstvene mehanizme zaštite za prenos podataka izvan Srbije i
                 Evropske unije.
               </p>
@@ -169,6 +169,17 @@ export default function PolitikaPrivatnostiPage() {
                   <strong className="text-ink-text">Google Ireland Ltd.</strong>: Google Analytics
                   4, samo uz vaš pristanak; i Google mape, samo ako sami kliknete da se mapa učita.
                 </li>
+                {/* Cloudflare se navodi samo kad je Turnstile stvarno uključen (ključ postavljen
+                    pri build-u). Bez toga sajt ne šalje Cloudflare-u nijedan zahtev, pa bi stavka
+                    u ovom spisku bila netačna. Vidi components/Turnstile.tsx. */}
+                {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                  <li>
+                    <strong className="text-ink-text">Cloudflare, Inc.</strong>: provera da upit sa
+                    naših formi ne šalje automat (Turnstile). Pri slanju forme Cloudflare obrađuje
+                    vašu IP adresu i podatke o pregledaču. Ne postavlja kolačiće za praćenje i ne
+                    koristi te podatke za oglašavanje.
+                  </li>
+                )}
               </ul>
               <p>
                 Podatke prosleđujemo i nadležnim organima ako to zakon izričito nalaže. Drugim
