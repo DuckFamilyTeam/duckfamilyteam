@@ -237,7 +237,7 @@ export default function IzradaSajtovaPage() {
               href="/rezultati/mobilni-vulkanizer-milan"
               className="inline-flex items-center gap-2 text-wine-text hover:text-ink-text font-medium mt-4 text-sm"
             >
-              Pogledajte ceo slučaj, 203 odsto povraćaja za tri meseca →
+              Pogledajte ceo slučaj, 306 odsto povraćaja za šest meseci →
             </Link>
           </section>
 

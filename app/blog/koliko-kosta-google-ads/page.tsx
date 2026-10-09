@@ -377,10 +377,10 @@ export default function KolikoKostaGoogleAdsPage() {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 {[
-                  { k: '3.550 €', v: 'uloženo' },
-                  { k: '3 meseca', v: 'trajanje' },
-                  { k: '7.210 €', v: 'neto zarada' },
-                  { k: '203%', v: 'povraćaj' },
+                  { k: '7.150 €', v: 'uloženo' },
+                  { k: '6 meseci', v: 'trajanje' },
+                  { k: '21.850 €', v: 'neto zarada' },
+                  { k: '306%', v: 'povraćaj' },
                 ].map((item) => (
                   <div key={item.v} className="bg-ink-bg rounded-xl p-4 text-center">
                     <div className="font-mono text-lg md:text-2xl text-wine-text mb-1">{item.k}</div>
@@ -389,7 +389,7 @@ export default function KolikoKostaGoogleAdsPage() {
                 ))}
               </div>
               <p className="leading-relaxed">
-                Neto zarada je posle svih troškova. Povraćaj od 203 odsto je{' '}
+                Neto zarada je posle svih troškova. Povraćaj od 306 odsto je{' '}
                 <strong className="text-ink-text font-medium">naš obračun na osnovu brojki koje je klijent dao usmeno</strong>, ne nezavisno verifikovan podatak, i tako ga i predstavljamo. Isto tako, jedan slučaj je jedan slučaj. On pokazuje da se ovako nešto dešava, ne da će se desiti vama.
               </p>
             </div>

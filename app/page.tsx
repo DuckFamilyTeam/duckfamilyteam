@@ -97,9 +97,9 @@ export default async function Home() {
   // poziva kao i badge u hero sekciji, pa se ne može razići sa njim.
   const metrike: Metrika[] = [
     {
-      broj: 203,
+      broj: 306,
       sufiks: '%',
-      opis: 'Povraćaj na uloženo za tri meseca, Mobilni Vulkanizer Milan (naš obračun na osnovu brojki klijenta)',
+      opis: 'Povraćaj na uloženo za šest meseci, Mobilni Vulkanizer Milan (naš obračun na osnovu brojki klijenta)',
       href: '/rezultati/mobilni-vulkanizer-milan',
     },
     ...(reviews
@@ -231,11 +231,11 @@ export default async function Home() {
                   style={{ '--d': '420ms' } as React.CSSProperties}
                 >
                   <div className="font-display font-semibold text-3xl text-wine-text leading-none">
-                    203%
+                    306%
                   </div>
                   <p className="text-xs text-ink-muted leading-relaxed">
                     <strong className="text-ink-text font-medium">Mobilni Vulkanizer Milan.</strong>{' '}
-                    Povraćaj na uloženo za tri meseca, naš obračun na osnovu brojki klijenta.{' '}
+                    Povraćaj na uloženo za šest meseci, naš obračun na osnovu brojki klijenta.{' '}
                     <span className="text-wine-text group-hover:text-ink-text transition-colors">
                       Pogledaj kako <span className="arrow-fx">→</span>
                     </span>

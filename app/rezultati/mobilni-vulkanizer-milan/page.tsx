@@ -9,13 +9,13 @@ import BrowserFrame from '@/components/BrowserFrame'
 export const metadata: Metadata = {
   title: 'Slučaj: Mobilni Vulkanizer Milan',
   description:
-    'Milan je uložio 3.550 evra u Google Ads kampanju i sajt. Za tri meseca neto zarada je bila 7.210 evra, 203 odsto povraćaja po našem obračunu.',
+    'Milan je za prvih šest meseci saradnje uložio 7.150 evra u Google Ads kampanju i sajt. Neto zarada je bila 21.850 evra, 306 odsto povraćaja po našem obračunu.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/rezultati/mobilni-vulkanizer-milan',
   },
   openGraph: {
     title: 'Slučaj: Mobilni Vulkanizer Milan | Duck Family Team',
-    description: '203 odsto povraćaja na uloženo za tri meseca, po našem obračunu na osnovu brojki klijenta.',
+    description: '306 odsto povraćaja na uloženo za šest meseci, po našem obračunu na osnovu brojki klijenta.',
     url: 'https://www.duckfamilyteam.online/rezultati/mobilni-vulkanizer-milan',
     type: 'article',
   },
@@ -37,10 +37,15 @@ const breadcrumbSchema = {
 }
 
 const brojke = [
-  { label: 'Uloženo', value: '3.550 €' },
-  { label: 'Period', value: '3 meseca' },
-  { label: 'Neto zarada', value: '7.210 €' },
-  { label: 'Povraćaj na uloženo', value: '203%' },
+  { label: 'Uloženo', value: '7.150 €' },
+  { label: 'Period', value: '6 meseci' },
+  { label: 'Neto zarada', value: '21.850 €' },
+  { label: 'Povraćaj na uloženo', value: '306%' },
+]
+
+const dodatneBrojke = [
+  { label: 'Primljenih poziva', value: '1.109' },
+  { label: 'Potvrđenih terena', value: '706' },
 ]
 
 export default function MilanCaseStudyPage() {
@@ -72,15 +77,15 @@ export default function MilanCaseStudyPage() {
                 na sajtu. text-balance i širi max-w sprečavaju usamljenu reč
                 u poslednjem redu ("meseca" samo, krug 9). */}
             <h1 className="font-display font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight mb-6 max-w-4xl text-balance">
-              Mobilni Vulkanizer Milan: <PodvucenaRec>203 odsto</PodvucenaRec> povraćaja za tri meseca
+              Mobilni Vulkanizer Milan: <PodvucenaRec>306 odsto</PodvucenaRec> povraćaja za šest meseci
             </h1>
           </section>
 
           {/* ── BROJKE ──
               grid-cols-2 sve do lg (ne md): na 600-1023px je mreža 2x4 kartice
-              premale za "3.550 €" i "3 meseca" u jednom redu, pa se broj lomi
+              premale za "7.150 €" i "6 meseci" u jednom redu, pa se broj lomi
               u dva reda (vizuelna provera, krug 7, ispravka 4c). */}
-          <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+          <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {brojke.map((item) => (
               <div key={item.label} className="bg-ink-surface border border-ink-border rounded-2xl p-6 text-center">
                 <div className="font-display font-medium text-2xl md:text-3xl text-wine-text mb-1 whitespace-nowrap">{item.value}</div>
@@ -89,10 +94,27 @@ export default function MilanCaseStudyPage() {
             ))}
           </section>
 
+          {/* Pozivi i tereni: zaseban, manji red ispod glavne trake od 4
+              brojke. Ne u istoj mreži — "306%" i "1.109" nisu uporedive
+              veličine i ne zaslužuju isti vizuelni naglasak. */}
+          <section className="grid grid-cols-2 gap-4 mb-14 max-w-md">
+            {dodatneBrojke.map((item) => (
+              <div key={item.label} className="border border-ink-border rounded-xl p-4 text-center">
+                <div className="font-display font-medium text-lg text-ink-text mb-0.5 whitespace-nowrap">{item.value}</div>
+                <div className="text-ink-muted text-[11px] uppercase tracking-widest font-mono">{item.label}</div>
+              </div>
+            ))}
+          </section>
+
           {/* ── COPY ── */}
           <section className="mb-16 max-w-3xl">
-            <p className="text-lg text-ink-text leading-relaxed">
-              Milan vozi mobilni servis za gume u Beogradu. Pre saradnje, telefon mu je zvonio povremeno. Za tri meseca rada sa nama, uložio je 3.550 evra u kampanju i sajt. Neto zarada, kada su plaćeni svi troškovi, iznosila je 7.210 evra. To je 203 odsto povraćaja na uloženo, prema našem obračunu na osnovu ovih brojki. Kampanja se i dalje vodi.
+            <p className="text-lg text-ink-text leading-relaxed mb-4">
+              Milan vozi mobilni servis za gume u Beogradu. Pre saradnje, telefon mu je zvonio povremeno. Sarađujemo od maja 2026. U prvih šest meseci (maj–oktobar 2026) uložio je 7.150 evra u kampanju i sajt, primio 1.109 poziva i potvrdio 706 terena. Neto zarada, kada su plaćeni svi troškovi, radnici i popravke, iznosila je 21.850 evra. To je 306 odsto povraćaja na uloženo, prema našem obračunu na osnovu ovih brojki. Kampanja se i dalje vodi.
+            </p>
+            <p className="text-ink-muted text-sm leading-relaxed">
+              Uloženo je dato u dinarima (839.000 RSD) i preračunato u evre po srednjem kursu
+              NBS iz oktobra 2026 (oko 117,3 RSD za 1 €), da brojke budu uporedive sa ostatkom
+              ovog prikaza.
             </p>
           </section>
 
@@ -126,7 +148,7 @@ export default function MilanCaseStudyPage() {
           {/* ── SAJT KOJI SMO MU IZRADILI ──
               Snimak Milanovog sajta stoji OVDE, uz karticu "Izrada sajta",
               a ne odmah ispod trake sa 4 brojke — na staroj poziciji je
-              izgledao kao dokaz za 203%, a dokazuje samo da sajt postoji
+              izgledao kao dokaz za 306%, a dokazuje samo da sajt postoji
               (vizuelna provera, krug 7, ispravka 5e). */}
           <section className="mb-16">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">

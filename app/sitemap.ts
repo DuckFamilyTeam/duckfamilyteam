@@ -18,19 +18,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2026-09-27'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${baseUrl}/usluge/google-ads`,
-      lastModified: new Date('2026-09-28'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly',
       priority: 0.95,
     },
     {
       url: `${baseUrl}/usluge/izrada-sajtova`,
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly',
       priority: 0.95,
     },
@@ -48,13 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/rezultati`,
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/rezultati/mobilni-vulkanizer-milan`,
-      lastModified: new Date('2026-09-28'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
@@ -109,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/koliko-kosta-google-ads`,
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
