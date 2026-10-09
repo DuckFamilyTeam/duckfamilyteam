@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
@@ -149,15 +150,7 @@ export default function ONamaPage() {
                   <div className="font-display font-medium text-4xl md:text-5xl text-wine-text mb-2">
                     {item.n}
                   </div>
-                  <svg viewBox="0 0 60 10" className="w-12 h-2.5 mb-4" aria-hidden="true" focusable="false">
-                    <path
-                      d="M2 6C10 2 16 8 26 5C36 2 42 8 58 4"
-                      stroke="#8C2438"
-                      strokeWidth="2.2"
-                      fill="none"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <PotezRazdelnik className="mb-4" />
                   <h3 className="font-display font-medium text-lg mb-2">{item.t}</h3>
                   <p className="text-ink-muted text-sm leading-relaxed">{item.d}</p>
                 </div>

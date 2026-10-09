@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PodvucenaRec from '@/components/PodvucenaRec'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export const metadata: Metadata = {
   title: 'AI agenti i automatizacija',
@@ -179,6 +180,7 @@ export default function AiAgentiPage() {
               Tekst je ilustrativan primer i tako je i označen ispod prozora,
               ne tvrdnja o stvarnom klijentu. */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-3">
               Kako izgleda jedan razgovor
             </h2>
@@ -235,13 +237,16 @@ export default function AiAgentiPage() {
 
           {/* ── ŠTA NUDIMO ── */}
           <section id="usluge" className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-3">
               Šta nudimo
             </h2>
             <p className="text-ink-muted mb-10">
               Cena zavisi od obima i složenosti, javite se za besplatnu konsultaciju.
             </p>
-            <div className="grid md:grid-cols-3 gap-4">
+            {/* sm:2, lg:3 — na 768 px su tri kolone bile preuske za naslove
+                kartica (vizuelna provera, krug 12, ispravka 3a). */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {usluge.map((item) => (
                 <div key={item.title} className="bg-ink-surface border border-ink-border rounded-2xl p-6">
                   <h3 className="font-display font-medium text-xl mb-2">{item.title}</h3>
@@ -253,6 +258,7 @@ export default function AiAgentiPage() {
 
           {/* ── FAQ ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Pitanja o AI agentima
             </h2>

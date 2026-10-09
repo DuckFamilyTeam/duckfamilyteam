@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
 import PodvucenaRec from '@/components/PodvucenaRec'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export const metadata: Metadata = {
   title: { absolute: 'Agencija za Google Business profil: cena vođenja' },
@@ -198,6 +199,7 @@ export default function GoogleBusinessProfilPage() {
 
           {/* ── ZAŠTO ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
               Zašto je Google Business profil bitan
             </h2>
@@ -211,6 +213,7 @@ export default function GoogleBusinessProfilPage() {
 
           {/* ── ŠTA RADIMO ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Šta je uključeno u vođenje GBP-a
             </h2>
@@ -226,6 +229,7 @@ export default function GoogleBusinessProfilPage() {
 
           {/* ── CENA ── */}
           <section id="cena" className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
               Cena i šta je uključeno
             </h2>
@@ -254,6 +258,7 @@ export default function GoogleBusinessProfilPage() {
 
           {/* ── ZAŠTO MI ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Zašto Duck Family Team
             </h2>
@@ -269,6 +274,7 @@ export default function GoogleBusinessProfilPage() {
 
           {/* ── REZULTATI ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
               Rezultati klijenata
             </h2>
@@ -285,6 +291,7 @@ export default function GoogleBusinessProfilPage() {
 
           {/* ── FAQ ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Pitanja o Google Business profilu
             </h2>

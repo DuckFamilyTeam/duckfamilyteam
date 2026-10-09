@@ -160,10 +160,15 @@ export default function CenaVodjenjaGbpPage() {
                 child): na uskom ekranu se lomi zajedno s njom, pa ne ostaje
                 da visi sam na kraju reda (vizuelna provera, krug 7,
                 ispravka 4b). */}
-            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest">
-              <span className="whitespace-nowrap">Duck Family Team</span>
-              <span className="whitespace-nowrap">· <time dateTime="2026-08-31">31. avgust 2026.</time></span>
-              <span className="whitespace-nowrap">· 6 min čitanja</span>
+            {/* Autor u svom redu ispod 640 px, pa datum i vreme čitanja zajedno u jednom.
+                Ranije je razdelnik „·" završavao ili počinjao red na telefonu
+                (vizuelna provera, krugovi 10 i 12, ispravka 3d). */}
+            <div className="mt-6 font-mono text-[11px] text-ink-muted uppercase tracking-widest text-center leading-relaxed">
+              <span className="block sm:inline">Duck Family Team</span>
+              <span className="hidden sm:inline"> · </span>
+              <span className="block sm:inline whitespace-nowrap">
+                <time dateTime="2026-08-31">31. avgust 2026.</time> · 6 min čitanja
+              </span>
             </div>
           </div>
 

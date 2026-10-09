@@ -24,7 +24,7 @@
 <path d="M138 354 L138 383 L172 354 Z" fill="none" stroke="#F2EAE2" stroke-width="3" stroke-linejoin="round"/>
 <line x1="138" y1="292" x2="248" y2="292" stroke="#F2EAE2" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
 <line x1="138" y1="318" x2="210" y2="318" stroke="#F2EAE2" stroke-opacity="0.32" stroke-width="5" stroke-linecap="round"/>
-<line x1="292" y1="305" x2="370" y2="305" stroke="#F2EAE2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<path d="M294 305C312 300 330 310 348 304C358 301 363 305 368 304" fill="none" stroke="#B03A47" stroke-width="3" stroke-linecap="round"/>
 <!-- centralni cvor: automatizacija, pravi zupčanik -->
 <rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(0.0)"/>
 <rect x="-16.2" y="-80.0" width="32.5" height="18.0" rx="3" fill="#F2EAE2" transform="translate(500 305) rotate(45.0)"/>
@@ -37,7 +37,7 @@
 <circle cx="500" cy="305" r="62" fill="#8C2438" fill-opacity="0.9"/>
 <circle cx="500" cy="305" r="62" fill="none" stroke="#F2EAE2" stroke-width="3"/>
 <circle cx="500" cy="305" r="22" fill="none" stroke="#F2EAE2" stroke-width="4"/>
-<line x1="630" y1="305" x2="708" y2="305" stroke="#F2EAE2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<path d="M632 305C650 300 668 310 686 304C696 301 701 305 706 304" fill="none" stroke="#B03A47" stroke-width="3" stroke-linecap="round"/>
 <!-- rezultat: zakazan termin (kalendar sa kvacicom) -->
 <rect x="708" y="240" width="176" height="140" rx="18" fill="none" stroke="#F2EAE2" stroke-width="3"/>
 <line x1="708" y1="278" x2="884" y2="278" stroke="#F2EAE2" stroke-opacity="0.4" stroke-width="2.5"/>

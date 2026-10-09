@@ -1,4 +1,5 @@
 import type { GoogleReview } from '@/lib/googleReviews'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 const googleReviewsUrl = 'https://www.google.com/maps?cid=13771670212645560743'
 
@@ -27,6 +28,7 @@ export default function Testimonials({ recenzije }: { recenzije: GoogleReview[] 
           <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
             Klijenti
           </div>
+          <PotezRazdelnik className="mb-4" />
           <h2 className="font-display font-medium text-3xl md:text-5xl text-ink-text tracking-tight mb-5">
             Šta kažu ljudi sa kojima radimo
           </h2>

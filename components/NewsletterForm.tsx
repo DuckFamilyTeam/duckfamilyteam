@@ -79,7 +79,10 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="relative w-full max-w-md mx-auto space-y-4">
-      <div className="flex flex-col sm:flex-row gap-3">
+      {/* Jedan red i na 390 px, i dugme uokvireno umesto punog wine bloka:
+          ispod je i Footer-ov wine CTA, pa su na kraju članka stajala dva
+          puna dugmeta zaredom (vizuelna provera, krug 12, ispravka 3c). */}
+      <div className="flex flex-row gap-2 sm:gap-3">
         <div className="flex-1 text-left">
           <label htmlFor="newsletter-email" className="sr-only">
             Email adresa
@@ -99,7 +102,7 @@ export default function NewsletterForm() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="bg-wine hover:bg-wine-bright text-ink-text px-6 py-4 rounded-xl font-medium text-sm whitespace-nowrap transition-colors disabled:opacity-60"
+          className="border border-ink-border-strong hover:border-wine hover:text-wine-text text-ink-text px-4 sm:px-6 py-4 rounded-xl font-medium text-sm whitespace-nowrap transition-colors disabled:opacity-60"
         >
           {status === 'sending' ? 'Slanje…' : 'Prijavi se'}
         </button>

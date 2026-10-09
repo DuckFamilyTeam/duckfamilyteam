@@ -25,7 +25,7 @@
 <line x1="194" y1="318" x2="220" y2="344" stroke="#F2EAE2" stroke-width="6" stroke-linecap="round"/>
 <rect x="226" y="266" width="42" height="24" rx="5" fill="#8C2438" stroke="#F2EAE2" stroke-width="2"/>
 <line x1="234" y1="278" x2="260" y2="278" stroke="#F2EAE2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-<line x1="286" y1="305" x2="370" y2="305" stroke="#F2EAE2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<path d="M288 305C305 297 316 313 330 305C344 297 355 312 368 304" fill="none" stroke="#B03A47" stroke-width="3" stroke-linecap="round"/>
 <!-- centralni cvor: poziv, ne klik -->
 <circle cx="500" cy="305" r="62" fill="#8C2438" fill-opacity="0.9"/>
 <circle cx="500" cy="305" r="62" fill="none" stroke="#F2EAE2" stroke-width="3"/>
@@ -33,7 +33,7 @@
 <path d="M22.03 14.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V24c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#F2EAE2" transform="translate(418,264) scale(3)"/>
 <path d="M478 269 q22 -18 44 0" fill="none" stroke="#F2EAE2" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round"/>
 <path d="M470 260 q30 -26 60 0" fill="none" stroke="#F2EAE2" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
-<line x1="630" y1="305" x2="708" y2="305" stroke="#F2EAE2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<path d="M632 305C648 297 659 313 673 305C687 297 696 311 706 304" fill="none" stroke="#B03A47" stroke-width="3" stroke-linecap="round"/>
 <!-- rezultat: dnevnik poziva -->
 <rect x="708" y="240" width="176" height="140" rx="18" fill="none" stroke="#F2EAE2" stroke-width="3"/>
 <circle cx="732" cy="266" r="9" fill="#8C2438"/>

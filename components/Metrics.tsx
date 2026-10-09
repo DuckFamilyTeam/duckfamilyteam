@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export type Metrika = {
   /** Konačna vrednost. Server je ispisuje kao tekst, JS je samo animira do nje. */
@@ -33,6 +34,7 @@ export default function Metrics({ metrike }: { metrike: Metrika[] }) {
           <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
             Brojevi
           </div>
+          <PotezRazdelnik className="mb-4" />
           <h2 className="font-display font-medium text-3xl md:text-5xl text-ink-text tracking-tight">
             Rezultati, ne obećanja
           </h2>

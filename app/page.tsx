@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 import AnimatedSection from '@/components/AnimatedSection'
 import FaqAccordion from '@/components/FaqAccordion'
 import ClientLogos from '@/components/ClientLogos'
@@ -361,6 +362,7 @@ export default async function Home() {
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
                 Kako radimo
               </div>
+              <PotezRazdelnik className="mb-4" />
               <h2 className="font-display font-medium text-3xl md:text-5xl text-ink-text tracking-tight mb-5">
                 Naš proces
               </h2>
@@ -411,6 +413,7 @@ export default async function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <AnimatedSection smer="zoom">
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">Cene</div>
+              <PotezRazdelnik className="mb-4" />
               <h2 className="font-display font-medium text-3xl md:text-5xl tracking-tight mb-6">
                 Koliko košta Google Ads, GBP i izrada sajta
               </h2>
@@ -469,6 +472,7 @@ export default async function Home() {
             </AnimatedSection>
             <AnimatedSection delay={100} smer="right">
               <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">O nama</div>
+              <PotezRazdelnik className="mb-4" />
               <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-4">
                 Nikola i Anđela, tim iza Duck Family Team
               </h2>
@@ -486,6 +490,7 @@ export default async function Home() {
         <section id="pitanja" className="py-20 px-6 md:px-12 bg-ink-surface">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
+              <PotezRazdelnik className="mb-4" />
               <h2 className="font-display font-medium text-3xl md:text-5xl text-ink-text text-center mb-12">
                 Ekspertski odgovori
               </h2>
@@ -509,6 +514,7 @@ export default async function Home() {
                   <div className="font-mono text-xs uppercase tracking-[0.12em] text-wine-text mb-4">
                     Iz bloga
                   </div>
+                  <PotezRazdelnik className="mb-4" />
                   <h2 className="font-display font-medium text-3xl md:text-5xl tracking-tight">
                     Marketing bez filtera
                   </h2>

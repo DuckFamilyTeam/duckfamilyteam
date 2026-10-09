@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import PodvucenaRec from '@/components/PodvucenaRec'
 import BrowserFrame from '@/components/BrowserFrame'
 import { sajtCenaMin, sajtCenaMax, sajtBrojTipovaBiznisa, mesecnoOdrzavanje } from '@/lib/cenaPodaci'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export const metadata: Metadata = {
   title: 'Izrada sajtova i landing stranica',
@@ -184,7 +185,10 @@ export default function IzradaSajtovaPage() {
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-5">
+            {/* Širina ograničena ispod 1024 px: na 768 je ceo okvir bio visok
+                oko 578 px i gurao sadržaj ispod preloma (vizuelna provera,
+                krug 12, ispravka 3b). Sada je oko 337 px, bez sečenja crteža. */}
+            <div className="lg:col-span-5 max-w-md mx-auto w-full lg:max-w-none">
               {/* .svg, u istom jeziku kao AI agenti/GBP/blog ilustracije (tanka
                   parchment linija, wine akcenat, bez teksta i brojki u slici),
                   zamenjuje stari sjajni raster sa munjom i perspektivnom mrežom
@@ -239,6 +243,7 @@ export default function IzradaSajtovaPage() {
 
           {/* ── ZAŠTO ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
               Zašto Next.js ili Astro, ne WordPress
             </h2>
@@ -252,6 +257,7 @@ export default function IzradaSajtovaPage() {
 
           {/* ── TIPOVI SAJTOVA ── */}
           <section id="cena" className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-3">
               Kako se formira cena
             </h2>
@@ -279,6 +285,7 @@ export default function IzradaSajtovaPage() {
 
           {/* ── ŠTA JE UKLJUČENO ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Šta je uključeno u svaki sajt
             </h2>
@@ -294,6 +301,7 @@ export default function IzradaSajtovaPage() {
 
           {/* ── FAQ ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Pitanja o izradi sajtova
             </h2>

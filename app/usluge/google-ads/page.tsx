@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { adsVodjenjeCena } from '@/lib/cenaPodaci'
 import PodvucenaRec from '@/components/PodvucenaRec'
+import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export const metadata: Metadata = {
   title: 'Google Ads marketing i kampanje',
@@ -237,6 +238,7 @@ export default function GoogleAdsPage() {
 
           {/* ── ZAŠTO ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
               Zašto Google Ads
             </h2>
@@ -267,6 +269,7 @@ export default function GoogleAdsPage() {
 
           {/* ── TIPOVI KAMPANJA ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-3">
               Vrste kampanja koje vodimo
             </h2>
@@ -285,6 +288,7 @@ export default function GoogleAdsPage() {
 
           {/* ── PROCES ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Kako vodimo kampanju
             </h2>
@@ -303,6 +307,7 @@ export default function GoogleAdsPage() {
 
           {/* ── CENA ── */}
           <section id="cena" className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-6">
               Koliko košta Google Ads
             </h2>
@@ -328,6 +333,7 @@ export default function GoogleAdsPage() {
 
           {/* ── FAQ ── */}
           <section className="mb-20">
+            <PotezRazdelnik className="mb-4" />
             <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight mb-10">
               Pitanja o Google Ads oglašavanju
             </h2>
