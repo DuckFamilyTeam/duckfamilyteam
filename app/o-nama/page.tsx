@@ -88,27 +88,21 @@ export default function ONamaPage() {
               </p>
             </div>
             <div className="relative">
-              {/* Namerno DRUGI kadar iste radne sesije, ne ista fotografija kao
-                  na početnoj (koja koristi širi, zatamnjeni ambijentalni kadar
-                  za hero pozadinu). Ovde je kadar iz istog snimka, ali blizu
-                  na ruke, notes i tastaturu — vizuelna provera krug 7, stavka
-                  Vizuali, ispravka 7. Sama `.webp` je već PIL-kadrirana na taj
-                  detalj (1085×600, odnos ~1,81:1) — bez eksplicitnog odnosa
-                  ovde, `aspect-[6/5]` (1,2:1) je nad njom radio DRUGO,
-                  nezavisno `object-cover` kadriranje i odsecao oba lica i deo
-                  saksije sa cvetom, ostavljajući samo ruke/tastaturu (prijavljen
-                  bug, Nikola). Odnos ovde sad odgovara stvarnim `width`/`height`
-                  gore, pa se prikazuje tačno onaj kadar koji je PIL isekao, bez
-                  dodatnog sečenja — isto na mobile/tablet/desktop, jer je zasnovano
-                  na odnosu stranica, ne na pikselima kontejnera. */}
+              {/* Cela fotografija, bez sečenja (Nikolina odluka — dosadašnji
+                  uzak detalj-kadar na ruke/tastaturu je prijavljen kao
+                  "vidi se samo pola"). Ovaj kadar nikad ne prikazuje lica
+                  (snimljen iz ugla iza leđa), to se ne menja izborom kadra —
+                  ali bez sečenja se vidi ceo prizor: prozor, polica, oboje
+                  za stolom, ne samo ruke. `aspect-[1085/1449]` odgovara
+                  stvarnim dimenzijama fajla, pa `object-cover` ne seče ništa. */}
               <Image
-                src="/img/andjela-i-nikola-detalj-rada.webp"
-                alt="Anđela i Nikola Stanković rade zajedno, beleške i analitika na laptopu, Duck Family Team"
+                src="/img/andjela-i-nikola-u-radnoj-sobi-1-obradjena.webp"
+                alt="Anđela i Nikola Stanković rade zajedno u radnoj sobi, beleške i analitika na laptopu, Duck Family Team"
                 width={1085}
-                height={600}
+                height={1449}
                 priority
                 fetchPriority="high"
-                className="rounded-2xl border border-ink-border w-full aspect-[1085/600] object-cover"
+                className="rounded-2xl border border-ink-border w-full aspect-[1085/1449] object-cover"
               />
             </div>
           </section>
