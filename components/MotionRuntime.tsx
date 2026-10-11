@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 
 /**
@@ -17,8 +17,41 @@ import { usePathname } from 'next/navigation'
  */
 export default function MotionRuntime() {
   const pathname = usePathname()
+  // true kad je sledeća promena putanje stigla od dugmeta nazad/napred
+  // (popstate), false za svaki klik na Link/`router.push`.
+  const isPopNav = useRef(false)
+
+  // Mora u sopstvenom efektu sa praznim nizom zavisnosti: `popstate` se
+  // dešava PRE nego što `usePathname()` prijavi novu putanju, pa zastavica
+  // treba da postoji i preživi ponovno pokretanje efekta ispod.
+  useEffect(() => {
+    const onPopState = () => {
+      isPopNav.current = true
+    }
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [])
 
   useEffect(() => {
+    // Next-ov keš rutа ovde zna da „vrati" skrol poziciju koju je ista
+    // putanja imala pri PRETHODNOJ poseti u ovoj sesiji (npr. klik na
+    // „O nama" u headeru vodio je na dno stranice — na poziciju na kojoj je
+    // posetilac bio kad je sa te stranice ranije otišao), umesto da skroluje
+    // na vrh nove stranice. Dugme nazad/napred treba da vrati staru poziciju
+    // (očekivano ponašanje pretraživača) — svaki drugi prelaz na novu
+    // putanju (klik na link, `router.push`) uvek ide na vrh.
+    // Linkovi sa sidrom na drugu rutu (npr. `/#kontakt` sa `/usluge/...`)
+    // takođe menjaju putanju (sidro nije deo `usePathname()`), a Next sam
+    // skroluje do elementa s tim id-om — ne sme se nadjačati skokom na vrh.
+    if (isPopNav.current) {
+      isPopNav.current = false
+    } else if (!window.location.hash) {
+      // `behavior: 'instant'` zaobilazi globalno `scroll-behavior: smooth`
+      // (globals.css) — bez toga bi prelazak na novu stranicu izgledao kao
+      // sporo, animirano skrolovanje nazad na vrh umesto trenutnog skoka.
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    }
+
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     const cleanups: Array<() => void> = []

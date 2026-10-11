@@ -92,7 +92,15 @@ export default function ONamaPage() {
                   na početnoj (koja koristi širi, zatamnjeni ambijentalni kadar
                   za hero pozadinu). Ovde je kadar iz istog snimka, ali blizu
                   na ruke, notes i tastaturu — vizuelna provera krug 7, stavka
-                  Vizuali, ispravka 7. */}
+                  Vizuali, ispravka 7. Sama `.webp` je već PIL-kadrirana na taj
+                  detalj (1085×600, odnos ~1,81:1) — bez eksplicitnog odnosa
+                  ovde, `aspect-[6/5]` (1,2:1) je nad njom radio DRUGO,
+                  nezavisno `object-cover` kadriranje i odsecao oba lica i deo
+                  saksije sa cvetom, ostavljajući samo ruke/tastaturu (prijavljen
+                  bug, Nikola). Odnos ovde sad odgovara stvarnim `width`/`height`
+                  gore, pa se prikazuje tačno onaj kadar koji je PIL isekao, bez
+                  dodatnog sečenja — isto na mobile/tablet/desktop, jer je zasnovano
+                  na odnosu stranica, ne na pikselima kontejnera. */}
               <Image
                 src="/img/andjela-i-nikola-detalj-rada.webp"
                 alt="Anđela i Nikola Stanković rade zajedno, beleške i analitika na laptopu, Duck Family Team"
@@ -100,7 +108,7 @@ export default function ONamaPage() {
                 height={600}
                 priority
                 fetchPriority="high"
-                className="rounded-2xl border border-ink-border w-full aspect-[6/5] object-cover"
+                className="rounded-2xl border border-ink-border w-full aspect-[1085/600] object-cover"
               />
             </div>
           </section>
