@@ -245,13 +245,17 @@ export default async function Home() {
 
               {/* Slika se otkriva odozdo i lagano se pomera pri skrolu.
                   CSS filter je uklonjen — primenjivao se na svakom paint-u, i to
-                  na LCP elementu. Isti izgled treba ispeći u samu sliku. */}
+                  na LCP elementu. Isti izgled treba ispeći u samu sliku.
+                  Blago „disanje" (beskonačan scale) je takođe uklonjeno (vizuelna
+                  provera): 4,5% u 7s je ispod praga primetnosti, dupliralo se sa
+                  pokretnom pozadinom (Aurora), nikad se nije gasilo van kadra, i
+                  blago je omekšavalo oštrinu slike dok je stalno skalirana. */}
               <div
                 className="relative rounded-3xl overflow-hidden border border-ink-border aspect-[4/5] lg:aspect-auto lg:h-full"
                 data-hero-media
                 data-parallax="0.06"
               >
-                <div className="absolute inset-0" data-breathe>
+                <div className="absolute inset-0">
                   <Image
                     // Obrada (sepia/brightness/contrast) je sada zapečena u samu
                     // sliku. Ranije je stajala kao CSS `filter` na LCP elementu,

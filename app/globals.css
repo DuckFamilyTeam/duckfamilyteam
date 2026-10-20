@@ -25,7 +25,6 @@
 
   /* Jačina animacija. Menja se jednim potezom ako ikad zatreba smirivanje. */
   --amp: 1;
-  --tilt: 1;
 }
 
 html {
@@ -153,19 +152,6 @@ html {
   80% { transform: translate(3%, 1%); }
 }
 
-/* Svetlo koje prati miša, sa inercijom (poziciju postavlja MotionRuntime). */
-.spotlight {
-  position: fixed;
-  left: 0; top: 0;
-  width: 640px; height: 640px;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(217, 112, 124, 0.075), transparent 62%);
-  transform: translate3d(-50%, -50%, 0);
-  opacity: calc(1 * var(--amp));
-  will-change: transform;
-}
-
 /* Sav sadržaj mora biti iznad pozadinskih slojeva. */
 main, header, footer { position: relative; z-index: 2; }
 
@@ -240,22 +226,13 @@ main, header, footer { position: relative; z-index: 2; }
   to { opacity: 1; transform: none; }
 }
 
-/* Hero slika: otkriva se odozdo, pa neprimetno „diše". */
+/* Hero slika: otkriva se odozdo. */
 .js [data-hero-media] {
   clip-path: inset(0 0 100% 0);
   animation: dft-media-in 800ms var(--ease-out) 120ms forwards;
   will-change: transform;
 }
 @keyframes dft-media-in { to { clip-path: inset(0 0 0 0); } }
-.js [data-hero-media] > [data-breathe] {
-  animation: dft-breathe 14s var(--ease-in-out) infinite;
-  will-change: transform;
-}
-@keyframes dft-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(calc(1 + 0.045 * var(--amp))); }
-}
-
 /* ══════════════════════════════════════════════════════════════════════
    ⑤ DUGMAD — odziv na pritisak i sjaj koji prelazi preko njih
    ══════════════════════════════════════════════════════════════════════ */
@@ -289,16 +266,17 @@ main, header, footer { position: relative; z-index: 2; }
 .press { transition: transform 160ms var(--ease-out); }
 
 /* ══════════════════════════════════════════════════════════════════════
-   ⑥ KARTICE — 3D nagib i sjaj koji prati kursor
+   ⑥ KARTICE — sjaj koji prati kursor
+   3D nagib (rotateX/rotateY) je uklonjen (vizuelna provera): na glavnoj
+   kartici je krivio tekst dok se čita, i CSS tranzicija transform-a se
+   borila sa transform-om koji je JS upisivao na svaki frame.
    ══════════════════════════════════════════════════════════════════════ */
 [data-tilt] {
   position: relative;
-  transform-style: preserve-3d;
   overflow: hidden;
   transition:
     border-color 240ms var(--ease-out),
-    box-shadow 300ms var(--ease-out),
-    transform 320ms var(--ease-out);
+    box-shadow 300ms var(--ease-out);
 }
 [data-tilt]::before,
 [data-tilt]::after {
@@ -465,7 +443,7 @@ details[data-faq][open] svg { transform: rotate(180deg); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
-  .aurora, .grain, .spotlight { display: none; }
+  .aurora, .grain { display: none; }
 
   .js [data-rv],
   .js [data-hero-in],
@@ -480,7 +458,6 @@ details[data-faq][open] svg { transform: rotate(180deg); }
     clip-path: none !important;
     animation: none !important;
   }
-  .js [data-hero-media] > [data-breathe],
   .marquee-track { animation: none !important; }
   .js .squiggle path { animation: none; stroke-dashoffset: 0; }
 
@@ -488,11 +465,6 @@ details[data-faq][open] svg { transform: rotate(180deg); }
     transition-property: opacity, background-color, border-color, color, box-shadow, fill, stroke !important;
     transition-duration: 200ms !important;
   }
-}
-
-/* Hover efekti se ne primenjuju na dodir — tap bi ostavio „zaglavljen" hover. */
-@media not all and (hover: hover) {
-  [data-tilt] { transform: none !important; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

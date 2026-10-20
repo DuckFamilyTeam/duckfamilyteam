@@ -9,8 +9,10 @@ import Turnstile, { turnstileUkljucen } from '@/components/Turnstile'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
+// text-base (16px) na telefonu: iOS Safari uvećava (zumira) stranu kad je font
+// polja manji od 16px pri fokusu. Na desktopu ostaje text-sm, gde to ne smeta.
 const fieldClass =
-  'w-full p-4 md:p-5 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text aria-[invalid=true]:border-wine-text aria-[invalid=true]:border-2 text-ink-text placeholder:text-ink-muted text-sm transition-colors'
+  'w-full p-4 md:p-5 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text aria-[invalid=true]:border-wine-text aria-[invalid=true]:border-2 text-ink-text placeholder:text-ink-muted text-base md:text-sm transition-colors'
 
 const labelClass = 'block font-mono text-[11px] uppercase tracking-widest text-ink-muted mb-2'
 
