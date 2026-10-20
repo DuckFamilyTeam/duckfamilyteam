@@ -40,3 +40,8 @@ yarn-error.log*
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# lokalni alati (Claude Code dev-server podešavanja, Next.js agent fajlovi)
+.claude/
+AGENTS.md
+CLAUDE.md
