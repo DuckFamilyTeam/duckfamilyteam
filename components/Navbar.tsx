@@ -165,7 +165,8 @@ export default function Navbar() {
             <a
               href="tel:+381643877524"
               onClick={() => trackPhoneClick('navbar_desktop')}
-              data-magnetic
+              // Bez data-magnetic (vizuelna provera): dugme je usko i blizu ivice
+              // ekrana, pa je pomeraj mogao da ga odvuče ispod kursora i promaši klik.
               className="btn-fx inline-flex items-center gap-2 bg-wine hover:bg-wine-bright text-ink-text px-6 py-3 rounded-full text-sm font-sans font-semibold whitespace-nowrap"
             >
               <span>Pozovite nas</span>

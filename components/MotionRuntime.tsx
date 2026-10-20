@@ -216,7 +216,13 @@ export default function MotionRuntime() {
 
     request()
 
-    // ── ④ 3D nagib kartica i sjaj koji prati kursor ───────────────────
+    // ── ④ Sjaj koji prati kursor na karticama ──────────────────────────
+    // Ranije je ovde bio i 3D nagib (rotateX/rotateY) — uklonjen je (vizuelna
+    // provera): na glavnoj kartici nagib je krivio tekst dok se čita, a CSS
+    // `transition: transform` se borila sa transform-om koji JS upisuje na
+    // svaki frame, pa je nagib vidljivo zaostajao za kursorom. Sjaj ostaje —
+    // čist CSS (`--mx`/`--my`), funkcionalna informacija (kartice su linkovi),
+    // radi i pod reduce-motion.
     if (fine && !reduce) {
       document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((card) => {
         let raf: number | undefined
@@ -229,25 +235,19 @@ export default function MotionRuntime() {
             const py = (e.clientY - rect.top) / rect.height
             card.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`)
             card.style.setProperty('--my', `${(py * 100).toFixed(1)}%`)
-            card.style.transform =
-              `perspective(1200px) rotateX(${((0.5 - py) * 8).toFixed(2)}deg) ` +
-              `rotateY(${((px - 0.5) * 10).toFixed(2)}deg) translateZ(8px)`
           })
         }
-        const onLeave = () => {
-          if (raf !== undefined) cancelAnimationFrame(raf)
-          raf = undefined
-          card.style.transform = ''
-        }
         card.addEventListener('pointermove', onMove, { passive: true })
-        card.addEventListener('pointerleave', onLeave)
         cleanups.push(() => {
           card.removeEventListener('pointermove', onMove)
-          card.removeEventListener('pointerleave', onLeave)
         })
       })
 
       // ── ⑤ Magnetna dugmad ───────────────────────────────────────────
+      // Faktor smanjen sa 0.22 na 0.09 (vizuelna provera): na hero dugmetu
+      // pomeraj je išao do ~24px, dugme je „bežalo" ispod kursora. Na uskom
+      // dugmetu u navbaru (telefon) je atribut potpuno uklonjen — tamo je
+      // pomeraj mogao da odvuče dugme ispod kursora i promaši klik.
       document.querySelectorAll<HTMLElement>('[data-magnetic]').forEach((el) => {
         let raf: number | undefined
         const onMove = (e: PointerEvent) => {
@@ -255,8 +255,8 @@ export default function MotionRuntime() {
           raf = requestAnimationFrame(() => {
             raf = undefined
             const rect = el.getBoundingClientRect()
-            const dx = (e.clientX - rect.left - rect.width / 2) * 0.22
-            const dy = (e.clientY - rect.top - rect.height / 2) * 0.22
+            const dx = (e.clientX - rect.left - rect.width / 2) * 0.09
+            const dy = (e.clientY - rect.top - rect.height / 2) * 0.09
             el.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px)`
           })
         }
