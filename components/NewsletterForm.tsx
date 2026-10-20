@@ -96,7 +96,9 @@ export default function NewsletterForm() {
             placeholder="vasa@adresa.rs"
             aria-invalid={status === 'error' ? true : undefined}
             aria-describedby={status === 'error' ? 'newsletter-greska' : undefined}
-            className="w-full p-4 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text aria-[invalid=true]:border-wine-text aria-[invalid=true]:border-2 text-ink-text placeholder:text-ink-muted text-sm transition-colors"
+            // text-base (16px) na telefonu: iOS Safari uvećava stranu kad je font polja
+            // manji od 16px pri fokusu. Na desktopu ostaje text-sm.
+            className="w-full p-4 bg-ink-bg border border-ink-border-strong rounded-xl outline-none focus:ring-2 focus:ring-wine-text focus:border-wine-text aria-[invalid=true]:border-wine-text aria-[invalid=true]:border-2 text-ink-text placeholder:text-ink-muted text-base md:text-sm transition-colors"
           />
         </div>
         <button

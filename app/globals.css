@@ -153,19 +153,6 @@ html {
   80% { transform: translate(3%, 1%); }
 }
 
-/* Svetlo koje prati miša, sa inercijom (poziciju postavlja MotionRuntime). */
-.spotlight {
-  position: fixed;
-  left: 0; top: 0;
-  width: 640px; height: 640px;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(217, 112, 124, 0.075), transparent 62%);
-  transform: translate3d(-50%, -50%, 0);
-  opacity: calc(1 * var(--amp));
-  will-change: transform;
-}
-
 /* Sav sadržaj mora biti iznad pozadinskih slojeva. */
 main, header, footer { position: relative; z-index: 2; }
 
@@ -465,7 +452,7 @@ details[data-faq][open] svg { transform: rotate(180deg); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
-  .aurora, .grain, .spotlight { display: none; }
+  .aurora, .grain { display: none; }
 
   .js [data-rv],
   .js [data-hero-in],

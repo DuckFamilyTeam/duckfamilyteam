@@ -139,19 +139,14 @@ export default function MotionRuntime() {
       cleanups.push(() => cio.disconnect())
     }
 
-    // ── ③ Jedna rAF petlja za skrol i miša ────────────────────────────
+    // ── ③ Jedna rAF petlja za skrol ────────────────────────────────────
     const progress = document.querySelector<HTMLElement>('[data-scroll-progress]')
     const header = document.querySelector<HTMLElement>('[data-header]')
-    const spot = document.querySelector<HTMLElement>('[data-spotlight]')
     const parallax = document.querySelectorAll<HTMLElement>('[data-parallax]')
     const stepsFill = document.querySelector<HTMLElement>('[data-steps-fill]')
     const steps = document.querySelector<HTMLElement>('[data-steps]')
     const stickyCta = document.querySelector<HTMLElement>('[data-sticky-cta]')
 
-    let pointerX = 0
-    let pointerY = 0
-    let easedX = 0
-    let easedY = 0
     let queued = false
 
     const frame = () => {
@@ -204,14 +199,6 @@ export default function MotionRuntime() {
         const p = Math.min(Math.max((window.innerHeight * 0.78 - rect.top) / (rect.height * 0.86), 0), 1)
         stepsFill.style.transform = `scaleY(${p.toFixed(3)})`
       }
-
-      if (spot && fine) {
-        easedX += (pointerX - easedX) * 0.09
-        easedY += (pointerY - easedY) * 0.09
-        spot.style.transform = `translate3d(${easedX.toFixed(1)}px, ${easedY.toFixed(1)}px, 0) translate(-50%, -50%)`
-        // Petlja se nastavlja samo dok prsten stvarno ima kuda da stigne.
-        if (Math.abs(pointerX - easedX) > 0.5 || Math.abs(pointerY - easedY) > 0.5) request()
-      }
     }
 
     const request = () => {
@@ -227,15 +214,6 @@ export default function MotionRuntime() {
       window.removeEventListener('resize', request)
     })
 
-    if (fine && !reduce) {
-      const onMove = (e: PointerEvent) => {
-        pointerX = e.clientX
-        pointerY = e.clientY
-        request()
-      }
-      window.addEventListener('pointermove', onMove, { passive: true })
-      cleanups.push(() => window.removeEventListener('pointermove', onMove))
-    }
     request()
 
     // ── ④ 3D nagib kartica i sjaj koji prati kursor ───────────────────

@@ -62,9 +62,6 @@ export default function Navbar() {
     { label: 'Kontakt', href: '/kontakt' },
   ]
 
-  const googleReviewUrl =
-    'https://maps.google.com/?cid=13771670212645560743&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed'
-
   return (
     // Traka je providnija na vrhu strane, a zgusne se čim se krene sa skrolom —
     // `data-stuck` postavlja MotionRuntime iz iste rAF petlje kao i sve ostalo,
@@ -166,14 +163,6 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href={googleReviewUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-underline text-sm font-sans font-medium whitespace-nowrap text-ink-muted hover:text-ink-text transition-colors duration-200"
-            >
-              Recenzije
-            </a>
-            <a
               href="tel:+381643877524"
               onClick={() => trackPhoneClick('navbar_desktop')}
               data-magnetic
@@ -242,15 +231,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={googleReviewUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMobile}
-              className="text-lg font-sans font-medium text-ink-muted border-b border-ink-border py-3 hover:text-ink-text transition-colors"
-            >
-              Recenzije
-            </a>
             <a
               href="tel:+381643877524"
               onClick={() => {

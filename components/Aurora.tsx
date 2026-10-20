@@ -1,10 +1,11 @@
 /**
- * Pozadinski slojevi: mesh gradijent koji se kreće, zrnasta tekstura i svetlo
- * koje prati miša. Sve troje su čisti CSS — ovde nema nijedne linije logike,
- * pa komponenta ostaje serverska i ne dodaje ništa u JS bundle.
+ * Pozadinski slojevi: mesh gradijent koji se kreće i zrnasta tekstura preko
+ * njega. Oboje je čist CSS — ovde nema nijedne linije logike, pa komponenta
+ * ostaje serverska i ne dodaje ništa u JS bundle.
  *
- * Pozicioniranje svetla preuzima MotionRuntime; dok se to ne desi, stoji na
- * (0,0) izvan ekrana i ne smeta.
+ * Svetlo koje je ranije pratilo kursor je uklonjeno (vizuelna provera):
+ * efekat je bio toliko suptilan (alpha 0.075) da ga niko ne bi primetio da
+ * nestane, a trošio je sopstveni pointermove listener u MotionRuntime.
  */
 export default function Aurora() {
   return (
@@ -15,7 +16,6 @@ export default function Aurora() {
         <span className="b3" />
       </div>
       <div className="grain" aria-hidden="true" />
-      <div className="spotlight" data-spotlight aria-hidden="true" />
     </>
   )
 }
