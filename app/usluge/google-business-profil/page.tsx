@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
+import { gbpOsnovnaCena, gbpPostavkaCena, gbpDodatak } from '@/lib/cenaPodaci'
 import PodvucenaRec from '@/components/PodvucenaRec'
 import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export const metadata: Metadata = {
   title: { absolute: 'Agencija za Google Business profil: cena vođenja' },
   description:
-    'Agencija za vođenje Google Business profila u Beogradu: 8 objava i 8 fotografija mesečno, odgovori na recenzije, optimizacija profila. Cena od 100€ mesečno.',
+    `Agencija za vođenje Google Business profila u Beogradu: 2 objave i 1 fotografija nedeljno, odgovori na sve recenzije. Postavljanje i verifikacija ${gbpPostavkaCena}€ jednokratno, vođenje ${gbpOsnovnaCena}€ mesečno.`,
   keywords: [
     'google business profile cena',
     'agencija za google business profile',
@@ -40,7 +40,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Vođenje Google Business profila',
   description:
-    'Agencija za vođenje Google Business profila za firme u Srbiji: objave, fotografije, odgovaranje na recenzije i optimizacija profila za lokalnu pretragu. Cena 100 evra mesečno po profilu.',
+    `Agencija za vođenje Google Business profila za firme u Srbiji: objave, fotografije, odgovaranje na recenzije i optimizacija profila za lokalnu pretragu. Postavljanje i verifikacija profila ${gbpPostavkaCena} evra jednokratno, vođenje ${gbpOsnovnaCena} evra mesečno po profilu.`,
   provider: {
     '@type': 'Organization',
     name: 'Duck Family Team',
@@ -53,12 +53,20 @@ const serviceSchema = {
     { '@type': 'City', name: 'Beograd' },
   ],
   serviceType: 'Google Business Profile Management',
-  offers: {
-    '@type': 'Offer',
-    priceCurrency: 'EUR',
-    price: String(gbpOsnovnaCena),
-    description: `Vođenje profila, ${gbpOsnovnaCena} evra mesečno.`,
-  },
+  offers: [
+    {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: String(gbpPostavkaCena),
+      description: `Postavljanje i verifikacija profila, ${gbpPostavkaCena} evra jednokratno.`,
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: String(gbpOsnovnaCena),
+      description: `Mesečno vođenje profila, ${gbpOsnovnaCena} evra mesečno po profilu.`,
+    },
+  ],
 }
 
 const breadcrumbSchema = {
@@ -79,7 +87,7 @@ const faqSchema = {
       name: 'Koliko košta vođenje Google Business profila?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cena vođenja jednog Google Business profila kod nas je 100 evra mesečno i uključuje 8 objava, 8 fotografija, odgovaranje na recenzije i optimizaciju profila. Za više lokacija se cena računa po profilu, a dostupno je i pojačano objavljivanje (16 umesto 8 objava mesečno) za dodatnih 50 evra mesečno.',
+        text: `Postavljanje i verifikacija profila se plaćaju jednom, ${gbpPostavkaCena} evra. Mesečno vođenje je ${gbpOsnovnaCena} evra po profilu i uključuje 2 objave i 1 fotografiju nedeljno i odgovaranje na sve recenzije. Za više lokacija se cena računa po profilu, a dostupno je i pojačano objavljivanje, 4 objave i 2 fotografije nedeljno, za dodatnih ${gbpDodatak.cena} evra mesečno.`,
       },
     },
     {
@@ -103,7 +111,7 @@ const faqSchema = {
       name: 'Da li je sam profil besplatan?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Da, otvaranje i osnovno korišćenje Google Business profila je besplatno. Mi naplaćujemo vođenje profila, objave, fotografije, odgovaranje na recenzije i optimizaciju, 100 evra mesečno.',
+        text: `Da, sam profil je kod Google-a besplatan. Mi naplaćujemo rad: postavljanje i verifikaciju profila ${gbpPostavkaCena} evra jednokratno, a zatim vođenje, objave, fotografije i odgovaranje na recenzije, ${gbpOsnovnaCena} evra mesečno.`,
       },
     },
     {
@@ -111,7 +119,7 @@ const faqSchema = {
       name: 'Šta tačno radite u vođenju profila?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mesečno postavljamo 8 objava i 8 fotografija, odgovaramo na recenzije i optimizujemo profil, kategorije, opis i atribute, da vas ljudi lakše pronađu kad pretražuju vašu uslugu u okolini.',
+        text: 'Na početku postavljamo i verifikujemo profil i podesimo kategorije, usluge, opis, radno vreme i atribute. Posle toga nedeljno objavljujemo 2 objave i 1 fotografiju i odgovaramo na svaku pristiglu recenziju, da vas ljudi lakše pronađu kad pretražuju vašu uslugu u okolini.',
       },
     },
     {
@@ -126,10 +134,10 @@ const faqSchema = {
 }
 
 const sta_radimo = [
-  { title: '8 objava mesečno', desc: 'Redovne objave o uslugama, ponudama i novostima, direktno na profilu.' },
-  { title: '8 fotografija mesečno', desc: 'Sveže fotografije prostora, tima i rada, jer profili sa fotografijama dobijaju više poziva.' },
-  { title: 'Odgovaranje na recenzije', desc: 'Odgovaramo na svaku novu recenziju, pozitivnu i negativnu, u vaše ime ili uz vašu potvrdu.' },
-  { title: 'Optimizacija profila', desc: 'Kategorije, opis, radno vreme i atributi podešeni tako da vas Google prikazuje za prave pretrage.' },
+  { title: 'Postavljanje i verifikacija', desc: 'Jednokratno, na početku: profil se otvori, verifikuje i podese kategorije, usluge, opis, radno vreme i atributi.' },
+  { title: '2 objave nedeljno', desc: 'Redovne objave o uslugama, ponudama i novostima, direktno na profilu.' },
+  { title: '1 fotografija nedeljno', desc: 'Sveže fotografije prostora, tima i rada, jer profili sa fotografijama dobijaju više poziva.' },
+  { title: 'Odgovaranje na sve recenzije', desc: 'Odgovaramo na svaku novu recenziju, pozitivnu i negativnu, u vaše ime ili uz vašu potvrdu.' },
   { title: 'Mesečni izveštaj', desc: 'Pregledi profila, pozivi i klikovi na navigaciju, jasno prikazani svakog meseca.' },
 ]
 
@@ -234,21 +242,31 @@ export default function GoogleBusinessProfilPage() {
               Cena i šta je uključeno
             </h2>
             <p className="text-ink-muted leading-relaxed mb-4 max-w-3xl">
-              Vođenje jednog Google Business profila kod nas košta fiksnih 100 evra mesečno i uključuje sve navedeno u prethodnoj sekciji. Pisali smo detaljnije o{' '}
+              Cena je razdvojena na dve stavke, jer su i poslovi različiti. Postavljanje i verifikacija profila se rade jednom, na početku, i to je {gbpPostavkaCena} evra. Posle toga ide mesečno vođenje, {gbpOsnovnaCena} evra po profilu. Pisali smo detaljnije o{' '}
               <Link href="/blog/cena-vodjenja-google-business-profila" className="text-wine-text underline hover:no-underline">ceni vođenja GBP profila</Link>
-              {' '}u Srbiji. Ako imate više lokacija, cena se računa po profilu, i svaki dodatni profil je +100 evra mesečno:
+              {' '}u Srbiji.
             </p>
-            <ul className="text-ink-muted leading-relaxed mb-8 max-w-3xl list-disc pl-5 space-y-1">
-              <li>Više lokacija ili poslovnica: svaki dodatni profil se naplaćuje kao poseban profil, +100 evra mesečno.</li>
-              <li>Pojačano objavljivanje: 16 umesto standardnih 8 objava i 8 fotografija mesečno, uz doplatu od 50 evra mesečno.</li>
-            </ul>
-            <div className="bg-ink-surface border border-ink-border rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-              <div>
-                <h3 className="font-medium text-lg mb-1">Vođenje Google Business profila</h3>
-                <p className="text-ink-muted text-sm">8 objava i 8 fotografija mesečno, odgovaranje na recenzije, optimizacija profila.</p>
+            <div className="border border-ink-border rounded-2xl overflow-hidden mb-4">
+              <div className="p-6 md:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-ink-surface">
+                <div>
+                  <h3 className="font-medium text-lg mb-1">Postavljanje i verifikacija profila</h3>
+                  <p className="text-ink-muted text-sm">Otvaranje i verifikacija profila, kategorije, usluge, opis, radno vreme i atributi.</p>
+                </div>
+                <span className="font-mono text-wine-text text-lg whitespace-nowrap">{gbpPostavkaCena} evra jednokratno</span>
               </div>
-              <span className="font-mono text-wine-text text-lg whitespace-nowrap">100 evra mesečno</span>
+              <div className="p-6 md:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-ink-bg">
+                <div>
+                  <h3 className="font-medium text-lg mb-1">Mesečno vođenje profila</h3>
+                  <p className="text-ink-muted text-sm">2 objave i 1 fotografija nedeljno, odgovaranje na sve recenzije, mesečni izveštaj.</p>
+                </div>
+                <span className="font-mono text-wine-text text-lg whitespace-nowrap">{gbpOsnovnaCena} evra mesečno</span>
+              </div>
             </div>
+            <ul className="text-ink-muted leading-relaxed mb-8 max-w-3xl list-disc pl-5 space-y-1">
+              <li>Više lokacija ili poslovnica: cena se računa po profilu, jer svaki nosi svoje objave, recenzije i fotografije. Svaki dodatni profil je +{gbpOsnovnaCena} evra mesečno.</li>
+              <li>Pojačano objavljivanje: 4 objave i 2 fotografije nedeljno umesto standardnih 2 i 1, uz doplatu od {gbpDodatak.cena} evra mesečno.</li>
+              <li>Ako već imate uredan i verifikovan profil, postavljanje se ne naplaćuje i počinjemo odmah od mesečnog vođenja.</li>
+            </ul>
             <p className="text-ink-muted leading-relaxed max-w-3xl">
               Za tačan predlog cene prilagođen vašem biznisu, pogledajte i naš{' '}
               <Link href="/cene" className="text-wine-text underline hover:no-underline">opšti cenovnik</Link>

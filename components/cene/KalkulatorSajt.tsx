@@ -7,6 +7,7 @@ import {
   rokovi,
   mesecnoOdrzavanje,
   napomenaODomenu,
+  napomenaOHostingu,
   formatEvra,
   type Rok,
 } from '@/lib/cenaPodaci'
@@ -153,8 +154,10 @@ export default function KalkulatorSajt() {
 
       <div className="text-sm text-ink-muted space-y-2 border-t border-ink-border pt-6">
         <p>
-          <span className="text-ink-text font-medium">Hosting i održavanje: </span>
+          <span className="text-ink-text font-medium">Održavanje sajta: </span>
           {formatEvra(mesecnoOdrzavanje)} mesečno, posebno od jednokratne cene izrade.
+        </p>
+        <p>{napomenaOHostingu}
         </p>
         <p>{napomenaODomenu}</p>
       </div>

@@ -32,11 +32,11 @@ export default function KalkulatorPaket() {
           <span className="font-mono text-ink-muted">{formatEvra(adsVodjenje)}</span>
         </div>
         <div className="flex justify-between p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
-          <span className="text-ink-text">Google Business profil, vođenje</span>
+          <span className="text-ink-text">Google Business profil, mesečno vođenje</span>
           <span className="font-mono text-ink-muted">{formatEvra(gbpOsnovnaCena)}</span>
         </div>
         <div className="flex justify-between p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg">
-          <span className="text-ink-text">Hosting i održavanje sajta</span>
+          <span className="text-ink-text">Održavanje sajta</span>
           <span className="font-mono text-ink-muted">{formatEvra(mesecnoOdrzavanje)}</span>
         </div>
         <div className="flex justify-between p-5 md:p-6 odd:bg-ink-surface even:bg-ink-bg font-medium">
@@ -45,9 +45,14 @@ export default function KalkulatorPaket() {
         </div>
       </div>
 
-      <p className="text-center text-ink-text mb-8">
+      <p className="text-center text-ink-text mb-4">
         Sa paketom štedite <span className="text-wine-text font-mono">{formatEvra(usteda)}</span> mesečno
         u odnosu na pojedinačne cene.
+      </p>
+
+      <p className="text-center text-sm text-ink-muted max-w-xl mx-auto mb-8">
+        Poređenje je mesečno. Jednokratne stavke, izrada sajta i postavljanje Google Business
+        profila, naplaćuju se posebno. Hosting i domen plaćate vi, direktno provajderu.
       </p>
 
       <div className="text-center">

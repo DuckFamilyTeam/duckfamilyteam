@@ -16,6 +16,9 @@ import StickyCta from '@/components/StickyCta'
 import { getGoogleReviewsSummary, getGoogleReviews } from '@/lib/googleReviews'
 import { blogPosts } from '@/lib/blogPosts'
 import { faqPageSchema, homeFaqs } from '@/lib/faqs'
+import { adsVodjenjeCena, adsStavke, formatEvra } from '@/lib/cenaPodaci'
+
+const pocetnaPostavkaCena = adsStavke.find((s) => s.id === 'postavka')!.cena
 
 export const metadata: Metadata = {
   // Naslov i opis prepisani 2026-10-05 po GSC podacima (stavka 78), ne po pretpostavci.
@@ -335,9 +338,9 @@ export default async function Home() {
                     </div>
                     {glavna && (
                       <p className="font-mono text-sm text-ink-text mt-8">
-                        Mesečno vođenje <span className="text-wine-text">200 €</span>
+                        Mesečno vođenje <span className="text-wine-text">{formatEvra(adsVodjenjeCena)}</span>
                         <span className="text-ink-muted"> · </span>
-                        postavka kampanje <span className="text-wine-text">70 €</span>
+                        postavka kampanje <span className="text-wine-text">{formatEvra(pocetnaPostavkaCena)}</span>
                       </p>
                     )}
                     <div className="flex items-center gap-2 text-sm font-medium mt-3.5">

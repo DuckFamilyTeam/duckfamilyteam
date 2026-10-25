@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
-import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
+import { gbpOsnovnaCena, gbpPostavkaCena } from '@/lib/cenaPodaci'
 
 export const metadata: Metadata = {
   title: { absolute: 'Google Business profili za firme sa više lokacija' },
@@ -99,7 +99,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Koliko košta vođenje profila za lanac sa više poslovnica?',
-    a: `Cena se računa po profilu, ${gbpOsnovnaCena} evra mesečno za jedan profil. Pet poslovnica znači pet profila, jer svaki nosi svoje objave, svoje recenzije i svoje fotografije. Paušalna cena za celu firmu bi značila da neki profili ne dobijaju rad.`,
+    a: `Cena se računa po profilu: ${gbpPostavkaCena} evra jednokratno za postavljanje i verifikaciju i ${gbpOsnovnaCena} evra mesečno za vođenje. Pet poslovnica znači pet profila, jer svaki nosi svoje objave, svoje recenzije i svoje fotografije. Profili koji su već uredni i verifikovani ne plaćaju postavljanje. Paušalna cena za celu firmu bi značila da neki profili ne dobijaju rad.`,
   },
   {
     q: 'Šta je najčešći uzrok suspenzije profila kod lanaca?',
@@ -414,7 +414,7 @@ export default function GbpViseLokacijaPage() {
                 Kako mi to naplaćujemo
               </h2>
               <p className="leading-relaxed">
-                Po profilu, {gbpOsnovnaCena} evra mesečno za jedan. Pet poslovnica znači pet profila i pet puta toliko. Nije stvar u cenovniku nego u tome da svaki profil nosi svoje objave, svoje recenzije i svoje fotografije. Paušalna cena za celu firmu bi u praksi značila da neki profili dobijaju rad a neki ne, i uvek su to oni manji.
+                Po profilu: {gbpPostavkaCena} evra jednokratno za postavljanje i verifikaciju i {gbpOsnovnaCena} evra mesečno za vođenje. Pet poslovnica znači pet profila i pet puta toliko. Profil koji je već uredan i verifikovan ne plaća postavljanje, pa se kod lanaca obično plati samo za one koji stvarno nisu podešeni. Nije stvar u cenovniku nego u tome da svaki profil nosi svoje objave, svoje recenzije i svoje fotografije. Paušalna cena za celu firmu bi u praksi značila da neki profili dobijaju rad a neki ne, i uvek su to oni manji.
               </p>
               <p className="leading-relaxed">
                 Ako vodite lanac ili franšizu i niste sigurni u kakvom su stanju vaši profili, pošaljite nam spisak lokacija. Pogledaćemo svaki profil i reći vam koji su duplikati, gde je naziv rizičan, gde radno vreme nije tačno i gde profil vodi na pogrešnu stranicu. To je besplatno i ne obavezuje ni na šta.

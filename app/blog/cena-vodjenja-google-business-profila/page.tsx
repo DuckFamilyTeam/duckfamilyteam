@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
-import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
+import { gbpOsnovnaCena, gbpPostavkaCena } from '@/lib/cenaPodaci'
 
 export const metadata: Metadata = {
   title: { absolute: 'Cena vođenja Google Business Profila u Srbiji' },
@@ -95,7 +95,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Koliko košta vođenje Google Business Profila?',
-    a: `Kod nas je cena fiksna, ${gbpOsnovnaCena} evra mesečno, i uključuje osam objava, osam fotografija, odgovaranje na sve recenzije i tekuću optimizaciju profila. Firme sa više lokacija dobijaju predlog po profilu.`,
+    a: `Kod nas je cena razdvojena na dve stavke. Postavljanje i verifikacija profila su ${gbpPostavkaCena} evra, jednom na početku. Mesečno vođenje je ${gbpOsnovnaCena} evra i uključuje dve objave i jednu fotografiju nedeljno i odgovaranje na sve recenzije. Firme sa više lokacija dobijaju predlog po profilu.`,
   },
   {
     q: 'Kada se isplati samostalno voditi profil, a kada platiti nekom drugom?',
@@ -252,7 +252,7 @@ export default function CenaVodjenjaGbpPage() {
                   <strong className="text-wine-text uppercase text-xs md:text-sm tracking-widest block mb-2">
                     Naš broj, ne prosek
                   </strong>
-                  Mi vođenje Google Business profila naplaćujemo {gbpOsnovnaCena} evra mesečno, a u tu cenu ulazi osam objava mesečno, osam fotografija, odgovaranje na sve recenzije i tekuća optimizacija profila. Ako negde vidite nižu cenu, prvo proverite da li su unutra iste stavke. Ako je cena viša, isto pravilo važi.
+                  Kod nas se postavljanje i verifikacija profila plaćaju jednom, {gbpPostavkaCena} evra, a mesečno vođenje je {gbpOsnovnaCena} evra i u njega ulaze dve objave i jedna fotografija nedeljno i odgovaranje na sve recenzije. Ako negde vidite nižu cenu, prvo proverite da li su unutra iste stavke, i da li je početno podešavanje profila uračunato ili se naplaćuje posebno. Ako je cena viša, isto pravilo važi.
                 </p>
               </div>
               <p className="leading-relaxed text-sm">
@@ -284,14 +284,14 @@ export default function CenaVodjenjaGbpPage() {
                 Kako mi naplaćujemo
               </h2>
               <p className="leading-relaxed">
-                Najčešće pitanje glasi otprilike ovako: cena gbp mesečno, koliko košta gbp, dajte mi konačan broj. Naša cena za vođenje Google Business Profila je fiksna, {gbpOsnovnaCena} evra mesečno, bez obzira na to koliko recenzija tog meseca stigne ili koliko posla ima oko fotografija. U tu cenu ulazi sledeće.
+                Najčešće pitanje glasi otprilike ovako: cena gbp mesečno, koliko košta gbp, dajte mi konačan broj. Kod nas su to dva broja, jer su i dva različita posla. Postavljanje i verifikacija profila su {gbpPostavkaCena} evra i plaćaju se jednom, na početku. Mesečno vođenje je fiksnih {gbpOsnovnaCena} evra, bez obzira na to koliko recenzija tog meseca stigne ili koliko posla ima oko fotografija. U mesečnu cenu ulazi sledeće.
               </p>
               <ul className="space-y-3 pl-6 list-none">
                 {[
-                  { e: 'Osam objava mesečno', d: 'Planiranih tako da prate ono što se stvarno dešava u vašem poslu, ne generički tekst.' },
-                  { e: 'Osam fotografija', d: 'Iz materijala koji nam pošaljete ili koje sami napravimo na licu mesta, po dogovoru.' },
+                  { e: 'Dve objave nedeljno', d: 'Planiranih tako da prate ono što se stvarno dešava u vašem poslu, ne generički tekst.' },
+                  { e: 'Jedna fotografija nedeljno', d: 'Iz materijala koji nam pošaljete ili koje sami napravimo na licu mesta, po dogovoru.' },
                   { e: 'Odgovaranje na sve recenzije', d: 'Pozitivne i negativne, u roku koji ne ostavlja klijenta da čeka danima.' },
-                  { e: 'Tekuća optimizacija', d: 'Kategorije, atributi, opis profila, sve ono što se ne vidi na prvi pogled, a utiče na to da li se profil uopšte pojavljuje kad neko pretražuje u vašoj okolini.' },
+                  { e: 'Mesečni izveštaj', d: 'Pregledi profila, pozivi i klikovi na navigaciju, da se vidi da li rad daje rezultat.' },
                 ].map((item) => (
                   <li key={item.e} className="flex items-start gap-3">
                     <span className="text-wine-text font-bold text-xl leading-none shrink-0 mt-1">✓</span>

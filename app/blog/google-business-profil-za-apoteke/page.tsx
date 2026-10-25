@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NewsletterForm from '@/components/NewsletterForm'
 import Potpis from '@/components/Potpis'
-import { gbpOsnovnaCena } from '@/lib/cenaPodaci'
+import { gbpOsnovnaCena, gbpPostavkaCena } from '@/lib/cenaPodaci'
 
 export const metadata: Metadata = {
   title: { absolute: 'Google Business Profile za apoteke' },
@@ -383,7 +383,7 @@ export default function GbpZaApotekePage() {
                 </li>
               </ul>
               <p className="leading-relaxed">
-                Vođenje jednog profila kod nas košta {gbpOsnovnaCena} evra mesečno. Ako imate više apoteka, cena se računa po profilu, jer svaki nosi svoje radno vreme, svoje recenzije i svoje objave. O tome detaljnije u tekstu o{' '}
+                Postavljanje i verifikacija profila su {gbpPostavkaCena} evra, jednom na početku, a vođenje {gbpOsnovnaCena} evra mesečno. Ako imate više apoteka, cena se računa po profilu, jer svaki nosi svoje radno vreme, svoje recenzije i svoje objave. O tome detaljnije u tekstu o{' '}
                 <Link href="/blog/google-business-profil-vise-lokacija" className="text-wine-text underline hover:no-underline">profilima za firme sa više lokacija</Link>.
               </p>
             </div>
