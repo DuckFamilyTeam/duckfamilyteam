@@ -3,14 +3,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { adsVodjenjeCena } from '@/lib/cenaPodaci'
+import { adsVodjenjeCena, adsStavke, analizaOpcije } from '@/lib/cenaPodaci'
+
+const adsPostavkaCena = adsStavke.find((s) => s.id === 'postavka')!.cena
+const adsGa4Cena = adsStavke.find((s) => s.id === 'ga4-konekcija')!.cena
+const adsGbpCena = adsStavke.find((s) => s.id === 'gbp-konekcija')!.cena
+const analizaPuna = analizaOpcije.find((a) => a.id === 'puna')!.cena
+const analizaAktivne = analizaOpcije.find((a) => a.id === 'aktivne')!.cena
 import PodvucenaRec from '@/components/PodvucenaRec'
 import PotezRazdelnik from '@/components/PotezRazdelnik'
 
 export const metadata: Metadata = {
   title: 'Google Ads marketing i kampanje',
   description:
-    'Google Ads kampanje fokusirane na pozive i konverzije, ne na broj klikova. Smart Bidding, remarketing, mesečno vođenje 200 evra. Besplatna konsultacija.',
+    `Google Ads kampanje fokusirane na pozive i konverzije, ne na broj klikova. Smart Bidding, remarketing, mesečno vođenje ${adsVodjenjeCena} evra. Besplatna konsultacija.`,
   keywords: [
     'Google Ads marketing',
     'Google Ads kampanje',
@@ -81,7 +87,7 @@ const faqSchema = {
       name: 'Koliko košta vođenje Google Ads kampanja?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mesečno vođenje Google Ads kampanja košta 200 evra. U to spada svakodnevno praćenje, podešavanje ponuda i mesečni izveštaj sa konkretnim brojkama. Jednokratna postavka kampanje, bez mesečnog vođenja, košta 70 evra po kampanji.',
+        text: `Mesečno vođenje Google Ads kampanja košta ${adsVodjenjeCena} evra. U to spada svakodnevno praćenje, podešavanje ponuda i mesečni izveštaj sa konkretnim brojkama. Jednokratna postavka kampanje, bez mesečnog vođenja, košta ${adsPostavkaCena} evra po kampanji.`,
       },
     },
     {
@@ -313,12 +319,12 @@ export default function GoogleAdsPage() {
             </h2>
             <div className="border border-ink-border rounded-2xl overflow-hidden">
               {[
-                ['Mesečno vođenje Google Ads kampanja', '200 evra mesečno'],
-                ['Jednokratna postavka kampanje, bez mesečnog vođenja', '70 evra po kampanji'],
-                ['Detaljna analiza naloga, sa istorijom kampanja i proverom konverzija', '200 evra'],
-                ['Detaljna analiza naloga, samo trenutne aktivne kampanje', '100 evra'],
-                ['Povezivanje GA4 sa Google Ads nalogom', '50 evra'],
-                ['Povezivanje Google Business profila sa Google Ads nalogom', '50 evra'],
+                ['Mesečno vođenje Google Ads kampanja', `${adsVodjenjeCena} evra mesečno`],
+                ['Jednokratna postavka kampanje, bez mesečnog vođenja', `${adsPostavkaCena} evra po kampanji`],
+                ['Detaljna analiza naloga, sa istorijom kampanja i proverom konverzija', `${analizaPuna} evra`],
+                ['Detaljna analiza naloga, samo trenutne aktivne kampanje', `${analizaAktivne} evra`],
+                ['Povezivanje GA4 sa Google Ads nalogom', `${adsGa4Cena} evra`],
+                ['Povezivanje Google Business profila sa Google Ads nalogom', `${adsGbpCena} evra`],
               ].map(([label, price], i) => (
                 <div
                   key={label}

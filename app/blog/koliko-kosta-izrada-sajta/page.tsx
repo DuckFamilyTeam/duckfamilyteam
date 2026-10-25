@@ -10,6 +10,7 @@ import {
   formatEvra,
   mesecnoOdrzavanje,
   napomenaODomenu,
+  napomenaOHostingu,
   rokovi,
   sajtCenaMax,
   sajtCenaMin,
@@ -135,7 +136,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Koliko košta održavanje sajta mesečno?',
-    a: `Hosting i održavanje kod nas koštaju ${mesecnoOdrzavanje} evra mesečno, posebno od jednokratne cene izrade. U to ulaze do tri izmene mesečno i redovna kontrola da sajt radi.`,
+    a: `Održavanje kod nas košta ${mesecnoOdrzavanje} evra mesečno, posebno od jednokratne cene izrade. U to ulaze do tri izmene mesečno i redovna kontrola da sajt radi. Hosting i domen plaćate vi, direktno provajderu, i nisu u toj ceni.`,
   },
 ]
 
@@ -332,7 +333,7 @@ export default function KolikoKostaIzradaSajtaPage() {
               </div>
               <p className="leading-relaxed">
                 Posle izrade ide{' '}
-                <strong className="text-ink-text font-medium">{mesecnoOdrzavanje} evra mesečno za hosting i održavanje</strong>, sa do tri izmene mesečno. Domen je odvojena stavka. {napomenaODomenu}
+                <strong className="text-ink-text font-medium">{mesecnoOdrzavanje} evra mesečno za održavanje</strong>, sa do tri izmene mesečno. Hosting i domen su odvojene stavke i plaćate ih vi. {napomenaOHostingu} {napomenaODomenu}
               </p>
             </div>
 
@@ -393,10 +394,10 @@ export default function KolikoKostaIzradaSajtaPage() {
                 Kratak rezime
               </h2>
               <p className="leading-relaxed">
-                Cenu sajta razložite na izradu, domen, hosting sa održavanjem i sadržaj, i tražite iznos za prvu i za svaku sledeću godinu. Izradu najviše pomeraju delatnost, funkcije, sadržaj i rok.
+                Cenu sajta razložite na izradu, domen, hosting, održavanje i sadržaj, i tražite iznos za prvu i za svaku sledeću godinu. Izradu najviše pomeraju delatnost, funkcije, sadržaj i rok.
               </p>
               <p className="leading-relaxed">
-                Kod nas izrada košta od {sajtCenaMin} do {sajtCenaMax} evra plus izabrani dodaci, a hosting i održavanje {mesecnoOdrzavanje} evra mesečno. Domen je vaš i registruje se na vas. Tačan iznos za vaš slučaj izbacuje{' '}
+                Kod nas izrada košta od {sajtCenaMin} do {sajtCenaMax} evra plus izabrani dodaci, a održavanje {mesecnoOdrzavanje} evra mesečno. Hosting plaćate direktno provajderu, a domen je vaš i registruje se na vas. Tačan iznos za vaš slučaj izbacuje{' '}
                 <Link href="/cene" className="text-wine-text hover:text-ink-text font-medium">kalkulator cena</Link>, za minut.
               </p>
             </div>

@@ -6,6 +6,13 @@
  *
  * Cene vezane za izradu sajta (tipoviBiznisa, dodaciSajt, mesecnoOdrzavanje)
  * su 2026-09-06 snižene za 39% u odnosu na prvobitni predlog.
+ *
+ * 2026-10-25: Google Ads vođenje 200 -> 150 evra. Google Business profil
+ * razdvojen na jednokratnu postavku sa verifikacijom (100) i mesečno vođenje
+ * (100 -> 50), uz manji obim: 2 objave i 1 fotografija nedeljno umesto
+ * 8 objava i 8 fotografija mesečno. Paket 300 -> 180: morao je da padne ispod
+ * zbira tri pojedinačne stavke (150 + 50 + 30 = 230), a 180 daje uštedu od
+ * 50 evra mesečno, dovoljno vidljivu da paket ima razlog da postoji.
  */
 
 export type TipBiznisa = {
@@ -116,6 +123,14 @@ export const mesecnoOdrzavanje = 30
 export const napomenaODomenu =
   'Domen kupujemo mi u vaše ime i registrujemo na vaš biznis, po ceni koja je aktuelna u tom trenutku. Osmišljavanje imena i povezivanje je besplatno.'
 
+/**
+ * Hosting nije naša stavka: plaća ga klijent direktno provajderu. `mesecnoOdrzavanje`
+ * je samo održavanje. Do 2026-10-25 je na pet mesta pisalo „hosting i održavanje“,
+ * što je čitaocu govorilo da je hosting uračunat.
+ */
+export const napomenaOHostingu =
+  'Hosting plaćate vi, direktno provajderu, isto kao i domen. Mi naplaćujemo samo održavanje sajta.'
+
 // ── Google Ads ──────────────────────────────────────────────────────────────
 
 export type AdsStavka = {
@@ -130,7 +145,7 @@ export type AdsStavka = {
 }
 
 export const adsStavke: AdsStavka[] = [
-  { id: 'vodjenje', naziv: 'Mesečno vođenje Google Ads kampanja', cena: 200, ucestalost: 'mesecno', podrazumevano: true },
+  { id: 'vodjenje', naziv: 'Mesečno vođenje Google Ads kampanja', cena: 150, ucestalost: 'mesecno', podrazumevano: true },
   { id: 'postavka', naziv: 'Jednokratna postavka kampanje (bez mesečnog vođenja)', cena: 70, ucestalost: 'jednokratno', brojac: true },
   { id: 'ga4-konekcija', naziv: 'Povezivanje GA4 sa Ads nalogom', cena: 50, ucestalost: 'jednokratno' },
   { id: 'gbp-konekcija', naziv: 'Povezivanje Google Business profila sa Ads nalogom', cena: 50, ucestalost: 'jednokratno' },
@@ -142,7 +157,7 @@ export const adsStavke: AdsStavka[] = [
  * u različite brojeve kad se cenovnik promeni.
  */
 export const adsVodjenjeCena =
-  adsStavke.find((s) => s.id === 'vodjenje')?.cena ?? 200
+  adsStavke.find((s) => s.id === 'vodjenje')?.cena ?? 150
 
 export type AnalizaOpcija = {
   id: 'bez' | 'puna' | 'aktivne'
@@ -158,19 +173,25 @@ export const analizaOpcije: AnalizaOpcija[] = [
 
 // ── Google Business Profil ──────────────────────────────────────────────────
 
-export const gbpOsnovnaCena = 100
+/** Jednokratno, na početku saradnje. Naplaćuje se i bez mesečnog vođenja. */
+export const gbpPostavkaCena = 100
+export const gbpPostavkaOpis =
+  'Postavljanje i verifikacija profila, kategorije, usluge, opis, radno vreme i atributi'
+
+/** Mesečno vođenje jednog profila. Za više lokacija se računa po profilu. */
+export const gbpOsnovnaCena = 50
 export const gbpOsnovniOpis =
-  '8 objava i 8 fotografija mesečno, odgovaranje na recenzije, optimizacija profila'
+  '2 objave i 1 fotografija nedeljno, odgovaranje na sve recenzije'
 
 export const gbpDodatak = {
-  naziv: 'Pojačano objavljivanje (16 umesto 8 objava mesečno)',
+  naziv: 'Pojačano objavljivanje (4 objave i 2 fotografije nedeljno)',
   cena: 50,
 }
 
 // ── Sve na jednom mestu ──────────────────────────────────────────────────────
 
 export const paketSveNaJednomMestu = {
-  cena: 300,
+  cena: 180,
   opis: 'Kompletno vođenje: Google Ads, Google Business profil i sajt, sva odgovornost na nama.',
 }
 

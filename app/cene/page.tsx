@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CenaKalkulator from '@/components/cene/CenaKalkulator'
+import { adsVodjenjeCena } from '@/lib/cenaPodaci'
 import PodvucenaRec from '@/components/PodvucenaRec'
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ const faqSchema = {
       name: 'Šta je uključeno u mesečno vođenje Google Ads kampanja?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vođenje Google Ads kampanja, 200 evra mesečno. U to spada svakodnevno praćenje, podešavanje ponuda i mesečni izveštaj sa konkretnim brojkama.',
+        text: `Vođenje Google Ads kampanja, ${adsVodjenjeCena} evra mesečno. U to spada svakodnevno praćenje, podešavanje ponuda i mesečni izveštaj sa konkretnim brojkama.`,
       },
     },
     {
