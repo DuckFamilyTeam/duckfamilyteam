@@ -10,8 +10,9 @@
  * 2026-10-25: Google Ads vođenje 200 -> 150 evra. Google Business profil
  * razdvojen na jednokratnu postavku sa verifikacijom (100) i mesečno vođenje
  * (100 -> 50), uz manji obim: 2 objave i 1 fotografija nedeljno umesto
- * 8 objava i 8 fotografija mesečno. Paket 300 -> 200, jer bi inače ispao
- * skuplji od tri pojedinačne stavke (150 + 50 + 30 = 230).
+ * 8 objava i 8 fotografija mesečno. Paket 300 -> 180: morao je da padne ispod
+ * zbira tri pojedinačne stavke (150 + 50 + 30 = 230), a 180 daje uštedu od
+ * 50 evra mesečno, dovoljno vidljivu da paket ima razlog da postoji.
  */
 
 export type TipBiznisa = {
@@ -190,7 +191,7 @@ export const gbpDodatak = {
 // ── Sve na jednom mestu ──────────────────────────────────────────────────────
 
 export const paketSveNaJednomMestu = {
-  cena: 200,
+  cena: 180,
   opis: 'Kompletno vođenje: Google Ads, Google Business profil i sajt, sva odgovornost na nama.',
 }
 
