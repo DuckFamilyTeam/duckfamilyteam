@@ -70,7 +70,10 @@ export default function Testimonials({ recenzije }: { recenzije: GoogleReview[] 
                   </svg>
                 ))}
               </div>
-              <p className="text-ink-text text-[15px] leading-relaxed relative">{r.tekst}</p>
+              {/* 16px na telefonu, 15px od md nadalje kao i do sada. */}
+              <p className="text-ink-text text-base md:text-[15px] leading-relaxed relative">
+                {r.tekst}
+              </p>
               <div className="flex items-center gap-3 mt-auto pt-4 border-t border-ink-border">
                 <span
                   aria-hidden="true"
@@ -92,9 +95,13 @@ export default function Testimonials({ recenzije }: { recenzije: GoogleReview[] 
             href={googleReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-ink-muted hover:text-ink-text border-b border-ink-border pb-1 transition-colors"
+            // Meta za dodir: izmereno 23,2px na 390px. Podvlaka ostaje uz sam
+            // tekst (unutrasnji span), a link dobija 44px visine oko njega.
+            className="inline-flex items-center min-h-[44px] text-sm text-ink-muted hover:text-ink-text transition-colors"
           >
-            Pogledajte sve recenzije na Google-u →
+            <span className="border-b border-ink-border pb-1">
+              Pogledajte sve recenzije na Google-u →
+            </span>
           </a>
         </p>
       </div>

@@ -78,7 +78,8 @@ export default function Footer({
             <a
               href="tel:+381643877524"
               onClick={() => trackPhoneClick('futer')}
-              className="block font-display font-medium text-2xl md:text-4xl hover:text-wine-text transition tracking-tight"
+              // flex + min-h 44px umesto `block`: izmereno 32px na 390px.
+              className="flex items-center min-h-[44px] font-display font-medium text-2xl md:text-4xl hover:text-wine-text transition tracking-tight"
             >
               +381 64 387 7524
             </a>
@@ -86,7 +87,8 @@ export default function Footer({
             <a
               href="mailto:stankovic.s.nikola@gmail.com"
               onClick={() => trackEmailClick('futer')}
-              className="block text-lg md:text-2xl font-medium hover:text-wine-text transition break-all"
+              // flex + min-h 44px umesto `block`: izmereno 28px na 390px.
+              className="flex items-center min-h-[44px] text-lg md:text-2xl font-medium hover:text-wine-text transition break-all"
             >
               stankovic.s.nikola@gmail.com
             </a>
@@ -101,7 +103,7 @@ export default function Footer({
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-wine-text hover:text-ink-text transition font-medium text-sm"
+                className="inline-flex items-center min-h-[44px] gap-2 text-wine-text hover:text-ink-text transition font-medium text-sm"
               >
                 Pogledaj nas na Google mapi
                 <svg
@@ -124,7 +126,7 @@ export default function Footer({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={trackReviewClick}
-                className="inline-flex items-center gap-2 text-wine-text hover:text-ink-text transition font-medium text-sm"
+                className="inline-flex items-center min-h-[44px] gap-2 text-wine-text hover:text-ink-text transition font-medium text-sm"
               >
                 Ostavite recenziju
                 <svg
@@ -143,6 +145,17 @@ export default function Footer({
                 </svg>
               </a>
             </div>
+            {/* Radno vreme mora znak za znak da odgovara Google Business profilu
+                (svih sedam dana 09:00-22:00) — posetilac koji vidi jedno vreme na
+                mapi a drugo na sajtu ne zna kad da pozove. Stoji ispod adresnog
+                bloka, a ne između adrese i njenih linkova za mapu, da ti linkovi
+                ne bi izgledali kao da pripadaju radnom vremenu. */}
+            <p className="font-mono text-ink-muted pt-6 text-xs uppercase tracking-widest">
+              Radno vreme
+            </p>
+            <p className="text-lg md:text-xl font-medium text-ink-text">
+              Svaki dan, 09:00–22:00
+            </p>
           </div>
         </div>
 
@@ -171,22 +184,31 @@ export default function Footer({
       <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-ink-border flex flex-col md:flex-row justify-between items-center gap-6 text-ink-muted text-xs font-mono uppercase tracking-widest text-center">
         <p>© {godina} Nikola Stanković, Duck Family Team. Sva prava zadržana.</p>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
-          <Link href="/" className="hover:text-ink-text transition">
+          {/* Svih šest stavki donjeg reda je na 390px merilo 16px visine.
+              `inline-flex items-center min-h-[44px]` im daje metu za dodir po
+              WCAG 2.2, bez promene tipografije i rasporeda. */}
+          <Link href="/" className="inline-flex items-center min-h-[44px] hover:text-ink-text transition">
             Početna
           </Link>
-          <Link href="/blog" className="hover:text-ink-text transition">
+          <Link href="/blog" className="inline-flex items-center min-h-[44px] hover:text-ink-text transition">
             Blog
           </Link>
-          <Link href="/politika-privatnosti" className="hover:text-ink-text transition">
+          <Link
+            href="/politika-privatnosti"
+            className="inline-flex items-center min-h-[44px] hover:text-ink-text transition"
+          >
             Privatnost
           </Link>
-          <Link href="/politika-kolacica" className="hover:text-ink-text transition">
+          <Link
+            href="/politika-kolacica"
+            className="inline-flex items-center min-h-[44px] hover:text-ink-text transition"
+          >
             Kolačići
           </Link>
           <button
             type="button"
             onClick={openCookieSettings}
-            className="uppercase tracking-widest hover:text-ink-text transition"
+            className="inline-flex items-center min-h-[44px] uppercase tracking-widest hover:text-ink-text transition"
           >
             Podešavanja kolačića
           </button>
@@ -194,7 +216,7 @@ export default function Footer({
             href="https://www.instagram.com/duckfamilyteam/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-ink-text transition"
+            className="inline-flex items-center min-h-[44px] hover:text-ink-text transition"
           >
             Instagram
           </a>

@@ -230,6 +230,12 @@ export default function ContactForm() {
           podvlačenja link je nevidljiv daltonistima. Nalaz Lighthouse audita `link-in-text-block`,
           2026-08-19.
         */}
+        {/*
+          Link namerno ostaje inline, bez 44px mete za dodir. WCAG 2.2 (2.5.8, Target Size)
+          izričito izuzima mete koje su unutar rečenice i ograničene visinom reda. Probali
+          smo `inline-flex min-h-[44px]`: na 390px razvlači red usred rečenice i pravi
+          vidljivu rupu između dva reda ovog pasusa.
+        */}
         <Link href="/politika-privatnosti" className="text-wine-text underline hover:text-ink-text transition">
           politiku privatnosti
         </Link>

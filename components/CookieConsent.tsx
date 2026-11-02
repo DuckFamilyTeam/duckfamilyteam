@@ -119,6 +119,9 @@ export default function CookieConsent() {
               // Bez prefetch-a: baner je u kadru na svakoj prvoj poseti, pa bi se
               // /politika-kolacica preuzimala svaki put, pre nego što posetilac išta klikne.
               prefetch={false}
+              // Link namerno ostaje inline, bez 44px mete za dodir. WCAG 2.2 (2.5.8)
+              // izuzima mete unutar rečenice ograničene visinom reda. Probali smo
+              // `inline-flex min-h-[44px]`: na 390px razvlači red usred rečenice u baneru.
               className="text-wine-text hover:text-ink-text transition underline underline-offset-2"
             >
               Više o kolačićima

@@ -33,7 +33,8 @@ export default function GoogleRating({ summary }: { summary: GoogleReviewsSummar
       href={googleReviewsUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-3 bg-ink-surface border border-ink-border hover:border-wine-text rounded-full pl-4 pr-5 py-2.5 transition-colors"
+      // min-h 44px: bedz je merio 41,6px na 390px, tik ispod mete za dodir.
+      className="inline-flex items-center min-h-[44px] gap-3 bg-ink-surface border border-ink-border hover:border-wine-text rounded-full pl-4 pr-5 py-2.5 transition-colors"
     >
       <span className="flex items-center gap-0.5" aria-hidden="true">
         {[1, 2, 3, 4, 5].map((zvezdica) => (

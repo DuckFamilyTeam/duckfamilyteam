@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CookieSettingsButton from '@/components/CookieSettingsButton'
+import { GA_MEASUREMENT_ID } from '@/lib/analytics'
 
 const url = 'https://www.duckfamilyteam.online/politika-kolacica'
 
@@ -30,6 +31,12 @@ const breadcrumbSchema = {
 
 const AZURIRANO = '27. septembar 2026.'
 
+// GA4 ne pravi kolačić sa proizvoljnim imenom: uvek je `_ga_` + merni ID bez
+// prefiksa `G-`. Naziv se zato sastavlja iz GA_MEASUREMENT_ID umesto da se
+// prepisuje rukom — tabela i stvarni kolačić u browseru ne mogu više da se
+// raziđu kad se merni ID jednog dana promeni.
+const ga4SesijskiKolacic = `_ga_${GA_MEASUREMENT_ID.replace(/^G-/, '')}`
+
 const kolacici = [
   {
     naziv: 'cookie_consent',
@@ -38,7 +45,7 @@ const kolacici = [
     trajanje: 'Dok ga ne obrišete iz browsera',
   },
   {
-    naziv: '_ga, _ga_HW9597T7Y7',
+    naziv: `_ga, ${ga4SesijskiKolacic}`,
     vrsta: 'Analitički (Google Analytics 4)',
     svrha:
       'Razlikuje posetioce i sesije, da bismo videli koje stranice se čitaju i odakle ljudi dolaze.',

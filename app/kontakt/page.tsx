@@ -99,6 +99,11 @@ export default function KontaktPage() {
                 <p className="font-mono text-ink-muted text-xs uppercase tracking-widest mb-2">Adresa</p>
                 <p className="text-xl font-medium">Porodice Josipović 2, Sremčica, Beograd</p>
               </div>
+              {/* Isto radno vreme kao na Google Business profilu i u futeru. */}
+              <div>
+                <p className="font-mono text-ink-muted text-xs uppercase tracking-widest mb-2">Radno vreme</p>
+                <p className="text-xl font-medium">Svaki dan, 09:00–22:00</p>
+              </div>
             </div>
 
             <div className="bg-ink-surface border border-ink-border rounded-2xl p-8">

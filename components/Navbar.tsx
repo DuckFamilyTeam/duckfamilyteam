@@ -81,7 +81,13 @@ export default function Navbar() {
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0 group" onClick={closeMobile}>
+          {/* min-h 44px: logo-link je merio 40px visine na 390px. Traka ne
+              raste, jer je hamburger pored njega već 44px. */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 flex-shrink-0 group min-h-[44px]"
+            onClick={closeMobile}
+          >
             <span className="bg-ink-text rounded-xl p-1 flex-shrink-0 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
               <Image
                 src="/img/logo-za-nasu-agenciju.png"
@@ -176,7 +182,9 @@ export default function Navbar() {
           {/* Hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="lg:hidden text-2xl text-ink-text p-1 flex-shrink-0 rounded"
+            // min-h/min-w 44px: izmereno 26px visine na 390px, ispod WCAG 2.2
+            // mete za dodir. Trake ostaju iste, samo dobijaju okvir oko sebe.
+            className="lg:hidden text-2xl text-ink-text p-1 flex-shrink-0 rounded min-h-[44px] min-w-[44px] flex flex-col items-center justify-center"
             aria-label={mobileOpen ? 'Zatvori meni' : 'Otvori meni'}
             aria-expanded={mobileOpen}
             aria-controls="mobilni-meni"

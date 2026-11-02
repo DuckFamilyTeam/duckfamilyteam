@@ -209,11 +209,16 @@ export default async function Home() {
                   data-hero-in
                   style={{ '--d': '300ms' } as React.CSSProperties}
                 >
+                  {/* Meta za dodir: izmereno 25px na 390px. Podvlaka ostaje uz
+                      sam tekst (unutrašnji span), a link dobija 44px visine oko
+                      njega — min-h na samom linku bi odvojio liniju od teksta. */}
                   <Link
                     href="/rezultati"
-                    className="text-ink-muted hover:text-ink-text border-b border-ink-border pb-1 transition-colors"
+                    className="inline-flex items-center min-h-[44px] text-ink-muted hover:text-ink-text transition-colors"
                   >
-                    Pogledaj rezultate klijenata
+                    <span className="border-b border-ink-border pb-1">
+                      Pogledaj rezultate klijenata
+                    </span>
                   </Link>
                 </div>
 
@@ -236,7 +241,7 @@ export default async function Home() {
                   <div className="font-display font-semibold text-3xl text-wine-text leading-none">
                     306%
                   </div>
-                  <p className="text-xs text-ink-muted leading-relaxed">
+                  <p className="text-base md:text-xs text-ink-muted leading-relaxed">
                     <strong className="text-ink-text font-medium">Mobilni Vulkanizer Milan.</strong>{' '}
                     Povraćaj na uloženo za pet meseci, naš obračun na osnovu brojki klijenta.{' '}
                     <span className="text-wine-text group-hover:text-ink-text transition-colors">
@@ -329,15 +334,18 @@ export default async function Home() {
                         {u.naslov}
                       </h3>
                       <p
+                        // Na telefonu je telo teksta bilo 14px; `text-base md:text-sm`
+                        // diže mobilnu veličinu na 16px a od md nadalje ostavlja 14px
+                        // kakvo je i bilo.
                         className={`text-ink-muted leading-relaxed ${
-                          glavna ? 'text-base md:text-lg max-w-md' : 'text-sm'
+                          glavna ? 'text-base md:text-lg max-w-md' : 'text-base md:text-sm'
                         }`}
                       >
                         {u.opis}
                       </p>
                     </div>
                     {glavna && (
-                      <p className="font-mono text-sm text-ink-text mt-8">
+                      <p className="font-mono text-base md:text-sm text-ink-text mt-8">
                         Mesečno vođenje <span className="text-wine-text">{formatEvra(adsVodjenjeCena)}</span>
                         <span className="text-ink-muted"> · </span>
                         postavka kampanje <span className="text-wine-text">{formatEvra(pocetnaPostavkaCena)}</span>
@@ -404,7 +412,10 @@ export default async function Home() {
                   </div>
                   <div className="pt-2">
                     <h3 className="font-display font-medium text-lg text-ink-text mb-2">{item.t}</h3>
-                    <p className="text-ink-muted text-[15px] leading-relaxed max-w-2xl">{item.d}</p>
+                    {/* 16px na telefonu, 15px od md nadalje kao i do sada. */}
+                    <p className="text-ink-muted text-base md:text-[15px] leading-relaxed max-w-2xl">
+                      {item.d}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -486,8 +497,15 @@ export default async function Home() {
               <p className="text-ink-muted leading-relaxed mb-6">
                 Svaku kampanju i svaki sajt radimo nas dvoje lično, ne prosleđujemo vaš nalog nepoznatom timu.
               </p>
-              <Link href="/o-nama" className="text-ink-text hover:text-wine-text transition-colors font-medium border-b border-ink-border pb-1">
-                Upoznajte nas <span className="arrow-fx">→</span>
+              {/* Meta za dodir: izmereno 25px na 390px (vidi i „Pogledaj rezultate
+                  klijenata" u hero sekciji — isti obrazac). */}
+              <Link
+                href="/o-nama"
+                className="inline-flex items-center min-h-[44px] text-ink-text hover:text-wine-text transition-colors font-medium"
+              >
+                <span className="border-b border-ink-border pb-1">
+                  Upoznajte nas <span className="arrow-fx">→</span>
+                </span>
               </Link>
             </AnimatedSection>
           </div>
@@ -526,11 +544,14 @@ export default async function Home() {
                     Marketing bez filtera
                   </h2>
                 </div>
+                {/* Meta za dodir: izmereno 29px na 390px. */}
                 <Link
                   href="/blog"
-                  className="text-ink-text hover:text-wine-text transition-colors font-medium border-b border-ink-border pb-1"
+                  className="inline-flex items-center min-h-[44px] text-ink-text hover:text-wine-text transition-colors font-medium"
                 >
-                  Svi tekstovi <span className="arrow-fx">→</span>
+                  <span className="border-b border-ink-border pb-1">
+                    Svi tekstovi <span className="arrow-fx">→</span>
+                  </span>
                 </Link>
               </div>
             </AnimatedSection>
@@ -562,7 +583,10 @@ export default async function Home() {
                         <span>{post.readTime} čitanja</span>
                       </div>
                       <h3 className="font-display font-medium text-lg mb-3 leading-snug">{post.title}</h3>
-                      <p className="text-ink-muted text-sm leading-relaxed flex-1">{post.excerpt}</p>
+                      {/* 16px na telefonu, 14px od md nadalje kao i do sada. */}
+                      <p className="text-ink-muted text-base md:text-sm leading-relaxed flex-1">
+                        {post.excerpt}
+                      </p>
                       <span className="text-sm font-medium flex items-center gap-2 mt-5">
                         Pročitaj više <span className="arrow-fx">→</span>
                       </span>

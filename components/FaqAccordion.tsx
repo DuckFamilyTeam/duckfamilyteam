@@ -34,7 +34,9 @@ export default function FaqAccordion() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
-          <p className="px-5 md:px-6 pb-5 md:pb-6 text-ink-muted text-sm md:text-base leading-relaxed">
+          {/* `text-base` umesto `text-sm md:text-base`: na telefonu je odgovor bio
+              14px, a `md:` je i ranije bio 16px — od md nadalje se nista ne menja. */}
+          <p className="px-5 md:px-6 pb-5 md:pb-6 text-ink-muted text-base leading-relaxed">
             {faq.answer}
           </p>
         </details>

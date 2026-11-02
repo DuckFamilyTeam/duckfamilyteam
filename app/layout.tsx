@@ -139,6 +139,23 @@ const organizationSchema = {
   },
   hasMap: googleMapsUrl,
   areaServed: 'RS',
+  // Radno vreme je isto kao na Google Business profilu: svih sedam dana
+  // 09:00–22:00. Vreme se na sajtu vidi i u futeru i na /kontakt, pa ta tri
+  // mesta moraju da ostanu identična kad se jednog dana promeni.
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '09:00',
+    closes: '22:00',
+  },
   sameAs: ['https://www.instagram.com/duckfamilyteam/', googleMapsUrl],
   priceRange: '$$',
   serviceType: ['Google Ads', 'Google Business profil', 'Izrada sajtova', 'AI agenti'],

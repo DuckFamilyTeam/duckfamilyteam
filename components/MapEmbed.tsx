@@ -55,7 +55,8 @@ export default function MapEmbed() {
         href="https://www.google.com/maps?cid=13771670212645560743"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-wine-text hover:text-ink-text transition text-xs underline underline-offset-2"
+        // min-h 44px (izmereno 16px): meta za dodir, bez promene tipografije.
+        className="inline-flex items-center min-h-[44px] text-wine-text hover:text-ink-text transition text-xs underline underline-offset-2"
       >
         Ili otvorite mapu u novom tabu
       </a>
