@@ -238,7 +238,7 @@ export default async function Home() {
                   data-hero-in
                   style={{ '--d': '420ms' } as React.CSSProperties}
                 >
-                  <div className="font-display font-semibold text-3xl text-wine-text leading-none">
+                  <div className="font-display font-medium text-3xl text-wine-text leading-none">
                     306%
                   </div>
                   <p className="text-base md:text-xs text-ink-muted leading-relaxed">

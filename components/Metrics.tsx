@@ -45,7 +45,7 @@ export default function Metrics({ metrike }: { metrike: Metrika[] }) {
             const sadrzaj = (
               <>
                 <span
-                  className="block font-display font-semibold text-5xl text-wine-text leading-none tabular-nums"
+                  className="block font-display font-medium text-5xl text-wine-text leading-none tabular-nums"
                   data-count={m.broj}
                   data-decimals={m.decimale ?? 0}
                   data-suffix={m.sufiks ?? ''}

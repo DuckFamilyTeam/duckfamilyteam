@@ -17,9 +17,14 @@ import './globals.css'
 // dekorativnih mesta (brojevi numerisanih listi u blogu, cifra u „step-dot“ na
 // početnoj, ogroman upola providan navodnik u Testimonials) — tamo će sad pasti
 // na najbližu učitanu težinu (500), vizuelno gotovo neprimetno.
+//
+// Težina 600 je 2026-11-02 uklonjena iz istog razloga. Prebrojano pre uklanjanja:
+// `font-display font-semibold` je postojalo na tačno 2 mesta (broj „306%" na
+// početnoj, 30px, i brojevi u Metrics, 48px) naspram 219 mesta na `font-medium`.
+// Oba su prebačena na `font-medium`. Fraunces sada nosi jednu težinu.
 const fraunces = Fraunces({
   subsets: ['latin', 'latin-ext'],
-  weight: ['500', '600'],
+  weight: ['500'],
   variable: '--font-display',
   display: 'swap',
   preload: true,
