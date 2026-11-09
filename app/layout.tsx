@@ -126,8 +126,11 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   '@id': ORGANIZATION_ID,
-  name: 'Duck Family Team - Online Marketing',
-  alternateName: 'Duck Family Team',
+  // Naziv mora da bude identičan nazivu na Google Business profilu, koji je
+  // 20.08.2026 skraćen na „Duck Family Team". Stari, duži oblik ostaje kao
+  // alternateName jer se po njemu ljudi i dalje pretražuju.
+  name: 'Duck Family Team',
+  alternateName: 'Duck Family Team - Online Marketing',
   url: siteUrl,
   logo: `${siteUrl}/img/logo-za-nasu-agenciju.png`,
   image: `${siteUrl}/img/logo-za-nasu-agenciju.png`,
@@ -143,7 +146,13 @@ const organizationSchema = {
     addressCountry: 'RS',
   },
   hasMap: googleMapsUrl,
-  areaServed: 'RS',
+  // Isti oblik kao na stranicama usluga (app/usluge/*), da sve stranice
+  // prijavljuju isto područje. Srbija ostaje, jer se sajtovi rade i van
+  // Beograda; Beograd se dodaje kao lokalni signal.
+  areaServed: [
+    { '@type': 'Country', name: 'Serbia' },
+    { '@type': 'City', name: 'Beograd' },
+  ],
   // Radno vreme je isto kao na Google Business profilu: svih sedam dana
   // 09:00–22:00. Vreme se na sajtu vidi i u futeru i na /kontakt, pa ta tri
   // mesta moraju da ostanu identična kad se jednog dana promeni.
