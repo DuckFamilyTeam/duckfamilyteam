@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/usluge/google-business-profil`,
-      lastModified: new Date('2026-09-28'),
+      lastModified: new Date('2026-11-17'),
       changeFrequency: 'monthly',
       priority: 0.95,
     },
@@ -103,7 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/cena-vodjenja-google-business-profila`,
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-11-17'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
@@ -115,7 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/google-business-profil`,
-      lastModified: new Date('2026-09-27'),
+      lastModified: new Date('2026-11-17'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
