@@ -357,6 +357,7 @@ export default function CenaVodjenjaGbpPage() {
             <h3 className="font-display font-medium text-ink-text mb-4">Povezani tekstovi</h3>
             <ul className="space-y-2">
               <li><Link href="/blog/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">Google Business Profil: vaš najjači, a najčešće zanemareni alat →</Link></li>
+              <li><Link href="/blog/google-business-profil-vise-lokacija" className="text-wine-text hover:text-ink-text font-medium">Google Business profili za firme sa više lokacija →</Link></li>
               <li><Link href="/usluge/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">Vođenje Google Business profila, naša usluga →</Link></li>
             </ul>
           </div>

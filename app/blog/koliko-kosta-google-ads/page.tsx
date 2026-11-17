@@ -9,12 +9,18 @@ import { adsStavke, adsVodjenjeCena } from '@/lib/cenaPodaci'
 
 const adsPostavkaCena = adsStavke.find((s) => s.id === 'postavka')?.cena ?? 70
 
+// Gornja granica potrošnje u mesecu je 30,4 puta prosečan dnevni budžet (pravilo je objašnjeno niže u tekstu).
+const primeriBudzeta = [5, 10, 20].map((dnevni) => {
+  const googleMesecno = Math.round(dnevni * 30.4)
+  return { dnevni, googleMesecno, ukupno: googleMesecno + adsVodjenjeCena }
+})
+
 export const metadata: Metadata = {
   // `budžet` dodat u naslov 2026-10-05: stranica je na poz. 11 za upit `google ads budžet`,
   // a ta reč je dotad postojala samo u opisu, ne i u naslovu (stavka 78).
-  title: 'Koliko košta Google Ads: cena i budžet',
+  title: 'Koliko košta Google Ads: cena oglašavanja i budžet',
   description:
-    'Ne postoji prosečna cena klika za Srbiju. Iz čega se sastoji trošak Google Ads kampanje, kako da izvučete svoju cifru i šta se plaća agenciji.',
+    'Cena Google oglašavanja u Srbiji: dnevni budžet od 10 evra je najviše 304 evra mesečno. Kako se računa budžet i šta se plaća agenciji.',
   alternates: {
     canonical: 'https://www.duckfamilyteam.online/blog/koliko-kosta-google-ads',
   },
@@ -37,7 +43,7 @@ export const metadata: Metadata = {
     url: 'https://www.duckfamilyteam.online/blog/koliko-kosta-google-ads',
     type: 'article',
     publishedTime: '2026-08-19',
-    modifiedTime: '2026-10-08',
+    modifiedTime: '2026-11-17',
     authors: ['Duck Family Team'],
     images: [
       {
@@ -58,7 +64,7 @@ const articleSchema = {
     'Iz čega se sastoji trošak Google Ads kampanje, kako Google naplaćuje klik, kako se izvlači sopstvena procena cene klika i šta se plaća agenciji.',
   image: 'https://www.duckfamilyteam.online/img/blog/koliko-kosta-google-ads.jpg',
   datePublished: '2026-08-19',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-17',
   wordCount: 1900,
   author: {
     '@type': 'Organization',
@@ -203,6 +209,38 @@ export default function KolikoKostaGoogleAdsPage() {
             <p className="leading-relaxed">
               Ali to ne znači da je odgovor magla. Postoji postupak kojim se za konkretnu delatnost i konkretan grad dolazi do cifre koja drži vodu, i taj postupak možete da odradite sami, za dvadesetak minuta, pre nego što bilo kome date novac. U ovom tekstu ga razlažemo korak po korak.
             </p>
+
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">
+                Orijentir mesečne cene
+              </h2>
+              <p className="leading-relaxed">
+                Cena Google oglašavanja zavisi pre svega od budžeta koji sami zadate. Google za mesec ne naplaćuje više od 30,4 puta prosečan dnevni budžet, pa se gornja granica računa odmah. Vođenje kampanje kod nas se plaća odvojeno.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm md:text-base border border-ink-border rounded-xl overflow-hidden">
+                  <thead className="bg-ink-surface text-ink-text">
+                    <tr>
+                      <th className="p-3 md:p-4 font-medium">Dnevni budžet</th>
+                      <th className="p-3 md:p-4 font-medium">Najviše Google-u mesečno</th>
+                      <th className="p-3 md:p-4 font-medium">Uz vođenje kod nas ({adsVodjenjeCena} evra)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {primeriBudzeta.map((r) => (
+                      <tr key={r.dnevni} className="border-t border-ink-border">
+                        <td className="p-3 md:p-4">{r.dnevni} evra</td>
+                        <td className="p-3 md:p-4">{r.googleMesecno} evra</td>
+                        <td className="p-3 md:p-4">{r.ukupno} evra</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="leading-relaxed text-ink-muted">
+                Ovo je gornja granica potrošnje po Google-ovom pravilu, ne preporuka budžeta i ne cena klika. Koliko klikova taj novac kupuje zavisi od delatnosti i grada, a kako da to procenite pokazujemo niže.
+              </p>
+            </div>
 
             <div className="space-y-4 md:space-y-6">
               <h2 className="font-display font-medium text-2xl md:text-3xl lg:text-4xl text-ink-text leading-tight">

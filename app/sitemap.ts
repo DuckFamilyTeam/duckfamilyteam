@@ -109,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/koliko-kosta-google-ads`,
-      lastModified: new Date('2026-10-09'),
+      lastModified: new Date('2026-11-17'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },

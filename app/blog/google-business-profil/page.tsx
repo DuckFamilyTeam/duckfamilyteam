@@ -275,7 +275,8 @@ export default function GoogleBusinessProfilPage() {
               </h2>
               <p className="leading-relaxed">
                 Za srednje i velike firme najveći rizik nije loš profil, već{' '}
-                <strong className="text-wine-text font-medium">nekonzistentni profili</strong> na različitim adresama. Google danas nudi grupno upravljanje (Business Groups) preko kog centralizovano kontrolišete sve lokacije: jedinstven pregled statistike, masovne izmene podataka i podelu pristupa članovima tima po ulogama. Za lance sa deset ili više lokacija tu je i grupna (bulk) verifikacija, koja štedi nedelje administracije.
+                <strong className="text-wine-text font-medium">nekonzistentni profili</strong> na različitim adresama. Google danas nudi grupno upravljanje (Business Groups) preko kog centralizovano kontrolišete sve lokacije: jedinstven pregled statistike, masovne izmene podataka i podelu pristupa članovima tima po ulogama. Za lance sa deset ili više lokacija tu je i grupna (bulk) verifikacija, koja štedi nedelje administracije. Pravila, česte greške i strukturu za lance opisali smo u tekstu o{' '}
+                <Link href="/blog/google-business-profil-vise-lokacija" className="text-wine-text underline hover:no-underline">Google Business profilima za firme sa više lokacija</Link>.
               </p>
               <div className="bg-ink-bg p-5 md:p-8 border-l-4 border-ink-border rounded-r-xl shadow-sm">
                 <p className="text-ink-text m-0">
@@ -340,6 +341,8 @@ export default function GoogleBusinessProfilPage() {
             <ul className="space-y-2">
               <li><Link href="/blog/seo-2026" className="text-wine-text hover:text-ink-text font-medium">SEO u 2026, tematski autoritet i AI pretraga →</Link></li>
               <li><Link href="/blog/ga4-vodic" className="text-wine-text hover:text-ink-text font-medium">GA4 vodič za preduzetnike →</Link></li>
+              <li><Link href="/blog/google-business-profil-vise-lokacija" className="text-wine-text hover:text-ink-text font-medium">Google Business profili za firme sa više lokacija →</Link></li>
+              <li><Link href="/blog/cena-vodjenja-google-business-profila" className="text-wine-text hover:text-ink-text font-medium">Cena vođenja Google Business Profila u Srbiji →</Link></li>
               <li><Link href="/usluge/google-business-profil" className="text-wine-text hover:text-ink-text font-medium">Agencija za Google Business profil: šta radimo i koliko košta →</Link></li>
             </ul>
           </div>

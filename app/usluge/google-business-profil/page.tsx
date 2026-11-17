@@ -263,14 +263,15 @@ export default function GoogleBusinessProfilPage() {
               </div>
             </div>
             <ul className="text-ink-muted leading-relaxed mb-8 max-w-3xl list-disc pl-5 space-y-1">
-              <li>Više lokacija ili poslovnica: cena se računa po profilu, jer svaki nosi svoje objave, recenzije i fotografije. Svaki dodatni profil je +{gbpOsnovnaCena} evra mesečno.</li>
+              <li>Više lokacija ili poslovnica: cena se računa po profilu, jer svaki nosi svoje objave, recenzije i fotografije. Svaki dodatni profil je +{gbpOsnovnaCena} evra mesečno. Kako se takvi profili uređuju bez duplikata i suspenzija pročitajte u tekstu o <Link href="/blog/google-business-profil-vise-lokacija" className="text-wine-text underline hover:no-underline">Google Business profilima za firme sa više lokacija</Link>.</li>
               <li>Pojačano objavljivanje: 4 objave i 2 fotografije nedeljno umesto standardnih 2 i 1, uz doplatu od {gbpDodatak.cena} evra mesečno.</li>
               <li>Ako već imate uredan i verifikovan profil, postavljanje se ne naplaćuje i počinjemo odmah od mesečnog vođenja.</li>
             </ul>
             <p className="text-ink-muted leading-relaxed max-w-3xl">
               Za tačan predlog cene prilagođen vašem biznisu, pogledajte i naš{' '}
               <Link href="/cene" className="text-wine-text underline hover:no-underline">opšti cenovnik</Link>
-              {' '}ili zakažite besplatnu konsultaciju. U razgovoru od 15 minuta dobijate konkretan predlog, bez obaveze.
+              {' '}ili zakažite besplatnu konsultaciju. U razgovoru od 15 minuta dobijate konkretan predlog, bez obaveze. Ako prvo želite da vidite kako profil uopšte radi, pogledajte naš{' '}
+              <Link href="/blog/google-business-profil" className="text-wine-text underline hover:no-underline">vodič kroz Google Business Profil</Link>.
             </p>
           </section>
 
