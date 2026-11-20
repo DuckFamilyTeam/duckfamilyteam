@@ -22,6 +22,16 @@ export type BlogPost = {
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'google-ads-servis-bele-tehnike-pogresne-pretrage',
+    img: '/img/blog/google-ads-servis-bele-tehnike-pogresne-pretrage.svg',
+    tag: 'Google Ads',
+    title: 'Kampanja koja je radila, pa počela da troši novac na pogrešne pozive',
+    excerpt:
+      'Slučaj servisa bele tehnike Specijaltehnik: šta se desilo posle šest meseci, šta znači procenat uz Googleov predlog i šta smo popravili.',
+    date: '2026-11-20',
+    readTime: '4 min',
+  },
+  {
     slug: 'koliko-kosta-izrada-sajta',
     img: '/img/blog/koliko-kosta-izrada-sajta.svg',
     tag: 'Web Development',

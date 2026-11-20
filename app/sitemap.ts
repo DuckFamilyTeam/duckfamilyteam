@@ -79,9 +79,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/blog`,
       // Datum poslednjeg objavljenog teksta. Menja se kad izađe nov post.
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-11-20'),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/google-ads-servis-bele-tehnike-pogresne-pretrage`,
+      lastModified: new Date('2026-11-20'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/blog/koliko-kosta-izrada-sajta`,

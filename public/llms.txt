@@ -12,9 +12,9 @@
 
 ## Usluge
 
-- [Google Ads](https://www.duckfamilyteam.online/usluge/google-ads): Kampanje fokusirane na pozive i konverzije. Mesečno vođenje 200 evra, jednokratna postavka kampanje 70 evra po kampanji.
-- [Google Business profil](https://www.duckfamilyteam.online/usluge/google-business-profil): Vođenje profila, 8 objava i 8 fotografija mesečno, odgovaranje na recenzije i lokalni SEO. 100 evra mesečno.
-- [Izrada sajtova](https://www.duckfamilyteam.online/usluge/izrada-sajtova): Next.js i Astro sajtovi sa ugrađenom SEO optimizacijom. Sajt do 3 stranice 300 evra, višestranični sajt 600 evra.
+- [Google Ads](https://www.duckfamilyteam.online/usluge/google-ads): Kampanje fokusirane na pozive i konverzije. Mesečno vođenje 150 evra, jednokratna postavka kampanje 70 evra po kampanji.
+- [Google Business profil](https://www.duckfamilyteam.online/usluge/google-business-profil): Jednokratna postavka i verifikacija profila 100 evra. Mesečno vođenje 50 evra: 2 objave i 1 fotografija nedeljno, odgovaranje na recenzije i lokalni SEO.
+- [Izrada sajtova](https://www.duckfamilyteam.online/usluge/izrada-sajtova): Next.js i Astro sajtovi sa ugrađenom SEO optimizacijom. Cena zavisi od tipa firme, od 180 do 490 evra, a održavanje sajta je 30 evra mesečno.
 
 ## Rezultati
 
@@ -23,12 +23,17 @@
 
 ## Blog / Sadržaj
 
-- [Koliko košta Google Ads u Srbiji](https://www.duckfamilyteam.online/blog/koliko-kosta-google-ads): Iz čega se sastoji trošak kampanje, kako Google naplaćuje klik, zašto prosečna cena klika za Srbiju ne postoji i kako se sopstvena procena izvlači iz Keyword Planner-a
-- [Google Business Profil](https://www.duckfamilyteam.online/blog/google-business-profil): Zašto je profil najjači, a najčešće zanemaren alat lokalne firme, i kako se podešava i optimizuje
-- [Astro sajtovi, Island Architecture i Lighthouse 100](https://www.duckfamilyteam.online/blog/astro-sajtovi): Zašto su Astro sajtovi trenutno najbolja tehnologija za brze, SEO optimizovane web prezentacije
-- [Zašto Google oglasi troše novac bez konverzija](https://www.duckfamilyteam.online/blog/google-ads-trosak): Najčešći razlozi niskog ROAS-a i kako ispraviti targeting, landing stranicu i merenje konverzija
-- [SEO u 2026, tematski autoritet i AI pretraga](https://www.duckfamilyteam.online/blog/seo-2026): Aktuelne SEO strategije, tematski autoritet i promene u Google algoritmima za 2026. godinu
-- [GA4 vodič za preduzetnike](https://www.duckfamilyteam.online/blog/ga4-vodic): Kako podesiti Google Analytics 4 za praćenje prodaje i konverzija
+- [Kampanja koja je radila, pa počela da troši novac na pogrešne pozive](https://www.duckfamilyteam.online/blog/google-ads-servis-bele-tehnike-pogresne-pretrage): Slučaj servisa bele tehnike Specijaltehnik: šta se desilo posle šest meseci, šta znači procenat uz Googleov predlog i šta smo popravili.
+- [Koliko košta izrada sajta u Srbiji, i šta ulazi u cenu](https://www.duckfamilyteam.online/blog/koliko-kosta-izrada-sajta): Četiri troška koja se zovu istim imenom, naše cene bez zaokruživanja i šest pitanja koja treba postaviti pre nego što potpišete bilo čiju ponudu.
+- [Google Business Profile za apoteke: kako da vas pacijenti pronađu na Google mapi](https://www.duckfamilyteam.online/blog/google-business-profil-za-apoteke): Pretraga apoteke je skoro uvek hitna. Zato je radno vreme najvažnije polje profila, a Zakon o lekovima postavlja granicu koju druge delatnosti nemaju.
+- [Google Business profili za firme sa više lokacija (lanci i franšize)](https://www.duckfamilyteam.online/blog/google-business-profil-vise-lokacija): Lanac ne vodi jedan profil, nego jedan po poslovnici. Kako se ta struktura postavlja bez duplikata, bez doorway stranica i bez rizika od suspenzije.
+- [Cena vođenja Google Business Profila u Srbiji: od čega zavisi mesečna cena](https://www.duckfamilyteam.online/blog/cena-vodjenja-google-business-profila): Google Business Profile je besplatan alat, ali vođenje nije. Šta pomera mesečnu cenu, kada se isplati raditi sami, i koliko mi naplaćujemo.
+- [Koliko košta Google Ads u Srbiji, i kako se budžet stvarno računa](https://www.duckfamilyteam.online/blog/koliko-kosta-google-ads): Prosečna cena klika za Srbiju ne postoji. Kako da izvučete svoju iz Keyword Planner-a, i iz čega se sastoji mesečni trošak kampanje.
+- [Google Business Profil: vaš najjači, a najčešće zanemareni alat](https://www.duckfamilyteam.online/blog/google-business-profil): Besplatan je i gradi poverenje pre nego što neko klikne na vaš sajt. Saznajte kako da ga pametno napravite i optimizujete, za male, srednje i velike firme.
+- [Astro sajtovi: kada su najbolji izbor, a kada nisu](https://www.duckfamilyteam.online/blog/astro-sajtovi): Island Architecture, nulti JavaScript i Lighthouse score 100. Za koje sajtove je Astro prava odluka, a za koje je Next.js bolji.
+- [Zašto vaši Google oglasi troše novac bez konverzija?](https://www.duckfamilyteam.online/blog/google-ads-trosak): Otkrijte 3 najčešće greške koje prave početnici i kako da podesite Smart Bidding da radi za vaš profit.
+- [SEO u 2026: da li su ključne reči i dalje bitne?](https://www.duckfamilyteam.online/blog/seo-2026): Google algoritam se menja. Fokus se pomera sa kucanja reči na nameru korisnika. Saznajte kako da dominirate.
+- [GA4 vodič za preduzetnike: šta zapravo treba da gledate?](https://www.duckfamilyteam.online/blog/ga4-vodic): Ne dozvolite da vas gomila brojeva zbuni. Fokusirajte se na ove 3 metrike koje direktno pokazuju koliko zarađujete.
 
 ## Kontakt i profili
 
