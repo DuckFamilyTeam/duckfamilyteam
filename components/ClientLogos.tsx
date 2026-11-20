@@ -33,7 +33,7 @@ const klijenti: Klijent[] = [
   },
 ]
 
-export default function ClientLogos({ naslov = 'Sa kim smo radili' }: { naslov?: string }) {
+export default function ClientLogos({ naslov = 'Naši klijenti' }: { naslov?: string }) {
   return (
     <div>
       <p className="font-mono text-xs uppercase tracking-widest text-ink-muted mb-6 text-center">
